@@ -6,7 +6,7 @@ banner = "img/blog/Benevoles.png"
 
 Plus de place, et vous arrivez trop tard. Pas de BreizhCamp pour vous en 2017 :'(
 
-Bien sur il reste la possibilité de tenter le [tirage au sort](https://twitter.com/breizhcamp/status/839155864850292736) 
+Bien sûr il reste la possibilité de tenter le [tirage au sort](https://twitter.com/breizhcamp/status/839155864850292736) 
 des dernières places libérées (?), mais ça reste assez incertain.
 
 Il reste cependant une autre possibilité : participer au BreizhCamp en tant que bénévole.
