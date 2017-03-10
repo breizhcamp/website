@@ -17,7 +17,7 @@ Oui bien sur on a pas grand chose à voir avec les restos du coeur, mais pour au
 qui trimbalent des cartons et des rallonges pendant toute la semaine pour faire de cet événement une réussite. Et comme on ne
 rajeunit pas, de temps en temps on est pas contre un petit coup de main.
 
-Accessoirement, avec un peu plus de 600 personnes cette année, et de grandes ambitions (sic), il va faloir être un peu "carré" sur l'organisation. 
+Accessoirement, depuis 2016 nous avons changé d'échelle en doublant la taille de l'évènement, et l'équipe n'a pas bougé. Nous avons donc terminé l'édition précédente sur les rotules - heureux, mais lessivés - mais heureux - mais lessivés. Avec un peu plus de 600 personnes cette année, et de grandes ambitions (sic), il va faloir être un peu "carré" sur l'organisation. 
 
 # Le deal
 
