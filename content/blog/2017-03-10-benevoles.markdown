@@ -25,10 +25,10 @@ Voici donc notre proposition :
 
 * vous acceptez de vous mettre à notre disposition, du mardi 18 en fin d'après-midi (mise en place, consignes, 
 répétition keynote, etc) au vendredi soir jusqu'à un bon 20h (rangement)
-* vous acceptez de '_sacrifier_' une journée (jeudi ou vendredi) pour la bonne cause. Enfin, "sacrifier" à moitié : 
+* vous acceptez de '_sacrifier_' une journée et demi (demi journée mercredi + jeudi ou vendredi) pour la bonne cause. Enfin, "sacrifier" à moitié : 
 vous serez dans une des salles de conférence pour nous aider à installer chaque speaker, filtrer les accès à la salle, etc. 
 Autrement dit, vous verrez les sessions, mais pas forcément celle que vous voulez (NB: pas de changement de salle en cours de journée, 
-c'est un boulot à plein temps _justement_ pendant les périodes de changement de salle).
+c'est un boulot à plein temps _justement_ pendant les périodes de changement de salle). Nous aurons aussi besoin de vous le matin pour l'accueil, donc faudra mettre votre réveil, et ce ne sera pas pour voir les keynotes...
 * vous aurez un pass 3 jours pour profiter des autres journées à votre guise
 * vous aurez un joli TShirt ridicule pour qu'on vous repère facilement, parce que vous devrez aussi renseigner les participants, 
 genre: connaitre le programme par coeur (interrogation écrite mardi soir :P)
