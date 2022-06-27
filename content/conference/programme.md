@@ -12,3 +12,6 @@ draft = false
     grâce à notre sponsor <a href="https://www.cyim.com/">CYIM</a> qui assure les captations vidéos.
     {{< /comment >}}
 </div>
+<div class="text-center lead">
+    Une version <a href="https://breizhcamp.org/pdf">PDF du programme est ici</a>.
+</div>
