@@ -23,7 +23,28 @@ export default ts.config(
 		rules: {
 			// typescript-eslint strongly recommend that you do not use the no-undef lint rule on TypeScript projects.
 			// see: https://typescript-eslint.io/troubleshooting/faqs/eslint/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
-			'no-undef': 'off'
+			'no-undef': 'off',
+			// https://stackoverflow.com/a/64067915/11320442
+			// allows unused variable if they start with _
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					argsIgnorePattern: '^_',
+					varsIgnorePattern: '^_',
+					caughtErrorsIgnorePattern: '^_'
+				}
+			],
+			// https://eslint.org/docs/latest/rules/no-console
+			// disallows the use of console.info() and console.log()
+			'no-console': [
+				'error',
+				{
+					allow: ['warn', 'error']
+				}
+			],
+			// https://eslint.org/docs/latest/rules/no-control-regex
+			// allows to write new RegExp("\t") which is normally only possible with /\t/
+			'no-control-regex': 0
 		}
 	},
 	{

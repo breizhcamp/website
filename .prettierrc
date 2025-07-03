@@ -10,6 +10,9 @@
 			"options": {
 				"parser": "svelte"
 			}
-		}
-	]
+		},
+		{ "files": "*.md", "options": { "tabWidth": 2 } }
+	],
+	"tabWidth": 4,
+	"svelteBracketNewLine": true
 }
