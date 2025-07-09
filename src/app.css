@@ -1,1 +1,10 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+
+/* see for custom theme https://www.skeleton.dev/docs/design/themes#custom-themes */
+@import './theme-breizhcamp.css';
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
