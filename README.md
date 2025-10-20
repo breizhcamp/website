@@ -7,8 +7,9 @@ La majorité des contenus est écrite en Markdown. Il est facile d'y contribuer 
 Ami·es du BreizhCamp, n'hésitez pas à proposer des PR si vous voulez améliorer ce site!
 
 Pour lancer le site sur votre machine, Vous pouvez
-* soit installer Node.js et pnpm,
-* soit utiliser l'image Docker si vous ne souhaitez pas déployer ces outils directement sur votre OS.
+
+- soit installer Node.js et pnpm,
+- soit utiliser l'image Docker si vous ne souhaitez pas déployer ces outils directement sur votre OS.
 
 ## Développement avec Node.js et pnpm
 
@@ -18,7 +19,7 @@ Pour lancer le site sur votre machine, Vous pouvez
 
 ```sh
 git clone git@github.com:breizhcamp/website-rework.git
-```  
+```
 
 **2. Installer Node.js **
 
@@ -54,7 +55,6 @@ pnpm preview
 
 Le site sera accessible sur l'url http://localhost:4173 et va s'ouvrir automatiquement dans le navigateur par défaut.
 
-
 ## Développement avec Docker
 
 **Prérequis** : Docker ou un équivalent (Podman, Colima, etc)
@@ -68,7 +68,7 @@ git clone git@github.com:breizhcamp/website-rework.git
 **2. Construire l'image Docker**
 
 ```sh
-cd website-rework  
+cd website-rework
 make docker-image
 ```
 
