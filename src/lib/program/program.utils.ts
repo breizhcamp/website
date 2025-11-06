@@ -1,6 +1,6 @@
-import type { Category, Room, Session, Speaker } from './program.types';
+import type { Formatted, Json } from './program.types';
 
-export function verifyCategories(sessions: Array<Session>, categories: Array<Category>) {
+export function verifyCategories(sessions: Array<Json.Session>, categories: Array<Json.Category>) {
 	const sessionsWithUnknownCategories = sessions
 		.map((session) => ({
 			...session,
@@ -17,7 +17,7 @@ export function verifyCategories(sessions: Array<Session>, categories: Array<Cat
 	return true;
 }
 
-export function verifySpeakers(sessions: Array<Session>, speakers: Array<Speaker>) {
+export function verifySpeakers(sessions: Array<Json.Session>, speakers: Array<Json.Speaker>) {
 	const sessionsWithUnknownSpeakers = sessions
 		.map((session) => ({
 			...session,
@@ -34,7 +34,7 @@ export function verifySpeakers(sessions: Array<Session>, speakers: Array<Speaker
 	return true;
 }
 
-export function verifyRooms(sessions: Array<Session>, rooms: Array<Room>) {
+export function verifyRooms(sessions: Array<Json.Session>, rooms: Array<Json.Room>) {
 	const sessionsWithUnknownRooms = sessions.filter(
 		(session) => !rooms.find((room) => room.id == session.roomId)
 	);
@@ -46,11 +46,19 @@ export function verifyRooms(sessions: Array<Session>, rooms: Array<Room>) {
 	return true;
 }
 
-export function getSpeaker(speakerId: string, speakers: Array<Speaker>) {
+export function getRoom(roomId: number, rooms: Array<Json.Room>) {
+	return rooms.find((room) => room.id === roomId);
+}
+
+export function formatRoom(room: Json.Room): Formatted.Room {
+	return room.name;
+}
+
+export function getSpeaker(speakerId: string, speakers: Array<Json.Speaker>) {
 	return speakers.find((speaker) => speaker.id === speakerId);
 }
 
-export function formatSpeaker(speaker: Speaker) {
+export function formatSpeaker(speaker: Json.Speaker): Formatted.Speaker {
 	return {
 		name: speaker.fullName,
 		tagline: speaker.tagLine,
@@ -58,7 +66,7 @@ export function formatSpeaker(speaker: Speaker) {
 	};
 }
 
-export function getCategory(categoryItemId: number, categories: Array<Category>) {
+export function getCategory(categoryItemId: number, categories: Array<Json.Category>) {
 	return categories
 		.map((category) => ({
 			...category,
@@ -67,7 +75,7 @@ export function getCategory(categoryItemId: number, categories: Array<Category>)
 		.filter((category) => !!category.foundItem)[0]!;
 }
 
-export function formatCategory(category: ReturnType<typeof getCategory>) {
+export function formatCategory(category: ReturnType<typeof getCategory>): Formatted.Category {
 	return {
 		id: category.foundItem?.id,
 		name: category.title,
@@ -76,18 +84,18 @@ export function formatCategory(category: ReturnType<typeof getCategory>) {
 }
 
 export function formatSession(
-	session: Session,
-	rooms: Array<Room>,
-	categories: Array<Category>,
-	speakers: Array<Speaker>
-) {
+	session: Json.Session,
+	rooms: Array<Json.Room>,
+	categories: Array<Json.Category>,
+	speakers: Array<Json.Speaker>
+): Formatted.Session {
 	return {
 		title: session.title,
 		description: session.description,
 		startAt: new Date(session.startsAt),
 		endAt: new Date(session.endsAt),
 		dayOfWeek: new Date(session.startsAt).getDay(),
-		room: rooms.find((room) => room.id === session.roomId)!.name,
+		room: formatRoom(getRoom(session.roomId, rooms)!),
 		categories: session.categoryItems
 			.map((categoryItemId) => getCategory(categoryItemId, categories))
 			.map(formatCategory),

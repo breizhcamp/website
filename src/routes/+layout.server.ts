@@ -1,3 +1,4 @@
+import type { Json } from '$lib/program/program.types';
 import {
 	formatSession,
 	verifyCategories,
@@ -7,21 +8,13 @@ import {
 import { categories, rooms, sessions, speakers } from '../../static/conferences.json';
 
 export function load() {
-	if (!verifyCategories(sessions, categories)) {
-		throw '';
-	}
-
-	if (!verifySpeakers(sessions, speakers)) {
-		throw '';
-	}
-
-	if (!verifyRooms(sessions, rooms)) {
-		throw '';
-	}
+	verifyCategories(sessions, categories);
+	verifySpeakers(sessions, speakers);
+	verifyRooms(sessions, rooms);
 
 	return {
 		sessions: sessions.map((session) => formatSession(session, rooms, categories, speakers)),
-		categories,
-		rooms
+		categories: categories as Array<Json.Category>,
+		rooms: rooms as Array<Json.Room>
 	};
 }

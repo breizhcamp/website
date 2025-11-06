@@ -1,5 +1,9 @@
 <script lang="ts">
+	import type { Formatted } from '$lib/program/program.types';
+	import { dayPeriods } from '$lib/shared/constants';
 	import { groupBy } from '$lib/shared/utils.js';
+	import Grid from './Grid.svelte';
+	import Slots from './Slots.svelte';
 
 	const { data } = $props();
 
@@ -21,11 +25,15 @@
 			)
 	);
 
-	const daySessionsPerRoom = $derived(
-		groupBy(
-			daySessions,
-			(session) => session.room,
-			data.rooms.map((room) => room.name)
+	type SessionsPerRoom = Record<Formatted.Room, Array<Formatted.Session>>;
+
+	const daySessionsPerRoom: SessionsPerRoom = $derived(
+		Object.fromEntries(
+			groupBy(
+				daySessions,
+				(session) => session.room,
+				data.rooms.map((room) => room.name)
+			)
 		)
 	);
 </script>
@@ -45,23 +53,43 @@
 </legend>
 
 {#each data.categories as category, index (category.id)}
-	<legend>
+	<label>
 		{category.title}
-		{#each category.items as { id, name } (id)}
-			<label>
-				<input type="radio" value={id} bind:group={selectedCategoryItemIds[index]} />
-				{name}
-			</label>
-		{/each}
-	</legend>
-	<button onclick={() => (selectedCategoryItemIds[index] = undefined)}> RAZ filtre </button>
+		<select bind:value={selectedCategoryItemIds[index]}>
+			<option value={undefined}> Tous </option>
+			{#each category.items as { id, name } (id)}
+				<option value={id}>
+					{name}
+				</option>
+			{/each}
+		</select>
+	</label>
 {/each}
 
 <h2>Programme</h2>
 
-{#each daySessionsPerRoom as [room, sessions] (room)}
+<Grid
+	data={[daySessionsPerRoom]}
+	columns={[
+		{
+			title: 'Heures',
+			value: (item: SessionsPerRoom) => 'All day'
+		},
+		...data.rooms.map((room) => ({
+			title: room.name,
+			value: (item: SessionsPerRoom) => ({
+				sessions: item[room.name] ?? []
+			}),
+			component: Slots
+		}))
+	]}
+/>
+
+<!-- {#each daySessionsPerRoom as [room, sessions] (room)}
 	<h2>{room}</h2>
 	{#each sessions as session (session.title)}
 		<p>{session.title} - {session.categories.map((c) => c.value)}</p>
 	{/each}
-{/each}
+{/each} -->
+
+<pre>{JSON.stringify(dayPeriods, null, 2)}</pre>
