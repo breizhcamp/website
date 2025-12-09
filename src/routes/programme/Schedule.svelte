@@ -1,0 +1,106 @@
+<script lang="ts">
+	import Slots from './SlotCell.svelte';
+	import Time from './TimeCell.svelte';
+	import { sortEvents, type DaySessionsBySlot } from './utils';
+
+	interface Props {
+		data: Array<DaySessionsBySlot>;
+		rooms: Array<string>;
+		eventTypes: Array<string>;
+	}
+
+	const { data, rooms, eventTypes }: Props = $props();
+</script>
+
+{#snippet snippet_time_cell(row: DaySessionsBySlot)}
+	<td>
+		<Time {...row} />
+	</td>
+{/snippet}
+
+{#snippet snippet_columns(rooms: Array<string>, row: DaySessionsBySlot)}
+	{#each rooms as room (room)}
+		{@const value = row.sessions[room] ?? []}
+		<td>
+			<div>
+				<Slots sessions={value} {eventTypes} />
+			</div>
+		</td>
+	{/each}
+{/snippet}
+
+<table role="grid">
+	<thead>
+		<tr>
+			<th style:width="200px">Horaire</th>
+			{#each rooms as room (room)}
+				<th scope="col">{room}</th>
+			{/each}
+		</tr>
+	</thead>
+	<tbody>
+		{#each data as row (row.startAt)}
+			<tr>
+				{#if row.sessions['Hall']?.length && row.sessions['Amphi D']?.length}
+					<!-- si Hall et Amphi D => Hall sur A et B + Amphi C, D et E (jeudi et vendredi midi) -->
+					{@render snippet_time_cell(row)}
+
+					<td colspan="2">
+						<Slots sessions={row.sessions['Hall']} {eventTypes} />
+					</td>
+					{@render snippet_columns(rooms.slice(Math.max(rooms.length - 3, 0)), row)}
+				{:else if row.sessions['Hall']?.length}
+					<!-- si Hall sans Amphi D => affichage Hall + Amphi C sur 5 colonnes (jeudi et vendredi matin) -->
+					{@render snippet_time_cell(row)}
+
+					<td colspan="5">
+						<Slots
+							sessions={[
+								...row.sessions['Hall'],
+								...('Amphi C' in row.sessions ? row.sessions['Amphi C'] : [])
+							].sort(sortEvents)}
+							{eventTypes}
+						/>
+					</td>
+				{:else if !row.sessions['Amphi A']?.length && row.sessions['Amphi C']?.length}
+					<!-- si Amphi C sans Amphi A => affichage Amphi C sur 5 colonnes (keynote soir) -->
+					{@render snippet_time_cell(row)}
+
+					<td colspan="5">
+						<Slots sessions={row.sessions['Amphi C']} {eventTypes} />
+					</td>
+				{:else}
+					<!-- sinon, affichage de toutes les colonnes -->
+					{@render snippet_time_cell(row)}
+					{@render snippet_columns(rooms, row)}
+				{/if}
+			</tr>
+		{/each}
+	</tbody>
+</table>
+
+<style>
+	table {
+		max-width: 100%;
+	}
+
+	thead th {
+		padding: 12px 0;
+	}
+
+	td {
+		border-bottom: 1px solid #e5e7eb;
+		vertical-align: top;
+	}
+
+	td:first-child {
+		width: 144px;
+		min-width: 144px;
+		max-width: 144px;
+		padding: 16px 8px;
+	}
+
+	td + td {
+		width: 18.5%;
+	}
+</style>
