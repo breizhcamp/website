@@ -12,10 +12,10 @@
 		<nav>
 			<ul class="nav-list">
 				<li><a href="/">Accueil</a></li>
-				<li><span>Programme</span></li>
-				<li><span>Intervenants</span></li>
-				<li><span>Sponsors</span></li>
-				<li><span>Infos pratiques</span></li>
+				<li><a href="/#programme">Programme</a></li>
+				<li><a href="/#intervenants">Intervenants</a></li>
+				<li><a href="/#sponsors">Sponsors</a></li>
+				<li><a href="/#infos-pratiques">Infos pratiques</a></li>
 			</ul>
 		</nav>
 
@@ -71,8 +71,7 @@
 		margin: 0;
 	}
 
-	.nav-list a,
-	.nav-list span {
+	.nav-list a {
 		color: var(--neutral-700);
 		font-weight: 500;
 		font-size: 0.95rem;

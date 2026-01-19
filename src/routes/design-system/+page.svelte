@@ -104,7 +104,11 @@
 		<h2>Cartes</h2>
 		<div class="grid-3">
 			<Card align="center">
-				<img src="https://i.pravatar.cc/150?u=marie" alt="" class="avatar" />
+				<img
+					src="https://i.pravatar.cc/150?u=marie"
+					alt="Portrait de Marie Dupont"
+					class="avatar"
+				/>
 				<h3>Marie Dupont</h3>
 				<p class="text-sm text-neutral-500">Senior Developer</p>
 				<Badge color="pink">React</Badge>
@@ -118,7 +122,11 @@
 				<h3>Intro React 18</h3>
 				<p class="text-sm mb-4">Découvrez les fonctionnalités...</p>
 				<div class="flex items-center gap-2">
-					<img src="https://i.pravatar.cc/150?u=pierre" alt="" class="avatar-sm" />
+					<img
+						src="https://i.pravatar.cc/150?u=pierre"
+						alt="Portrait de Pierre Martin"
+						class="avatar-sm"
+					/>
 					<span class="text-sm">Pierre Martin</span>
 				</div>
 			</Card>
@@ -197,7 +205,7 @@
 		align-items: flex-end;
 		padding: 0.5rem;
 		font-size: 0.75rem;
-		color: var(--neutral-500);
+		color: var(--neutral-900);
 	}
 
 	.shade-50 {

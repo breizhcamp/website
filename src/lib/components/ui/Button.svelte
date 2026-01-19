@@ -23,7 +23,7 @@
 </script>
 
 {#if href}
-	<a {href} class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`} role="button">
+	<a {href} class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`}>
 		{@render children?.()}
 	</a>
 {:else}

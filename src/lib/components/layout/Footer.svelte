@@ -53,20 +53,26 @@
 				<li class="footer-col">
 					<span class="footer-title">Navigation</span>
 					<ul>
-						<li><span class="footer-link">Accueil</span></li>
-						<li><span class="footer-link">Programme</span></li>
-						<li><span class="footer-link">Intervenants</span></li>
-						<li><span class="footer-link">Sponsors</span></li>
+						<li><a class="footer-link" href="/">Accueil</a></li>
+						<li><a class="footer-link" href="/#programme">Programme</a></li>
+						<li><a class="footer-link" href="/#intervenants">Intervenants</a></li>
+						<li><a class="footer-link" href="/#sponsors">Sponsors</a></li>
 					</ul>
 				</li>
 
 				<li class="footer-col">
 					<span class="footer-title">Informations</span>
 					<ul>
-						<li><span class="footer-link">Code de conduite</span></li>
-						<li><span class="footer-link">FAQ</span></li>
-						<li><span class="footer-link">Contact</span></li>
-						<li><span class="footer-link">Accessibilité : conforme</span></li>
+						<li>
+							<a class="footer-link" href="/#code-de-conduite">Code de conduite</a>
+						</li>
+						<li><a class="footer-link" href="/#faq">FAQ</a></li>
+						<li><a class="footer-link" href="/#contact">Contact</a></li>
+						<li>
+							<a class="footer-link" href="/#accessibilite"
+								>Accessibilité : conforme</a
+							>
+						</li>
 					</ul>
 				</li>
 
@@ -191,7 +197,7 @@
 
 	.eco-badge {
 		display: inline-block;
-		background-color: #16a34a;
+		background-color: #15803d;
 		color: white;
 		font-weight: 600;
 		font-size: 0.85rem;
