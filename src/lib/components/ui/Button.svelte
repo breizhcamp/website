@@ -1,6 +1,4 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-
 	type Variant =
 		| 'primary'
 		| 'secondary'
@@ -13,7 +11,6 @@
 		type?: 'button' | 'reset' | 'submit';
 		href?: string | null;
 		fullWidth?: boolean;
-		children?: Snippet;
 	};
 
 	let {
@@ -22,7 +19,7 @@
 		href = null,
 		fullWidth = false,
 		children
-	}: Props = $props();
+	}: Props & { children?: import('svelte').Snippet } = $props();
 </script>
 
 {#if href}

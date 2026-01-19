@@ -1,5 +1,9 @@
-<script>
-	const { align = 'left', children } = $props(); // left, center
+<script lang="ts">
+	type Props = {
+		align?: 'left' | 'center';
+	};
+
+	let { align = 'left', children }: Props & { children?: import('svelte').Snippet } = $props();
 </script>
 
 <article class="card align-{align}">

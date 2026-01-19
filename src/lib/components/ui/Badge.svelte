@@ -1,5 +1,14 @@
-<script>
-	const { color = 'grey', size = 'md', children } = $props(); // pink, yellow, grey | sm, md
+<script lang="ts">
+	type Props = {
+		color?: 'pink' | 'yellow' | 'grey' | 'orange';
+		size?: 'sm' | 'md';
+	};
+
+	let {
+		color = 'grey',
+		size = 'md',
+		children
+	}: Props & { children?: import('svelte').Snippet } = $props();
 </script>
 
 <span class="badge badge-{color} size-{size}">
