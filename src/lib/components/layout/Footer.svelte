@@ -141,6 +141,12 @@
 		opacity: 1;
 	}
 
+	.social-icon:focus-visible,
+	a:focus-visible {
+		outline: 2px solid var(--lime);
+		outline-offset: 2px;
+	}
+
 	.footer-title {
 		display: inline-block;
 		font-size: 1rem;
