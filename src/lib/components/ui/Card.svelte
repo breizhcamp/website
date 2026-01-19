@@ -1,12 +1,19 @@
 <script lang="ts">
 	type Props = {
 		align?: 'left' | 'center';
+		interactive?: boolean;
 	};
 
-	let { align = 'left', children }: Props & { children?: import('svelte').Snippet } = $props();
+	let {
+		align = 'left',
+		interactive = false,
+		children
+	}: Props & {
+		children?: import('svelte').Snippet;
+	} = $props();
 </script>
 
-<article class="card align-{align}">
+<article class="card align-{align} {interactive ? 'is-interactive' : ''}">
 	{@render children?.()}
 </article>
 
@@ -23,7 +30,7 @@
 		height: 100%;
 	}
 
-	.card:hover {
+	.card.is-interactive:hover {
 		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
 	}
 
