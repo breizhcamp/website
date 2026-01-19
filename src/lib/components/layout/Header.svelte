@@ -10,11 +10,13 @@
 		</a>
 
 		<nav>
-			<a href="/">Accueil</a>
-			<span>Programme</span>
-			<span>Intervenants</span>
-			<span>Sponsors</span>
-			<span>Infos pratiques</span>
+			<ul class="nav-list">
+				<li><a href="/">Accueil</a></li>
+				<li><span>Programme</span></li>
+				<li><span>Intervenants</span></li>
+				<li><span>Sponsors</span></li>
+				<li><span>Infos pratiques</span></li>
+			</ul>
 		</nav>
 
 		<div class="cta-wrapper">
@@ -57,13 +59,20 @@
 
 	nav {
 		display: flex;
-		gap: 2rem;
-		align-items: center;
 		margin-left: auto;
 	}
 
-	nav a,
-	nav span {
+	.nav-list {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.nav-list a,
+	.nav-list span {
 		color: var(--neutral-700);
 		font-weight: 500;
 		font-size: 0.95rem;
@@ -72,7 +81,7 @@
 		line-height: 1;
 	}
 
-	nav a:hover {
+	.nav-list a:hover {
 		color: var(--violet);
 	}
 
@@ -93,10 +102,13 @@
 
 		nav {
 			margin-left: 0;
+			text-align: center;
+		}
+
+		.nav-list {
 			flex-wrap: wrap;
 			justify-content: center;
 			gap: 1rem;
-			text-align: center;
 		}
 
 		.cta-wrapper {

@@ -48,40 +48,44 @@
 			</div>
 		</div>
 
-		<div class="footer-col">
-			<h4>Navigation</h4>
-			<ul>
-				<li><span class="footer-link">Accueil</span></li>
-				<li><span class="footer-link">Programme</span></li>
-				<li><span class="footer-link">Intervenants</span></li>
-				<li><span class="footer-link">Sponsors</span></li>
+		<nav class="footer-nav" aria-label="Footer">
+			<ul class="footer-columns">
+				<li class="footer-col">
+					<span class="footer-title">Navigation</span>
+					<ul>
+						<li><span class="footer-link">Accueil</span></li>
+						<li><span class="footer-link">Programme</span></li>
+						<li><span class="footer-link">Intervenants</span></li>
+						<li><span class="footer-link">Sponsors</span></li>
+					</ul>
+				</li>
+
+				<li class="footer-col">
+					<span class="footer-title">Informations</span>
+					<ul>
+						<li><span class="footer-link">Code de conduite</span></li>
+						<li><span class="footer-link">FAQ</span></li>
+						<li><span class="footer-link">Contact</span></li>
+						<li><span class="footer-link">Accessibilité : conforme</span></li>
+					</ul>
+				</li>
+
+				<li class="footer-col">
+					<span class="footer-title">Éditions précédentes</span>
+					<p class="years-cloud">
+						{#each years as year (year)}
+							<span class="year-text">{year}</span>{year !== years[years.length - 1]
+								? ', '
+								: ''}
+						{/each}
+					</p>
+
+					<div class="eco-badge-container">
+						<span class="eco-badge">EcoIndex A</span>
+					</div>
+				</li>
 			</ul>
-		</div>
-
-		<div class="footer-col">
-			<h4>Informations</h4>
-			<ul>
-				<li><span class="footer-link">Code de conduite</span></li>
-				<li><span class="footer-link">FAQ</span></li>
-				<li><span class="footer-link">Contact</span></li>
-				<li><span class="footer-link">Accessibilité : conforme</span></li>
-			</ul>
-		</div>
-
-		<div class="footer-col">
-			<h4>Éditions précédentes</h4>
-			<p class="years-cloud">
-				{#each years as year (year)}
-					<span class="year-text">{year}</span>{year !== years[years.length - 1]
-						? ', '
-						: ''}
-				{/each}
-			</p>
-
-			<div class="eco-badge-container">
-				<span class="eco-badge">EcoIndex A</span>
-			</div>
-		</div>
+		</nav>
 	</div>
 </footer>
 
@@ -97,8 +101,21 @@
 		max-width: 1440px;
 		margin: 0 auto;
 		display: grid;
-		grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+		grid-template-columns: 1.5fr 3fr;
 		gap: 3rem;
+	}
+
+	.footer-nav {
+		align-self: start;
+	}
+
+	.footer-columns {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1.5fr;
+		gap: 3rem;
+		list-style: none;
+		padding: 0;
+		margin: 0;
 	}
 
 	.tagline {
@@ -124,7 +141,8 @@
 		opacity: 1;
 	}
 
-	h4 {
+	.footer-title {
+		display: inline-block;
 		font-size: 1rem;
 		font-weight: 600;
 		margin-bottom: 1.5rem;
@@ -179,6 +197,11 @@
 		.footer-inner {
 			grid-template-columns: 1fr;
 			gap: 2.5rem;
+		}
+
+		.footer-columns {
+			grid-template-columns: 1fr;
+			gap: 2rem;
 		}
 
 		.brand {
