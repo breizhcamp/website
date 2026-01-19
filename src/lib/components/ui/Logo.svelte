@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let width: string = '350';
-	export let color: string = 'currentColor';
+	type Props = {
+		width?: string;
+		color?: string;
+	};
+
+	let { width = '350', color = 'currentColor' }: Props = $props();
 </script>
 
 <div style="display: inline-flex; width: {width}px; color: {color};">

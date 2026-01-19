@@ -1,9 +1,9 @@
 <script>
-	export let align = 'left'; // left, center
+	const { align = 'left', children } = $props(); // left, center
 </script>
 
 <article class="card align-{align}">
-	<slot />
+	{@render children?.()}
 </article>
 
 <style>

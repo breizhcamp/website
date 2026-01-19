@@ -1,29 +1,37 @@
 <script lang="ts">
-	// Toutes les variantes possibles
-	export let variant:
+	import type { Snippet } from 'svelte';
+
+	type Variant =
 		| 'primary'
 		| 'secondary'
 		| 'tertiary'
 		| 'link'
 		| 'icon-primary'
-		| 'icon-secondary' = 'primary';
+		| 'icon-secondary';
+	type Props = {
+		variant?: Variant;
+		type?: 'button' | 'reset' | 'submit';
+		href?: string | null;
+		fullWidth?: boolean;
+		children?: Snippet;
+	};
 
-	// Type conforme à l’attribut HTML `type` de <button>
-	export let type: 'button' | 'reset' | 'submit' = 'button';
-
-	// href optionnel : si présent => <a>, sinon => <button>
-	export let href: string | null = null;
-
-	export let fullWidth = false;
+	let {
+		variant = 'primary',
+		type = 'button',
+		href = null,
+		fullWidth = false,
+		children
+	}: Props = $props();
 </script>
 
 {#if href}
 	<a {href} class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`} role="button">
-		<slot />
+		{@render children?.()}
 	</a>
 {:else}
 	<button {type} class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`}>
-		<slot />
+		{@render children?.()}
 	</button>
 {/if}
 

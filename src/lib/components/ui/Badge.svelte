@@ -1,10 +1,9 @@
 <script>
-	export let color = 'grey'; // pink, yellow, grey
-	export let size = 'md'; // sm, md
+	const { color = 'grey', size = 'md', children } = $props(); // pink, yellow, grey | sm, md
 </script>
 
 <span class="badge badge-{color} size-{size}">
-	<slot />
+	{@render children?.()}
 </span>
 
 <style>
