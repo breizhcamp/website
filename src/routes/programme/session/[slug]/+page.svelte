@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Speaker from '$lib/Speaker.svelte';
-	import { speakers } from '../constants';
-	import LevelIcon from '../LevelIcon.svelte';
-	import { formatDate } from '../utils';
+	import { speakers } from '../../constants';
+	import LevelIcon from '../../LevelIcon.svelte';
+	import { formatDate, formatDayOfWeek } from '../../utils';
 
 	const { data } = $props();
 </script>
@@ -11,21 +11,23 @@
 	class="theme-{data.themeIndex} duration-{data.duration}"
 	style:opacity={data.filter === 'visible' ? 1 : 0.15}
 >
-	<!-- FIXME use correct title level -->
 	<h1>{data.name}</h1>
 
-	<h2>Infos pratiques</h2>
-	<div class="footer">
-		<p class="schedule">{formatDate(data.event_start)} — {formatDate(data.event_end)}</p>
-		<div class="flex">
-			{#if data.level}
-				<span class="level" title={data.level} aria-label="Niveau {data.level}">
-					<LevelIcon level={data.level} />
-				</span>
-			{/if}
-			<span class="event-type">{data.event_type}</span>
-		</div>
-	</div>
+	<h2>Les infos pratiques</h2>
+	<ul>
+		<li>
+			la session a lieu en <strong>{data.venue}</strong> le
+			<strong>{formatDayOfWeek(data.day_of_week)}</strong>
+			de <strong>{formatDate(data.event_start)} à {formatDate(data.event_end)}</strong>
+		</li>
+		{#if data.level}
+			<li>
+				La session est prévu avec un niveau <LevelIcon level={data.level} />
+				<strong>{data.level}</strong>
+			</li>
+		{/if}
+		<li>La session aura pour thème : <strong>{data.event_type}</strong></li>
+	</ul>
 
 	<h2>Description</h2>
 	<p>{data.description}</p>

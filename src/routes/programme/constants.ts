@@ -2,7 +2,7 @@ import _schedule from './schedule.json';
 import _speakers from './speakers.json';
 import { sortEvents } from './utils';
 
-type AsideEvent = {
+type AsideSession = {
 	id: string;
 	name: string;
 	description: null;
@@ -13,7 +13,7 @@ type AsideEvent = {
 	search: string;
 	event_start: Date;
 	event_end: Date;
-	day_of_week: number;
+	day_of_week: 3 | 4 | 5;
 	event_type: string;
 	venue_id: string;
 	video_url: string;
@@ -34,7 +34,7 @@ type Talk = {
 	search: string;
 	event_start: Date;
 	event_end: Date;
-	day_of_week: number;
+	day_of_week: 3 | 4 | 5;
 	event_type: string;
 	venue_id: string;
 	video_url: string;
@@ -44,7 +44,7 @@ type Talk = {
 	filter: 'visible' | 'hidden';
 };
 
-export type Event = AsideEvent | Talk;
+export type Session = AsideSession | Talk;
 
 export type Speaker = {
 	id: string;
@@ -80,7 +80,7 @@ const schedule = _schedule
 			search: `${event.name} ${event.speakers.replace('/,/', '')}`,
 			speakers: _speakers,
 			filter: 'visible'
-		} as Event;
+		} as Session;
 	})
 	.sort(sortEvents);
 

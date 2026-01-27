@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Slots from './SlotCell.svelte';
+	import SlotEvents from './SlotEvents.svelte';
 	import Time from './TimeCell.svelte';
 	import { sortEvents, type DaySessionsBySlot } from './utils';
 
@@ -22,9 +22,7 @@
 	{#each rooms as room (room)}
 		{@const value = row.sessions[room] ?? []}
 		<td>
-			<div>
-				<Slots sessions={value} {eventTypes} />
-			</div>
+			<SlotEvents sessions={value} {eventTypes} />
 		</td>
 	{/each}
 {/snippet}
@@ -46,7 +44,7 @@
 					{@render snippet_time_cell(row)}
 
 					<td colspan="2">
-						<Slots sessions={row.sessions['Hall']} {eventTypes} />
+						<SlotEvents sessions={row.sessions['Hall']} {eventTypes} />
 					</td>
 					{@render snippet_columns(rooms.slice(Math.max(rooms.length - 3, 0)), row)}
 				{:else if row.sessions['Hall']?.length}
@@ -54,7 +52,7 @@
 					{@render snippet_time_cell(row)}
 
 					<td colspan="5">
-						<Slots
+						<SlotEvents
 							sessions={[
 								...row.sessions['Hall'],
 								...('Amphi C' in row.sessions ? row.sessions['Amphi C'] : [])
@@ -67,7 +65,7 @@
 					{@render snippet_time_cell(row)}
 
 					<td colspan="5">
-						<Slots sessions={row.sessions['Amphi C']} {eventTypes} />
+						<SlotEvents sessions={row.sessions['Amphi C']} {eventTypes} />
 					</td>
 				{:else}
 					<!-- sinon, affichage de toutes les colonnes -->

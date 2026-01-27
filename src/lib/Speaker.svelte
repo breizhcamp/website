@@ -4,12 +4,13 @@
 	interface Props {
 		speaker: string | Speaker;
 		size: 'lg' | 'md' | 'sm';
+		reducedTextSize?: boolean;
 	}
 
-	const { speaker, size }: Props = $props();
+	const { speaker, size, reducedTextSize = false }: Props = $props();
 </script>
 
-<div class="size-{size}">
+<div class="size-{size}" class:reduced-text-size={reducedTextSize}>
 	<span class="avatar">
 		{#if typeof speaker === 'string'}
 			<!-- FIXME this is ridiculous -->
@@ -48,16 +49,35 @@
 	}
 
 	.avatar p {
+		margin: 0;
 		font-size: 14px;
 		line-height: 1.05;
 		color: #333333;
+
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+
+	.reduced-text-size .avatar p {
+		font-size: 12px;
 	}
 
 	.size-sm img {
-		width: 16px;
+		width: 20px;
+	}
+
+	.size-sm .avatar img.picture {
+		border: 1px solid hsl(var(--accent-color));
 	}
 
 	.size-sm p {
+		font-size: 12px;
+	}
+
+	.size-sm.reduced-text-size p {
 		font-size: 10px;
 	}
 

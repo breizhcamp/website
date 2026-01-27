@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Speaker from '$lib/Speaker.svelte';
-	import { type Event } from './constants';
+	import { type Session } from './constants';
 	import LevelIcon from './LevelIcon.svelte';
 	import { formatDate } from './utils';
 
-	type Props = Event & { eventTypes: Array<string> };
+	type Props = Session & { eventTypes: Array<string> };
 
 	const {
 		id,
@@ -28,11 +28,15 @@
 	style:opacity={filter === 'visible' ? 1 : 0.15}
 >
 	<!-- FIXME use correct title level -->
-	<h3><a href="/programme/{id}">{name}</a></h3>
+	<a href="/programme/session/{id}"><h2>{name}</h2></a>
 	{#if speakers}
 		<div class="speakers" class:too-crowded={speakers.length >= 3}>
 			{#each speakers as speaker, index (index)}
-				<Speaker {speaker} size={duration < 40 ? 'sm' : 'md'} />
+				<Speaker
+					{speaker}
+					size={duration < 40 ? 'sm' : 'md'}
+					reducedTextSize={duration < 100 && speakers.length > 1}
+				/>
 			{/each}
 		</div>
 	{/if}
@@ -55,13 +59,16 @@
 		border-left: 4px solid hsla(var(--accent-color), 1);
 		border-radius: 8px;
 		margin: 8px 0 8px 8px;
-		padding: 6px 16px;
+		padding: 8px 16px;
 		height: 200px;
 	}
 
 	.duration-15 {
 		height: 76px;
 		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 
 	.duration-25,
@@ -77,7 +84,7 @@
 		height: 408px;
 	}
 
-	h3 {
+	h2 {
 		font-size: 16px;
 		color: #1a1a1a;
 		line-height: 1.2;
@@ -87,6 +94,11 @@
 		-webkit-line-clamp: 4;
 		line-clamp: 4;
 		-webkit-box-orient: vertical;
+		transition: color 0.1s;
+	}
+
+	h2:hover {
+		color: var(--orange);
 	}
 
 	.speakers {
@@ -96,7 +108,7 @@
 		margin-bottom: 12px;
 	}
 
-	.speakers.too-crowded,
+	.duration-55 .speakers.too-crowded,
 	.duration-120 .speakers {
 		flex-wrap: wrap;
 		gap: 4px 8px;
@@ -123,18 +135,20 @@
 	}
 
 	.level {
-		display: inline-block;
+		height: 26px;
+		display: flex;
+
 		background-color: hsla(var(--accent-color), 0.1);
 		padding: 4px;
 		border-radius: 12px;
 	}
 
 	.duration-15 {
-		padding: 4px 16px;
+		padding: 4px 12px;
 	}
 
-	.duration-15 h3,
-	.duration-25 h3 {
+	.duration-15 h2,
+	.duration-25 h2 {
 		font-size: 12px;
 		line-height: 1.05;
 		overflow: hidden;
@@ -144,20 +158,20 @@
 		-webkit-box-orient: vertical;
 	}
 
-	.duration-15 h3,
+	.duration-15 h2,
 	.duration-15 .speakers {
-		margin-bottom: 4px;
+		margin-bottom: 0;
 	}
 
-	.duration-25 h3,
+	.duration-25 h2,
 	.duration-25 .speakers {
-		margin-bottom: 6px;
+		margin-bottom: 8px;
 	}
 
 	.duration-15 .schedule,
 	.duration-25 .schedule {
 		font-size: 10px;
-		margin-bottom: 0;
+		margin: 0;
 	}
 
 	.duration-15 .footer,
@@ -172,12 +186,16 @@
 	.duration-25 .event-type {
 		font-size: 10px;
 		padding: 2px 6px;
+		max-width: 80px;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 
 	.duration-15 .level,
 	.duration-25 .level {
 		padding: 2px;
 		border-radius: 10px;
+		height: 18px;
 	}
 
 	.duration-15 .level :global(svg),

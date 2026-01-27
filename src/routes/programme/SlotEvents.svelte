@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Event } from './constants';
-	import Slot from './Event.svelte';
+	import type { Session } from './constants';
+	import Event from './Event.svelte';
 
 	interface Props {
-		sessions: Array<Event>;
+		sessions: Array<Session>;
 		eventTypes: Array<string>;
 	}
 
@@ -11,5 +11,5 @@
 </script>
 
 {#each sessions as session (session.id)}
-	<Slot {...session} {eventTypes} />
+	<Event {...session} {eventTypes} />
 {/each}

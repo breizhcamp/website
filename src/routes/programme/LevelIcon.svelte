@@ -42,3 +42,9 @@
 		<path d="m9 12-2 2" />
 	{/if}
 </svg>
+
+<style>
+	svg {
+		display: inline-block;
+	}
+</style>

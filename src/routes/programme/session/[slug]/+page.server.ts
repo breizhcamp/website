@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { schedule } from '../constants';
-import { getDuration, getThemeIndex } from '../utils';
+import { schedule } from '../../constants';
+import { getDuration, getThemeIndex } from '../../utils';
 
 export const load = async ({ params, parent }) => {
 	const data = await parent();
