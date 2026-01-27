@@ -1,0 +1,45 @@
+<script lang="ts">
+	type Props = {
+		align?: 'left' | 'center';
+		interactive?: boolean;
+	};
+
+	let {
+		align = 'left',
+		interactive = false,
+		children
+	}: Props & {
+		children?: import('svelte').Snippet;
+	} = $props();
+</script>
+
+<article class="card align-{align} {interactive ? 'is-interactive' : ''}">
+	{@render children?.()}
+</article>
+
+<style>
+	.card {
+		border: 1px solid var(--neutral-100);
+		border-radius: var(--border-radius);
+		padding: 2rem;
+		background: white;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+		transition: box-shadow 0.3s;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.card.is-interactive:hover {
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+	}
+
+	.align-center {
+		align-items: center;
+		text-align: center;
+	}
+	.align-left {
+		align-items: flex-start;
+		text-align: left;
+	}
+</style>
