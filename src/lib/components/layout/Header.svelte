@@ -6,7 +6,7 @@
 <header>
 	<div class="header-inner">
 		<a href="/" class="logo" aria-label="BreizhCamp - Accueil">
-			<Logo width="250" />
+			<Logo />
 		</a>
 
 		<nav>
@@ -44,12 +44,12 @@
 	}
 
 	.logo {
+		width: 250px;
 		display: flex;
 		align-items: center;
 		text-decoration: none;
 		color: inherit;
 		flex-shrink: 0;
-		height: 40px;
 	}
 
 	:global(.logo svg) {
