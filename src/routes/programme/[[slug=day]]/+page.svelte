@@ -1,9 +1,10 @@
 <script lang="ts">
 	import DayNavigation from '../DayNavigation.svelte';
 	import Filters from '../Filters.svelte';
-	import Schedule from '../Schedule.svelte';
+	import LaptopSchedule from '../LaptopSchedule.svelte';
+	import MobileSchedule from '../MobileSchedule.svelte';
 	import '../themes.css';
-	import { filterSessions, groupSessionsBySlotsAndRooms } from '../utils';
+	import { filterSessions } from '../utils';
 
 	const { data } = $props();
 
@@ -18,12 +19,8 @@
 
 	let currentDayOfWeek = $derived(getDayOfWeek());
 
-	const daySessions = $derived(
+	const filteredSessions = $derived(
 		filterSessions(data.schedule, { ...filter, dayOfWeek: currentDayOfWeek })
-	);
-
-	const daySessionsBySlots = $derived(
-		groupSessionsBySlotsAndRooms(daySessions, data.eventRooms, currentDayOfWeek)
 	);
 </script>
 
@@ -32,15 +29,33 @@
 <DayNavigation days={data.eventDays} {currentDayOfWeek} />
 <Filters eventTypes={data.eventTypes} bind:filter />
 
-<Schedule
-	data={daySessionsBySlots}
-	rooms={data.eventRooms.filter((room) => room !== 'Hall')}
-	eventTypes={data.eventTypes}
-/>
+<div class="mobile-only">
+	<MobileSchedule sessions={filteredSessions} eventTypes={data.eventTypes} {currentDayOfWeek} />
+</div>
+<div class="laptop-only">
+	<LaptopSchedule
+		sessions={filteredSessions}
+		rooms={data.eventRooms}
+		eventTypes={data.eventTypes}
+		{currentDayOfWeek}
+	/>
+</div>
 
 <style>
 	h1 {
 		font-size: 36px;
 		text-transform: uppercase;
+	}
+
+	.laptop-only {
+		display: none;
+	}
+	@media (min-width: 1024px) {
+		.mobile-only {
+			display: none;
+		}
+		.laptop-only {
+			display: block;
+		}
 	}
 </style>

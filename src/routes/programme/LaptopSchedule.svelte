@@ -1,20 +1,26 @@
 <script lang="ts">
+	import type { Session } from './constants';
 	import SlotEvents from './SlotEvents.svelte';
-	import Time from './TimeCell.svelte';
-	import { sortEvents, type DaySessionsBySlot } from './utils';
+	import SlotTitle from './SlotTitle.svelte';
+	import { groupSessionsBySlotsAndRooms, sortEventsDate, type DaySessionsBySlot } from './utils';
 
 	interface Props {
-		data: Array<DaySessionsBySlot>;
+		sessions: Array<Session>;
 		rooms: Array<string>;
 		eventTypes: Array<string>;
+		currentDayOfWeek: number;
 	}
 
-	const { data, rooms, eventTypes }: Props = $props();
+	const { sessions, rooms, eventTypes, currentDayOfWeek }: Props = $props();
+
+	const data = $derived(groupSessionsBySlotsAndRooms(sessions, rooms, currentDayOfWeek));
+
+	const roomsWithoutHall = $derived(rooms.filter((room) => room !== 'Hall'));
 </script>
 
 {#snippet snippet_time_cell(row: DaySessionsBySlot)}
 	<td>
-		<Time {...row} />
+		<SlotTitle {...row} />
 	</td>
 {/snippet}
 
@@ -31,7 +37,7 @@
 	<thead>
 		<tr>
 			<th style:width="200px">Horaire</th>
-			{#each rooms as room (room)}
+			{#each roomsWithoutHall as room (room)}
 				<th scope="col">{room}</th>
 			{/each}
 		</tr>
@@ -46,7 +52,10 @@
 					<td colspan="2">
 						<SlotEvents sessions={row.sessions['Hall']} {eventTypes} />
 					</td>
-					{@render snippet_columns(rooms.slice(Math.max(rooms.length - 3, 0)), row)}
+					{@render snippet_columns(
+						roomsWithoutHall.slice(Math.max(roomsWithoutHall.length - 3, 0)),
+						row
+					)}
 				{:else if row.sessions['Hall']?.length}
 					<!-- si Hall sans Amphi D => affichage Hall + Amphi C sur 5 colonnes (jeudi et vendredi matin) -->
 					{@render snippet_time_cell(row)}
@@ -56,7 +65,7 @@
 							sessions={[
 								...row.sessions['Hall'],
 								...('Amphi C' in row.sessions ? row.sessions['Amphi C'] : [])
-							].sort(sortEvents)}
+							].sort(sortEventsDate)}
 							{eventTypes}
 						/>
 					</td>

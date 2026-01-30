@@ -21,19 +21,20 @@
 		<legend>
 			<span>Thèmes</span>
 			<div class="themes">
-				{#each eventTypes as eventType, index (eventType)}
+				{#each eventTypes.filter((eventType) => !['Autre...', 'Eat', 'Keynote'].includes(eventType)) as eventType, index (eventType)}
 					<label class="theme-{index}">
 						<input type="checkbox" value={eventType} bind:group={filter.eventTypes} />
 						{eventType}
 					</label>
 				{/each}
-				<!-- FIXME accessibility should not be there? -->
-				<button onclick={() => (filter.eventTypes = [])}>
-					<img src="/trash.svg" alt="" width="16" />
-					Désélectionner tous les filtres
-				</button>
 			</div>
 		</legend>
+		<div class="align-right">
+			<button onclick={() => (filter.eventTypes = [])}>
+				<img src="/trash.svg" alt="" width="16" />
+				Désélectionner tous les filtres
+			</button>
+		</div>
 	</div>
 </div>
 
@@ -43,16 +44,16 @@
 	}
 
 	.filters {
-		margin: 32px 0;
+		margin: 32px -24px;
 		background-color: var(--neutral-100);
-		border-radius: 8px;
 		padding: 24px;
 		display: flex;
+		flex-direction: column;
 		gap: 32px;
 	}
 
 	.search input {
-		width: 320px;
+		width: 100%;
 	}
 
 	.themes {
@@ -72,15 +73,32 @@
 		cursor: pointer;
 	}
 
+	.align-right {
+		display: flex;
+		justify-content: flex-end;
+	}
+
 	button {
 		height: 28px;
 		display: inline-flex;
 		align-items: center;
 		gap: 8px;
 		background-color: hsl(230, 24%, 93%);
+		margin-top: 8px;
 		padding: 2px 10px;
 		border-radius: 2px;
 		border: none;
 		cursor: pointer;
+	}
+
+	@media (min-width: 768px) {
+		.filter {
+			flex-direction: row;
+			margin: 32px 0px;
+			border-radius: 8px;
+		}
+		.search input {
+			width: 320px;
+		}
 	}
 </style>

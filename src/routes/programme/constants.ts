@@ -1,6 +1,6 @@
 import _schedule from './schedule.json';
 import _speakers from './speakers.json';
-import { sortEvents } from './utils';
+import { sortEventsDate } from './utils';
 
 type AsideSession = {
 	id: string;
@@ -58,6 +58,8 @@ export type Speaker = {
 	social: null;
 };
 
+export type PeriodTime = (typeof dayPeriods)[number]['times'][number];
+
 const speakers = _speakers as Array<Speaker>;
 
 const schedule = _schedule
@@ -82,7 +84,7 @@ const schedule = _schedule
 			filter: 'visible'
 		} as Session;
 	})
-	.sort(sortEvents);
+	.sort(sortEventsDate);
 
 export { schedule, speakers };
 
@@ -95,32 +97,32 @@ export const dayPeriods = [
 			{
 				startAt: new Date('2025-06-25T09:00:00.000Z'),
 				endAt: new Date('2025-06-25T10:00:00.000Z'),
-				format: 'Accueil'
+				label: 'Accueil'
 			},
 			{
 				startAt: new Date('2025-06-25T10:00:00.000Z'),
 				endAt: new Date('2025-06-25T12:00:00.000Z'),
-				format: 'Universités & conférences'
+				label: 'Universités & conférences'
 			},
 			{
 				startAt: new Date('2025-06-25T12:00:00.000Z'),
 				endAt: new Date('2025-06-25T13:30:00.000Z'),
-				format: 'Déjeuner'
+				label: 'Déjeuner'
 			},
 			{
 				startAt: new Date('2025-06-25T13:30:00.000Z'),
 				endAt: new Date('2025-06-25T15:30:00.000Z'),
-				format: 'Universités & conférences'
+				label: 'Universités & conférences'
 			},
 			{
 				startAt: new Date('2025-06-25T15:30:00.000Z'),
 				endAt: new Date('2025-06-25T16:00:00.000Z'),
-				format: 'Pause'
+				label: 'Pause'
 			},
 			{
 				startAt: new Date('2025-06-25T16:00:00.000Z'),
 				endAt: new Date('2025-06-25T18:00:00.000Z'),
-				format: 'Universités & conférences'
+				label: 'Universités & conférences'
 			}
 		]
 	},
@@ -132,67 +134,67 @@ export const dayPeriods = [
 			{
 				startAt: new Date('2025-06-26T08:00:00.000Z'),
 				endAt: new Date('2025-06-26T10:00:00.000Z'),
-				format: 'Accueil & keynote'
+				label: 'Accueil & keynote'
 			},
 			{
 				startAt: new Date('2025-06-26T10:00:00.000Z'),
 				endAt: new Date('2025-06-26T10:30:00.000Z'),
-				format: 'Pause'
+				label: 'Pause'
 			},
 			{
 				startAt: new Date('2025-06-26T10:30:00.000Z'),
 				endAt: new Date('2025-06-26T11:30:00.000Z'),
-				format: 'Conférences'
+				label: 'Conférences'
 			},
 			{
 				startAt: new Date('2025-06-26T11:30:00.000Z'),
 				endAt: new Date('2025-06-26T12:30:00.000Z'),
-				format: 'Conférences'
+				label: 'Conférences'
 			},
 			{
 				startAt: new Date('2025-06-26T12:30:00.000Z'),
 				endAt: new Date('2025-06-26T13:30:00.000Z'),
-				format: 'Déjeuner & capsules'
+				label: 'Déjeuner & capsules'
 			},
 			{
 				startAt: new Date('2025-06-26T13:30:00.000Z'),
 				endAt: new Date('2025-06-26T14:30:00.000Z'),
-				format: 'Conférences'
+				label: 'Conférences'
 			},
 			{
 				startAt: new Date('2025-06-26T14:30:00.000Z'),
 				endAt: new Date('2025-06-26T15:30:00.000Z'),
-				format: 'Conférences'
+				label: 'Conférences'
 			},
 			{
 				startAt: new Date('2025-06-26T15:30:00.000Z'),
 				endAt: new Date('2025-06-26T16:00:00.000Z'),
-				format: 'Pause'
+				label: 'Pause'
 			},
 			{
 				startAt: new Date('2025-06-26T16:00:00.000Z'),
 				endAt: new Date('2025-06-26T17:00:00.000Z'),
-				format: 'Conférences'
+				label: 'Conférences'
 			},
 			{
 				startAt: new Date('2025-06-26T17:00:00.000Z'),
 				endAt: new Date('2025-06-26T17:30:00.000Z'),
-				format: 'Tools in action'
+				label: 'Tools in action'
 			},
 			{
 				startAt: new Date('2025-06-26T17:30:00.000Z'),
 				endAt: new Date('2025-06-26T18:00:00.000Z'),
-				format: 'Tools in action'
+				label: 'Tools in action'
 			},
 			{
 				startAt: new Date('2025-06-26T18:00:00.000Z'),
 				endAt: new Date('2025-06-26T19:00:00.000Z'),
-				format: 'Keynote'
+				label: 'Keynote'
 			},
 			{
 				startAt: new Date('2025-06-26T19:00:00.000Z'),
 				endAt: new Date('2025-06-26T23:00:00.000Z'),
-				format: 'Soirée'
+				label: 'Soirée'
 			}
 		]
 	},
@@ -204,52 +206,52 @@ export const dayPeriods = [
 			{
 				startAt: new Date('2025-06-27T08:00:00.000Z'),
 				endAt: new Date('2025-06-27T10:00:00.000Z'),
-				format: 'Accueil & keynote'
+				label: 'Accueil & keynote'
 			},
 			{
 				startAt: new Date('2025-06-27T10:00:00.000Z'),
 				endAt: new Date('2025-06-27T10:30:00.000Z'),
-				format: 'Pause'
+				label: 'Pause'
 			},
 			{
 				startAt: new Date('2025-06-27T10:30:00.000Z'),
 				endAt: new Date('2025-06-27T11:30:00.000Z'),
-				format: 'Conférences'
+				label: 'Conférences'
 			},
 			{
 				startAt: new Date('2025-06-27T11:30:00.000Z'),
 				endAt: new Date('2025-06-27T12:30:00.000Z'),
-				format: 'Conférences'
+				label: 'Conférences'
 			},
 			{
 				startAt: new Date('2025-06-27T12:30:00.000Z'),
 				endAt: new Date('2025-06-27T13:30:00.000Z'),
-				format: 'Déjeuner & capsules'
+				label: 'Déjeuner & capsules'
 			},
 			{
 				startAt: new Date('2025-06-27T13:30:00.000Z'),
 				endAt: new Date('2025-06-27T14:30:00.000Z'),
-				format: 'Conférences'
+				label: 'Conférences'
 			},
 			{
 				startAt: new Date('2025-06-27T14:30:00.000Z'),
 				endAt: new Date('2025-06-27T15:30:00.000Z'),
-				format: 'Conférences'
+				label: 'Conférences'
 			},
 			{
 				startAt: new Date('2025-06-27T15:30:00.000Z'),
 				endAt: new Date('2025-06-27T16:00:00.000Z'),
-				format: 'Pause'
+				label: 'Pause'
 			},
 			{
 				startAt: new Date('2025-06-27T16:00:00.000Z'),
 				endAt: new Date('2025-06-27T16:30:00.000Z'),
-				format: 'Conférences'
+				label: 'Conférences'
 			},
 			{
 				startAt: new Date('2025-06-27T16:30:00.000Z'),
 				endAt: new Date('2025-06-27T17:00:00.000Z'),
-				format: 'Keynote'
+				label: 'Keynote'
 			}
 		]
 	}

@@ -19,7 +19,7 @@
 		padding: 1.5rem;
 	}
 
-	@media (max-width: 768px) {
+	@media (min-width: 768px) {
 		main {
 			padding: 3rem;
 		}

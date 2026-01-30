@@ -1,16 +1,17 @@
 <script lang="ts">
-	import { formatDate, type DaySessionsBySlot } from './utils';
+	import type { PeriodTime } from './constants';
+	import { formatDate } from './utils';
 
-	type Props = DaySessionsBySlot;
+	type Props = PeriodTime;
 
-	const { startAt, endAt, format }: Props = $props();
+	const { startAt, endAt, label }: Props = $props();
 </script>
 
 <div>
 	{formatDate(startAt)} — {formatDate(endAt)}
 </div>
-<div class="format">
-	{format}
+<div class="label">
+	{label}
 </div>
 
 <style>
@@ -18,7 +19,7 @@
 		text-align: center;
 	}
 
-	.format {
+	.label {
 		font-style: italic;
 		font-size: 14px;
 		margin-top: 8px;

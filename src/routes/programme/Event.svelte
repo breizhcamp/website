@@ -15,7 +15,8 @@
 		event_start,
 		event_end,
 		filter,
-		eventTypes
+		eventTypes,
+		venue
 	}: Props = $props();
 
 	const duration = $derived((event_end.getTime() - event_start.getTime()) / 1000 / 60);
@@ -41,7 +42,10 @@
 		</div>
 	{/if}
 	<div class="footer">
-		<p class="schedule">{formatDate(event_start)} — {formatDate(event_end)}</p>
+		<p class="schedule">
+			{formatDate(event_start)} — {formatDate(event_end)}
+			<span class="mobile-only"> · {venue}</span>
+		</p>
 		<div class="flex">
 			{#if level}
 				<span class="level" title={level} aria-label="Niveau {level}">
@@ -202,5 +206,11 @@
 	.duration-25 .level :global(svg) {
 		width: 14px;
 		height: 14px;
+	}
+
+	@media (min-width: 768px) {
+		.mobile-only {
+			display: none;
+		}
 	}
 </style>

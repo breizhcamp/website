@@ -42,22 +42,29 @@ export function groupSessionsByRoom(
 
 export function groupSessionsBySlots(
 	sessions: Array<Session>,
-	slots: Array<{ startAt: Date; endAt: Date; format: string }>
-): Array<{ startAt: Date; endAt: Date; format: string; sessions: Array<Session> }> {
-	return slots.reduce(
-		(acc, slot) => {
-			acc.push({
-				...slot,
-				sessions: sessions.filter(
-					(session) =>
-						session.event_start.getTime() >= slot.startAt.getTime() &&
-						session.event_end.getTime() <= slot.endAt.getTime()
-				)
-			});
-			return acc;
-		},
-		[] as Array<{ startAt: Date; endAt: Date; format: string; sessions: Array<Session> }>
-	);
+	selectedDayOfWeek: number
+): Array<{ startAt: Date; endAt: Date; label: string; sessions: Array<Session> }> {
+	const slots = dayPeriods.find((period) => period.day === selectedDayOfWeek)!.times!;
+
+	return slots
+		.reduce(
+			(acc, slot) => {
+				acc.push({
+					...slot,
+					sessions: sessions.filter(
+						(session) =>
+							session.event_start.getTime() >= slot.startAt.getTime() &&
+							session.event_end.getTime() <= slot.endAt.getTime()
+					)
+				});
+				return acc;
+			},
+			[] as Array<{ startAt: Date; endAt: Date; label: string; sessions: Array<Session> }>
+		)
+		.map((slot) => ({
+			...slot,
+			sessions: slot.sessions.sort(sortEventsDateAndVenue)
+		}));
 }
 
 type Filter = {
@@ -66,7 +73,7 @@ type Filter = {
 	eventTypes: Array<string>;
 };
 
-export function filterSessions(schedule: Array<Session>, filter: Filter) {
+export function filterSessions(schedule: Array<Session>, filter: Filter): Array<Session> {
 	const regex = new RegExp(filter.search.split(' ').join('|'), 'i');
 
 	return schedule
@@ -91,10 +98,7 @@ export function groupSessionsBySlotsAndRooms(
 	eventRooms: Array<string>,
 	selectedDayOfWeek: number
 ) {
-	return groupSessionsBySlots(
-		daySessions,
-		dayPeriods.find((period) => period.day === selectedDayOfWeek)!.times!
-	).map(({ sessions, ...rest }) => ({
+	return groupSessionsBySlots(daySessions, selectedDayOfWeek).map(({ sessions, ...rest }) => ({
 		...rest,
 		sessions: groupSessionsByRoom(sessions, eventRooms)
 	}));
@@ -107,7 +111,8 @@ export function formatDate(date: Date) {
 }
 
 export function formatDay(day: Date) {
-	return day.toLocaleDateString('fr-FR', { weekday: 'long' });
+	const res = day.toLocaleDateString('fr-FR', { weekday: 'long' });
+	return res.charAt(0).toUpperCase() + String(res).slice(1);
 }
 
 export function formatDayOfWeek(dayOfWeek: 3 | 4 | 5) {
@@ -116,8 +121,15 @@ export function formatDayOfWeek(dayOfWeek: 3 | 4 | 5) {
 	return day.toLocaleDateString('fr-FR', { weekday: 'long' });
 }
 
-export function sortEvents(eventA: Session, eventB: Session) {
+export function sortEventsDate(eventA: Session, eventB: Session) {
 	return eventA.event_start.getTime() - eventB.event_start.getTime();
+}
+
+export function sortEventsDateAndVenue(eventA: Session, eventB: Session) {
+	const dateDiff =
+		new Date(eventA.event_start).getTime() - new Date(eventB.event_start).getTime();
+	if (dateDiff !== 0) return dateDiff;
+	return eventA.venue.localeCompare(eventB.venue);
 }
 
 export function getThemeIndex(eventTypes: Array<string>, event: Session) {
