@@ -33,7 +33,7 @@
 	{/each}
 {/snippet}
 
-<table role="grid">
+<table>
 	<thead>
 		<tr>
 			<th style:width="200px">Horaire</th>
