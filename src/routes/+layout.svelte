@@ -1,27 +1,27 @@
-<script lang="ts">
-	import Footer from '$lib/components/layout/Footer.svelte';
-	import Header from '$lib/components/layout/Header.svelte';
-	import '$lib/css/index.css';
-
-	let { children } = $props();
+<script>
+	import '../lib/css/app.css';
+	import Header from '../lib/components/layout/Header.svelte';
+	import Footer from '../lib/components/layout/Footer.svelte';
 </script>
 
 <Header />
+
 <main>
-	{@render children?.()}
+	<slot />
 </main>
+
 <Footer />
 
 <style>
 	main {
-		max-width: 1440px;
-		margin: 0 auto;
-		padding: 1.5rem;
+		min-height: calc(100vh - 4rem);
+		display: flex;
+		flex-direction: column;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		main {
-			padding: 3rem;
+			min-height: calc(100vh - 5rem);
 		}
 	}
 </style>
