@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import Button from '../lib/components/ui/Button.svelte';
 	import Card from '../lib/components/ui/Card.svelte';
+	import { getSuggestionPages } from '../lib/config/site';
 	
 	// Messages d'erreur personnalisés selon le code
 	function getErrorMessage(status) {
@@ -35,14 +36,8 @@
 	
 	$: errorInfo = getErrorMessage($page.status);
 	
-	// Suggestions de pages populaires
-	const popularPages = [
-		{ label: 'Accueil', href: '/', description: 'Retour à la page principale' },
-		{ label: 'Programme', href: '/programme', description: 'Découvrir les sessions' },
-		{ label: 'Sponsors', href: '/sponsors', description: 'Nos partenaires' },
-		{ label: 'Blog', href: '/blog', description: 'Actualités BreizhCamp' },
-		{ label: 'Infos pratiques', href: '/infos-pratiques', description: 'Tout savoir sur l\'événement' }
-	];
+	// Suggestions de pages populaires depuis la configuration
+	const popularPages = getSuggestionPages();
 </script>
 
 <svelte:head>
@@ -110,11 +105,19 @@
 			<h2>Où souhaitez-vous aller ?</h2>
 			<div class="suggestions-grid">
 				{#each popularPages as page}
-					<Card interactive>
-						<a href={page.href} class="suggestion-link">
-							<h3>{page.label}</h3>
-							<p>{page.description}</p>
-						</a>
+					<Card interactive={!page.unavailable}>
+						{#if page.unavailable}
+							<div class="suggestion-unavailable">
+								<h3>{page.label}</h3>
+								<p>{page.description}</p>
+								<span class="unavailable-badge">Bientôt disponible</span>
+							</div>
+						{:else}
+							<a href={page.href} class="suggestion-link">
+								<h3>{page.label}</h3>
+								<p>{page.description}</p>
+							</a>
+						{/if}
 					</Card>
 				{/each}
 			</div>
@@ -206,7 +209,7 @@
 	
 	.error-suggestion {
 		font-size: 1.1rem;
-		color: var(--neutral-600);
+		color: var(--neutral-700);
 		margin-bottom: 2.5rem;
 		font-style: italic;
 	}
@@ -243,12 +246,11 @@
 		color: inherit;
 		padding: 1.5rem;
 		height: 100%;
-		transition: all 0.2s ease;
 		border-radius: var(--border-radius);
 	}
 	
 	.suggestion-link:hover {
-		transform: translateY(-2px);
+		/* Hover effect sans animation */
 	}
 	
 	.suggestion-link:focus-visible {
@@ -264,7 +266,7 @@
 	}
 	
 	.suggestion-link p {
-		color: var(--neutral-600);
+		color: var(--neutral-700);
 		font-size: 0.95rem;
 		line-height: 1.5;
 		margin: 0;
@@ -272,6 +274,42 @@
 	
 	.suggestion-link:hover h3 {
 		color: var(--orange);
+	}
+
+	.suggestion-unavailable {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+		padding: 1.5rem;
+		height: 100%;
+		border-radius: var(--border-radius);
+		text-align: center;
+		opacity: 0.7;
+	}
+
+	.suggestion-unavailable h3 {
+		color: var(--neutral-700);
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+
+	.suggestion-unavailable p {
+		color: var(--neutral-700);
+		font-size: 0.95rem;
+		line-height: 1.5;
+		margin: 0 0 1rem 0;
+	}
+
+	.unavailable-badge {
+		background: var(--neutral-200);
+		color: var(--neutral-700);
+		font-size: 0.8rem;
+		font-weight: 600;
+		padding: 0.3rem 0.8rem;
+		border-radius: 9999px;
+		text-transform: uppercase;
+		letter-spacing: 0.025em;
 	}
 	
 	/* Encouragement */
@@ -363,12 +401,6 @@
 	}
 	
 	@media (prefers-reduced-motion: reduce) {
-		.suggestion-link {
-			transition: none;
-		}
-		
-		.suggestion-link:hover {
-			transform: none;
-		}
+		/* Animations déjà supprimées */
 	}
 </style>
