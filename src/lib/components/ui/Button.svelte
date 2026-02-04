@@ -11,6 +11,7 @@
 		type?: 'button' | 'reset' | 'submit';
 		href?: string | null;
 		fullWidth?: boolean;
+		external?: boolean;
 	};
 
 	let {
@@ -18,16 +19,32 @@
 		type = 'button',
 		href = null,
 		fullWidth = false,
-		children
-	}: Props & { children?: import('svelte').Snippet } = $props();
+		external = false,
+		children,
+		'icon-left': iconLeft
+	}: Props & { 
+		children?: import('svelte').Snippet;
+		'icon-left'?: import('svelte').Snippet;
+	} = $props();
 </script>
 
 {#if href}
-	<a {href} class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`}>
+	<a 
+		{href} 
+		class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`}
+		target={external ? '_blank' : undefined}
+		rel={external ? 'noopener noreferrer' : undefined}
+	>
+		{#if iconLeft}
+			{@render iconLeft()}
+		{/if}
 		{@render children?.()}
 	</a>
 {:else}
 	<button {type} class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`}>
+		{#if iconLeft}
+			{@render iconLeft()}
+		{/if}
 		{@render children?.()}
 	</button>
 {/if}
