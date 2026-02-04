@@ -1,21 +1,21 @@
-<section class="stats">
+<section class="stats" aria-label="Statistiques de l'événement">
 	<div class="container">
-		<div class="stats-grid">
-			<div class="stat">
-				<div class="stat-number">1024+</div>
+		<div class="stats-grid" role="list">
+			<div class="stat" role="listitem">
+				<div class="stat-number" aria-label="Plus de 1024 participants">1024+</div>
 				<div class="stat-label">Participants</div>
 			</div>
-			<div class="stat">
-				<div class="stat-number">80+</div>
-				<div class="stat-label">Conférences</div>
+			<div class="stat" role="listitem">
+				<div class="stat-number" aria-label="Plus de 110 talks">110+</div>
+				<div class="stat-label">Talks</div>
 			</div>
-			<div class="stat">
-				<div class="stat-number">3</div>
+			<div class="stat" role="listitem">
+				<div class="stat-number" aria-label="3 jours d'événement">3</div>
 				<div class="stat-label">Jours</div>
 			</div>
-			<div class="stat">
-				<div class="stat-number">50+</div>
-				<div class="stat-label">Conférenciers</div>
+			<div class="stat" role="listitem">
+				<div class="stat-number" aria-label="119 speakers">119</div>
+				<div class="stat-label">Speakers</div>
 			</div>
 		</div>
 	</div>
@@ -48,7 +48,7 @@
 	}
 
 	.stat-label {
-		color: var(--neutral-600);
+		color: var(--neutral-700);
 		font-weight: 500;
 		font-size: 1.1rem;
 	}

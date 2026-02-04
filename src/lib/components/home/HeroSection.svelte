@@ -1,5 +1,24 @@
 <script>
 	import Button from '../ui/Button.svelte';
+
+	let currentSlide = $state(0);
+	const slides = [
+		{ src: '/home/conference-salle.jpeg', alt: 'Conférence BreizhCamp - Salle plénière avec participants' },
+		{ src: '/home/conference-presentation.jpeg', alt: 'Conférence BreizhCamp - Présentation technique' },
+		{ src: '/home/conference-atelier.jpeg', alt: 'Conférence BreizhCamp - Atelier et networking' }
+	];
+
+	function nextSlide() {
+		currentSlide = (currentSlide + 1) % slides.length;
+	}
+
+	function prevSlide() {
+		currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+	}
+
+	function goToSlide(index) {
+		currentSlide = index;
+	}
 </script>
 
 <section class="hero">
@@ -18,7 +37,7 @@
 					</div>
 					<div class="location">
 						<span class="icon" aria-hidden="true">📍</span>
-						<span>Université Rennes 1</span>
+						<span>Université de Rennes</span>
 					</div>
 				</div>
 				<div class="hero-actions">
@@ -26,14 +45,53 @@
 						<span class="cta-text">Réserver mes billets</span>
 						<span class="cta-badge">Bientôt disponibles</span>
 					</div>
-					<Button variant="secondary" href="/programme">Découvrir le programme</Button>
 				</div>
 			</div>
-			<div class="hero-image">
-				<img
-					src="/conference-photo.jpg"
-					alt="Salle de conférence BreizhCamp remplie de participants avec leurs ordinateurs portables, écoutant une présentation"
-				/>
+			<div class="hero-image" role="region" aria-label="Galerie d'images de l'événement">
+				<div class="carousel">
+					{#each slides as slide, index}
+						<img
+							src={slide.src}
+							alt={slide.alt}
+							class="carousel-image"
+							class:active={currentSlide === index}
+							loading={index === 0 ? 'eager' : 'lazy'}
+						/>
+					{/each}
+
+					<!-- Navigation buttons -->
+					<button
+						class="carousel-btn carousel-btn-prev"
+						onclick={prevSlide}
+						aria-label="Image précédente"
+					>
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+						</svg>
+					</button>
+					<button
+						class="carousel-btn carousel-btn-next"
+						onclick={nextSlide}
+						aria-label="Image suivante"
+					>
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+						</svg>
+					</button>
+
+					<!-- Dots navigation -->
+					<div class="carousel-dots">
+						{#each slides as _, index}
+							<button
+								class="carousel-dot"
+								class:active={currentSlide === index}
+								onclick={() => goToSlide(index)}
+								aria-label="Aller à l'image {index + 1}"
+								aria-current={currentSlide === index ? 'true' : undefined}
+							></button>
+						{/each}
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -135,15 +193,101 @@
 	.hero-image {
 		display: flex;
 		justify-content: center;
+		position: relative;
 	}
 
-	.hero-image img {
+	.carousel {
+		position: relative;
 		width: 100%;
 		max-width: 500px;
 		height: 300px;
-		object-fit: cover;
 		border-radius: var(--border-radius);
+		overflow: hidden;
 		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+	}
+
+	.carousel-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+	}
+
+	.carousel-image.active {
+		opacity: 1;
+	}
+
+	.carousel-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(0, 0, 0, 0.5);
+		color: white;
+		border: none;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 10;
+		transition: background 0.2s;
+	}
+
+	.carousel-btn:hover {
+		background: rgba(0, 0, 0, 0.7);
+	}
+
+	.carousel-btn:focus-visible {
+		outline: 2px solid white;
+		outline-offset: 2px;
+	}
+
+	.carousel-btn-prev {
+		left: 1rem;
+	}
+
+	.carousel-btn-next {
+		right: 1rem;
+	}
+
+	.carousel-dots {
+		position: absolute;
+		bottom: 1rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 0.5rem;
+		z-index: 10;
+	}
+
+	.carousel-dot {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.5);
+		border: none;
+		cursor: pointer;
+		transition: background 0.2s;
+		padding: 0;
+	}
+
+	.carousel-dot:hover {
+		background: rgba(255, 255, 255, 0.8);
+	}
+
+	.carousel-dot.active {
+		background: white;
+	}
+
+	.carousel-dot:focus-visible {
+		outline: 2px solid white;
+		outline-offset: 2px;
 	}
 
 	@media (min-width: 768px) {
@@ -178,6 +322,11 @@
 	@media (prefers-contrast: high) {
 		.hero-description {
 			opacity: 1;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.carousel-image {
+			transition: none;
 		}
 	}
 </style>
