@@ -38,9 +38,14 @@
 <StatsSection />
 
 <!-- Programme Section -->
-<section class="programme">
+<section class="programme" aria-labelledby="programme-title">
 	<div class="container">
-		<h2>Programme 2026</h2>
+		<div class="programme-header">
+			<h2 id="programme-title">Programme 2026</h2>
+			<div class="programme-badge">
+				<span class="badge-unavailable" aria-label="Programme bientôt disponible">Bientôt disponible</span>
+			</div>
+		</div>
 		<p class="section-subtitle">
 			Découvrez les dernières technologies tech avec nos experts internationaux
 		</p>
@@ -51,15 +56,17 @@
 					<div class="track-icon violet" aria-hidden="true">
 						<span>💻</span>
 					</div>
-					<h3>Développement</h3>
+					<h3>Développement & Craft</h3>
 					<p>
-						Les dernières tendances, langages et frameworks pour développer des
-						applications modernes et performantes.
+						Du code, du vrai. Des retours d'expérience, des bonnes pratiques, des débats
+						techniques et des approches concrètes pour mieux concevoir, tester et faire
+						évoluer nos applications au quotidien.
 					</p>
 					<div class="track-tags">
-						<Badge>React</Badge>
+						<Badge>Front & Back</Badge>
 						<Badge>Java</Badge>
-						<Badge>DevOps</Badge>
+						<Badge>JavaScript</Badge>
+						<Badge>Architecture</Badge>
 					</div>
 				</div>
 			</Card>
@@ -69,15 +76,17 @@
 					<div class="track-icon orange" aria-hidden="true">
 						<span>☁️</span>
 					</div>
-					<h3>Cloud & DevOps</h3>
+					<h3>Cloud, Ops & Prod</h3>
 					<p>
-						Infrastructure moderne, conteneurisation et bonnes pratiques pour déployer
-						et maintenir vos applications.
+						Du laptop à la prod (et parfois retour 😅). Infrastructure moderne,
+						automatisation, conteneurs, observabilité et tout ce qu'il faut pour faire
+						tourner des systèmes fiables dans la vraie vie.
 					</p>
 					<div class="track-tags">
-						<Badge>Kubernetes</Badge>
-						<Badge>AWS</Badge>
 						<Badge>Docker</Badge>
+						<Badge>Kubernetes</Badge>
+						<Badge>CI/CD</Badge>
+						<Badge>DevOps</Badge>
 					</div>
 				</div>
 			</Card>
@@ -87,47 +96,45 @@
 					<div class="track-icon lime" aria-hidden="true">
 						<span>🔒</span>
 					</div>
-					<h3>Data & IA</h3>
+					<h3>Data, IA & Futur proche</h3>
 					<p>
-						Intelligence artificielle, machine learning et analyse de données pour créer
-						des solutions intelligentes.
+						Quand la donnée rencontre l'intelligence. IA, machine learning, data
+						engineering… mais toujours avec du recul, des cas concrets et des questions
+						éthiques bien ancrées dans le réel.
 					</p>
 					<div class="track-tags">
-						<Badge>ML</Badge>
+						<Badge>Data engineering</Badge>
+						<Badge>IA & ML</Badge>
 						<Badge>Python</Badge>
 					</div>
 				</div>
 			</Card>
 		</div>
-
-		<div class="programme-cta">
-			<Button variant="primary" href="/programme">Voir tout le programme</Button>
-		</div>
 	</div>
 </section>
 
 <!-- Partners Section -->
-<section class="partners">
+<section class="partners" aria-labelledby="partners-title">
 	<div class="container">
-		<h2>Nos partenaires</h2>
+		<h2 id="partners-title">Nos partenaires</h2>
 		<p class="section-subtitle">
 			Ils nous font confiance et soutiennent l'événement tech breton
 		</p>
 
 		<div class="partners-category">
 			<h3>Partenaires Platine</h3>
-			<div class="partners-grid platine">
-				<div class="partner-logo">
-					<div class="placeholder-logo">Logo 1</div>
+			<div class="partners-grid platine" role="list" aria-label="Liste des partenaires Platine">
+				<div class="partner-logo" role="listitem">
+					<div class="placeholder-logo" aria-label="Emplacement partenaire 1">Logo 1</div>
 				</div>
-				<div class="partner-logo">
-					<div class="placeholder-logo">Logo 2</div>
+				<div class="partner-logo" role="listitem">
+					<div class="placeholder-logo" aria-label="Emplacement partenaire 2">Logo 2</div>
 				</div>
-				<div class="partner-logo">
-					<div class="placeholder-logo">Logo 3</div>
+				<div class="partner-logo" role="listitem">
+					<div class="placeholder-logo" aria-label="Emplacement partenaire 3">Logo 3</div>
 				</div>
-				<div class="partner-logo">
-					<div class="placeholder-logo">Logo 4</div>
+				<div class="partner-logo" role="listitem">
+					<div class="placeholder-logo" aria-label="Emplacement partenaire 4">Logo 4</div>
 				</div>
 			</div>
 		</div>
@@ -139,14 +146,14 @@
 </section>
 
 <!-- News Section -->
-<section class="news">
+<section class="news" aria-labelledby="news-title">
 	<div class="container">
-		<h2>Actualités</h2>
+		<h2 id="news-title">Actualités</h2>
 		<p class="section-subtitle">Restez informés des dernières nouvelles du BreizhCamp</p>
 
-		<div class="news-grid">
+		<div class="news-grid" role="list" aria-label="Liste des actualités">
 			{#if loading}
-				<article class="news-card">
+				<article class="news-card" role="listitem" aria-busy="true">
 					<div class="news-image">
 						<div class="placeholder-image">Chargement...</div>
 					</div>
@@ -157,7 +164,7 @@
 					</div>
 				</article>
 			{:else if error}
-				<article class="news-card">
+				<article class="news-card" role="listitem" aria-live="polite">
 					<div class="news-image">
 						<div class="placeholder-image">Erreur</div>
 					</div>
@@ -169,7 +176,7 @@
 				</article>
 			{:else}
 				{#each articles.slice(0, 3) as article}
-					<article class="news-card">
+					<article class="news-card" role="listitem">
 						<div class="news-image">
 							{#if article.image}
 								<img src={article.image} alt={article.title} />
@@ -200,6 +207,16 @@
 				{/each}
 			{/if}
 		</div>
+
+		<!-- Lien vers toutes les actualités -->
+		<div class="news-footer">
+			<a href="/blog" class="all-news-link">
+				Toutes les actualités
+				<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+					<path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+				</svg>
+			</a>
+		</div>
 	</div>
 </section>
 
@@ -215,10 +232,34 @@
 		padding: 6rem 0;
 	}
 
+	.programme-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
 	.programme h2 {
 		text-align: center;
 		color: var(--neutral-900);
-		margin-bottom: 1rem;
+		margin: 0;
+	}
+
+	.programme-badge {
+		display: flex;
+		justify-content: center;
+	}
+
+	.badge-unavailable {
+		background: var(--neutral-200);
+		color: var(--neutral-700);
+		font-size: 0.85rem;
+		font-weight: 600;
+		padding: 0.4rem 1rem;
+		border-radius: 9999px;
+		text-transform: uppercase;
+		letter-spacing: 0.025em;
 	}
 
 	.section-subtitle {
@@ -285,10 +326,6 @@
 		flex-wrap: wrap;
 	}
 
-	.programme-cta {
-		text-align: center;
-	}
-
 	/* Partners Section */
 	.partners {
 		padding: 6rem 0;
@@ -331,7 +368,7 @@
 	}
 
 	.placeholder-logo {
-		color: var(--neutral-400);
+		color: var(--neutral-600);
 		font-weight: 500;
 	}
 
@@ -361,11 +398,10 @@
 		border-radius: var(--border-radius);
 		overflow: hidden;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-		transition: transform 0.2s ease;
 	}
 
 	.news-card:hover {
-		transform: translateY(-4px);
+		/* Hover effect sans animation */
 	}
 
 	.news-image {
@@ -380,7 +416,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: var(--neutral-400);
+		color: var(--neutral-600);
 		font-weight: 500;
 	}
 
@@ -404,7 +440,6 @@
 	.news-card h3 a {
 		color: inherit;
 		text-decoration: none;
-		transition: color 0.2s ease;
 	}
 
 	.news-card h3 a:hover {
@@ -435,7 +470,6 @@
 		text-decoration: none;
 		font-weight: 500;
 		font-size: 0.9rem;
-		transition: color 0.2s ease;
 		display: inline-block;
 		margin-top: 1rem;
 	}
@@ -455,16 +489,50 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform 0.3s ease;
 	}
 
 	.news-card:hover .news-image img {
-		transform: scale(1.05);
+		/* Hover effect sans animation */
 	}
 
 	.news-card p {
 		color: var(--neutral-700); /* Amélioré pour contraste */
 		line-height: 1.6;
+	}
+
+	/* Lien vers toutes les actualités */
+	.news-footer {
+		display: flex;
+		justify-content: center;
+		margin-top: 3rem;
+	}
+
+	.all-news-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--violet);
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1rem;
+		padding: 0.75rem 1.5rem;
+		border: 2px solid var(--violet);
+		border-radius: 6px;
+		background: white;
+	}
+
+	.all-news-link:hover {
+		background: var(--violet);
+		color: white;
+	}
+
+	.all-news-link:focus-visible {
+		outline: 2px solid var(--violet);
+		outline-offset: 2px;
+	}
+
+	.all-news-link svg {
+		flex-shrink: 0;
 	}
 
 	/* Responsive */
@@ -501,12 +569,6 @@
 
 	/* Respect des préférences de mouvement réduit */
 	@media (prefers-reduced-motion: reduce) {
-		.news-card {
-			transition: none;
-		}
-
-		.news-card:hover {
-			transform: none;
-		}
+		/* Animations déjà supprimées */
 	}
 </style>
