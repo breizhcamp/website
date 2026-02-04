@@ -1,4 +1,6 @@
 <script>
+	import { getFooterPages } from '../../config/site';
+
 	// Données pour les liens
 	const socialLinks = [
 		{
@@ -19,11 +21,12 @@
 		{
 			name: 'Bluesky',
 			url: 'https://bsky.app/profile/breizhcamp.org',
-			path: 'M18.5 9c-.83 0-1.5-.67-1.5-1.5 0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 .83-.67 1.5-1.5 1.5zm-13 0C4.67 9 4 8.33 4 7.5S4.67 6 5.5 6 7 6.67 7 7.5 6.33 9 5.5 9zm6.5 7c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z'
+			path: 'M5.202 2.922C7.955 4.988 10.914 8.677 12 11.424c1.087-2.747 4.045-6.436 6.798-8.502C20.283 1.433 24 .279 24 3.948c0 .734-.42 6.158-.666 7.038-.858 3.06-3.98 3.842-6.756 3.369 4.854.827 6.09 3.563 3.422 6.3-5.064 5.196-7.278-1.305-7.845-2.97-.105-.306-.155-.45-.155-.327 0-.122-.05.021-.153.327-.569 1.665-2.783 8.166-7.847 2.97-2.667-2.737-1.431-5.473 3.42-6.3-2.775.473-5.898-.308-6.755-3.369C.42 10.106 0 4.682 0 3.948 0 .279 3.718 1.433 5.202 2.922'
 		}
 	];
 
 	const years = [2024, 2023, 2022, 2019, 2018, 2017, 2016, 2015, 2014, 2013];
+	const footerPages = getFooterPages();
 
 	// Toutes les éditions utilisent le pattern https://YYYY.breizhcamp.org/
 	function getEditionUrl(year) {
@@ -62,6 +65,10 @@
 					</a>
 				{/each}
 			</div>
+
+			<p class="copyright">
+				Copyright © 2015-2026, BreizhCamp team
+			</p>
 		</div>
 
 		<nav class="footer-nav" aria-label="Footer">
@@ -92,10 +99,17 @@
 						class="footer-links"
 						class:expanded={expandedSections.navigation}
 					>
-						<li><a class="footer-link" href="/">Accueil</a></li>
-						<li><a class="footer-link" href="/programme">Programme</a></li>
-						<li><a class="footer-link" href="/sponsors">Sponsors</a></li>
-						<li><a class="footer-link" href="/infos-pratiques">Infos pratiques</a></li>
+						{#each footerPages as page}
+							{#if page.available}
+								<li><a class="footer-link" href={page.href}>{page.label}</a></li>
+							{:else}
+								<li>
+									<span class="footer-link-disabled">
+										{page.label} <span class="footer-badge-unavailable">Bientôt</span>
+									</span>
+								</li>
+							{/if}
+						{/each}
 					</ul>
 				</li>
 
@@ -135,8 +149,8 @@
 							<a class="footer-link" href="mailto:contact@breizhcamp.org">Contact</a>
 						</li>
 						<li>
-							<a class="footer-link" href="/infos-pratiques"
-								>Accessibilité : conforme</a
+							<a class="footer-link" href="/accessibilite"
+								>Accessibilité : en cours d'évaluation</a
 							>
 						</li>
 					</ul>
@@ -184,7 +198,9 @@
 						</p>
 
 						<div class="eco-badge-container">
-							<span class="eco-badge">EcoIndex A</span>
+							<a href="/ecoindex" class="eco-badge-link" aria-label="En savoir plus sur notre démarche éco-responsable">
+								<span class="eco-badge eco-badge-pending">EcoIndex : en cours</span>
+							</a>
 						</div>
 					</div>
 				</li>
@@ -231,10 +247,17 @@
 		justify-content: center;
 	}
 
+	.copyright {
+		color: #94a3b8;
+		font-size: 0.85rem;
+		margin-top: 1.5rem;
+		margin-bottom: 0;
+		text-align: center;
+	}
+
 	.social-icon {
 		color: white;
 		opacity: 0.8;
-		transition: opacity 0.2s;
 		padding: 0.5rem;
 		border-radius: 6px;
 	}
@@ -306,12 +329,11 @@
 	}
 
 	.chevron {
-		transition: transform 0.3s ease;
 		flex-shrink: 0;
 	}
 
 	.chevron.expanded {
-		transform: rotate(180deg);
+		/* Chevron sans rotation */
 	}
 
 	/* Liens et contenu */
@@ -321,9 +343,6 @@
 		margin: 0;
 		max-height: 0;
 		overflow: hidden;
-		transition:
-			max-height 0.3s ease,
-			padding 0.3s ease;
 	}
 
 	.footer-links.expanded {
@@ -338,9 +357,6 @@
 	.editions-content {
 		max-height: 0;
 		overflow: hidden;
-		transition:
-			max-height 0.3s ease,
-			padding 0.3s ease;
 	}
 
 	.editions-content.expanded {
@@ -361,7 +377,6 @@
 		color: #cbd5e1;
 		text-decoration: underline;
 		font-weight: 500;
-		transition: color 0.2s;
 		display: inline;
 		white-space: nowrap;
 	}
@@ -370,17 +385,10 @@
 		color: white;
 	}
 
-	.years-label {
-		font-weight: 600;
-		color: #e2e8f0;
-		margin-right: 0.5rem;
-	}
-
 	a {
 		color: #e2e8f0; /* Amélioré pour contraste sur fond sombre */
 		text-decoration: none;
 		font-size: 0.95rem;
-		transition: color 0.2s;
 		display: block;
 		padding: 0.25rem 0;
 	}
@@ -424,7 +432,6 @@
 		font-size: 0.95rem;
 		text-decoration: underline;
 		text-decoration-color: rgba(226, 232, 240, 0.5);
-		transition: all 0.2s ease;
 	}
 
 	.footer-link:hover {
@@ -446,16 +453,45 @@
 		background-color: rgba(224, 224, 78, 0.2);
 	}
 
-	.years-cloud {
-		color: #cbd5e1;
+	.footer-link-disabled {
+		color: #94a3b8;
 		font-size: 0.95rem;
-		line-height: 1.8;
-		margin-bottom: 1.5rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.25rem 0;
+		opacity: 0.7;
+	}
+
+	.footer-badge-unavailable {
+		background: rgba(148, 163, 184, 0.3);
+		color: #cbd5e1;
+		font-size: 0.7rem;
+		font-weight: 600;
+		padding: 0.2rem 0.5rem;
+		border-radius: 8px;
+		text-transform: uppercase;
+		letter-spacing: 0.025em;
 	}
 
 	.eco-badge-container {
 		display: flex;
 		justify-content: center;
+	}
+
+	.eco-badge-link {
+		display: inline-block;
+		text-decoration: none;
+	}
+
+	.eco-badge-link:hover {
+		text-decoration: none;
+	}
+
+	.eco-badge-link:focus-visible {
+		outline: 2px solid var(--lime);
+		outline-offset: 2px;
+		border-radius: 9999px;
 	}
 
 	.eco-badge {
@@ -466,6 +502,18 @@
 		font-size: 0.85rem;
 		padding: 0.4rem 1rem;
 		border-radius: 9999px;
+	}
+
+	.eco-badge-pending {
+		background-color: #64748b;
+	}
+
+	.eco-badge-link:hover .eco-badge {
+		background-color: #166534;
+	}
+
+	.eco-badge-link:hover .eco-badge-pending {
+		background-color: #475569;
 	}
 
 	/* Tablet responsive */
@@ -489,6 +537,10 @@
 
 		.socials {
 			justify-content: flex-start;
+		}
+
+		.copyright {
+			text-align: left;
 		}
 
 		.tagline {
@@ -563,12 +615,7 @@
 
 	/* Respect des préférences de mouvement réduit */
 	@media (prefers-reduced-motion: reduce) {
-		.footer-links,
-		.editions-content,
-		.chevron,
-		.social-icon {
-			transition: none;
-		}
+		/* Animations déjà supprimées */
 	}
 
 	/* Amélioration des contrastes */
@@ -582,10 +629,6 @@
 		}
 
 		.footer-link {
-			color: #e2e8f0;
-		}
-
-		.years-cloud {
 			color: #e2e8f0;
 		}
 
