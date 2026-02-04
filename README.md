@@ -96,10 +96,54 @@ Vous pouvez forker le repo et ouvrir une PR. Au moment du commit, des actions au
 
 ## Actions classiques
 
+### Configuration centralisée du site
+
+Le site utilise un système de configuration centralisé qui permet de gérer facilement l'activation/désactivation des fonctionnalités.
+
+**📖 Voir la documentation complète :** [CONFIGURATION.md](./CONFIGURATION.md)
+
+**Fichier de configuration :** `src/lib/config/site.ts`
+
 ### Ouverture / Fermeture du CFP
+
+Éditez `src/lib/config/site.ts` :
+
+```typescript
+cfp: {
+  isOpen: true, // ← Changer à false pour fermer
+  url: 'https://sessionize.com/breizhcamp-2026/',
+  badge: 'Ouvert'
+}
+```
 
 ### Ouverture / Fermeture de la billetterie
 
-### Récupération des talks pour le programme
+Éditez `src/lib/config/site.ts` :
+
+```typescript
+tickets: {
+  available: true, // ← Changer à false pour fermer
+  badge: 'Disponibles'
+}
+```
+
+### Activation du Programme et des Intervenants
+
+Éditez `src/lib/config/site.ts` :
+
+```typescript
+{
+  id: 'programme',
+  available: true, // ← Changer à true pour activer
+  // ...
+},
+{
+  id: 'speakers', 
+  available: true, // ← Changer à true pour activer
+  // ...
+}
+```
+
+**💡 Avantage :** Tous les menus, liens et badges se mettent à jour automatiquement sur tout le site !
 
 ## Mise en production
