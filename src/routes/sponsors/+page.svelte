@@ -1,6 +1,5 @@
 <script>
 	import Button from '../../lib/components/ui/Button.svelte';
-	import Card from '../../lib/components/ui/Card.svelte';
 	import SponsorCard from './SponsorCard.svelte';
 	import { sponsorLevels } from './constants.ts';
 </script>
@@ -14,34 +13,50 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero" aria-labelledby="sponsors-hero-title">
 	<div class="container">
-		<h1>Sponsors & Partenaires</h1>
+		<h1 id="sponsors-hero-title">Sponsors & Partenaires</h1>
 		<p class="hero-description">
-			Le BreizhCamp est possible grâce au soutien de nos sponsors. N'hésitez pas à nous
-			contacter pour devenir vous aussi sponsor de l'évènement.
+			Le BreizhCamp est possible grâce au soutien de nos sponsors. Découvrez comment soutenir
+			l'événement ou proposer une salle pour les meetups tout au long de l'année.
 		</p>
 		<div class="hero-cta">
-			<Button variant="primary" href="mailto:sponsoring@breizhcamp.org">
-				Devenir sponsor
+			<Button
+				variant="primary"
+				href="https://drive.google.com/file/d/1rzVxL8P8GyvxEgySzbxR0CHdr6cKyZT8/view?usp=sharing"
+			>
+				Dossier de sponsoring BreizhCamp
 			</Button>
-			<Button variant="secondary" href="/sponsors/kit">Kit de sponsoring</Button>
+			<Button
+				variant="secondary"
+				href="https://docs.google.com/forms/d/e/1FAIpQLSf_IIoCPa0l9MtJykKcWlDo7y3FTyPzSWmc4Hvm7akO1l9rNQ/viewform?usp=publish-editor"
+			>
+				Candidature sponsor BreizhCamp
+			</Button>
+			<Button
+				variant="secondary"
+				href="https://docs.google.com/forms/d/e/1FAIpQLSdR2yBKZEUW7L9fy0Th-AyKHK6IIrdrKIANJ486Giv0Am3tqw/viewform?usp=dialog"
+			>
+				Proposer une salle meetup
+			</Button>
 		</div>
 	</div>
 </section>
 
 <!-- Sponsors Sections -->
 {#each sponsorLevels as level}
-	<section class="sponsors-section" id={level.id}>
+	<section class="sponsors-section" id={level.id} aria-labelledby="{level.id}-title">
 		<div class="container">
 			<div class="section-header">
-				<h2>{level.name}</h2>
+				<h2 id="{level.id}-title">{level.name}</h2>
 				<p class="section-description">{level.description}</p>
 			</div>
 
-			<div class="sponsors-grid {level.gridCols}">
+			<div class="sponsors-grid {level.gridCols}" role="list" aria-label="Liste des sponsors {level.name}">
 				{#each level.sponsors as sponsor}
-					<SponsorCard {sponsor} size={level.logoSize} />
+					<div role="listitem">
+						<SponsorCard {sponsor} size={level.logoSize} />
+					</div>
 				{/each}
 			</div>
 		</div>
@@ -49,23 +64,17 @@
 {/each}
 
 <!-- Call to Action -->
-<section class="cta-section">
+<section class="cta-section" aria-labelledby="cta-title">
 	<div class="container">
-		<Card>
-			<div class="cta-content">
-				<h2>Rejoignez nos sponsors</h2>
-				<p>
-					Vous souhaitez soutenir la plus grande conférence tech de Bretagne ?
-					Contactez-nous pour découvrir nos offres de sponsoring.
-				</p>
-				<div class="cta-actions">
-					<Button variant="primary" href="mailto:sponsoring@breizhcamp.org">
-						Contactez-nous
-					</Button>
-					<Button variant="secondary" href="/sponsors/kit">Télécharger le kit</Button>
-				</div>
-			</div>
-		</Card>
+		<div class="cta-content">
+			<h2 id="cta-title">Une question ?</h2>
+			<p>
+				Notre équipe est à votre disposition pour répondre à toutes vos questions sur le sponsoring.
+			</p>
+			<Button variant="primary" href="mailto:sponsoring@breizhcamp.org">
+				Contactez-nous
+			</Button>
+		</div>
 	</div>
 </section>
 
@@ -218,12 +227,7 @@
 		margin-right: auto;
 	}
 
-	.cta-actions {
-		display: flex;
-		gap: 1rem;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
+
 
 	/* Responsive */
 	@media (min-width: 768px) {
@@ -239,9 +243,7 @@
 			gap: 2.5rem;
 		}
 
-		.sponsor-card {
-			padding: 2.5rem;
-		}
+
 	}
 
 	@media (min-width: 1024px) {
@@ -266,9 +268,6 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		* {
-			transition: none !important;
-			transform: none !important;
-		}
+		/* Animations déjà supprimées */
 	}
 </style>

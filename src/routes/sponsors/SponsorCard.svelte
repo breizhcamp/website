@@ -43,7 +43,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		transition: all 0.2s ease;
 		width: 100%;
 		aspect-ratio: 3/2;
 	}
@@ -51,7 +50,6 @@
 	.sponsor-card:hover {
 		border-color: var(--violet);
 		box-shadow: 0 4px 12px rgba(142, 48, 137, 0.1);
-		transform: translateY(-2px);
 	}
 
 	/* Tailles des logos */
@@ -96,7 +94,7 @@
 		justify-content: center;
 		width: 100%;
 		height: 100%;
-		color: var(--neutral-400);
+		color: var(--neutral-600);
 		font-weight: 500;
 		text-align: center;
 	}
@@ -117,12 +115,6 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.sponsor-card {
-			transition: none;
-		}
-
-		.sponsor-card:hover {
-			transform: none;
-		}
+		/* Animations déjà supprimées */
 	}
 </style>
