@@ -2,7 +2,13 @@
 	import Button from '../../lib/components/ui/Button.svelte';
 	import Card from '../../lib/components/ui/Card.svelte';
 	import InfoSection from './InfoSection.svelte';
-	import { infoSections } from './constants.ts';
+	import { infoSections, categories } from './constants.ts';
+
+	// Grouper les sections par catégorie
+	const sectionsByCategory = categories.map((category) => ({
+		...category,
+		sections: infoSections.filter((section) => section.category === category.id)
+	}));
 </script>
 
 <svelte:head>
@@ -25,24 +31,31 @@
 	</div>
 </section>
 
-<!-- Navigation rapide -->
+<!-- Navigation rapide par catégories -->
 <section class="quick-nav">
 	<div class="container">
-		<nav aria-label="Navigation rapide des infos pratiques">
-			<ul class="nav-grid">
-				{#each infoSections as section}
-					<li>
-						<a href="#{section.id}" class="nav-card">
-							<div class="nav-icon" aria-hidden="true">
-								{@html section.icon}
-							</div>
-							<h3>{section.title}</h3>
-							<p>{section.shortDescription}</p>
-						</a>
-					</li>
-				{/each}
-			</ul>
-		</nav>
+		{#each sectionsByCategory as category}
+			<div class="category-section">
+				<h2 class="category-title">{category.title}</h2>
+				<p class="category-description">{category.description}</p>
+
+				<nav aria-label="Navigation {category.title}">
+					<ul class="nav-grid">
+						{#each category.sections as section}
+							<li>
+								<a href="#{section.id}" class="nav-card">
+									<div class="nav-icon" aria-hidden="true">
+										{@html section.icon}
+									</div>
+									<h3>{section.title}</h3>
+									<p>{section.shortDescription}</p>
+								</a>
+							</li>
+						{/each}
+					</ul>
+				</nav>
+			</div>
+		{/each}
 	</div>
 </section>
 
@@ -117,6 +130,32 @@
 		background: var(--neutral-50);
 	}
 
+	.category-section {
+		margin-bottom: 4rem;
+	}
+
+	.category-section:last-child {
+		margin-bottom: 0;
+	}
+
+	.category-title {
+		font-size: 1.75rem;
+		font-weight: 600;
+		color: var(--neutral-900);
+		margin-bottom: 0.5rem;
+		text-align: center;
+	}
+
+	.category-description {
+		text-align: center;
+		color: var(--neutral-700);
+		font-size: 1.05rem;
+		margin-bottom: 2.5rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.nav-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -134,14 +173,12 @@
 		padding: 2rem;
 		text-decoration: none;
 		color: inherit;
-		transition: all 0.2s ease;
 		height: 100%;
 	}
 
 	.nav-card:hover {
 		border-color: var(--violet);
 		box-shadow: 0 4px 12px rgba(142, 48, 137, 0.1);
-		transform: translateY(-2px);
 	}
 
 	.nav-card:focus-visible {
@@ -164,7 +201,7 @@
 	}
 
 	.nav-card p {
-		color: var(--neutral-600);
+		color: var(--neutral-700);
 		font-size: 0.95rem;
 		line-height: 1.5;
 		margin: 0;
@@ -210,7 +247,6 @@
 		font-weight: 500;
 		padding: 0.5rem 1rem;
 		border-radius: 4px;
-		transition: all 0.2s ease;
 	}
 
 	.edition-link:hover {
@@ -282,9 +318,6 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		* {
-			transition: none !important;
-			transform: none !important;
-		}
+		/* Animations déjà supprimées */
 	}
 </style>

@@ -5,12 +5,20 @@ export interface InfoSection {
 	shortDescription: string;
 	content: string;
 	icon: string;
+	category: 'event' | 'participation' | 'organization';
 	actions?: Array<{
 		label: string;
 		href: string;
 		variant: 'primary' | 'secondary';
 		external?: boolean;
 	}>;
+}
+
+export interface CategoryInfo {
+	id: string;
+	title: string;
+	description: string;
+	icon: string;
 }
 
 // Icônes SVG pour les sections
@@ -25,6 +33,28 @@ const icons = {
 	speakers: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>`
 };
 
+// Catégories pour organiser les sections
+export const categories: CategoryInfo[] = [
+	{
+		id: 'event',
+		title: "📅 L'événement",
+		description: 'Tout savoir sur le BreizhCamp et comment y participer',
+		icon: '📅'
+	},
+	{
+		id: 'participation',
+		title: '🎤 Participer',
+		description: 'Devenir speaker, code de conduite et conseils pratiques',
+		icon: '🎤'
+	},
+	{
+		id: 'organization',
+		title: '👥 Organisation',
+		description: "L'équipe, l'association et comment nous rejoindre",
+		icon: '👥'
+	}
+];
+
 // Configuration des sections d'informations
 export const infoSections: InfoSection[] = [
 	{
@@ -32,6 +62,7 @@ export const infoSections: InfoSection[] = [
 		title: 'La conférence',
 		shortDescription: 'Découvrez le BreizhCamp, ses valeurs et son organisation',
 		icon: icons.conference,
+		category: 'event',
 		content: `
 			<h3>Qu'est-ce que le BreizhCamp ?</h3>
 			<p>Le BreizhCamp est <em>la plus grande conférence tech de Bretagne</em>. Organisée chaque année à Rennes, elle rassemble la communauté des développeurs, architectes, chefs de projets et passionnés de technologies.</p>
@@ -59,6 +90,7 @@ export const infoSections: InfoSection[] = [
 		title: 'Tout le reste',
 		shortDescription: 'Informations pratiques pour votre venue au BreizhCamp',
 		icon: icons.info,
+		category: 'event',
 		content: `
 			<h3>Lieu et accès</h3>
 			<p>Le BreizhCamp 2026 se déroule à <strong>Rennes, Bretagne</strong>. Le lieu exact sera communiqué prochainement.</p>
@@ -86,6 +118,7 @@ export const infoSections: InfoSection[] = [
 		title: 'Code de conduite',
 		shortDescription: 'Les règles de bonne conduite pour un événement respectueux',
 		icon: icons.rules,
+		category: 'participation',
 		content: `
 			<h3>Notre engagement</h3>
 			<p>Le BreizhCamp s'engage à offrir une expérience <em>respectueuse et inclusive</em> à tous les participants, quels que soient leur genre, orientation sexuelle, handicap, apparence physique, origine ethnique, religion ou niveau d'expérience.</p>
@@ -119,6 +152,7 @@ export const infoSections: InfoSection[] = [
 		title: 'FAQ',
 		shortDescription: 'Réponses aux questions les plus fréquentes',
 		icon: icons.help,
+		category: 'event',
 		content: `
 			<h3>Questions générales</h3>
 			
@@ -154,6 +188,7 @@ export const infoSections: InfoSection[] = [
 		title: "L'équipe",
 		shortDescription: 'Découvrez les organisateurs du BreizhCamp',
 		icon: icons.team,
+		category: 'organization',
 		content: `
 			<h3>Une équipe de bénévoles survitaminée</h3>
 			<p>Le BreizhCamp est organisé par une <em>équipe de bénévoles survitaminée qui s'active en coulisse</em>. Développeurs, chefs de projet, designers... tous unis par l'envie de partager et faire grandir l'écosystème tech breton.</p>
@@ -212,6 +247,7 @@ export const infoSections: InfoSection[] = [
 		title: "L'association",
 		shortDescription: "En savoir plus sur l'association BreizhCamp",
 		icon: icons.association,
+		category: 'organization',
 		content: `
 			<h3>Association BreizhCamp</h3>
 			<p>Le BreizhCamp est une <em>association loi 1901</em> dont l'objectif est d'organiser et de faciliter des événements autour de l'ingénierie informatique.</p>
@@ -277,6 +313,7 @@ export const infoSections: InfoSection[] = [
 		title: 'Le coaching',
 		shortDescription: 'Accompagnement pour les speakers débutants',
 		icon: icons.coaching,
+		category: 'participation',
 		content: `
 			<h3>Programme de coaching speakers</h3>
 			<p>Le BreizhCamp propose un <em>programme de coaching</em> pour accompagner les speakers débutants dans la préparation de leur première conférence.</p>
@@ -319,6 +356,7 @@ export const infoSections: InfoSection[] = [
 		title: 'Conseils aux orateurs',
 		shortDescription: 'Guide pratique pour réussir votre présentation',
 		icon: icons.speakers,
+		category: 'participation',
 		content: `
 			<h3>Guide du speaker BreizhCamp</h3>
 			<p>Vous allez présenter au BreizhCamp ? Voici nos conseils pour <em>réussir votre présentation</em> et vivre une expérience enrichissante.</p>
