@@ -131,7 +131,7 @@
 	}
 
 	.error p {
-		color: var(--neutral-600);
+		color: var(--neutral-700);
 		margin-bottom: 2rem;
 	}
 
@@ -148,7 +148,6 @@
 	.breadcrumb a {
 		color: var(--violet);
 		text-decoration: none;
-		transition: color 0.2s ease;
 	}
 
 	.breadcrumb a:hover {
@@ -185,7 +184,7 @@
 	}
 
 	.article-date {
-		color: var(--neutral-600);
+		color: var(--neutral-700);
 		font-size: 0.95rem;
 		font-weight: 500;
 	}
