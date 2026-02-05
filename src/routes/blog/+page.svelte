@@ -146,11 +146,10 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform 0.3s ease;
 	}
 
 	.article-card:hover .article-image img {
-		transform: scale(1.05);
+		/* Hover effect sans animation */
 	}
 
 	.article-content {
@@ -168,7 +167,7 @@
 	}
 
 	.article-date {
-		color: var(--neutral-600);
+		color: var(--neutral-700);
 		font-size: 0.9rem;
 		font-weight: 500;
 	}
@@ -194,7 +193,6 @@
 		text-decoration: none;
 		font-size: 1.5rem;
 		font-weight: 600;
-		transition: color 0.2s ease;
 	}
 
 	.article-title a:hover {
@@ -221,7 +219,7 @@
 	.no-articles {
 		text-align: center;
 		padding: 4rem 2rem;
-		color: var(--neutral-600);
+		color: var(--neutral-700);
 	}
 
 	.no-articles p {
@@ -275,12 +273,6 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.article-image img {
-			transition: none;
-		}
-
-		.article-card:hover .article-image img {
-			transform: none;
-		}
+		/* Animations déjà supprimées */
 	}
 </style>
