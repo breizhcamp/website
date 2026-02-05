@@ -3,300 +3,527 @@
 	import Button from '$lib/components/ui/Button.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
 
-	// Données
-	let formData = { email: '', entreprise: '', role: 'Dev', message: '', newsletter: false };
 	const brandColors = [
-		{ name: 'Violet', hex: '#8E3089', bg: 'var(--violet)', text: 'white' },
-		{ name: 'Jaune-vert', hex: '#E0E04E', bg: 'var(--lime)', text: 'black' },
-		{ name: 'Orange', hex: '#DD7A26', bg: 'var(--orange)', text: 'white' },
-		{ name: 'Noir', hex: '#000000', bg: 'var(--black)', text: 'white' }
+		{ name: 'Violet', var: '--violet', hex: '#8E3089', class: 'bg-violet' },
+		{ name: 'Lime', var: '--lime', hex: '#E0E04E', class: 'bg-lime' },
+		{ name: 'Orange', var: '--orange', hex: '#B45309', class: 'bg-orange' }
 	];
-	const neutralColors = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+	const neutralColors = [
+		{ shade: '50', hex: '#F8FAFC', contrast: 'AA' },
+		{ shade: '100', hex: '#F1F5F9', contrast: 'AA' },
+		{ shade: '200', hex: '#E2E8F0', contrast: 'AA' },
+		{ shade: '300', hex: '#CBD5E1', contrast: 'AA' },
+		{ shade: '400', hex: '#94A3B8', contrast: 'Fail' },
+		{ shade: '500', hex: '#64748B', contrast: 'AA' },
+		{ shade: '600', hex: '#475569', contrast: 'AAA' },
+		{ shade: '700', hex: '#334155', contrast: 'AAA' },
+		{ shade: '800', hex: '#1E293B', contrast: 'AAA' },
+		{ shade: '900', hex: '#0F172A', contrast: 'AAA' }
+	];
+
+	const utilityCategories = [
+		{
+			name: 'Layout',
+			classes: [
+				{ name: '.container', desc: 'Conteneur centré max-width 1200px avec padding responsive' },
+				{ name: '.section', desc: 'Section avec padding vertical 4rem (6rem sur desktop)' }
+			]
+		},
+		{
+			name: 'Flexbox',
+			classes: [
+				{ name: '.flex', desc: 'display: flex' },
+				{ name: '.flex-col', desc: 'flex-direction: column' },
+				{ name: '.flex-row', desc: 'flex-direction: row' },
+				{ name: '.items-center', desc: 'align-items: center' },
+				{ name: '.justify-between', desc: 'justify-content: space-between' },
+				{ name: '.gap-4', desc: 'gap: 1rem (aussi: gap-1, gap-2, gap-3, gap-6, gap-8)' }
+			]
+		},
+		{
+			name: 'Grid',
+			classes: [
+				{ name: '.grid', desc: 'display: grid' },
+				{ name: '.grid-cols-3', desc: 'grid-template-columns: repeat(3, 1fr)' },
+				{ name: '.grid-auto-fit', desc: 'Auto-fit avec minmax(250px, 1fr)' },
+				{ name: '.md:grid-cols-3', desc: 'Grid responsive (sm:, md:, lg:)' }
+			]
+		},
+		{
+			name: 'Spacing',
+			classes: [
+				{ name: '.mt-4', desc: 'margin-top: 1rem' },
+				{ name: '.mb-8', desc: 'margin-bottom: 2rem' },
+				{ name: '.p-4', desc: 'padding: 1rem' },
+				{ name: '.gap-4', desc: 'gap: 1rem' }
+			]
+		},
+		{
+			name: 'Typography',
+			classes: [
+				{ name: '.text-sm', desc: 'font-size: 0.875rem' },
+				{ name: '.text-lg', desc: 'font-size: 1.125rem' },
+				{ name: '.font-semibold', desc: 'font-weight: 600' },
+				{ name: '.text-center', desc: 'text-align: center' }
+			]
+		},
+		{
+			name: 'Colors',
+			classes: [
+				{ name: '.text-violet', desc: 'color: var(--violet)' },
+				{ name: '.text-neutral-700', desc: 'color: var(--neutral-700)' },
+				{ name: '.bg-neutral-50', desc: 'background: var(--neutral-50)' }
+			]
+		},
+		{
+			name: 'Composants',
+			classes: [
+				{ name: '.badge', desc: 'Badge générique' },
+				{ name: '.badge-primary', desc: 'Badge violet' },
+				{ name: '.badge-success', desc: 'Badge vert' },
+				{ name: '.card', desc: 'Carte avec border et shadow' },
+				{ name: '.avatar', desc: 'Avatar rond 80x80px (aussi: avatar-sm, avatar-md, avatar-lg)' },
+				{ name: '.input-field', desc: 'Champ de formulaire stylisé' },
+				{ name: '.link', desc: 'Lien avec style violet et underline' },
+				{ name: '.placeholder', desc: 'Placeholder gris pour contenu manquant' }
+			]
+		}
+	];
 </script>
 
 <svelte:head>
-	<title>Design System - BreizhCamp</title>
+	<title>Design System - BreizhCamp 2026</title>
+	<meta name="description" content="Système de design et classes utilitaires du site BreizhCamp" />
 </svelte:head>
 
+<!-- Hero -->
 <section class="hero">
-	<h1>Design System <span class="text-gradient">BreizhCamp</span></h1>
-	<p class="subtitle">Système de design complet...</p>
-	<div class="tags">
-		<Badge color="yellow">WCAG 2.1 AA</Badge>
-		<Badge color="grey">Éco-conçu</Badge>
-		<Badge color="orange">Mobile-first</Badge>
+	<div class="container">
+		<h1>Design System <span class="text-violet">BreizhCamp</span></h1>
+		<p class="hero-subtitle">
+			Système de design complet avec composants réutilisables et classes utilitaires pour un
+			développement cohérent et rapide.
+		</p>
+		<div class="flex justify-center gap-4 flex-wrap">
+			<Badge>WCAG 2.1 AAA</Badge>
+			<Badge>Éco-conçu</Badge>
+			<Badge>Mobile-first</Badge>
+		</div>
 	</div>
 </section>
 
-<section>
-	<h2>Palette de couleurs</h2>
-	<h3>Couleurs de marque</h3>
-	<div class="color-grid brand-colors">
-		{#each brandColors as c (c.name)}
-			<div class="color-card" style="background: {c.bg}; color: {c.text};">
-				<span>{c.name}</span><span class="opacity-80 text-sm">{c.hex}</span>
+<div class="container page-content">
+
+	<!-- Couleurs -->
+	<section class="content-section">
+		<h2 class="section-title">Palette de couleurs</h2>
+
+		<h3 class="subsection-title">Couleurs de marque</h3>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+			{#each brandColors as color}
+				<div class="color-card {color.class}">
+					<div class="color-info">
+						<span class="font-semibold">{color.name}</span>
+						<span class="text-sm opacity-90">{color.hex}</span>
+						<code class="text-xs">var({color.var})</code>
+					</div>
+				</div>
+			{/each}
+		</div>
+
+		<h3 class="subsection-title">Couleurs neutres (avec contraste WCAG)</h3>
+		<div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-2">
+			{#each neutralColors as color}
+				<div class="neutral-card bg-neutral-{color.shade}">
+					<div class="neutral-info">
+						<span class="font-semibold">{color.shade}</span>
+						<span class="text-xs">{color.hex}</span>
+						<span class="text-xs badge-contrast {color.contrast === 'AAA' ? 'badge-success' : color.contrast === 'AA' ? 'badge-warning' : 'badge-fail'}">{color.contrast}</span>
+					</div>
+				</div>
+			{/each}
+		</div>
+		<p class="text-sm text-neutral-700 mt-4">
+			✓ Utilisez neutral-600 et neutral-700 pour les textes (contraste AAA)
+		</p>
+	</section>
+
+	<!-- Composants UI -->
+	<section class="content-section">
+		<h2 class="section-title">Composants UI</h2>
+
+		<h3 class="subsection-title">Boutons</h3>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+			<div>
+				<p class="text-sm text-neutral-700 mb-4">Primaire</p>
+				<Button variant="primary">Bouton primaire</Button>
+			</div>
+			<div>
+				<p class="text-sm text-neutral-700 mb-4">Secondaire</p>
+				<Button variant="secondary">Bouton secondaire</Button>
+			</div>
+			<div>
+				<p class="text-sm text-neutral-700 mb-4">Tertiaire</p>
+				<Button variant="tertiary">Bouton tertiaire</Button>
+			</div>
+		</div>
+
+		<h3 class="subsection-title">Badges</h3>
+		<div class="flex gap-4 flex-wrap mb-8">
+			<Badge>Badge par défaut</Badge>
+			<span class="badge badge-primary">Badge primaire</span>
+			<span class="badge badge-success">Badge succès</span>
+			<span class="badge badge-warning">Badge warning</span>
+			<span class="badge badge-secondary">Badge secondaire</span>
+		</div>
+
+		<h3 class="subsection-title">Cartes</h3>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			<Card align="center">
+				<div class="avatar placeholder mb-4">👤</div>
+				<h3>Carte centrée</h3>
+				<p class="text-sm text-neutral-700">Contenu de la carte avec alignement centré</p>
+			</Card>
+
+			<Card align="left">
+				<h3>Carte alignée à gauche</h3>
+				<p class="text-sm text-neutral-700 mb-4">
+					Contenu de la carte avec alignement à gauche par défaut
+				</p>
+				<Badge>React</Badge>
+			</Card>
+
+			<div class="card">
+				<h3>Carte avec classe .card</h3>
+				<p class="text-sm text-neutral-700">Utilisation directe de la classe utilitaire .card</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Classes utilitaires -->
+	<section class="content-section">
+		<h2 class="section-title">Classes utilitaires</h2>
+		<p class="section-description">
+			Classes réutilisables pour un développement rapide et cohérent
+		</p>
+
+		{#each utilityCategories as category}
+			<div class="utility-section">
+				<h3 class="subsection-title">{category.name}</h3>
+				<div class="utility-grid">
+					{#each category.classes as util}
+						<div class="utility-item">
+							<code class="utility-name">{util.name}</code>
+							<span class="utility-desc">{util.desc}</span>
+						</div>
+					{/each}
+				</div>
 			</div>
 		{/each}
-	</div>
+	</section>
 
-	<h3>Couleurs neutres</h3>
-	<div class="color-grid neutral-colors">
-		{#each neutralColors as n (n)}
-			<div class="neutral-card shade-{n}"><span>{n}</span></div>
-		{/each}
-	</div>
-</section>
+	<!-- Exemples d'utilisation -->
+	<section class="content-section">
+		<h2 class="section-title">Exemples d'utilisation</h2>
 
-<section>
-	<h2>Typographie</h2>
-	<div class="grid-2">
-		<div>
-			<p class="label">Titres</p>
-			<h1>Titre H1</h1>
-			<h2>Titre H2</h2>
-			<h3>Titre H3</h3>
+		<h3 class="subsection-title">Layout avec classes utilitaires</h3>
+		<div class="example-box">
+			<pre><code>&lt;div class="container"&gt;
+  &lt;div class="flex justify-between items-center gap-4"&gt;
+    &lt;h2 class="text-2xl font-semibold text-violet"&gt;Titre&lt;/h2&gt;
+    &lt;span class="badge badge-success"&gt;Nouveau&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 		</div>
-		<div>
-			<p class="label">Corps</p>
-			<p class="text-large">Texte large...</p>
-			<p class="text-base">Texte de base...</p>
-		</div>
-	</div>
-</section>
 
-<section>
-	<h2>Boutons</h2>
-	<div class="grid-3">
-		<div>
-			<p class="label">Primaires</p>
-			<Button variant="primary">Primaire</Button>
+		<h3 class="subsection-title mt-8">Grid responsive</h3>
+		<div class="example-box">
+			<pre><code>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-6"&gt;
+  &lt;div class="card"&gt;Carte 1&lt;/div&gt;
+  &lt;div class="card"&gt;Carte 2&lt;/div&gt;
+  &lt;div class="card"&gt;Carte 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 		</div>
-		<div>
-			<p class="label">Secondaires</p>
-			<Button variant="secondary">Secondaire</Button>
-			<div style="margin-top:1rem"><Button variant="tertiary">Réserver</Button></div>
+
+		<h3 class="subsection-title mt-8">Formulaire</h3>
+		<div class="example-box">
+			<pre><code>&lt;form class="max-w-md"&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="form-label"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="input-field" /&gt;
+  &lt;/div&gt;
+  &lt;Button variant="primary" fullWidth&gt;Envoyer&lt;/Button&gt;
+&lt;/form&gt;</code></pre>
 		</div>
-		<div>
-			<p class="label">Icônes</p>
-			<Button variant="icon-primary">
-				<svg
-					width="16"
-					height="16"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2"
-				>
-					<rect x="2" y="4" width="20" height="16" rx="2" />
-					<path d="M7 8h10M7 12h10M7 16h6" />
-				</svg>
-				Acheter
-			</Button>
-			<div style="margin-top:1rem">
-				<Button variant="link">En savoir plus</Button>
+	</section>
+
+	<!-- Typographie -->
+	<section class="content-section">
+		<h2 class="section-title">Typographie</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+			<div>
+				<h3 class="subsection-title">Titres</h3>
+				<h1 class="mb-4">Titre H1 - 3.5rem</h1>
+				<h2 class="mb-4">Titre H2 - 2rem</h2>
+				<h3 class="mb-4">Titre H3 - 1.1rem</h3>
+			</div>
+			<div>
+				<h3 class="subsection-title">Tailles de texte</h3>
+				<p class="text-xs mb-2">Texte extra small (.text-xs) - 0.75rem</p>
+				<p class="text-sm mb-2">Texte small (.text-sm) - 0.875rem</p>
+				<p class="text-base mb-2">Texte base (.text-base) - 1rem</p>
+				<p class="text-lg mb-2">Texte large (.text-lg) - 1.125rem</p>
+				<p class="text-xl mb-2">Texte extra large (.text-xl) - 1.25rem</p>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section>
-	<h2>Cartes</h2>
-	<div class="grid-3">
-		<Card align="center">
-			<img
-				src="https://i.pravatar.cc/150?u=marie"
-				alt="Portrait de Marie Dupont"
-				class="avatar"
-			/>
-			<h3>Marie Dupont</h3>
-			<p class="text-sm text-neutral-500">Senior Developer</p>
-			<Badge color="pink">React</Badge>
-		</Card>
-
-		<Card align="left">
-			<div class="flex justify-between w-full mb-2">
-				<Badge color="yellow" size="sm">14:30</Badge>
-				<span class="text-sm text-neutral-400">45 min</span>
+	<!-- Accessibilité -->
+	<section class="content-section accessibility-section">
+		<h2 class="section-title">Accessibilité</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<div class="card">
+				<h3 class="subsection-title">✓ Contrastes</h3>
+				<ul class="text-sm text-neutral-700 space-y-2">
+					<li>• Tous les textes respectent WCAG 2.1 AAA</li>
+					<li>• neutral-700 pour textes principaux (9.73:1)</li>
+					<li>• neutral-600 pour textes secondaires (7.23:1)</li>
+					<li>• Éviter neutral-400 et neutral-500</li>
+				</ul>
 			</div>
-			<h3>Intro React 18</h3>
-			<p class="text-sm mb-4">Découvrez les fonctionnalités...</p>
-			<div class="flex items-center gap-2">
-				<img
-					src="https://i.pravatar.cc/150?u=pierre"
-					alt="Portrait de Pierre Martin"
-					class="avatar-sm"
-				/>
-				<span class="text-sm">Pierre Martin</span>
+			<div class="card">
+				<h3 class="subsection-title">✓ Focus visible</h3>
+				<ul class="text-sm text-neutral-700 space-y-2">
+					<li>• Outline violet 2px sur tous les éléments interactifs</li>
+					<li>• Zones de clic minimum 44x44px</li>
+					<li>• Navigation clavier complète</li>
+					<li>• Support prefers-reduced-motion</li>
+				</ul>
 			</div>
-		</Card>
-	</div>
-</section>
-
-<section>
-	<h2>Formulaires</h2>
-	<form class="form-stack">
-		<div class="form-group">
-			<label for="email">Email</label>
-			<input type="email" id="email" bind:value={formData.email} class="input-field" />
 		</div>
-		<Button variant="primary" fullWidth={true} type="submit">Envoyer</Button>
-	</form>
-</section>
+	</section>
+</div>
 
 <style>
-	section {
+	/* Hero Section */
+	.hero {
+		background: linear-gradient(135deg, var(--violet) 0%, var(--orange) 100%);
+		color: white;
+		text-align: center;
+		padding: 4rem 0;
+		margin-bottom: 4rem;
+	}
+
+	/* Page Content */
+	.page-content {
+		padding-bottom: 4rem;
+	}
+
+	.hero h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		font-weight: 600;
+	}
+
+	.hero-subtitle {
+		font-size: 1.125rem;
+		margin-bottom: 2rem;
+		opacity: 0.95;
+		line-height: 1.6;
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* Content Sections */
+	.content-section {
 		margin-bottom: 5rem;
 	}
 
-	.hero {
-		text-align: center;
-		margin: 3rem 0 6rem;
+	.section-title {
+		font-size: 2rem;
+		font-weight: 600;
+		color: var(--neutral-900);
+		margin-bottom: 1rem;
+		text-align: left;
 	}
-	.text-gradient {
-		color: var(--violet);
+
+	.section-description {
+		color: var(--neutral-700);
+		font-size: 1.1rem;
+		margin-bottom: 3rem;
+		line-height: 1.6;
 	}
-	.tags {
-		display: flex;
-		justify-content: center;
-		gap: 1rem;
+
+	.subsection-title {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: var(--neutral-900);
+		margin-bottom: 1.5rem;
 		margin-top: 2rem;
 	}
 
-	/* Grilles utilitaires */
-	.color-grid {
-		display: grid;
-		gap: 1.5rem;
-		margin-bottom: 2rem;
-	}
-	.brand-colors {
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	}
-	.neutral-colors {
-		grid-template-columns: repeat(10, 1fr);
-		gap: 0.5rem;
+	.subsection-title:first-of-type {
+		margin-top: 0;
 	}
 
-	.grid-2 {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 4rem;
-	}
-	.grid-3 {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
-	}
-
-	/* Styles locaux pour les démos */
 	.color-card {
+		height: 150px;
+		border-radius: var(--border-radius);
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		color: white;
+	}
+
+	.bg-lime {
+		color: black;
+	}
+
+	.color-info {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.neutral-card {
 		height: 120px;
-		border-radius: 8px;
+		border-radius: var(--border-radius);
 		padding: 1rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
+		border: 1px solid var(--neutral-200);
 	}
-	.neutral-card {
-		height: 80px;
-		border-radius: 4px;
-		display: flex;
-		align-items: flex-end;
-		padding: 0.5rem;
-		font-size: 0.75rem;
+
+	.bg-neutral-50,
+	.bg-neutral-100,
+	.bg-neutral-200,
+	.bg-neutral-300,
+	.bg-neutral-400 {
 		color: var(--neutral-900);
 	}
 
-	.shade-50 {
-		background: var(--neutral-50);
-	}
-	.shade-100 {
-		background: var(--neutral-100);
-	}
-	.shade-200 {
-		background: var(--neutral-200);
-	}
-	.shade-300 {
-		background: var(--neutral-300);
-	}
-	.shade-400 {
-		background: var(--neutral-400);
-	}
-	.shade-500 {
-		background: var(--neutral-500);
-		color: white;
-	}
-	.shade-600 {
-		background: var(--neutral-600);
-		color: white;
-	}
-	.shade-700 {
-		background: var(--neutral-700);
-		color: white;
-	}
-	.shade-800 {
-		background: var(--neutral-800);
-		color: white;
-	}
-	.shade-900 {
-		background: var(--neutral-900);
+	.bg-neutral-500,
+	.bg-neutral-600,
+	.bg-neutral-700,
+	.bg-neutral-800,
+	.bg-neutral-900 {
 		color: white;
 	}
 
-	.label {
-		color: var(--neutral-500);
-		margin-bottom: 1.5rem;
-		font-size: 0.9rem;
-	}
-	.avatar {
-		width: 80px;
-		height: 80px;
-		border-radius: 50%;
-		margin-bottom: 1rem;
-		object-fit: cover;
-	}
-	.avatar-sm {
-		width: 32px;
-		height: 32px;
-		border-radius: 50%;
-	}
-
-	.form-stack {
-		max-width: 600px;
-	}
-	.form-group {
-		margin-bottom: 1.5rem;
-	}
-	label {
-		display: block;
-		margin-bottom: 0.5rem;
-		font-size: 0.9rem;
-		font-weight: 500;
-	}
-	.flex {
+	.neutral-info {
 		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
 	}
-	.justify-between {
-		justify-content: space-between;
+
+	.badge-contrast {
+		display: inline-block;
+		padding: 0.1rem 0.4rem;
+		border-radius: 4px;
+		font-weight: 600;
+		font-size: 0.65rem;
 	}
-	.items-center {
-		align-items: center;
+
+	.badge-success {
+		background: #15803d;
+		color: white;
 	}
-	.gap-2 {
-		gap: 0.5rem;
+
+	.badge-warning {
+		background: var(--orange);
+		color: white;
 	}
-	.w-full {
-		width: 100%;
+
+	.badge-fail {
+		background: #dc2626;
+		color: white;
 	}
-	.text-sm {
-		font-size: 0.875rem;
+
+	.utility-section {
+		margin-bottom: 2.5rem;
 	}
-	.text-neutral-500 {
-		color: var(--neutral-500);
+
+	.accessibility-section {
+		background: var(--neutral-50);
+		border-radius: 12px;
+		padding: 3rem;
 	}
-	.mb-2 {
-		margin-bottom: 0.5rem;
+
+	.utility-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 1rem;
 	}
-	.mb-4 {
-		margin-bottom: 1rem;
+
+	.utility-item {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		padding: 1rem;
+		background: var(--neutral-50);
+		border-radius: 6px;
+		border: 1px solid var(--neutral-200);
+	}
+
+	.utility-name {
+		font-family: 'Courier New', monospace;
+		font-weight: 600;
+		color: var(--violet);
+		font-size: 0.9rem;
+	}
+
+	.utility-desc {
+		font-size: 0.85rem;
+		color: var(--neutral-700);
+	}
+
+	.example-box {
+		background: var(--neutral-900);
+		color: #e2e8f0;
+		padding: 1.5rem;
+		border-radius: var(--border-radius);
+		overflow-x: auto;
+	}
+
+	.example-box pre {
+		margin: 0;
+	}
+
+	.example-box code {
+		font-family: 'Courier New', monospace;
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+
+	.space-y-2 > * + * {
+		margin-top: 0.5rem;
+	}
+
+	@media (min-width: 768px) {
+		.hero {
+			padding: 6rem 0;
+		}
+
+		.hero h1 {
+			font-size: 3.5rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.25rem;
+		}
+
+		.accessibility-section {
+			padding: 4rem;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.hero h1 {
+			font-size: 4rem;
+		}
 	}
 </style>
