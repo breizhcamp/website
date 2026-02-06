@@ -13,8 +13,7 @@
 	// Fonction pour déterminer si un lien est actif
 	function isCurrentPage(href: string | null) {
 		if (!href) return false;
-		return $page.url.pathname === href || 
-			   ($page.url.pathname.startsWith(href) && href !== '/');
+		return $page.url.pathname === href || ($page.url.pathname.startsWith(href) && href !== '/');
 	}
 
 	function toggleMobileMenu() {
@@ -67,7 +66,9 @@
 								{#if siteConfig.cfp.isOpen && item.label === 'CFP'}
 									<div class="nav-text-container">
 										<span class="nav-text">{item.label}</span>
-										<span class="nav-badge nav-badge-success" aria-hidden="true">{siteConfig.cfp.badge}</span>
+										<span class="nav-badge nav-badge-success" aria-hidden="true"
+											>{siteConfig.cfp.badge}</span
+										>
 									</div>
 								{:else}
 									<span class="nav-text">{item.label}</span>
@@ -77,7 +78,9 @@
 							<div class="nav-link-disabled">
 								<div class="nav-text-container">
 									<span class="nav-text">{item.label}</span>
-									<span class="nav-badge-unavailable" aria-hidden="true">Bientôt</span>
+									<span class="nav-badge-unavailable" aria-hidden="true"
+										>Bientôt</span
+									>
 								</div>
 							</div>
 						{/if}
@@ -141,13 +144,18 @@
 							>
 								<span class="nav-text">{item.label}</span>
 								{#if siteConfig.cfp.isOpen && item.label === 'CFP'}
-									<span class="nav-badge nav-badge-success mobile" aria-hidden="true">{siteConfig.cfp.badge}</span>
+									<span
+										class="nav-badge nav-badge-success mobile"
+										aria-hidden="true">{siteConfig.cfp.badge}</span
+									>
 								{/if}
 							</a>
 						{:else}
 							<div class="mobile-nav-link-disabled">
 								<span class="nav-text">{item.label}</span>
-								<span class="nav-badge-unavailable mobile" aria-hidden="true">Bientôt</span>
+								<span class="nav-badge-unavailable mobile" aria-hidden="true"
+									>Bientôt</span
+								>
 							</div>
 						{/if}
 					</li>
@@ -296,13 +304,6 @@
 	.nav-badge.mobile {
 		font-size: 0.7rem;
 		padding: 0.2rem 0.4rem;
-	}
-
-	.external-icon {
-		flex-shrink: 0;
-		opacity: 0.7;
-		width: 14px;
-		height: 14px;
 	}
 
 	.nav-link:hover {
@@ -555,8 +556,7 @@
 		flex: 1;
 	}
 
-	.mobile-nav-link .nav-badge,
-	.mobile-nav-link .external-icon {
+	.mobile-nav-link .nav-badge {
 		margin-left: 0.5rem;
 	}
 
@@ -640,11 +640,6 @@
 		.nav-badge-unavailable {
 			font-size: 0.75rem;
 			padding: 0.2rem 0.5rem;
-		}
-
-		.external-icon {
-			width: 15px;
-			height: 15px;
 		}
 
 		.cta-disabled {

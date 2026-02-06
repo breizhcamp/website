@@ -15,7 +15,7 @@
 			} else {
 				error = 'Article non trouvé';
 			}
-		} catch (e) {
+		} catch (_e) {
 			error = "Erreur lors du chargement de l'article";
 		} finally {
 			loading = false;
