@@ -11,6 +11,7 @@
 		type?: 'button' | 'reset' | 'submit';
 		href?: string | null;
 		fullWidth?: boolean;
+		external?: boolean;
 	};
 
 	let {
@@ -18,16 +19,32 @@
 		type = 'button',
 		href = null,
 		fullWidth = false,
-		children
-	}: Props & { children?: import('svelte').Snippet } = $props();
+		external = false,
+		children,
+		'icon-left': iconLeft
+	}: Props & {
+		children?: import('svelte').Snippet;
+		'icon-left'?: import('svelte').Snippet;
+	} = $props();
 </script>
 
 {#if href}
-	<a {href} class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`}>
+	<a
+		{href}
+		class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`}
+		target={external ? '_blank' : undefined}
+		rel={external ? 'noopener noreferrer' : undefined}
+	>
+		{#if iconLeft}
+			{@render iconLeft()}
+		{/if}
 		{@render children?.()}
 	</a>
 {:else}
 	<button {type} class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`}>
+		{#if iconLeft}
+			{@render iconLeft()}
+		{/if}
 		{@render children?.()}
 	</button>
 {/if}
@@ -46,6 +63,13 @@
 		transition: all 0.2s ease;
 		gap: 0.5rem;
 		font-family: inherit;
+		text-decoration: none; /* Pas de soulignement pour les boutons */
+	}
+
+	.btn:hover,
+	.btn:focus,
+	.btn:visited {
+		text-decoration: none; /* Assure qu'aucun état ne souligne les boutons */
 	}
 	.w-full {
 		width: 100%;
@@ -56,6 +80,13 @@
 	}
 	.btn:active {
 		transform: translateY(0);
+	}
+
+	/* Focus pour l'accessibilité - différent des liens */
+	.btn:focus-visible {
+		outline: 2px solid var(--violet);
+		outline-offset: 2px;
+		text-decoration: none;
 	}
 
 	/* VARIANTS */
@@ -110,5 +141,27 @@
 		text-decoration: underline;
 		background: transparent;
 		transform: none;
+	}
+
+	/* Assure que tous les autres boutons n'ont jamais de soulignement */
+	.btn-primary,
+	.btn-secondary,
+	.btn-tertiary,
+	.btn-icon-primary,
+	.btn-icon-secondary {
+		text-decoration: none !important;
+	}
+
+	.btn-primary:hover,
+	.btn-secondary:hover,
+	.btn-tertiary:hover,
+	.btn-icon-primary:hover,
+	.btn-icon-secondary:hover,
+	.btn-primary:focus,
+	.btn-secondary:focus,
+	.btn-tertiary:focus,
+	.btn-icon-primary:focus,
+	.btn-icon-secondary:focus {
+		text-decoration: none !important;
 	}
 </style>

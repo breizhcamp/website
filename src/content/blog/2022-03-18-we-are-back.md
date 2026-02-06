@@ -1,0 +1,32 @@
+---
+title: 'We are Back!'
+date: '2022-03-18'
+category: 'Annonce'
+excerpt: "Deux ans, quasiment jour pour jour, après avoir du annoncer à contre-cœur l'annulation de l'édition 2020, nous avons le plaisir de vous annoncer le retour du BreizhCamp."
+slug: '2022-03-18-we-are-back'
+---
+
+Ami·e·s du BreizhCamp,
+
+Deux ans, quasiment jour pour jour, après avoir du annoncer à contre-cœur l'annulation de l'édition 2020, nous avons le plaisir de vous annoncer **le retour du BreizhCamp**, qui se tiendra le **29, 30 Juin et 1er Juillet**.
+
+## Notre thème pour cette 10ème édition : "Green"
+
+Avec tout ce qui touche à la transition écologique et à la décarbonation de notre domaine.
+
+La préparation d'une édition nous occupait pendant près de 6 mois, il va donc falloir profiter de notre expérience pour mettre tout en place en moitié moins de temps, et - en accord avec notre thème - en nous ajoutant la contrainte de réfléchir à notre empreinte carbone et à une gestion durable de notre logistique - même pas peur.
+
+## Un retour attendu
+
+Après cette pause forcée, nous sommes impatients de retrouver :
+
+- **La communauté tech bretonne**
+- **Les échanges passionnés**
+- **Les découvertes technologiques**
+- **L'ambiance unique du BreizhCamp**
+
+## Préparez-vous !
+
+Les inscriptions et le CFP ouvriront bientôt. Restez connectés sur nos réseaux sociaux pour ne rien manquer de cette édition du retour !
+
+– L'équipe BreizhCamp
