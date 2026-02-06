@@ -174,7 +174,7 @@
 						s'active en coulisse.
 					</p>
 					<div class="team-grid" role="list">
-						{#each equipeOrganisation as membre}
+						{#each equipeOrganisation as membre (membre.nom)}
 							<div class="member-card" role="listitem">
 								<div class="member-photo">
 									<img
@@ -235,7 +235,7 @@
 						de notre écosystème.
 					</p>
 					<div class="team-grid" role="list">
-						{#each comiteProgramme as membre}
+						{#each comiteProgramme as membre (membre.nom)}
 							<div class="member-card" role="listitem">
 								<div class="member-photo">
 									<img
@@ -364,7 +364,7 @@
 								Membres actuels du bureau
 							</h3>
 							<div class="bureau-grid" role="list">
-								{#each membresBureau as membre}
+								{#each membresBureau as membre (membre.nom)}
 									<article class="bureau-member-card" role="listitem">
 										<div class="bureau-member-photo">
 											{#if membre.photo}
@@ -416,7 +416,7 @@
 								Anciens membres du bureau
 							</h3>
 							<div class="bureau-grid" role="list">
-								{#each anciensMembresBureau as membre}
+								{#each anciensMembresBureau as membre (membre.nom)}
 									<article class="bureau-member-card former" role="listitem">
 										<div class="bureau-member-photo">
 											{#if membre.photo}
@@ -468,7 +468,7 @@
 								User Groups / Meetups rattachés à BreizhCamp
 							</h3>
 							<div class="groups-list" role="list">
-								{#each communities as community}
+								{#each communities as community (community.name)}
 									<article class="group-item" role="listitem">
 										<div class="group-header">
 											<img
@@ -509,7 +509,7 @@
 										<div class="group-organizers">
 											<span class="organizers-label">Organisateurs :</span>
 											<div class="organizers-grid" role="list">
-												{#each community.organizers as organizer}
+												{#each community.organizers as organizer (organizer.name)}
 													<div class="organizer-card" role="listitem">
 														<img
 															src={organizer.picture}

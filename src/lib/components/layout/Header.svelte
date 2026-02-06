@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import Button from '../ui/Button.svelte';
-	import Logo from '../ui/Logo.svelte';
+	import { page } from '$app/state';
 	import { getNavigationItems, siteConfig } from '../../config/site';
+	import Badge from '../ui/Badge.svelte';
+	import Button from '../ui/Button.svelte';
+	import HamburgerButton from './HamburgerButton.svelte';
+	import Logo from './Logo.svelte';
 
 	let mobileMenuOpen = $state(false);
 	let isScrolled = $state(false);
@@ -13,7 +15,7 @@
 	// Fonction pour déterminer si un lien est actif
 	function isCurrentPage(href: string | null) {
 		if (!href) return false;
-		return $page.url.pathname === href || ($page.url.pathname.startsWith(href) && href !== '/');
+		return page.url.pathname === href || (page.url.pathname.startsWith(href) && href !== '/');
 	}
 
 	function toggleMobileMenu() {
@@ -41,17 +43,12 @@
 
 <header class="header" class:scrolled={isScrolled}>
 	<div class="container">
-		<!-- Logo -->
-		<div class="logo-section">
-			<a href="/" class="logo-link" aria-label="BreizhCamp 2026 - Retour à l'accueil">
-				<Logo />
-			</a>
-		</div>
+		<Logo />
 
 		<!-- Navigation Desktop -->
 		<nav class="nav-desktop" aria-label="Navigation principale">
 			<ul class="nav-list">
-				{#each navigationItems as item}
+				{#each navigationItems as item (item.href)}
 					<li>
 						{#if item.available}
 							<a
@@ -66,8 +63,7 @@
 								{#if siteConfig.cfp.isOpen && item.label === 'CFP'}
 									<div class="nav-text-container">
 										<span class="nav-text">{item.label}</span>
-										<span class="nav-badge nav-badge-success" aria-hidden="true"
-											>{siteConfig.cfp.badge}</span
+										<Badge color="green" size="sm">{siteConfig.cfp.badge}</Badge
 										>
 									</div>
 								{:else}
@@ -78,9 +74,7 @@
 							<div class="nav-link-disabled">
 								<div class="nav-text-container">
 									<span class="nav-text">{item.label}</span>
-									<span class="nav-badge-unavailable" aria-hidden="true"
-										>Bientôt</span
-									>
+									<Badge size="sm">Bientôt</Badge>
 								</div>
 							</div>
 						{/if}
@@ -97,24 +91,14 @@
 				<div class="cta-disabled">
 					<div class="cta-text-container">
 						<span class="cta-text">Billets</span>
-						<span class="cta-badge">{siteConfig.tickets.badge}</span>
+						<Badge color="orange" size="sm">{siteConfig.tickets.badge}</Badge>
 					</div>
 				</div>
 			{/if}
 		</div>
 
 		<!-- Bouton Menu Mobile -->
-		<button
-			class="mobile-menu-button"
-			aria-expanded={mobileMenuOpen}
-			aria-controls="mobile-menu"
-			aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-			onclick={toggleMobileMenu}
-		>
-			<span class="hamburger-line" class:open={mobileMenuOpen}></span>
-			<span class="hamburger-line" class:open={mobileMenuOpen}></span>
-			<span class="hamburger-line" class:open={mobileMenuOpen}></span>
-		</button>
+		<HamburgerButton open={mobileMenuOpen} onToggleMenu={toggleMobileMenu} />
 	</div>
 
 	<!-- Menu Mobile -->
@@ -127,9 +111,9 @@
 			tabindex="0"
 			aria-label="Fermer le menu"
 		></div>
-		<nav class="mobile-menu" id="mobile-menu" aria-label="Navigation mobile">
+		<nav class="mobile-menu" aria-label="Navigation mobile">
 			<ul class="mobile-nav-list">
-				{#each navigationItems as item}
+				{#each navigationItems as item (item.href)}
 					<li>
 						{#if item.available}
 							<a
@@ -144,18 +128,13 @@
 							>
 								<span class="nav-text">{item.label}</span>
 								{#if siteConfig.cfp.isOpen && item.label === 'CFP'}
-									<span
-										class="nav-badge nav-badge-success mobile"
-										aria-hidden="true">{siteConfig.cfp.badge}</span
-									>
+									<Badge color="green" size="sm">{siteConfig.cfp.badge}</Badge>
 								{/if}
 							</a>
 						{:else}
 							<div class="mobile-nav-link-disabled">
 								<span class="nav-text">{item.label}</span>
-								<span class="nav-badge-unavailable mobile" aria-hidden="true"
-									>Bientôt</span
-								>
+								<Badge size="sm">Bientôt</Badge>
 							</div>
 						{/if}
 					</li>
@@ -166,7 +145,7 @@
 					{:else}
 						<div class="mobile-cta-disabled">
 							<span class="cta-text">Billets</span>
-							<span class="cta-badge">{siteConfig.tickets.badge}</span>
+							<Badge color="orange" size="sm">{siteConfig.tickets.badge}</Badge>
 						</div>
 					{/if}
 				</li>
@@ -187,7 +166,7 @@
 	}
 
 	.header.scrolled {
-		padding: 0.5rem 0;
+		/* padding: 0.5rem 0; */
 		box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.15);
 	}
 
@@ -201,40 +180,6 @@
 		gap: 0.75rem;
 		height: 4.5rem;
 		min-width: 0; /* Permet la compression */
-	}
-
-	.header.scrolled .container {
-		height: 4rem;
-	}
-
-	/* Logo Section */
-	.logo-section {
-		display: flex;
-		align-items: center;
-		flex-shrink: 0;
-		width: 140px;
-		min-width: 100px;
-	}
-
-	.logo-link {
-		display: block;
-		border-radius: 6px;
-		width: 100%;
-	}
-
-	.logo-link :global(img) {
-		width: 100%;
-		height: auto;
-		max-width: 140px;
-	}
-
-	.logo-link:hover {
-		opacity: 0.8;
-	}
-
-	.logo-link:focus-visible {
-		outline: 2px solid var(--violet);
-		outline-offset: 4px;
 	}
 
 	/* Navigation Desktop */
@@ -282,28 +227,6 @@
 
 	.nav-text {
 		flex-shrink: 0;
-	}
-
-	.nav-badge {
-		background: var(--orange);
-		color: white;
-		font-size: 0.7rem;
-		font-weight: 600;
-		padding: 0.15rem 0.4rem;
-		border-radius: 6px;
-		text-transform: uppercase;
-		letter-spacing: 0.025em;
-		flex-shrink: 0;
-	}
-
-	.nav-badge-success {
-		background: #15803d;
-		color: white;
-	}
-
-	.nav-badge.mobile {
-		font-size: 0.7rem;
-		padding: 0.2rem 0.4rem;
 	}
 
 	.nav-link:hover {
@@ -357,18 +280,6 @@
 		gap: 0.5rem;
 	}
 
-	.nav-badge-unavailable {
-		background: var(--neutral-200);
-		color: var(--neutral-700);
-		font-size: 0.7rem;
-		font-weight: 600;
-		padding: 0.15rem 0.4rem;
-		border-radius: 6px;
-		text-transform: uppercase;
-		letter-spacing: 0.025em;
-		flex-shrink: 0;
-	}
-
 	/* CTA Section - Isolée et prioritaire */
 	.cta-section {
 		display: none;
@@ -396,17 +307,6 @@
 		font-size: 0.85rem;
 	}
 
-	.cta-badge {
-		background: var(--orange);
-		color: white;
-		font-size: 0.6rem;
-		font-weight: 600;
-		padding: 0.15rem 0.4rem;
-		border-radius: 6px;
-		text-transform: uppercase;
-		letter-spacing: 0.025em;
-	}
-
 	/* Mobile CTA désactivé */
 	.mobile-cta-disabled {
 		display: flex;
@@ -426,11 +326,6 @@
 		font-size: 1rem;
 	}
 
-	.mobile-cta-disabled .cta-badge {
-		font-size: 0.7rem;
-		padding: 0.2rem 0.4rem;
-	}
-
 	/* Amélioration du bouton CTA pour plus de visibilité */
 	.cta-section :global(.btn-primary) {
 		font-weight: 600;
@@ -442,51 +337,6 @@
 
 	.cta-section :global(.btn-primary:hover) {
 		box-shadow: 0 4px 8px rgba(142, 48, 137, 0.3);
-	}
-
-	/* Bouton Menu Mobile */
-	.mobile-menu-button {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 2.75rem;
-		height: 2.75rem;
-		background: none;
-		border: none;
-		cursor: pointer;
-		padding: 0.5rem;
-		border-radius: 6px;
-		gap: 0.25rem;
-		flex-shrink: 0;
-	}
-
-	.mobile-menu-button:hover {
-		background-color: var(--neutral-50);
-	}
-
-	.mobile-menu-button:focus-visible {
-		outline: 2px solid var(--violet);
-		outline-offset: 2px;
-	}
-
-	.hamburger-line {
-		width: 1.5rem;
-		height: 2px;
-		background: var(--neutral-800);
-		transform-origin: center;
-	}
-
-	.hamburger-line.open:nth-child(1) {
-		/* Hamburger sans animation */
-	}
-
-	.hamburger-line.open:nth-child(2) {
-		opacity: 0;
-	}
-
-	.hamburger-line.open:nth-child(3) {
-		/* Hamburger sans animation */
 	}
 
 	/* Menu Mobile */
@@ -512,13 +362,8 @@
 		border-bottom: 1px solid var(--neutral-200);
 		box-shadow: -4px 4px 20px 0 rgb(0 0 0 / 0.15);
 		z-index: 50;
-		max-height: calc(100vh - 4.5rem);
+		height: calc(100vh - 4.5rem);
 		overflow-y: auto;
-	}
-
-	.header.scrolled .mobile-menu {
-		top: 4rem;
-		max-height: calc(100vh - 4rem);
 	}
 
 	.mobile-nav-list {
@@ -556,10 +401,6 @@
 		flex: 1;
 	}
 
-	.mobile-nav-link .nav-badge {
-		margin-left: 0.5rem;
-	}
-
 	.mobile-nav-link:hover {
 		background-color: var(--neutral-50);
 		color: var(--violet);
@@ -589,20 +430,6 @@
 			padding: 0 0.75rem;
 			gap: 0.5rem;
 		}
-
-		.logo-section {
-			width: 140px;
-			min-width: 100px;
-		}
-
-		.logo-link :global(img) {
-			max-width: 140px;
-		}
-
-		.mobile-menu-button {
-			width: 2.5rem;
-			height: 2.5rem;
-		}
 	}
 
 	/* Responsive - Tablet */
@@ -610,14 +437,6 @@
 		.container {
 			padding: 0 1.5rem;
 			gap: 1rem;
-		}
-
-		.logo-section {
-			width: 160px;
-		}
-
-		.logo-link :global(img) {
-			max-width: 160px;
 		}
 
 		.nav-link {
@@ -632,16 +451,6 @@
 			gap: 0.5rem;
 		}
 
-		.nav-badge {
-			font-size: 0.75rem;
-			padding: 0.2rem 0.5rem;
-		}
-
-		.nav-badge-unavailable {
-			font-size: 0.75rem;
-			padding: 0.2rem 0.5rem;
-		}
-
 		.cta-disabled {
 			padding: 0.625rem 1.75rem;
 			font-size: 0.9rem;
@@ -650,11 +459,6 @@
 		.cta-text {
 			font-size: 0.9rem;
 		}
-
-		.cta-badge {
-			font-size: 0.65rem;
-			padding: 0.2rem 0.5rem;
-		}
 	}
 
 	/* Responsive - Desktop */
@@ -662,14 +466,6 @@
 		.container {
 			padding: 0 1rem;
 			gap: 0.75rem;
-		}
-
-		.logo-section {
-			width: 140px;
-		}
-
-		.logo-link :global(img) {
-			max-width: 140px;
 		}
 
 		.nav-desktop {
@@ -709,24 +505,12 @@
 		.cta-text {
 			font-size: 0.85rem;
 		}
-
-		.mobile-menu-button {
-			display: none;
-		}
 	}
 
 	@media (min-width: 1200px) {
 		.container {
 			padding: 0 1.5rem;
 			gap: 1rem;
-		}
-
-		.logo-section {
-			width: 160px;
-		}
-
-		.logo-link :global(img) {
-			max-width: 160px;
 		}
 
 		.nav-list {
@@ -758,10 +542,6 @@
 		.cta-text {
 			font-size: 0.9rem;
 		}
-
-		.cta-badge {
-			font-size: 0.65rem;
-		}
 	}
 
 	@media (min-width: 1300px) {
@@ -772,14 +552,6 @@
 
 		.header.scrolled .container {
 			height: 4.5rem;
-		}
-
-		.logo-section {
-			width: 180px;
-		}
-
-		.logo-link :global(img) {
-			max-width: 180px;
 		}
 
 		.nav-list {
@@ -809,20 +581,6 @@
 		.cta-text {
 			font-size: 0.95rem;
 		}
-
-		.cta-badge {
-			font-size: 0.7rem;
-		}
-
-		.mobile-menu {
-			top: 5rem;
-			max-height: calc(100vh - 5rem);
-		}
-
-		.header.scrolled .mobile-menu {
-			top: 4.5rem;
-			max-height: calc(100vh - 4.5rem);
-		}
 	}
 
 	/* Amélioration des contrastes pour l'accessibilité */
@@ -835,12 +593,6 @@
 			background-color: var(--neutral-100);
 		}
 
-		.nav-badge {
-			background: var(--neutral-900);
-			color: white;
-			border: 2px solid var(--orange);
-		}
-
 		.mobile-nav-link {
 			color: var(--neutral-900);
 		}
@@ -848,15 +600,5 @@
 		.mobile-nav-link:hover {
 			background-color: var(--neutral-100);
 		}
-
-		.hamburger-line {
-			background: var(--neutral-900);
-		}
-	}
-
-	/* Respect des préférences de mouvement réduit */
-	@media (prefers-reduced-motion: reduce) {
-		.header,
-		/* Animations déjà désactivées globalement */
 	}
 </style>

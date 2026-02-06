@@ -1,14 +1,14 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import HeroSection from '../lib/components/home/HeroSection.svelte';
 	import StatsSection from '../lib/components/home/StatsSection.svelte';
+	import Badge from '../lib/components/ui/Badge.svelte';
 	import Button from '../lib/components/ui/Button.svelte';
 	import Card from '../lib/components/ui/Card.svelte';
-	import Badge from '../lib/components/ui/Badge.svelte';
 
 	let articles = $state([]);
 	let loading = $state(true);
-	let error = $state(null);
+	let error = $state<null | string>(null);
 
 	onMount(async () => {
 		try {
@@ -18,7 +18,7 @@
 			} else {
 				error = 'Erreur lors du chargement des actualités';
 			}
-		} catch (e) {
+		} catch (_error) {
 			error = 'Impossible de charger les actualités';
 		} finally {
 			loading = false;
@@ -181,7 +181,7 @@
 					</div>
 				</article>
 			{:else}
-				{#each articles.slice(0, 3) as article}
+				{#each articles.slice(0, 3) as article (article.title)}
 					<article class="news-card" role="listitem">
 						<div class="news-image">
 							{#if article.image}

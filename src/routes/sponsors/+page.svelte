@@ -44,7 +44,7 @@
 </section>
 
 <!-- Sponsors Sections -->
-{#each sponsorLevels as level}
+{#each sponsorLevels as level (level.id)}
 	<section class="sponsors-section" id={level.id} aria-labelledby="{level.id}-title">
 		<div class="container">
 			<div class="section-header">
@@ -57,7 +57,7 @@
 				role="list"
 				aria-label="Liste des sponsors {level.name}"
 			>
-				{#each level.sponsors as sponsor}
+				{#each level.sponsors as sponsor (sponsor.name)}
 					<div role="listitem">
 						<SponsorCard {sponsor} size={level.logoSize} />
 					</div>

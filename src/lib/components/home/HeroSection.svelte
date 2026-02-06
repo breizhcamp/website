@@ -1,6 +1,4 @@
 <script>
-	import Button from '../ui/Button.svelte';
-
 	let currentSlide = $state(0);
 	const slides = [
 		{
@@ -58,7 +56,7 @@
 			</div>
 			<div class="hero-image" role="region" aria-label="Galerie d'images de l'événement">
 				<div class="carousel">
-					{#each slides as slide, index}
+					{#each slides as slide, index (slide.src)}
 						<img
 							src={slide.src}
 							alt={slide.alt}
@@ -90,7 +88,7 @@
 
 					<!-- Dots navigation -->
 					<div class="carousel-dots">
-						{#each slides as _, index}
+						{#each slides as slide, index (slide.src)}
 							<button
 								class="carousel-dot"
 								class:active={currentSlide === index}

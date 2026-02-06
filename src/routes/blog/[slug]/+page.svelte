@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import Button from '../../../lib/components/ui/Button.svelte';
 
 	let article = $state(null);
 	let loading = $state(true);
-	let error = $state(null);
+	let error = $state<string | null>(null);
 
 	onMount(async () => {
 		try {

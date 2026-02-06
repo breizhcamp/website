@@ -8,23 +8,23 @@ Le fichier `communities.ts` contient toutes les informations des communautés pa
 
 ```typescript
 interface SocialLink {
-  type: 'twitter' | 'linkedin' | 'mastodon';
-  handle: string;
-  url: string;
+	type: 'twitter' | 'linkedin' | 'mastodon';
+	handle: string;
+	url: string;
 }
 
 interface Organizer {
-  name: string;
-  picture: string;
-  social?: SocialLink;
+	name: string;
+	picture: string;
+	social?: SocialLink;
 }
 
 interface Community {
-  name: string;
-  logo: string;
-  url: string;
-  text?: string;
-  organizers: Organizer[];
+	name: string;
+	logo: string;
+	url: string;
+	text?: string;
+	organizers: Organizer[];
 }
 ```
 
@@ -34,14 +34,14 @@ interface Community {
 
 ```svelte
 <script lang="ts">
-  import { communities } from '$lib/config/communities';
+	import { communities } from '$lib/config/communities';
 </script>
 
-{#each communities as community}
-  <div>
-    <h3>{community.name}</h3>
-    <a href={community.url}>{community.url}</a>
-  </div>
+{#each communities as community (community.name)}
+	<div>
+		<h3>{community.name}</h3>
+		<a href={community.url}>{community.url}</a>
+	</div>
 {/each}
 ```
 
@@ -49,31 +49,31 @@ interface Community {
 
 ```svelte
 <script lang="ts">
-  import { communities } from '$lib/config/communities';
+	import { communities } from '$lib/config/communities';
 </script>
 
-{#each communities as community}
-  <article>
-    <img src={community.logo} alt={community.name} />
-    <h3>{community.name}</h3>
-    {#if community.text}
-      <p>{community.text}</p>
-    {/if}
-    
-    <div class="organizers">
-      {#each community.organizers as organizer}
-        <div>
-          <img src={organizer.picture} alt={organizer.name} />
-          <span>{organizer.name}</span>
-          {#if organizer.social}
-            <a href={organizer.social.url}>
-              @{organizer.social.handle}
-            </a>
-          {/if}
-        </div>
-      {/each}
-    </div>
-  </article>
+{#each communities as community (community.name)}
+	<article>
+		<img src={community.logo} alt={community.name} />
+		<h3>{community.name}</h3>
+		{#if community.text}
+			<p>{community.text}</p>
+		{/if}
+
+		<div class="organizers">
+			{#each community.organizers as organizer (organizer.name)}
+				<div>
+					<img src={organizer.picture} alt={organizer.name} />
+					<span>{organizer.name}</span>
+					{#if organizer.social}
+						<a href={organizer.social.url}>
+							@{organizer.social.handle}
+						</a>
+					{/if}
+				</div>
+			{/each}
+		</div>
+	</article>
 {/each}
 ```
 
@@ -81,12 +81,12 @@ interface Community {
 
 ```svelte
 <script lang="ts">
-  import { communities } from '$lib/config/communities';
-  
-  // Trouver tous les organisateurs sur Twitter
-  const twitterOrganizers = communities
-    .flatMap(c => c.organizers)
-    .filter(o => o.social?.type === 'twitter');
+	import { communities } from '$lib/config/communities';
+
+	// Trouver tous les organisateurs sur Twitter
+	const twitterOrganizers = communities
+		.flatMap((c) => c.organizers)
+		.filter((o) => o.social?.type === 'twitter');
 </script>
 ```
 
@@ -94,9 +94,9 @@ interface Community {
 
 ```svelte
 <script lang="ts">
-  import { communities } from '$lib/config/communities';
-  
-  const rennesJS = communities.find(c => c.name === 'Rennes JS');
+	import { communities } from '$lib/config/communities';
+
+	const rennesJS = communities.find((c) => c.name === 'Rennes JS');
 </script>
 ```
 
@@ -106,13 +106,14 @@ Un composant `Communities.svelte` est disponible dans `src/lib/components/`:
 
 ```svelte
 <script>
-  import Communities from '$lib/components/Communities.svelte';
+	import Communities from '$lib/components/Communities.svelte';
 </script>
 
 <Communities />
 ```
 
 Ce composant affiche:
+
 - Toutes les communautés avec leurs logos
 - Les organisateurs avec leurs photos
 - Les liens vers les réseaux sociaux
@@ -156,6 +157,7 @@ Ce composant affiche:
 - `mastodon`: Mastodon (ou autres instances Fediverse)
 
 Pour ajouter un nouveau type:
+
 1. Modifier l'interface `SocialLink` dans `communities.ts`
 2. Ajouter l'icône SVG dans le composant `Communities.svelte`
 
@@ -169,7 +171,7 @@ Les images utilisent `loading="lazy"` par défaut dans le composant.
 
 ```svelte
 <svelte:head>
-  <link rel="preload" as="image" href="/team/important-person.jpg" />
+	<link rel="preload" as="image" href="/team/important-person.jpg" />
 </svelte:head>
 ```
 
@@ -190,14 +192,15 @@ Puis utiliser avec fallback:
 
 ```svelte
 <picture>
-  <source srcset="/team/person.webp" type="image/webp">
-  <img src="/team/person.jpg" alt="Person">
+	<source srcset="/team/person.webp" type="image/webp" />
+	<img src="/team/person.jpg" alt="Person" />
 </picture>
 ```
 
 ## Accessibilité
 
 Le composant `Communities.svelte` inclut:
+
 - Attributs `alt` descriptifs sur toutes les images
 - Liens avec `rel="noopener noreferrer"` pour la sécurité
 - Attributs `title` sur les liens sociaux

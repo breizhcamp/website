@@ -142,16 +142,8 @@ export const getFooterPages = () => {
 	return siteConfig.pages.filter((page) => page.showInFooter).sort((a, b) => a.order - b.order);
 };
 
-export const getAvailablePages = () => {
-	return siteConfig.pages.filter((page) => page.available);
-};
-
 export const getAllPages = () => {
 	return siteConfig.pages.sort((a, b) => a.order - b.order);
-};
-
-export const getPageById = (id: string) => {
-	return siteConfig.pages.find((page) => page.id === id);
 };
 
 /**

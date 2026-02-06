@@ -129,7 +129,7 @@
 
 		<h3 class="subsection-title">Couleurs de marque</h3>
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-			{#each brandColors as color}
+			{#each brandColors as color (color.name)}
 				<div class="color-card {color.class}">
 					<div class="color-info">
 						<span class="font-semibold">{color.name}</span>
@@ -142,7 +142,7 @@
 
 		<h3 class="subsection-title">Couleurs neutres (avec contraste WCAG)</h3>
 		<div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-2">
-			{#each neutralColors as color}
+			{#each neutralColors as color (color.hex)}
 				<div class="neutral-card bg-neutral-{color.shade}">
 					<div class="neutral-info">
 						<span class="font-semibold">{color.shade}</span>
@@ -224,11 +224,11 @@
 			Classes réutilisables pour un développement rapide et cohérent
 		</p>
 
-		{#each utilityCategories as category}
+		{#each utilityCategories as category (category.name)}
 			<div class="utility-section">
 				<h3 class="subsection-title">{category.name}</h3>
 				<div class="utility-grid">
-					{#each category.classes as util}
+					{#each category.classes as util (util.name)}
 						<div class="utility-item">
 							<code class="utility-name">{util.name}</code>
 							<span class="utility-desc">{util.desc}</span>

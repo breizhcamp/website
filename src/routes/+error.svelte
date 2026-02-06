@@ -169,7 +169,7 @@
 		<section class="suggestions">
 			<h2>Où souhaitez-vous aller ?</h2>
 			<div class="suggestions-grid">
-				{#each popularPages as page}
+				{#each popularPages as page (page.href)}
 					<Card interactive={!page.unavailable}>
 						{#if page.unavailable}
 							<div class="suggestion-unavailable">

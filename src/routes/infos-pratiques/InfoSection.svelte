@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Card from '../../lib/components/ui/Card.svelte';
 	import Button from '../../lib/components/ui/Button.svelte';
+	import Card from '../../lib/components/ui/Card.svelte';
 
 	interface Props {
 		section: {
@@ -38,7 +38,7 @@
 
 				{#if section.actions && section.actions.length > 0}
 					<div class="section-actions">
-						{#each section.actions as action}
+						{#each section.actions as action (action.href)}
 							<Button
 								variant={action.variant}
 								href={action.href}

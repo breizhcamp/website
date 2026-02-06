@@ -1,8 +1,7 @@
 <script>
-	import Button from '../../lib/components/ui/Button.svelte';
 	import Card from '../../lib/components/ui/Card.svelte';
 	import InfoSection from './InfoSection.svelte';
-	import { infoSections, categories } from './constants.ts';
+	import { categories, infoSections } from './constants';
 
 	// Grouper les sections par catégorie
 	const sectionsByCategory = categories.map((category) => ({
@@ -34,14 +33,14 @@
 <!-- Navigation rapide par catégories -->
 <section class="quick-nav">
 	<div class="container">
-		{#each sectionsByCategory as category}
+		{#each sectionsByCategory as category (category.title)}
 			<div class="category-section">
 				<h2 class="category-title">{category.title}</h2>
 				<p class="category-description">{category.description}</p>
 
 				<nav aria-label="Navigation {category.title}">
 					<ul class="nav-grid">
-						{#each category.sections as section}
+						{#each category.sections as section (section.id)}
 							<li>
 								<a href="#{section.id}" class="nav-card">
 									<div class="nav-icon" aria-hidden="true">
@@ -60,7 +59,7 @@
 </section>
 
 <!-- Sections d'informations -->
-{#each infoSections as section}
+{#each infoSections as section (section.id)}
 	<InfoSection {section} />
 {/each}
 
@@ -75,7 +74,7 @@
 					la plus grande conférence tech de Bretagne.
 				</p>
 				<div class="editions-links">
-					{#each [2024, 2023, 2022, 2019, 2018, 2017, 2016, 2015, 2014, 2013] as year}
+					{#each [2024, 2023, 2022, 2019, 2018, 2017, 2016, 2015, 2014, 2013] as year (year)}
 						<a
 							href="https://{year}.breizhcamp.org/"
 							target="_blank"

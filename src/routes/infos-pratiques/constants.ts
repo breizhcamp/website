@@ -58,7 +58,7 @@ export const categories: CategoryInfo[] = [
 // Configuration des sections d'informations
 export const infoSections: InfoSection[] = [
 	{
-		id: 'conference',
+		id: 'la-conference',
 		title: 'La conférence',
 		shortDescription: 'Découvrez le BreizhCamp, ses valeurs et son organisation',
 		icon: icons.conference,

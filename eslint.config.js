@@ -1,6 +1,6 @@
-import prettier from 'eslint-config-prettier';
 import { includeIgnoreFile } from '@eslint/compat';
 import js from '@eslint/js';
+import prettier from 'eslint-config-prettier';
 import svelte from 'eslint-plugin-svelte';
 import globals from 'globals';
 import { fileURLToPath } from 'node:url';
@@ -44,7 +44,8 @@ export default ts.config(
 			],
 			// https://eslint.org/docs/latest/rules/no-control-regex
 			// allows to write new RegExp("\t") which is normally only possible with /\t/
-			'no-control-regex': 0
+			'no-control-regex': 0,
+			'svelte/no-at-html-tags': 'off'
 		}
 	},
 	{

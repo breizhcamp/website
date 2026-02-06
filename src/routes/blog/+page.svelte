@@ -45,7 +45,7 @@
 	<div class="container">
 		{#if articles.length > 0}
 			<div class="articles-grid">
-				{#each articles as article}
+				{#each articles as article (article.title)}
 					<Card interactive>
 						<article class="article-card">
 							{#if article.image}

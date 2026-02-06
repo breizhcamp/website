@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { getFooterPages } from '../../config/site';
 
 	// Données pour les liens
@@ -29,7 +29,7 @@
 	const footerPages = getFooterPages();
 
 	// Toutes les éditions utilisent le pattern https://YYYY.breizhcamp.org/
-	function getEditionUrl(year) {
+	function getEditionUrl(year: number) {
 		return `https://${year}.breizhcamp.org/`;
 	}
 
@@ -40,7 +40,7 @@
 		editions: false
 	});
 
-	function toggleSection(section) {
+	function toggleSection(section: 'navigation' | 'informations' | 'editions') {
 		expandedSections[section] = !expandedSections[section];
 	}
 </script>
@@ -97,7 +97,7 @@
 						class="footer-links"
 						class:expanded={expandedSections.navigation}
 					>
-						{#each footerPages as page}
+						{#each footerPages as page (page.id)}
 							{#if page.available}
 								<li><a class="footer-link" href={page.href}>{page.label}</a></li>
 							{:else}
@@ -183,7 +183,7 @@
 					>
 						<!-- Historique compact sur une ligne avec points -->
 						<p class="editions-inline">
-							{#each years as year, index}
+							{#each years as year, index (year)}
 								<a
 									href={getEditionUrl(year)}
 									class="edition-link-inline"
@@ -403,9 +403,9 @@
 
 	/* Override spécifique pour les liens d'éditions */
 	.editions-inline a {
-		display: inline !important;
-		padding: 0 !important;
-		margin: 0 !important;
+		display: inline;
+		padding: 0.2em 0.5em;
+		margin: -0.5em;
 		color: #cbd5e1;
 		text-decoration: underline;
 		text-decoration-color: rgba(203, 213, 225, 0.5);
@@ -415,8 +415,6 @@
 		color: white;
 		text-decoration-color: white;
 		background-color: rgba(255, 255, 255, 0.1);
-		padding: 0.1em 0.2em !important;
-		margin: -0.1em -0.2em !important;
 		border-radius: 4px;
 	}
 
@@ -433,6 +431,8 @@
 	.footer-link {
 		color: #e2e8f0; /* Amélioré pour contraste */
 		font-size: 0.95rem;
+		padding: 0.2em 0.5em;
+		margin-left: -0.5em;
 		text-decoration: underline;
 		text-decoration-color: rgba(226, 232, 240, 0.5);
 	}
@@ -441,8 +441,6 @@
 		color: white;
 		text-decoration-color: white;
 		background-color: rgba(255, 255, 255, 0.1);
-		padding: 0.2em 0.4em;
-		margin: -0.2em -0.4em;
 		border-radius: 4px;
 	}
 
@@ -650,13 +648,13 @@
 		}
 
 		.editions-inline a {
-			color: #e2e8f0 !important;
-			text-decoration-color: #e2e8f0 !important;
+			color: #e2e8f0;
+			text-decoration-color: #e2e8f0;
 		}
 
 		.editions-inline a:hover {
-			background-color: var(--lime) !important;
-			color: var(--neutral-900) !important;
+			background-color: var(--lime);
+			color: var(--neutral-900);
 		}
 	}
 </style>
