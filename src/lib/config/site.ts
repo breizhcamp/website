@@ -103,7 +103,7 @@ export const siteConfig: SiteConfig = {
 			id: 'infos',
 			label: 'Infos pratiques',
 			href: '/infos-pratiques',
-			description: 'Tout savoir sur l\'événement',
+			description: "Tout savoir sur l'événement",
 			available: true,
 			showInMainNav: true,
 			showInFooter: true,
@@ -113,7 +113,7 @@ export const siteConfig: SiteConfig = {
 			id: 'equipe',
 			label: 'Équipe',
 			href: '/equipe',
-			description: 'L\'équipe BreizhCamp et l\'association',
+			description: "L'équipe BreizhCamp et l'association",
 			available: true,
 			showInMainNav: true,
 			showInFooter: true,
@@ -135,19 +135,15 @@ export const siteConfig: SiteConfig = {
  * Utilitaires pour récupérer les pages selon leur configuration
  */
 export const getNavigationPages = () => {
-	return siteConfig.pages
-		.filter(page => page.showInMainNav)
-		.sort((a, b) => a.order - b.order);
+	return siteConfig.pages.filter((page) => page.showInMainNav).sort((a, b) => a.order - b.order);
 };
 
 export const getFooterPages = () => {
-	return siteConfig.pages
-		.filter(page => page.showInFooter)
-		.sort((a, b) => a.order - b.order);
+	return siteConfig.pages.filter((page) => page.showInFooter).sort((a, b) => a.order - b.order);
 };
 
 export const getAvailablePages = () => {
-	return siteConfig.pages.filter(page => page.available);
+	return siteConfig.pages.filter((page) => page.available);
 };
 
 export const getAllPages = () => {
@@ -155,7 +151,7 @@ export const getAllPages = () => {
 };
 
 export const getPageById = (id: string) => {
-	return siteConfig.pages.find(page => page.id === id);
+	return siteConfig.pages.find((page) => page.id === id);
 };
 
 /**
@@ -163,7 +159,7 @@ export const getPageById = (id: string) => {
  */
 export const getNavigationItems = () => {
 	const pages = getNavigationPages();
-	const items = pages.map(page => ({
+	const items = pages.map((page) => ({
 		label: page.label,
 		href: page.available ? page.href : null,
 		description: page.description,
@@ -191,7 +187,7 @@ export const getNavigationItems = () => {
  * Génère les éléments pour les pages d'erreur et suggestions
  */
 export const getSuggestionPages = () => {
-	return getAllPages().map(page => ({
+	return getAllPages().map((page) => ({
 		label: page.label,
 		href: page.available ? page.href : null,
 		description: page.available ? page.description : 'Bientôt disponible',

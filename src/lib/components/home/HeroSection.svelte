@@ -3,9 +3,18 @@
 
 	let currentSlide = $state(0);
 	const slides = [
-		{ src: '/home/conference-salle.jpeg', alt: 'Conférence BreizhCamp - Salle plénière avec participants' },
-		{ src: '/home/conference-presentation.jpeg', alt: 'Conférence BreizhCamp - Présentation technique' },
-		{ src: '/home/conference-atelier.jpeg', alt: 'Conférence BreizhCamp - Atelier et networking' }
+		{
+			src: '/home/conference-salle.jpeg',
+			alt: 'Conférence BreizhCamp - Salle plénière avec participants'
+		},
+		{
+			src: '/home/conference-presentation.jpeg',
+			alt: 'Conférence BreizhCamp - Présentation technique'
+		},
+		{
+			src: '/home/conference-atelier.jpeg',
+			alt: 'Conférence BreizhCamp - Atelier et networking'
+		}
 	];
 
 	function nextSlide() {

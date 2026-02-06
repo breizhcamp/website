@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { communities } from '$lib/config/communities';
-	
+
 	// État des sections dépliables
 	let organisationOpen = $state(false);
 	let comiteOpen = $state(false);
 	let assoOpen = $state(false);
-	
+
 	function getSocialIcon(type: string) {
-		switch(type) {
+		switch (type) {
 			case 'twitter':
 				return 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z';
 			case 'linkedin':
@@ -18,7 +18,7 @@
 				return '';
 		}
 	}
-	
+
 	function getLinkIcon(url: string) {
 		if (url.includes('meetup.com')) {
 			return 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z';
@@ -97,7 +97,7 @@
 			assoOpen = !assoOpen;
 		}
 	}
-	
+
 	function handleKeydown(event: KeyboardEvent, section: 'organisation' | 'comite' | 'asso') {
 		if (event.key === 'Enter' || event.key === ' ') {
 			event.preventDefault();
@@ -108,9 +108,15 @@
 
 <svelte:head>
 	<title>Équipe - BreizhCamp 2026</title>
-	<meta name="description" content="Découvrez l'équipe de bénévoles qui organise le BreizhCamp et l'association qui porte l'événement." />
+	<meta
+		name="description"
+		content="Découvrez l'équipe de bénévoles qui organise le BreizhCamp et l'association qui porte l'événement."
+	/>
 	<meta property="og:title" content="Équipe - BreizhCamp 2026" />
-	<meta property="og:description" content="Découvrez l'équipe de bénévoles qui organise le BreizhCamp et l'association qui porte l'événement." />
+	<meta
+		property="og:description"
+		content="Découvrez l'équipe de bénévoles qui organise le BreizhCamp et l'association qui porte l'événement."
+	/>
 	<meta property="og:type" content="website" />
 </svelte:head>
 
@@ -120,7 +126,8 @@
 		<header class="page-header">
 			<h1>L'équipe BreizhCamp</h1>
 			<p class="page-description">
-				Découvrez les bénévoles passionnés qui organisent le BreizhCamp et l'association qui porte cet événement.
+				Découvrez les bénévoles passionnés qui organisent le BreizhCamp et l'association qui
+				porte cet événement.
 			</p>
 		</header>
 
@@ -148,13 +155,23 @@
 					</svg>
 					Organisation
 				</h2>
-				<span class="member-count" aria-label="{equipeOrganisation.length} membres dans l'équipe d'organisation">{equipeOrganisation.length} membres</span>
+				<span
+					class="member-count"
+					aria-label="{equipeOrganisation.length} membres dans l'équipe d'organisation"
+					>{equipeOrganisation.length} membres</span
+				>
 			</button>
 
 			{#if organisationOpen}
-				<div class="section-content" id="organisation-content" role="region" aria-labelledby="organisation-heading">
+				<div
+					class="section-content"
+					id="organisation-content"
+					role="region"
+					aria-labelledby="organisation-heading"
+				>
 					<p class="section-description">
-						Le BreizhCamp est organisé par une équipe de bénévoles survitaminée qui s'active en coulisse.
+						Le BreizhCamp est organisé par une équipe de bénévoles survitaminée qui
+						s'active en coulisse.
 					</p>
 					<div class="team-grid" role="list">
 						{#each equipeOrganisation as membre}
@@ -198,14 +215,24 @@
 					</svg>
 					Comité programme
 				</h2>
-				<span class="member-count" aria-label="{comiteProgramme.length} membres dans le comité programme">{comiteProgramme.length} membres</span>
+				<span
+					class="member-count"
+					aria-label="{comiteProgramme.length} membres dans le comité programme"
+					>{comiteProgramme.length} membres</span
+				>
 			</button>
 
 			{#if comiteOpen}
-				<div class="section-content" id="comite-content" role="region" aria-labelledby="comite-heading">
+				<div
+					class="section-content"
+					id="comite-content"
+					role="region"
+					aria-labelledby="comite-heading"
+				>
 					<p class="section-description">
-						Le programme est composé à partir des votes des membres des communautés techniques de Rennes, 
-						pour assurer un programme diversifié et représentatif de notre écosystème.
+						Le programme est composé à partir des votes des membres des communautés
+						techniques de Rennes, pour assurer un programme diversifié et représentatif
+						de notre écosystème.
 					</p>
 					<div class="team-grid" role="list">
 						{#each comiteProgramme as membre}
@@ -252,34 +279,64 @@
 			</button>
 
 			{#if assoOpen}
-				<div class="section-content" id="asso-content" role="region" aria-labelledby="asso-heading">
+				<div
+					class="section-content"
+					id="asso-content"
+					role="region"
+					aria-labelledby="asso-heading"
+				>
 					<div class="asso-content">
 						<!-- Association principale -->
 						<div class="main-association">
 							<h3>
-								<svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-									<path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 2.5L18.5 12H17v6H7v-6H5.5L12 5.5z"/>
-									<rect x="9" y="14" width="2" height="4"/>
-									<rect x="13" y="14" width="2" height="4"/>
+								<svg
+									class="section-icon"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="currentColor"
+									aria-hidden="true"
+								>
+									<path
+										d="M12 3L2 12h3v8h14v-8h3L12 3zm0 2.5L18.5 12H17v6H7v-6H5.5L12 5.5z"
+									/>
+									<rect x="9" y="14" width="2" height="4" />
+									<rect x="13" y="14" width="2" height="4" />
 								</svg>
 								Association principale
 							</h3>
 							<div class="association-card">
 								<div class="association-header">
-									<img 
-										src="/breizhcamp-logo-2026.svg" 
-										alt="Logo BreizhCamp" 
+									<img
+										src="/breizhcamp-logo-2026.svg"
+										alt="Logo BreizhCamp"
 										class="association-logo"
 									/>
 									<div class="association-info">
 										<h4>BreizhCamp</h4>
-										<p>Association loi 1901 dédiée à l'organisation d'événements autour de l'ingénierie informatique (conférence annuelle + animation de User Groups locaux).</p>
+										<p>
+											Association loi 1901 dédiée à l'organisation
+											d'événements autour de l'ingénierie informatique
+											(conférence annuelle + animation de User Groups locaux).
+										</p>
 									</div>
 								</div>
 								<div class="contact-info">
-									<a href="mailto:contact@breizhcamp.org" class="contact-email" aria-label="Envoyer un email à contact@breizhcamp.org">
-										<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-											<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+									<a
+										href="mailto:contact@breizhcamp.org"
+										class="contact-email"
+										aria-label="Envoyer un email à contact@breizhcamp.org"
+									>
+										<svg
+											width="16"
+											height="16"
+											viewBox="0 0 24 24"
+											fill="currentColor"
+											aria-hidden="true"
+										>
+											<path
+												d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+											/>
 										</svg>
 										contact@breizhcamp.org
 									</a>
@@ -290,10 +347,19 @@
 						<!-- Membres du bureau -->
 						<div class="bureau-section">
 							<h3>
-								<svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-									<path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/>
-									<circle cx="18" cy="8" r="2" fill="var(--orange)"/>
-									<circle cx="6" cy="8" r="2" fill="var(--orange)"/>
+								<svg
+									class="section-icon"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="currentColor"
+									aria-hidden="true"
+								>
+									<path
+										d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"
+									/>
+									<circle cx="18" cy="8" r="2" fill="var(--orange)" />
+									<circle cx="6" cy="8" r="2" fill="var(--orange)" />
 								</svg>
 								Membres actuels du bureau
 							</h3>
@@ -308,9 +374,20 @@
 													loading="lazy"
 												/>
 											{:else}
-												<div class="photo-placeholder" aria-label="Photo non disponible">
-													<svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-														<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+												<div
+													class="photo-placeholder"
+													aria-label="Photo non disponible"
+												>
+													<svg
+														width="40"
+														height="40"
+														viewBox="0 0 24 24"
+														fill="currentColor"
+														aria-hidden="true"
+													>
+														<path
+															d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+														/>
 													</svg>
 												</div>
 											{/if}
@@ -324,8 +401,17 @@
 						<!-- Anciens membres -->
 						<div class="former-members-section">
 							<h3>
-								<svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-									<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+								<svg
+									class="section-icon"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="currentColor"
+									aria-hidden="true"
+								>
+									<path
+										d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+									/>
 								</svg>
 								Anciens membres du bureau
 							</h3>
@@ -340,9 +426,20 @@
 													loading="lazy"
 												/>
 											{:else}
-												<div class="photo-placeholder" aria-label="Photo non disponible">
-													<svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-														<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+												<div
+													class="photo-placeholder"
+													aria-label="Photo non disponible"
+												>
+													<svg
+														width="40"
+														height="40"
+														viewBox="0 0 24 24"
+														fill="currentColor"
+														aria-hidden="true"
+													>
+														<path
+															d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+														/>
 													</svg>
 												</div>
 											{/if}
@@ -356,8 +453,17 @@
 						<!-- User Groups -->
 						<div class="user-groups-section">
 							<h3>
-								<svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-									<path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9V7h9v14z"/>
+								<svg
+									class="section-icon"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="currentColor"
+									aria-hidden="true"
+								>
+									<path
+										d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9V7h9v14z"
+									/>
 								</svg>
 								User Groups / Meetups rattachés à BreizhCamp
 							</h3>
@@ -365,8 +471,8 @@
 								{#each communities as community}
 									<article class="group-item" role="listitem">
 										<div class="group-header">
-											<img 
-												src={community.logo} 
+											<img
+												src={community.logo}
 												alt="Logo {community.name}"
 												class="group-logo"
 												loading="lazy"
@@ -374,19 +480,29 @@
 											<div class="group-info">
 												<h4>{community.name}</h4>
 												{#if community.text}
-													<p class="group-description">{community.text}</p>
+													<p class="group-description">
+														{community.text}
+													</p>
 												{/if}
-												<a 
-													href={community.url} 
-													target="_blank" 
+												<a
+													href={community.url}
+													target="_blank"
 													rel="noopener noreferrer"
 													class="community-link"
 													aria-label="Visiter le site de {community.name} (ouvre dans un nouvel onglet)"
 												>
-													<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+													<svg
+														width="16"
+														height="16"
+														viewBox="0 0 24 24"
+														fill="currentColor"
+														aria-hidden="true"
+													>
 														<path d={getLinkIcon(community.url)} />
 													</svg>
-													{community.url.includes('meetup.com') ? 'Voir sur Meetup' : 'Visiter le site'}
+													{community.url.includes('meetup.com')
+														? 'Voir sur Meetup'
+														: 'Visiter le site'}
 												</a>
 											</div>
 										</div>
@@ -395,24 +511,41 @@
 											<div class="organizers-grid" role="list">
 												{#each community.organizers as organizer}
 													<div class="organizer-card" role="listitem">
-														<img 
-															src={organizer.picture} 
+														<img
+															src={organizer.picture}
 															alt="Photo de {organizer.name}"
 															class="organizer-photo"
 															loading="lazy"
 														/>
 														<div class="organizer-info">
-															<span class="organizer-name">{organizer.name}</span>
+															<span class="organizer-name"
+																>{organizer.name}</span
+															>
 															{#if organizer.social}
-																<a 
+																<a
 																	href={organizer.social.url}
 																	target="_blank"
 																	rel="noopener noreferrer"
 																	class="social-link"
-																	aria-label="Profil {organizer.social.type} de {organizer.name} : @{organizer.social.handle} (ouvre dans un nouvel onglet)"
+																	aria-label="Profil {organizer
+																		.social
+																		.type} de {organizer.name} : @{organizer
+																		.social
+																		.handle} (ouvre dans un nouvel onglet)"
 																>
-																	<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-																		<path d={getSocialIcon(organizer.social.type)} />
+																	<svg
+																		width="14"
+																		height="14"
+																		viewBox="0 0 24 24"
+																		fill="currentColor"
+																		aria-hidden="true"
+																	>
+																		<path
+																			d={getSocialIcon(
+																				organizer.social
+																					.type
+																			)}
+																		/>
 																	</svg>
 																	@{organizer.social.handle}
 																</a>

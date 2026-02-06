@@ -21,8 +21,9 @@
 			</div>
 			<h1>Démarche éco-responsable</h1>
 			<p class="hero-description">
-				BreizhCamp s'engage pour un web plus durable en optimisant l'impact environnemental de son
-				site web grâce à l'éco-conception. L'EcoIndex sera calculé une fois le site finalisé.
+				BreizhCamp s'engage pour un web plus durable en optimisant l'impact environnemental
+				de son site web grâce à l'éco-conception. L'EcoIndex sera calculé une fois le site
+				finalisé.
 			</p>
 		</div>
 	</div>
@@ -36,10 +37,10 @@
 			<Card>
 				<h2>Qu'est-ce que l'EcoIndex ?</h2>
 				<p>
-					L'<strong>EcoIndex</strong> est un outil développé par le collectif GreenIT.fr qui permet
-					d'évaluer l'impact environnemental d'un site web. Il mesure la performance
-					environnementale d'une page web en analysant sa complexité technique et son impact sur
-					les ressources.
+					L'<strong>EcoIndex</strong> est un outil développé par le collectif GreenIT.fr qui
+					permet d'évaluer l'impact environnemental d'un site web. Il mesure la performance
+					environnementale d'une page web en analysant sa complexité technique et son impact
+					sur les ressources.
 				</p>
 
 				<div class="ecoindex-metrics">
@@ -76,12 +77,14 @@
 					</div>
 					<div class="score-details">
 						<p>
-							Le site BreizhCamp est actuellement <strong>en cours de développement</strong>. 
-							L'EcoIndex sera mesuré une fois le site finalisé et mis en production.
+							Le site BreizhCamp est actuellement <strong
+								>en cours de développement</strong
+							>. L'EcoIndex sera mesuré une fois le site finalisé et mis en
+							production.
 						</p>
 						<p>
-							Nous appliquons dès maintenant les bonnes pratiques d'éco-conception pour obtenir 
-							le meilleur score possible lors de la mesure finale.
+							Nous appliquons dès maintenant les bonnes pratiques d'éco-conception
+							pour obtenir le meilleur score possible lors de la mesure finale.
 						</p>
 					</div>
 				</div>
@@ -113,8 +116,8 @@
 			<Card>
 				<h2>Nos actions pour un web durable</h2>
 				<p>
-					Voici les principales mesures que nous avons mises en place pour réduire l'impact
-					environnemental de notre site web :
+					Voici les principales mesures que nous avons mises en place pour réduire
+					l'impact environnemental de notre site web :
 				</p>
 
 				<div class="actions-grid">
@@ -180,8 +183,8 @@
 						<div class="tip-content">
 							<h4>Utilisez un navigateur récent</h4>
 							<p>
-								Les navigateurs modernes sont plus efficaces pour traiter les pages web et
-								consomment moins d'énergie.
+								Les navigateurs modernes sont plus efficaces pour traiter les pages
+								web et consomment moins d'énergie.
 							</p>
 						</div>
 					</div>
@@ -191,7 +194,8 @@
 						<div class="tip-content">
 							<h4>Fermez les onglets inutiles</h4>
 							<p>
-								Chaque onglet ouvert consomme de la mémoire et de l'énergie, même en arrière-plan.
+								Chaque onglet ouvert consomme de la mémoire et de l'énergie, même en
+								arrière-plan.
 							</p>
 						</div>
 					</div>
@@ -201,7 +205,8 @@
 						<div class="tip-content">
 							<h4>Utilisez les favoris</h4>
 							<p>
-								Marquez nos pages en favoris plutôt que de les rechercher à chaque fois.
+								Marquez nos pages en favoris plutôt que de les rechercher à chaque
+								fois.
 							</p>
 						</div>
 					</div>
@@ -211,7 +216,8 @@
 						<div class="tip-content">
 							<h4>Partagez intelligemment</h4>
 							<p>
-								Partagez directement les liens plutôt que de faire des captures d'écran.
+								Partagez directement les liens plutôt que de faire des captures
+								d'écran.
 							</p>
 						</div>
 					</div>
@@ -224,7 +230,8 @@
 			<Card>
 				<h2>Pour aller plus loin</h2>
 				<p>
-					Découvrez d'autres ressources sur l'éco-conception web et le numérique responsable :
+					Découvrez d'autres ressources sur l'éco-conception web et le numérique
+					responsable :
 				</p>
 
 				<div class="resources-grid">
@@ -286,9 +293,7 @@
 				</div>
 
 				<div class="cta-section">
-					<Button variant="primary" href="/">
-						Retour à l'accueil
-					</Button>
+					<Button variant="primary" href="/">Retour à l'accueil</Button>
 					<Button variant="secondary" href="mailto:contact@breizhcamp.org">
 						Nous contacter
 					</Button>
@@ -705,8 +710,8 @@
 			text-decoration: underline !important;
 		}
 
-		a[href^="http"]:after {
-			content: " (" attr(href) ")";
+		a[href^='http']:after {
+			content: ' (' attr(href) ')';
 			font-size: 0.8em;
 		}
 	}

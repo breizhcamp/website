@@ -30,6 +30,7 @@
 ```
 
 **Résultat immédiat :**
+
 - ✅ Liens cliquables dans le menu principal
 - ✅ Programme visible dans le footer
 - ✅ Plus de badges "Bientôt disponible"
@@ -45,6 +46,7 @@ tickets: {
 ```
 
 **Résultat :**
+
 - ✅ Bouton "Billets" cliquable dans le header
 - ✅ Lien vers `/billets` au lieu du badge
 
@@ -59,32 +61,49 @@ cfp: {
 ```
 
 **Résultat :**
+
 - ❌ CFP disparaît du menu
 - ❌ Plus de lien externe vers Sessionize
 
 ## 🚀 Déploiement par étapes
 
 ### Phase 1 : Site de base
+
 ```typescript
 // Tout désactivé sauf les pages essentielles
-programme: { available: false }
-speakers: { available: false }
-cfp: { isOpen: false }
-tickets: { available: false }
+programme: {
+	available: false;
+}
+speakers: {
+	available: false;
+}
+cfp: {
+	isOpen: false;
+}
+tickets: {
+	available: false;
+}
 ```
 
 ### Phase 2 : Ouverture CFP
+
 ```typescript
 cfp: { isOpen: true, badge: 'Ouvert' }
 ```
 
 ### Phase 3 : Programme disponible
+
 ```typescript
-programme: { available: true }
-speakers: { available: true }
+programme: {
+	available: true;
+}
+speakers: {
+	available: true;
+}
 ```
 
 ### Phase 4 : Billets en vente
+
 ```typescript
 tickets: { available: true, badge: 'Disponibles' }
 cfp: { isOpen: false, badge: 'Fermé' }

@@ -43,7 +43,9 @@
 		<div class="programme-header">
 			<h2 id="programme-title">Programme 2026</h2>
 			<div class="programme-badge">
-				<span class="badge-unavailable" aria-label="Programme bientôt disponible">Bientôt disponible</span>
+				<span class="badge-unavailable" aria-label="Programme bientôt disponible"
+					>Bientôt disponible</span
+				>
 			</div>
 		</div>
 		<p class="section-subtitle">
@@ -123,7 +125,11 @@
 
 		<div class="partners-category">
 			<h3>Partenaires Platine</h3>
-			<div class="partners-grid platine" role="list" aria-label="Liste des partenaires Platine">
+			<div
+				class="partners-grid platine"
+				role="list"
+				aria-label="Liste des partenaires Platine"
+			>
 				<div class="partner-logo" role="listitem">
 					<div class="placeholder-logo" aria-label="Emplacement partenaire 1">Logo 1</div>
 				</div>

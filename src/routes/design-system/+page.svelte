@@ -26,7 +26,10 @@
 		{
 			name: 'Layout',
 			classes: [
-				{ name: '.container', desc: 'Conteneur centré max-width 1200px avec padding responsive' },
+				{
+					name: '.container',
+					desc: 'Conteneur centré max-width 1200px avec padding responsive'
+				},
 				{ name: '.section', desc: 'Section avec padding vertical 4rem (6rem sur desktop)' }
 			]
 		},
@@ -83,7 +86,10 @@
 				{ name: '.badge-primary', desc: 'Badge violet' },
 				{ name: '.badge-success', desc: 'Badge vert' },
 				{ name: '.card', desc: 'Carte avec border et shadow' },
-				{ name: '.avatar', desc: 'Avatar rond 80x80px (aussi: avatar-sm, avatar-md, avatar-lg)' },
+				{
+					name: '.avatar',
+					desc: 'Avatar rond 80x80px (aussi: avatar-sm, avatar-md, avatar-lg)'
+				},
 				{ name: '.input-field', desc: 'Champ de formulaire stylisé' },
 				{ name: '.link', desc: 'Lien avec style violet et underline' },
 				{ name: '.placeholder', desc: 'Placeholder gris pour contenu manquant' }
@@ -94,7 +100,10 @@
 
 <svelte:head>
 	<title>Design System - BreizhCamp 2026</title>
-	<meta name="description" content="Système de design et classes utilitaires du site BreizhCamp" />
+	<meta
+		name="description"
+		content="Système de design et classes utilitaires du site BreizhCamp"
+	/>
 </svelte:head>
 
 <!-- Hero -->
@@ -114,7 +123,6 @@
 </section>
 
 <div class="container page-content">
-
 	<!-- Couleurs -->
 	<section class="content-section">
 		<h2 class="section-title">Palette de couleurs</h2>
@@ -139,7 +147,13 @@
 					<div class="neutral-info">
 						<span class="font-semibold">{color.shade}</span>
 						<span class="text-xs">{color.hex}</span>
-						<span class="text-xs badge-contrast {color.contrast === 'AAA' ? 'badge-success' : color.contrast === 'AA' ? 'badge-warning' : 'badge-fail'}">{color.contrast}</span>
+						<span
+							class="text-xs badge-contrast {color.contrast === 'AAA'
+								? 'badge-success'
+								: color.contrast === 'AA'
+									? 'badge-warning'
+									: 'badge-fail'}">{color.contrast}</span
+						>
 					</div>
 				</div>
 			{/each}
@@ -196,7 +210,9 @@
 
 			<div class="card">
 				<h3>Carte avec classe .card</h3>
-				<p class="text-sm text-neutral-700">Utilisation directe de la classe utilitaire .card</p>
+				<p class="text-sm text-neutral-700">
+					Utilisation directe de la classe utilitaire .card
+				</p>
 			</div>
 		</div>
 	</section>
@@ -229,32 +245,38 @@
 
 		<h3 class="subsection-title">Layout avec classes utilitaires</h3>
 		<div class="example-box">
-			<pre><code>&lt;div class="container"&gt;
+			<pre><code
+					>&lt;div class="container"&gt;
   &lt;div class="flex justify-between items-center gap-4"&gt;
     &lt;h2 class="text-2xl font-semibold text-violet"&gt;Titre&lt;/h2&gt;
     &lt;span class="badge badge-success"&gt;Nouveau&lt;/span&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;</code
+				></pre>
 		</div>
 
 		<h3 class="subsection-title mt-8">Grid responsive</h3>
 		<div class="example-box">
-			<pre><code>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-6"&gt;
+			<pre><code
+					>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-6"&gt;
   &lt;div class="card"&gt;Carte 1&lt;/div&gt;
   &lt;div class="card"&gt;Carte 2&lt;/div&gt;
   &lt;div class="card"&gt;Carte 3&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;</code
+				></pre>
 		</div>
 
 		<h3 class="subsection-title mt-8">Formulaire</h3>
 		<div class="example-box">
-			<pre><code>&lt;form class="max-w-md"&gt;
+			<pre><code
+					>&lt;form class="max-w-md"&gt;
   &lt;div class="form-group"&gt;
     &lt;label class="form-label"&gt;Email&lt;/label&gt;
     &lt;input type="email" class="input-field" /&gt;
   &lt;/div&gt;
   &lt;Button variant="primary" fullWidth&gt;Envoyer&lt;/Button&gt;
-&lt;/form&gt;</code></pre>
+&lt;/form&gt;</code
+				></pre>
 		</div>
 	</section>
 

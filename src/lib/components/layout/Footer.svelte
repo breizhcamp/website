@@ -66,9 +66,7 @@
 				{/each}
 			</div>
 
-			<p class="copyright">
-				Copyright © 2015-2026, BreizhCamp team
-			</p>
+			<p class="copyright">Copyright © 2015-2026, BreizhCamp team</p>
 		</div>
 
 		<nav class="footer-nav" aria-label="Footer">
@@ -105,7 +103,8 @@
 							{:else}
 								<li>
 									<span class="footer-link-disabled">
-										{page.label} <span class="footer-badge-unavailable">Bientôt</span>
+										{page.label}
+										<span class="footer-badge-unavailable">Bientôt</span>
 									</span>
 								</li>
 							{/if}
@@ -198,7 +197,11 @@
 						</p>
 
 						<div class="eco-badge-container">
-							<a href="/ecoindex" class="eco-badge-link" aria-label="En savoir plus sur notre démarche éco-responsable">
+							<a
+								href="/ecoindex"
+								class="eco-badge-link"
+								aria-label="En savoir plus sur notre démarche éco-responsable"
+							>
 								<span class="eco-badge eco-badge-pending">EcoIndex : en cours</span>
 							</a>
 						</div>

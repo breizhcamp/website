@@ -138,7 +138,7 @@ tickets: {
   // ...
 },
 {
-  id: 'speakers', 
+  id: 'speakers',
   available: true, // ← Changer à true pour activer
   // ...
 }

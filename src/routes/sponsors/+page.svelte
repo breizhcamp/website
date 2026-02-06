@@ -52,7 +52,11 @@
 				<p class="section-description">{level.description}</p>
 			</div>
 
-			<div class="sponsors-grid {level.gridCols}" role="list" aria-label="Liste des sponsors {level.name}">
+			<div
+				class="sponsors-grid {level.gridCols}"
+				role="list"
+				aria-label="Liste des sponsors {level.name}"
+			>
 				{#each level.sponsors as sponsor}
 					<div role="listitem">
 						<SponsorCard {sponsor} size={level.logoSize} />
@@ -69,7 +73,8 @@
 		<div class="cta-content">
 			<h2 id="cta-title">Une question ?</h2>
 			<p>
-				Notre équipe est à votre disposition pour répondre à toutes vos questions sur le sponsoring.
+				Notre équipe est à votre disposition pour répondre à toutes vos questions sur le
+				sponsoring.
 			</p>
 			<Button variant="primary" href="mailto:sponsoring@breizhcamp.org">
 				Contactez-nous
@@ -227,8 +232,6 @@
 		margin-right: auto;
 	}
 
-
-
 	/* Responsive */
 	@media (min-width: 768px) {
 		.container {
@@ -242,8 +245,6 @@
 		.sponsors-grid {
 			gap: 2.5rem;
 		}
-
-
 	}
 
 	@media (min-width: 1024px) {

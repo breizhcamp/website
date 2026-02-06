@@ -101,10 +101,12 @@ const popularPages = getSuggestionPages();
 ## 🎨 Rendu automatique
 
 ### Pages disponibles
+
 - Lien cliquable normal
 - Couleurs et styles standards
 
 ### Pages non disponibles
+
 - Élément non cliquable
 - Badge "Bientôt" ou "Bientôt disponible"
 - Opacité réduite
@@ -115,42 +117,43 @@ const popularPages = getSuggestionPages();
 ```typescript
 // Activer le programme et les intervenants
 export const siteConfig: SiteConfig = {
-  pages: [
-    // ... autres pages
-    {
-      id: 'programme',
-      label: 'Programme',
-      href: '/programme',
-      description: 'Découvrir les sessions et conférences',
-      available: true, // ✅ Activé
-      showInMainNav: true,
-      showInFooter: true,
-      order: 2
-    },
-    {
-      id: 'speakers',
-      label: 'Intervenants',
-      href: '/intervenants',
-      description: 'Rencontrer nos speakers',
-      available: true, // ✅ Activé
-      showInMainNav: true,
-      showInFooter: false,
-      order: 3
-    }
-  ],
-  cfp: {
-    isOpen: false, // ❌ CFP fermé
-    url: 'https://sessionize.com/breizhcamp-2026/',
-    badge: 'Fermé'
-  },
-  tickets: {
-    available: true, // ✅ Billets ouverts
-    badge: 'Disponibles'
-  }
+	pages: [
+		// ... autres pages
+		{
+			id: 'programme',
+			label: 'Programme',
+			href: '/programme',
+			description: 'Découvrir les sessions et conférences',
+			available: true, // ✅ Activé
+			showInMainNav: true,
+			showInFooter: true,
+			order: 2
+		},
+		{
+			id: 'speakers',
+			label: 'Intervenants',
+			href: '/intervenants',
+			description: 'Rencontrer nos speakers',
+			available: true, // ✅ Activé
+			showInMainNav: true,
+			showInFooter: false,
+			order: 3
+		}
+	],
+	cfp: {
+		isOpen: false, // ❌ CFP fermé
+		url: 'https://sessionize.com/breizhcamp-2026/',
+		badge: 'Fermé'
+	},
+	tickets: {
+		available: true, // ✅ Billets ouverts
+		badge: 'Disponibles'
+	}
 };
 ```
 
 Cette configuration rendra automatiquement :
+
 - Programme et Intervenants cliquables dans tous les menus
 - CFP absent du menu
 - Bouton "Billets" cliquable dans le header

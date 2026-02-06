@@ -22,15 +22,15 @@
 		external = false,
 		children,
 		'icon-left': iconLeft
-	}: Props & { 
+	}: Props & {
 		children?: import('svelte').Snippet;
 		'icon-left'?: import('svelte').Snippet;
 	} = $props();
 </script>
 
 {#if href}
-	<a 
-		{href} 
+	<a
+		{href}
 		class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`}
 		target={external ? '_blank' : undefined}
 		rel={external ? 'noopener noreferrer' : undefined}

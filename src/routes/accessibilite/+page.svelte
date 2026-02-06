@@ -16,8 +16,8 @@
 	<div class="container">
 		<h1>Déclaration d'accessibilité</h1>
 		<p class="hero-description">
-			BreizhCamp s'engage à rendre son site web accessible, conformément au Référentiel Général
-			d'Amélioration de l'Accessibilité (RGAA).
+			BreizhCamp s'engage à rendre son site web accessible, conformément au Référentiel
+			Général d'Amélioration de l'Accessibilité (RGAA).
 		</p>
 	</div>
 </section>
@@ -30,8 +30,9 @@
 			<Card>
 				<h2>État de conformité</h2>
 				<p>
-					Le site <strong>breizhcamp.org</strong> est <strong>en cours d'évaluation</strong> au
-					regard du RGAA 4.1. Un audit d'accessibilité est prévu et sera réalisé prochainement.
+					Le site <strong>breizhcamp.org</strong> est
+					<strong>en cours d'évaluation</strong> au regard du RGAA 4.1. Un audit d'accessibilité
+					est prévu et sera réalisé prochainement.
 				</p>
 				<p>
 					Cette déclaration d'accessibilité s'applique au site web
@@ -60,8 +61,8 @@
 			<Card>
 				<h2>Agents utilisateurs et technologies d'assistance</h2>
 				<p>
-					Les tests d'accessibilité ont été effectués avec les combinaisons d'agents utilisateurs
-					et de technologies d'assistance suivantes :
+					Les tests d'accessibilité ont été effectués avec les combinaisons d'agents
+					utilisateurs et de technologies d'assistance suivantes :
 				</p>
 				<ul>
 					<li>Firefox avec NVDA sur Windows</li>
@@ -94,7 +95,8 @@
 			<Card>
 				<h2>Pages ayant fait l'objet de la vérification</h2>
 				<p>
-					L'audit d'accessibilité portera sur un échantillon de pages représentatives du site :
+					L'audit d'accessibilité portera sur un échantillon de pages représentatives du
+					site :
 				</p>
 				<ul>
 					<li>Page d'accueil</li>
@@ -114,15 +116,15 @@
 			<Card>
 				<h2>Contenus non accessibles</h2>
 				<p>
-					À ce jour, aucun contenu spécifiquement non accessible n'a été identifié. Cette section
-					sera mise à jour suite à l'audit d'accessibilité.
+					À ce jour, aucun contenu spécifiquement non accessible n'a été identifié. Cette
+					section sera mise à jour suite à l'audit d'accessibilité.
 				</p>
-				<p>
-					Les éventuels contenus non accessibles le sont pour les raisons suivantes :
-				</p>
+				<p>Les éventuels contenus non accessibles le sont pour les raisons suivantes :</p>
 				<ul>
 					<li><strong>Non-conformité :</strong> à déterminer lors de l'audit</li>
-					<li><strong>Dérogations :</strong> aucune dérogation n'est actuellement invoquée</li>
+					<li>
+						<strong>Dérogations :</strong> aucune dérogation n'est actuellement invoquée
+					</li>
 					<li>
 						<strong>Contenus tiers :</strong> certains contenus provenant de services tiers
 						(réseaux sociaux, vidéos) peuvent ne pas être entièrement accessibles
@@ -147,9 +149,9 @@
 			<Card>
 				<h2>Amélioration et contact</h2>
 				<p>
-					Si vous n'arrivez pas à accéder à un contenu ou à un service, vous pouvez contacter le
-					responsable du site BreizhCamp pour être orienté vers une alternative accessible ou
-					obtenir le contenu sous une autre forme.
+					Si vous n'arrivez pas à accéder à un contenu ou à un service, vous pouvez
+					contacter le responsable du site BreizhCamp pour être orienté vers une
+					alternative accessible ou obtenir le contenu sous une autre forme.
 				</p>
 
 				<div class="contact-info">
@@ -174,8 +176,8 @@
 				</div>
 
 				<p>
-					Nous nous efforçons de répondre dans les <strong>2 jours ouvrés</strong> suivant votre
-					demande.
+					Nous nous efforçons de répondre dans les <strong>2 jours ouvrés</strong> suivant
+					votre demande.
 				</p>
 			</Card>
 		</section>
@@ -185,9 +187,10 @@
 			<Card>
 				<h2>Voies de recours</h2>
 				<p>
-					Si vous constatez un défaut d'accessibilité vous empêchant d'accéder à un contenu ou une
-					fonctionnalité du site, que vous nous le signalez et que vous ne parvenez pas à obtenir
-					une réponse de notre part, vous êtes en droit de faire appel au Défenseur des droits.
+					Si vous constatez un défaut d'accessibilité vous empêchant d'accéder à un
+					contenu ou une fonctionnalité du site, que vous nous le signalez et que vous ne
+					parvenez pas à obtenir une réponse de notre part, vous êtes en droit de faire
+					appel au Défenseur des droits.
 				</p>
 
 				<div class="recourse-options">
@@ -214,7 +217,8 @@
 							</a>
 						</li>
 						<li>
-							Envoyer un courrier par la poste (gratuit, ne pas mettre de timbre) :<br />
+							Envoyer un courrier par la poste (gratuit, ne pas mettre de timbre) :<br
+							/>
 							<address>
 								Défenseur des droits<br />
 								Libre réponse 71120<br />
@@ -240,13 +244,13 @@
 			<Card>
 				<h2>Notre engagement</h2>
 				<p>
-					L'équipe BreizhCamp s'engage à améliorer continuellement l'accessibilité de son site web
-					et à prendre en compte les retours des utilisateurs pour offrir une expérience
-					inclusive à tous.
+					L'équipe BreizhCamp s'engage à améliorer continuellement l'accessibilité de son
+					site web et à prendre en compte les retours des utilisateurs pour offrir une
+					expérience inclusive à tous.
 				</p>
 				<p>
-					Un audit d'accessibilité complet sera réalisé prochainement par un expert certifié, et
-					cette déclaration sera mise à jour en conséquence.
+					Un audit d'accessibilité complet sera réalisé prochainement par un expert
+					certifié, et cette déclaration sera mise à jour en conséquence.
 				</p>
 
 				<div class="cta-section">
@@ -484,8 +488,8 @@
 			text-decoration: underline !important;
 		}
 
-		a[href^="http"]:after {
-			content: " (" attr(href) ")";
+		a[href^='http']:after {
+			content: ' (' attr(href) ')';
 			font-size: 0.8em;
 		}
 	}
