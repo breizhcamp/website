@@ -1,7 +1,7 @@
 <script>
 	import Button from '../../lib/components/ui/Button.svelte';
 	import SponsorCard from './SponsorCard.svelte';
-	import { sponsorLevels } from './constants.ts';
+	import { sponsorLevels } from './constants';
 </script>
 
 <svelte:head>
@@ -57,7 +57,7 @@
 				role="list"
 				aria-label="Liste des sponsors {level.name}"
 			>
-				{#each level.sponsors as sponsor (sponsor.name)}
+				{#each level.sponsors as sponsor, index (index)}
 					<div role="listitem">
 						<SponsorCard {sponsor} size={level.logoSize} />
 					</div>

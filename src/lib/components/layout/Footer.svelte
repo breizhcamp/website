@@ -139,11 +139,11 @@
 						class:expanded={expandedSections.informations}
 					>
 						<li>
-							<a class="footer-link" href="/infos-pratiques#code-de-conduite"
+							<a class="footer-link" href="/infos-pratiques/code-de-conduite"
 								>Code de conduite</a
 							>
 						</li>
-						<li><a class="footer-link" href="/infos-pratiques#faq">FAQ</a></li>
+						<li><a class="footer-link" href="/infos-pratiques/faq">FAQ</a></li>
 						<li>
 							<a class="footer-link" href="mailto:contact@breizhcamp.org">Contact</a>
 						</li>

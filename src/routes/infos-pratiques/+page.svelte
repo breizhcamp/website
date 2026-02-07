@@ -1,12 +1,13 @@
 <script>
 	import Card from '../../lib/components/ui/Card.svelte';
-	import InfoSection from './InfoSection.svelte';
-	import { categories, infoSections } from './constants';
+	import { categories } from './constants';
+
+	const { data } = $props();
 
 	// Grouper les sections par catégorie
 	const sectionsByCategory = categories.map((category) => ({
 		...category,
-		sections: infoSections.filter((section) => section.category === category.id)
+		sections: data.practicalInfoArticles.filter((article) => article.category === category.id)
 	}));
 </script>
 
@@ -40,14 +41,14 @@
 
 				<nav aria-label="Navigation {category.title}">
 					<ul class="nav-grid">
-						{#each category.sections as section (section.id)}
+						{#each category.sections as section (section.slug)}
 							<li>
-								<a href="#{section.id}" class="nav-card">
+								<a href={section.slug} class="nav-card">
 									<div class="nav-icon" aria-hidden="true">
-										{@html section.icon}
+										<img src={section.icon} alt="" width="48" height="48" />
 									</div>
 									<h3>{section.title}</h3>
-									<p>{section.shortDescription}</p>
+									<p>{section.excerpt}</p>
 								</a>
 							</li>
 						{/each}
@@ -57,11 +58,6 @@
 		{/each}
 	</div>
 </section>
-
-<!-- Sections d'informations -->
-{#each infoSections as section (section.id)}
-	<InfoSection {section} />
-{/each}
 
 <!-- Éditions précédentes -->
 <section class="editions-section" id="editions-precedentes">
@@ -186,10 +182,7 @@
 	}
 
 	.nav-icon {
-		width: 48px;
-		height: 48px;
 		margin-bottom: 1rem;
-		color: var(--violet);
 	}
 
 	.nav-card h3 {
@@ -257,12 +250,6 @@
 	.edition-link:focus-visible {
 		outline: 2px solid var(--violet);
 		outline-offset: 2px;
-	}
-
-	.editions-links::after {
-		content: '·';
-		color: var(--neutral-400);
-		margin: 0 0.25rem;
 	}
 
 	.editions-links .edition-link:not(:last-child)::after {

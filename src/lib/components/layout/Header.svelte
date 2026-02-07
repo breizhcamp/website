@@ -199,6 +199,7 @@
 		gap: 0.25rem;
 		flex-wrap: nowrap;
 		justify-content: flex-start;
+		align-items: center;
 		min-width: 0;
 		overflow-x: auto;
 		overflow-y: hidden;

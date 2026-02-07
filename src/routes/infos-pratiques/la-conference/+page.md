@@ -1,10 +1,10 @@
 ---
-id: 'la-conference'
 title: 'La conférence'
-shortDescription: 'Découvrez le BreizhCamp, ses valeurs et son organisation'
-icon: icons.conference
+excerpt: 'Découvrez le BreizhCamp, ses valeurs et son organisation'
+icon: /icons/conference.svg
 category: 'event'
 layout: practical-info
+order: 1
 ---
 
 # Qu'est-ce que le BreizhCamp ?
