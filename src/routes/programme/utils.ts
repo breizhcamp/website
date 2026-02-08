@@ -107,7 +107,7 @@ export function groupSessionsBySlotsAndRooms(
 export type DaySessionsBySlot = ReturnType<typeof groupSessionsBySlotsAndRooms>[number];
 
 export function formatDate(date: Date) {
-	return `${((24 + date.getHours() - 2) % 24).toFixed().padStart(2, '0')}h${date.getMinutes().toFixed().padStart(2, '0')}`;
+	return `${((24 + date.getHours() - 2) % 24).toFixed()}h${date.getMinutes().toFixed().padStart(2, '0')}`;
 }
 
 export function formatDay(day: Date) {

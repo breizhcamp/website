@@ -11,9 +11,8 @@
 </script>
 
 <div class="size-{size}" class:reduced-text-size={reducedTextSize}>
-	<span class="avatar">
+	<span class="speaker">
 		{#if typeof speaker === 'string'}
-			<!-- FIXME this is ridiculous -->
 			<img src="/user.svg" alt="" width="30" />
 			<p>{speaker}</p>
 		{:else}
@@ -31,24 +30,24 @@
 </div>
 
 <style>
-	.avatar {
+	.speaker {
 		display: flex;
 		align-items: center;
 		gap: 8px;
 	}
 
-	.avatar img {
+	.speaker img {
 		border-radius: 20px;
 		flex-shrink: 0;
 		width: 30px;
 		aspect-ratio: 1;
 	}
 
-	.avatar img.picture {
+	.speaker img.picture {
 		border: 3px solid hsl(var(--accent-color));
 	}
 
-	.avatar p {
+	.speaker p {
 		margin: 0;
 		font-size: 14px;
 		line-height: 1.05;
@@ -61,7 +60,7 @@
 		-webkit-box-orient: vertical;
 	}
 
-	.reduced-text-size .avatar p {
+	.reduced-text-size .speaker p {
 		font-size: 12px;
 	}
 
@@ -69,7 +68,7 @@
 		width: 20px;
 	}
 
-	.size-sm .avatar img.picture {
+	.size-sm .speaker img.picture {
 		border: 1px solid hsl(var(--accent-color));
 	}
 
@@ -81,7 +80,7 @@
 		font-size: 10px;
 	}
 
-	.size-lg .avatar {
+	.size-lg .speaker {
 		gap: 12px;
 	}
 
@@ -93,7 +92,7 @@
 		width: 36px;
 	}
 
-	.size-lg .avatar p {
+	.size-lg .speaker p {
 		font-size: 16px;
 	}
 

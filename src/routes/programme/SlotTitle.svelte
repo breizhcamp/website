@@ -7,8 +7,8 @@
 	const { startAt, endAt, label }: Props = $props();
 </script>
 
-<div>
-	{formatDate(startAt)} — {formatDate(endAt)}
+<div class="date">
+	{formatDate(startAt)} - {formatDate(endAt)}
 </div>
 <div class="label">
 	{label}
@@ -17,6 +17,10 @@
 <style>
 	div {
 		text-align: center;
+	}
+
+	.date {
+		font-size: 16px;
 	}
 
 	.label {

@@ -24,27 +24,47 @@
 	);
 </script>
 
-<h1>Programme</h1>
+<div class="max-width">
+	<h1>Programme</h1>
 
-<DayNavigation days={data.eventDays} {currentDayOfWeek} />
+	<DayNavigation days={data.eventDays} {currentDayOfWeek} />
+</div>
+
 <Filters eventTypes={data.eventTypes} bind:filter />
 
-<div class="mobile-only">
-	<MobileSchedule sessions={filteredSessions} eventTypes={data.eventTypes} {currentDayOfWeek} />
-</div>
-<div class="laptop-only">
-	<LaptopSchedule
-		sessions={filteredSessions}
-		rooms={data.eventRooms}
-		eventTypes={data.eventTypes}
-		{currentDayOfWeek}
-	/>
+<div class="max-width schedule-wrapper">
+	<div class="mobile-only">
+		<MobileSchedule
+			sessions={filteredSessions}
+			eventTypes={data.eventTypes}
+			{currentDayOfWeek}
+		/>
+	</div>
+	<div class="laptop-only">
+		<LaptopSchedule
+			sessions={filteredSessions}
+			rooms={data.eventRooms}
+			eventTypes={data.eventTypes}
+			{currentDayOfWeek}
+		/>
+	</div>
 </div>
 
 <style>
+	.max-width {
+		width: 100%;
+		max-width: 1440px;
+		margin: auto;
+		padding: 0 16px;
+	}
+
+	.schedule-wrapper {
+		margin-bottom: 120px;
+	}
+
 	h1 {
 		font-size: 36px;
-		text-transform: uppercase;
+		margin-top: 36px;
 	}
 
 	.laptop-only {

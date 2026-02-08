@@ -11,45 +11,52 @@
 </script>
 
 <div class="filters">
-	<div class="search">
-		<label>
-			Recherche
-			<input bind:value={filter.search} class="input-field" />
-		</label>
-	</div>
-	<div>
-		<legend>
-			<span>Thèmes</span>
-			<div class="themes">
-				{#each eventTypes.filter((eventType) => !['Autre...', 'Eat', 'Keynote'].includes(eventType)) as eventType, index (eventType)}
-					<label class="theme-{index}">
-						<input type="checkbox" value={eventType} bind:group={filter.eventTypes} />
-						{eventType}
-					</label>
-				{/each}
+	<div class="max-width">
+		<div class="search">
+			<label>
+				Recherche
+				<input bind:value={filter.search} class="input-field" />
+			</label>
+		</div>
+		<div class="themes-wrapper">
+			<legend>
+				<span>Thèmes</span>
+				<div class="themes">
+					{#each eventTypes.filter((eventType) => !['Autre...', 'Eat', 'Keynote'].includes(eventType)) as eventType, index (eventType)}
+						<label class="theme-{index}">
+							<input
+								type="checkbox"
+								value={eventType}
+								bind:group={filter.eventTypes}
+							/>
+							{eventType}
+						</label>
+					{/each}
+				</div>
+			</legend>
+			<div class="button-wrapper">
+				<button onclick={() => (filter.eventTypes = [])}>
+					<img src="/trash.svg" alt="" width="16" />
+					Désélectionner tous les filtres
+				</button>
 			</div>
-		</legend>
-		<div class="align-right">
-			<button onclick={() => (filter.eventTypes = [])}>
-				<img src="/trash.svg" alt="" width="16" />
-				Désélectionner tous les filtres
-			</button>
 		</div>
 	</div>
 </div>
 
 <style>
-	.days input {
-		display: none;
-	}
-
 	.filters {
-		margin: 32px -24px;
 		background-color: var(--neutral-100);
 		padding: 24px;
 		display: flex;
 		flex-direction: column;
 		gap: 32px;
+	}
+
+	.max-width {
+		width: 100%;
+		max-width: 1440px;
+		margin: auto;
 	}
 
 	.search input {
@@ -73,7 +80,7 @@
 		cursor: pointer;
 	}
 
-	.align-right {
+	.button-wrapper {
 		display: flex;
 		justify-content: flex-end;
 	}
@@ -99,6 +106,17 @@
 		}
 		.search input {
 			width: 320px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.themes-wrapper {
+			display: flex;
+		}
+
+		button {
+			height: 42px;
+			margin-top: 24px;
 		}
 	}
 </style>

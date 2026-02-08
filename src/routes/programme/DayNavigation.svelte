@@ -35,6 +35,13 @@
 		font-weight: 500;
 		cursor: pointer;
 		text-align: center;
+		text-decoration: none;
+		color: black;
+		border-radius: 0px;
+	}
+
+	nav a:hover {
+		color: var(--violet);
 	}
 
 	nav a[aria-current] {

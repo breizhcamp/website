@@ -29,7 +29,9 @@
 	style:opacity={filter === 'visible' ? 1 : 0.15}
 >
 	<!-- FIXME use correct title level -->
-	<a href="/programme/session/{id}"><h2>{name}</h2></a>
+	<a href="/programme/session/{id}">
+		<h2>{name}</h2>
+	</a>
 	{#if speakers}
 		<div class="speakers" class:too-crowded={speakers.length >= 3}>
 			{#each speakers as speaker, index (index)}
@@ -102,6 +104,11 @@
 
 	h2:hover {
 		color: var(--orange);
+	}
+
+	a {
+		text-decoration: none !important;
+		padding: 0px !important;
 	}
 
 	.speakers {

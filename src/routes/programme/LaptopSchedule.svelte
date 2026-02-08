@@ -101,13 +101,11 @@
 	}
 
 	td:first-child {
-		width: 144px;
-		min-width: 144px;
-		max-width: 144px;
-		padding: 16px 8px;
+		width: 10%;
+		padding: 16px 4px;
 	}
 
 	td + td {
-		width: 18.5%;
+		width: 18%;
 	}
 </style>
