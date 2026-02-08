@@ -3,7 +3,9 @@ title: 'We are Back!'
 date: '2022-03-18'
 category: 'Annonce'
 excerpt: "Deux ans, quasiment jour pour jour, après avoir du annoncer à contre-cœur l'annulation de l'édition 2020, nous avons le plaisir de vous annoncer le retour du BreizhCamp."
-slug: '2022-03-18-we-are-back'
+banner: '/blog/2022/back.gif'
+layout: blog-post
+author: 'L’équipe du BreizhCamp'
 ---
 
 Ami·e·s du BreizhCamp,
@@ -28,5 +30,3 @@ Après cette pause forcée, nous sommes impatients de retrouver :
 ## Préparez-vous !
 
 Les inscriptions et le CFP ouvriront bientôt. Restez connectés sur nos réseaux sociaux pour ne rien manquer de cette édition du retour !
-
-– L'équipe BreizhCamp

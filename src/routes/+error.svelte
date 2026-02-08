@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import Button from '../lib/components/ui/Button.svelte';
 	import Card from '../lib/components/ui/Card.svelte';
 	import { getSuggestionPages } from '../lib/config/site';
 
 	// Messages d'erreur personnalisés selon le code
-	function getErrorMessage(status) {
+	function getErrorMessage(status: number) {
 		switch (status) {
 			case 404:
 				return {
@@ -160,7 +160,9 @@
 
 				<div class="error-actions">
 					<Button variant="primary" href="/">Retour à l'accueil</Button>
-					<Button variant="secondary" onclick="history.back()">Page précédente</Button>
+					<Button variant="secondary" onclick={() => history.back()}
+						>Page précédente</Button
+					>
 				</div>
 			</div>
 		</section>
@@ -311,10 +313,6 @@
 		padding: 1.5rem;
 		height: 100%;
 		border-radius: var(--border-radius);
-	}
-
-	.suggestion-link:hover {
-		/* Hover effect sans animation */
 	}
 
 	.suggestion-link:focus-visible {

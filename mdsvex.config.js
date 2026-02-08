@@ -8,7 +8,7 @@ export const extension = '.md';
 export const mdsvexConfig = {
 	extension,
 	layout: {
-		// 'blog-post': path.join(dirname, './src/routes/blog/blogPostLayout.svelte'),
+		'blog-post': path.join(dirname, './src/routes/blog/BlogPostLayout.svelte'),
 		'practical-info': path.join(
 			dirname,
 			'./src/routes/infos-pratiques/PracticalInfoLayout.svelte'

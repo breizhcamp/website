@@ -335,10 +335,6 @@
 		flex-shrink: 0;
 	}
 
-	.chevron.expanded {
-		/* Chevron sans rotation */
-	}
-
 	/* Liens et contenu */
 	.footer-links {
 		list-style: none;

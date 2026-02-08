@@ -10,6 +10,7 @@
 		variant?: Variant;
 		type?: 'button' | 'reset' | 'submit';
 		href?: string | null;
+		onclick?: (e: MouseEvent) => void;
 		fullWidth?: boolean;
 		external?: boolean;
 	};
@@ -18,6 +19,7 @@
 		variant = 'primary',
 		type = 'button',
 		href = null,
+		onclick,
 		fullWidth = false,
 		external = false,
 		children,
@@ -41,7 +43,7 @@
 		{@render children?.()}
 	</a>
 {:else}
-	<button {type} class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`}>
+	<button {type} {onclick} class={`btn btn-${variant} ${fullWidth ? 'w-full' : ''}`}>
 		{#if iconLeft}
 			{@render iconLeft()}
 		{/if}

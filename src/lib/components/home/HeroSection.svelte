@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
 	let currentSlide = $state(0);
+
 	const slides = [
 		{
 			src: '/home/conference-salle.jpeg',
@@ -23,7 +24,7 @@
 		currentSlide = (currentSlide - 1 + slides.length) % slides.length;
 	}
 
-	function goToSlide(index) {
+	function goToSlide(index: number) {
 		currentSlide = index;
 	}
 </script>

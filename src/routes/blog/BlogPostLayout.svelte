@@ -1,109 +1,68 @@
-<script lang="ts">
-	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
-	import Button from '../../../lib/components/ui/Button.svelte';
+<script>
+	import Seo from '$lib/components/seo/Seo.svelte';
+	import Button from '$lib/components/ui/Button.svelte';
+	import { formatDate } from '$lib/date.utils';
 
-	let article = $state(null);
-	let loading = $state(true);
-	let error = $state<string | null>(null);
-
-	onMount(async () => {
-		try {
-			const response = await fetch(`/api/blog/${$page.params.slug}`);
-			if (response.ok) {
-				article = await response.json();
-			} else {
-				error = 'Article non trouvé';
-			}
-		} catch (_e) {
-			error = "Erreur lors du chargement de l'article";
-		} finally {
-			loading = false;
-		}
-	});
-
-	function formatDate(dateString) {
-		const date = new Date(dateString);
-		return date.toLocaleDateString('fr-FR', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
-		});
-	}
+	const { title, category, excerpt, date, banner, author } = $$props;
 </script>
 
-<svelte:head>
-	<title
-		>{article?.title
-			? `${article.title} - Blog BreizhCamp`
-			: 'Article - Blog BreizhCamp'}</title
-	>
-	<meta name="description" content={article?.excerpt || 'Article du blog BreizhCamp'} />
-</svelte:head>
+<Seo
+	title="{title} | BreizhCamp"
+	description={excerpt}
+	{date}
+	image={banner}
+	{author}
+	type="article"
+/>
 
 <main class="article-page">
 	<div class="container">
-		{#if loading}
-			<div class="loading">
-				<p>Chargement de l'article...</p>
-			</div>
-		{:else if error}
-			<div class="error">
-				<h1>Article non trouvé</h1>
-				<p>{error}</p>
-				<Button variant="primary" href="/blog">Retour au blog</Button>
-			</div>
-		{:else if article}
-			<article class="article">
-				<!-- Navigation -->
-				<nav class="breadcrumb" aria-label="Fil d'Ariane">
-					<a href="/">Accueil</a>
-					<span aria-hidden="true">›</span>
-					<a href="/blog">Blog</a>
-					<span aria-hidden="true">›</span>
-					<span aria-current="page">{article.title}</span>
-				</nav>
+		<article class="article">
+			<!-- Navigation -->
+			<nav class="breadcrumb" aria-label="Fil d'Ariane">
+				<a href="/">Accueil</a>
+				<span aria-hidden="true">›</span>
+				<a href="/blog">Blog</a>
+				<span aria-hidden="true">›</span>
+				<span aria-current="page">{title}</span>
+			</nav>
 
-				<!-- En-tête de l'article -->
-				<header class="article-header">
-					<div class="article-meta">
-						<time datetime={article.date} class="article-date">
-							{formatDate(article.date)}
-						</time>
-						{#if article.category}
-							<span class="article-category">{article.category}</span>
-						{/if}
-					</div>
-					<h1 class="article-title">{article.title}</h1>
-					<p class="article-excerpt">{article.excerpt}</p>
-				</header>
-
-				<!-- Image principale -->
-				{#if article.image}
-					<div class="article-image">
-						<img src={article.image} alt={article.title} />
-					</div>
-				{/if}
-
-				<!-- Contenu de l'article -->
-				<div class="article-content">
-					{#if article.content}
-						{@html article.content}
-					{:else}
-						<p>Contenu de l'article à venir...</p>
-						<p>Cet article sera bientôt disponible avec tout son contenu détaillé.</p>
+			<!-- En-tête de l'article -->
+			<header class="article-header">
+				<div class="article-meta">
+					<time datetime={date} class="article-date">
+						{formatDate(date)}
+					</time>
+					{#if category}
+						<span class="article-category">{category}</span>
 					{/if}
 				</div>
+				<h1 class="article-title">{title}</h1>
+				<p class="article-excerpt">{excerpt}</p>
+			</header>
 
-				<!-- Actions -->
-				<footer class="article-footer">
-					<div class="article-actions">
-						<Button variant="secondary" href="/blog">← Retour au blog</Button>
-						<Button variant="primary" href="/">Accueil BreizhCamp</Button>
-					</div>
-				</footer>
-			</article>
-		{/if}
+			<!-- Image principale -->
+			{#if banner}
+				<div class="article-image">
+					<img src={banner} alt={title} />
+				</div>
+			{/if}
+
+			<!-- Contenu de l'article -->
+			<div class="article-content">
+				<slot />
+
+				<p>— {author}</p>
+			</div>
+
+			<!-- Actions -->
+			<footer class="article-footer">
+				<div class="article-actions">
+					<Button variant="secondary" href="/blog">← Retour au blog</Button>
+					<Button variant="primary" href="/">Accueil BreizhCamp</Button>
+				</div>
+			</footer>
+		</article>
 	</div>
 </main>
 
@@ -117,22 +76,6 @@
 	.article-page {
 		padding: 2rem 0 4rem;
 		min-height: 60vh;
-	}
-
-	.loading,
-	.error {
-		text-align: center;
-		padding: 4rem 2rem;
-	}
-
-	.error h1 {
-		color: var(--neutral-900);
-		margin-bottom: 1rem;
-	}
-
-	.error p {
-		color: var(--neutral-700);
-		margin-bottom: 2rem;
 	}
 
 	/* Breadcrumb */

@@ -3,7 +3,9 @@ title: "Lettre d'Information #2"
 date: '2020-02-24'
 category: 'Newsletter'
 excerpt: 'Publication du programme ! Nous venons de publier le programme de cette édition 2020. Avec près de 80 sessions, il y en aura pour tous les goûts !'
-slug: '2020-02-24-newsletter-2'
+banner: '/blog/2020/newsletter.jpg'
+layout: blog-post
+author: 'L’équipe du BreizhCamp'
 ---
 
 ## Publication du programme
@@ -45,5 +47,3 @@ Le programme couvre un large éventail de sujets :
 - **Préparation de l'accueil**
 
 Restez connectés pour les dernières informations !
-
-– L'équipe BreizhCamp

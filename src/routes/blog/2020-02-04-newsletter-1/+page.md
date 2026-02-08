@@ -3,7 +3,9 @@ title: "Lettre d'Information #1"
 date: '2020-02-04'
 category: 'Newsletter'
 excerpt: "10 ans ! Depuis la première édition à l'ISTIC avec son camion galette saucisse qui avait bien failli nous faire expulser du campus, aux effets pyrotechniques des dernières éditions."
-slug: '2020-02-04-newsletter-1'
+banner: '/blog/2020/newsletter.jpg'
+layout: blog-post
+author: 'L’équipe du BreizhCamp'
 ---
 
 ## 10 ans !
@@ -53,5 +55,3 @@ Depuis la première édition à l'ISTIC avec son camion galette saucisse qui ava
 - **La diversité des speakers**
 
 Merci à tous ceux qui font vivre cette aventure depuis 10 ans !
-
-– L'équipe BreizhCamp

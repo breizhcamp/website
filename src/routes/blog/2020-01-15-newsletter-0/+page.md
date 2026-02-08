@@ -3,7 +3,9 @@ title: "Lettre d'Information #0"
 date: '2020-01-15'
 category: 'Newsletter'
 excerpt: "Et voilà, c'est reparti pour une nouvelle année. Toute l'équipe du BreizhCamp se remet en marche pour vous proposer une nouvelle édition en 2020."
-slug: '2020-01-15-newsletter-0'
+banner: '/blog/2020/newsletter.jpg'
+layout: blog-post
+author: 'L’équipe du BreizhCamp'
 ---
 
 Et voilà, c'est reparti pour une nouvelle année. Toute l'équipe du BreizhCamp se remet en marche pour vous proposer une nouvelle édition en 2020.
@@ -43,5 +45,3 @@ Plusieurs formats de sessions seront disponibles :
 ## Restez connectés
 
 Suivez-nous sur nos réseaux sociaux pour ne rien manquer des annonces à venir !
-
-– L'équipe BreizhCamp

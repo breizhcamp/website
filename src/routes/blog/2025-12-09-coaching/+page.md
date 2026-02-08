@@ -3,7 +3,9 @@ title: "Vos future Breizh'entation"
 date: '2025-12-09'
 category: 'Coaching'
 excerpt: 'Salut à toi futur·e orateur·rice, nous commençons à avoir des demandes pour ouvrir un "tremplin" pour le BreizhCamp. Nous souhaitons vous proposer encore mieux : un coaching tout au long de l''année.'
-slug: '2025-12-09-coaching'
+banner: '/blog/2025/coaching.gif'
+layout: blog-post
+author: 'L’équipe coaching du BreizhCamp'
 ---
 
 Salut à toi futur·e orateur·rice,
@@ -35,6 +37,4 @@ Notre programme de coaching vous accompagne dans :
 - Ceux qui ont déjà une idée mais manquent de confiance
 - Les speakers expérimentés qui veulent perfectionner leur approche
 
-Rendez-vous sur la [page coaching](/infos-pratiques#coaching) pour en savoir plus.
-
-– L'équipe coaching du BreizhCamp
+Rendez-vous sur la [page coaching](/infos-pratiques/le-coaching) pour en savoir plus.

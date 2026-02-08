@@ -3,7 +3,9 @@ title: 'Modalités pratiques'
 date: '2018-03-23'
 category: 'Infos pratiques'
 excerpt: "Nous vous informons que nous venons de publier quelques informations pratiques sur le déroulé de la conférence. Vous y trouverez quelques recommandations sur l'accueil, l'accès WiFi..."
-slug: '2018-03-23-modalites-pratiques'
+banner: '/blog/2018/breizh-to-the-camp.png'
+layout: blog-post
+author: 'L’équipe du BreizhCamp'
 ---
 
 Nous vous informons que nous venons de publier quelques **informations pratiques** sur le déroulé de la conférence.
@@ -59,5 +61,3 @@ Pour toute question pratique :
 - **Sur place** : Stand d'information à l'accueil
 
 Bon BreizhCamp à tous !
-
-– L'équipe BreizhCamp

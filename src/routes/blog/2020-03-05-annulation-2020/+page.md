@@ -3,7 +3,9 @@ title: "Annulation de l'édition 2020"
 date: '2020-03-05'
 category: 'Annonce'
 excerpt: "Nous avons pris, à contrecœur, la décision d'annuler l'édition 2020 du Breizhcamp. Il y a, à ce jour, trop d'inconnues sur la faisabilité de l'événement liées à l'épidémie de coronavirus."
-slug: '2020-03-05-annulation-2020'
+banner: '/blog/2020/coronavirus-cancelled.jpg'
+layout: blog-post
+author: 'L’équipe du BreizhCamp'
 ---
 
 Ami·e·s du BreizhCamp,
@@ -35,5 +37,3 @@ Le principe de base est simple : **nous allons rembourser intégralement les par
 Cette décision, bien que difficile, nous permet de nous concentrer sur la préparation d'une édition 2021 exceptionnelle. Nous reviendrons plus forts !
 
 Merci pour votre compréhension et votre soutien.
-
-– L'équipe BreizhCamp
