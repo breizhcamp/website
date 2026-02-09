@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Blog - BreizhCamp 2026</title>
+	<title>Blog - BreizhCamp 2027</title>
 	<meta
 		name="description"
 		content="Actualités, annonces et articles du BreizhCamp. Restez informés des dernières nouvelles de la conférence tech de Bretagne."

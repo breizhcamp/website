@@ -4,10 +4,10 @@
 </script>
 
 <svelte:head>
-	<title>EcoIndex et démarche éco-responsable - BreizhCamp 2026</title>
+	<title>EcoIndex et démarche éco-responsable - BreizhCamp 2027</title>
 	<meta
 		name="description"
-		content="Découvrez la démarche éco-responsable du site BreizhCamp 2026 et notre score EcoIndex pour un web plus durable."
+		content="Découvrez la démarche éco-responsable du site BreizhCamp 2027 et notre score EcoIndex pour un web plus durable."
 	/>
 </svelte:head>
 

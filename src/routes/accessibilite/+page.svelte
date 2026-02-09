@@ -4,10 +4,10 @@
 </script>
 
 <svelte:head>
-	<title>Déclaration d'accessibilité - BreizhCamp 2026</title>
+	<title>Déclaration d'accessibilité - BreizhCamp 2027</title>
 	<meta
 		name="description"
-		content="Déclaration d'accessibilité du site BreizhCamp 2026 conforme au RGAA (Référentiel Général d'Amélioration de l'Accessibilité)."
+		content="Déclaration d'accessibilité du site BreizhCamp 2027 conforme au RGAA (Référentiel Général d'Amélioration de l'Accessibilité)."
 	/>
 </svelte:head>
 

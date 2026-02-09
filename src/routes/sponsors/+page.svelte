@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Sponsors & Partenaires - BreizhCamp 2026</title>
+	<title>Sponsors & Partenaires - BreizhCamp 2027</title>
 	<meta
 		name="description"
 		content="Le BreizhCamp est possible grâce au soutien de nos sponsors. Découvrez nos partenaires Platinum, Gold, Silver, Bronze et institutionnels."

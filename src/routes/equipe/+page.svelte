@@ -107,12 +107,12 @@
 </script>
 
 <svelte:head>
-	<title>Équipe - BreizhCamp 2026</title>
+	<title>Équipe - BreizhCamp 2027</title>
 	<meta
 		name="description"
 		content="Découvrez l'équipe de bénévoles qui organise le BreizhCamp et l'association qui porte l'événement."
 	/>
-	<meta property="og:title" content="Équipe - BreizhCamp 2026" />
+	<meta property="og:title" content="Équipe - BreizhCamp 2027" />
 	<meta
 		property="og:description"
 		content="Découvrez l'équipe de bénévoles qui organise le BreizhCamp et l'association qui porte l'événement."

@@ -9,7 +9,7 @@ order: 2
 
 # Lieu et accès
 
-Le BreizhCamp 2026 se déroule à l'université de Rennes, en Bretagne.
+Le BreizhCamp 2027 se déroule à l'université de Rennes, en Bretagne.
 
 ## Comment venir ?
 

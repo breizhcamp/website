@@ -12,10 +12,10 @@
 </script>
 
 <svelte:head>
-	<title>Infos pratiques - BreizhCamp 2026</title>
+	<title>Infos pratiques - BreizhCamp 2027</title>
 	<meta
 		name="description"
-		content="Toutes les informations pratiques pour participer au BreizhCamp 2026 : conférence, code de conduite, FAQ, équipe, association et plus encore."
+		content="Toutes les informations pratiques pour participer au BreizhCamp 2027 : conférence, code de conduite, FAQ, équipe, association et plus encore."
 	/>
 </svelte:head>
 
@@ -24,7 +24,7 @@
 	<div class="container">
 		<h1>Infos pratiques</h1>
 		<p class="hero-description">
-			Tout ce que vous devez savoir pour profiter pleinement du BreizhCamp 2026. Retrouvez ici
+			Tout ce que vous devez savoir pour profiter pleinement du BreizhCamp 2027. Retrouvez ici
 			toutes les informations pratiques, les règles de bonne conduite et les ressources
 			utiles.
 		</p>

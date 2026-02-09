@@ -3,7 +3,7 @@
 </script>
 
 <div class="logo-section">
-	<a href="/" class="logo-link" aria-label="BreizhCamp 2026 - Retour à l'accueil">
+	<a href="/" class="logo-link" aria-label="BreizhCamp 2027 - Retour à l'accueil">
 		<LogoImg />
 	</a>
 </div>

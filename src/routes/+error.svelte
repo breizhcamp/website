@@ -42,8 +42,8 @@
 </script>
 
 <svelte:head>
-	<title>Erreur {$page.status} - BreizhCamp 2026</title>
-	<meta name="description" content="Page d'erreur {$page.status} du site BreizhCamp 2026" />
+	<title>Erreur {$page.status} - BreizhCamp 2027</title>
+	<meta name="description" content="Page d'erreur {$page.status} du site BreizhCamp 2027" />
 </svelte:head>
 
 <main class="error-page">

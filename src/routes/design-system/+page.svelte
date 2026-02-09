@@ -99,7 +99,7 @@
 </script>
 
 <svelte:head>
-	<title>Design System - BreizhCamp 2026</title>
+	<title>Design System - BreizhCamp 2027</title>
 	<meta
 		name="description"
 		content="Système de design et classes utilitaires du site BreizhCamp"

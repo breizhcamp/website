@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>BreizhCamp 2026 - La conférence tech incontournable de Bretagne</title>
+	<title>BreizhCamp 2027 - La conférence tech incontournable de Bretagne</title>
 	<meta
 		name="description"
 		content="La conférence tech incontournable de Bretagne. 3 jours d'innovation, de partage et de networking du 24 au 26 juin 2026."

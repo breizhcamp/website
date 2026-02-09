@@ -9,7 +9,7 @@ order: 3
 
 # Questions générales
 
-## Quand a lieu le BreizhCamp 2026 ?
+## Quand a lieu le BreizhCamp 2027 ?
 
 Retrouvons nous sur le campus de Beaulieu du 24 au 25 juin 2026!
 
