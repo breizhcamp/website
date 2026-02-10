@@ -41,7 +41,7 @@
 				<div class="hero-meta">
 					<div class="date">
 						<span class="icon" aria-hidden="true">📅</span>
-						<span>25-27 juin 2026</span>
+						<span>24-26 juin 2026</span>
 					</div>
 					<div class="location">
 						<span class="icon" aria-hidden="true">📍</span>

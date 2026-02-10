@@ -3,6 +3,7 @@ node_modules
 
 # Tooling
 .jj
+.idea
 
 # Output
 .output

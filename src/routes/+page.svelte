@@ -13,7 +13,7 @@
 	<title>BreizhCamp 2026 - La conférence tech incontournable de Bretagne</title>
 	<meta
 		name="description"
-		content="La conférence tech incontournable de Bretagne. 3 jours d'innovation, de partage et de networking du 25-27 juin 2026."
+		content="La conférence tech incontournable de Bretagne. 3 jours d'innovation, de partage et de networking du 24 au 26 juin 2026."
 	/>
 </svelte:head>
 

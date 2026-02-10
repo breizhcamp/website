@@ -17,7 +17,6 @@ Vous allez présenter au BreizhCamp ? Voici nos conseils pour _réussir votre pr
 - **Connaissez votre audience** : Adaptez le niveau technique
 - **Structurez votre présentation** : Introduction, développement, conclusion
 - **Préparez des exemples concrets** : Illustrations, démos, cas d'usage
-- **Utilisez un fond clair** : Les vidéo-projecteurs capricieux rendent mal les fonds sombres
 - **Chronométrez votre présentation** : Respectez le format choisi
 
 ## Conseils de présentation
@@ -30,7 +29,7 @@ Vous allez présenter au BreizhCamp ? Voici nos conseils pour _réussir votre pr
 
 ## Aspects techniques
 
-- **Format des slides** : 16:9, police lisible (minimum 24pt)
+- **Format des slides** : 16:9, police lisible (minimum 24pt), fond clair (sinon illisible sur vidéoprojecteur)
 - **Matériel fourni** : Vidéoprojecteur, micro, pointeur laser
 - **Connexions** : HDMI, adaptateurs disponibles
 - **Sauvegarde** : Prévoyez plusieurs supports (USB, cloud)

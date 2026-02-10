@@ -21,22 +21,13 @@
 			l'événement ou proposer une salle pour les meetups tout au long de l'année.
 		</p>
 		<div class="hero-cta">
-			<Button
-				variant="primary"
-				href="https://bzh.camp/dossier-sponsoring"
-			>
+			<Button variant="primary" href="https://bzh.camp/dossier-sponsoring">
 				Dossier de sponsoring BreizhCamp
 			</Button>
-			<Button
-				variant="secondary"
-				href="https://bzh.camp/form-sponsoring"
-			>
+			<Button variant="secondary" href="https://bzh.camp/form-sponsoring">
 				Candidature sponsor BreizhCamp
 			</Button>
-			<Button
-				variant="secondary"
-				href="https://bzh.camp/form-meetup"
-			>
+			<Button variant="secondary" href="https://bzh.camp/form-meetup">
 				Proposer une salle meetup
 			</Button>
 		</div>

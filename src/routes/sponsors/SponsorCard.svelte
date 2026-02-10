@@ -4,7 +4,7 @@
 			name: string;
 			logo?: string | null;
 			url?: string | null;
-			description?: string;
+			//description?: string;
 		};
 		size?: 'small' | 'medium' | 'large';
 	}
