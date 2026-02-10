@@ -1,0 +1,12 @@
+[build]
+  command = "pnpm run build"
+  publish = "build"
+
+[context.production]
+  command = "PUBLIC_BASE_URL=https://www.breizhcamp.org pnpm run build"
+
+[context.deploy-preview]
+  command = "PUBLIC_BASE_URL=$DEPLOY_URL pnpm run build"
+
+[context.branch-deploy]
+  command = "PUBLIC_BASE_URL=$DEPLOY_URL pnpm run build"
