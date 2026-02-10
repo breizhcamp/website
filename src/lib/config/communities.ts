@@ -21,7 +21,7 @@ export interface Community {
 export const communities: Community[] = [
 	{
 		name: 'BreizhJUG',
-		logo: 'https://secure.meetupstatic.com/photos/event/8/f/d/e/600_456516830.jpeg',
+		logo: 'usergroups/BreizhJUG.jpg',
 		url: 'http://www.breizhjug.org',
 		text: "Le Java User Group à l'origine du BreizhCamp en 2011",
 		organizers: [
@@ -38,7 +38,7 @@ export const communities: Community[] = [
 	},
 	{
 		name: 'Rennes JS',
-		logo: 'https://rennesjs.org/images/logo-rennesjs.jpg',
+		logo: 'usergroups/rennesjs.jpg',
 		url: 'https://rennesjs.org',
 		organizers: [
 			{
@@ -72,7 +72,7 @@ export const communities: Community[] = [
 	},
 	{
 		name: 'Software Crafters Rennes',
-		logo: 'https://pbs.twimg.com/profile_images/869988942770307072/5eE0osqk_400x400.jpg',
+		logo: 'usergroups/software-crafters.png',
 		url: 'https://www.meetup.com/fr-FR/Software-Craftsmanship-Rennes/',
 		organizers: [
 			{
@@ -106,7 +106,7 @@ export const communities: Community[] = [
 	},
 	{
 		name: 'Rennes DevOps',
-		logo: 'https://pbs.twimg.com/profile_images/2185370459/Logo-Rennes-DevOps_400x400.png',
+		logo: 'usergroups/devops.png',
 		url: 'https://www.meetup.com/fr-FR/rennes-devops/',
 		organizers: [
 			{
@@ -140,7 +140,7 @@ export const communities: Community[] = [
 	},
 	{
 		name: 'Python Rennes',
-		logo: 'https://pbs.twimg.com/profile_images/1451128458050945024/Gm1vyzTx_400x400.jpg',
+		logo: 'usergroups/python.jpg',
 		url: 'https://www.meetup.com/fr-FR/python-rennes/',
 		organizers: [
 			{
@@ -165,7 +165,7 @@ export const communities: Community[] = [
 	},
 	{
 		name: 'Écoconception de services numériques - Rennes',
-		logo: 'https://secure.meetupstatic.com/photos/event/7/8/d/a/clean_506730938.jpeg',
+		logo: 'usergroups/ecoconception.jpeg',
 		url: 'https://www.meetup.com/fr-FR/ecoconception-de-services-numeriques-rennes/',
 		organizers: [
 			{
@@ -181,7 +181,7 @@ export const communities: Community[] = [
 	},
 	{
 		name: 'Breizh Data Club',
-		logo: 'https://secure.meetupstatic.com/photos/event/a/d/a/5/clean_490484453.jpeg',
+		logo: 'usergroups/breizh-data-club.jpeg',
 		url: 'https://www.meetup.com/fr-FR/Breizh-Data-Club/',
 		organizers: [
 			{
@@ -204,25 +204,25 @@ export const communities: Community[] = [
 			}
 		]
 	},
-	{
-		name: 'Csscade',
-		logo: 'https://media.licdn.com/dms/image/C4D0BAQHT4twp7ZPWBg/company-logo_200_200/0/1640208536741?e=1695859200&v=beta&t=LPsVyayDAuhO6w1uwfwRbpCkLWhSx7lZJ9qmpmAF8GE',
-		url: 'http://csscade.fr/',
-		organizers: [
-			{
-				name: 'Manon Carbonnel',
-				picture: '/team/manoncarbonnel_.jpg',
-				social: {
-					type: 'twitter',
-					handle: 'manoncarbonnel_',
-					url: 'https://twitter.com/manoncarbonnel_'
-				}
-			}
-		]
-	},
+	// {
+	// 	name: 'Csscade',
+	// 	logo: 'https://media.licdn.com/dms/image/C4D0BAQHT4twp7ZPWBg/company-logo_200_200/0/1640208536741?e=1695859200&v=beta&t=LPsVyayDAuhO6w1uwfwRbpCkLWhSx7lZJ9qmpmAF8GE',
+	// 	url: 'http://csscade.fr/',
+	// 	organizers: [
+	// 		{
+	// 			name: 'Manon Carbonnel',
+	// 			picture: '/team/manoncarbonnel_.jpg',
+	// 			social: {
+	// 				type: 'twitter',
+	// 				handle: 'manoncarbonnel_',
+	// 				url: 'https://twitter.com/manoncarbonnel_'
+	// 			}
+	// 		}
+	// 	]
+	// },
 	{
 		name: 'Golang Rennes',
-		logo: 'https://pbs.twimg.com/profile_images/761950032065093632/oL_fGJyP_400x400.jpg',
+		logo: 'usergroups/golang.jpg',
 		url: 'https://www.meetup.com/fr/Golang-Rennes/',
 		organizers: [
 			{
@@ -256,7 +256,7 @@ export const communities: Community[] = [
 	},
 	{
 		name: 'Mobile Rennes',
-		logo: 'https://secure.meetupstatic.com/photos/event/5/9/6/e/clean_522742894.webp',
+		logo: 'usergroups/mobile.webp',
 		url: 'https://www.meetup.com/fr-FR/mobile-rennes/',
 		organizers: [
 			{
