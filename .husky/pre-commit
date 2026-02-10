@@ -1,16 +1,16 @@
 if command -v pnpm > /dev/null 2>&1; then
-  MPM="pnpm"
+  NPM="pnpm"
 elif command -v bun > /dev/null 2>&1; then
-  MPM="bun"
+  NPM="bun"
 elif command -v npm > /dev/null 2>&1; then
-  MPM="npm"
+  NPM="npm"
 elif command -v yarn > /dev/null 2>&1; then
-  MPM="yarn"
+  NPM="yarn"
 else
   echo "Aucun gestionnaire de paquets trouvé (pnpm, bun, npm, yarn)"
   exit 1
 fi
 
-$MPM exec lint-staged
-$MPM run build
-$MPM run check
+$NPM exec lint-staged
+$NPM run build
+$NPM run check
