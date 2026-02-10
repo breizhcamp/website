@@ -11,15 +11,16 @@ order: 3
 
 ## Quand a lieu le BreizhCamp 2026 ?
 
-Les dates exactes seront communiquées prochainement. Suivez-nous sur nos réseaux sociaux pour être informé en premier !
+Retrouvons nous sur le campus de Beaulieu du 24 au 25 juin 2026!
+
+Si ce n'est pas suffisant pour vous, vous pouvez rejoindre l'équipe de bénévoles le mardi 23 pour nous aider à tout installer.
 
 ## Combien coûte un billet ?
 
 Le BreizhCamp propose plusieurs tarifs :
 
-- **Étudiant** : Tarif préférentiel sur justificatif
-- **Particulier** : Tarif standard
-- **Entreprise** : Tarif professionnel
+- **2 jours**
+- **3 jours**
 
 ## Puis-je annuler mon inscription ?
 
@@ -31,7 +32,7 @@ Non ! Venez comme vous êtes. Le BreizhCamp privilégie le confort et l'authenti
 
 ## Puis-je venir avec mes enfants ?
 
-Le BreizhCamp n'est pas spécifiquement adapté aux enfants, mais ils sont les bienvenus si accompagnés. Contactez-nous pour organiser leur venue.
+Le BreizhCamp n'est pas spécifiquement adapté aux enfants, mais ils sont les bienvenus si accompagnés. Contactez-nous pour organiser leur venue. Très important, ils restent sous votre responsabilité.
 
 ## Comment proposer une conférence ?
 

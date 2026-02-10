@@ -17,6 +17,7 @@ Vous allez présenter au BreizhCamp ? Voici nos conseils pour _réussir votre pr
 - **Connaissez votre audience** : Adaptez le niveau technique
 - **Structurez votre présentation** : Introduction, développement, conclusion
 - **Préparez des exemples concrets** : Illustrations, démos, cas d'usage
+- **Utilisez un fond clair** : Les vidéo-projecteurs capricieux rendent mal les fonds sombres
 - **Chronométrez votre présentation** : Respectez le format choisi
 
 ## Conseils de présentation

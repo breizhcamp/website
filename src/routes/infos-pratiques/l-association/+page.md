@@ -39,9 +39,9 @@ Chacun de ces groupes d'utilisateurs, que nous appelons également **User Groups
 
 L'association est dirigée par un bureau élu chaque année :
 
-- **Président(e)** : Représentation légale et coordination
-- **Trésorier(ère)** : Gestion financière et comptabilité
-- **Secrétaire** : Gestion administrative et procès-verbaux
+On ne sais pas faire comme les autres au BreizhCamp.
+
+Il n'y a qu'un trésorier, tout le bureau peut prendre des actions pour l'association.
 
 ## Adhésion et participation
 

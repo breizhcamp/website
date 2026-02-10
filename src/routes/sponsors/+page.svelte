@@ -23,19 +23,19 @@
 		<div class="hero-cta">
 			<Button
 				variant="primary"
-				href="https://drive.google.com/file/d/1rzVxL8P8GyvxEgySzbxR0CHdr6cKyZT8/view?usp=sharing"
+				href="https://bzh.camp/dossier-sponsoring"
 			>
 				Dossier de sponsoring BreizhCamp
 			</Button>
 			<Button
 				variant="secondary"
-				href="https://docs.google.com/forms/d/e/1FAIpQLSf_IIoCPa0l9MtJykKcWlDo7y3FTyPzSWmc4Hvm7akO1l9rNQ/viewform?usp=publish-editor"
+				href="https://bzh.camp/form-sponsoring"
 			>
 				Candidature sponsor BreizhCamp
 			</Button>
 			<Button
 				variant="secondary"
-				href="https://docs.google.com/forms/d/e/1FAIpQLSdR2yBKZEUW7L9fy0Th-AyKHK6IIrdrKIANJ486Giv0Am3tqw/viewform?usp=dialog"
+				href="https://bzh.camp/form-meetup"
 			>
 				Proposer une salle meetup
 			</Button>
