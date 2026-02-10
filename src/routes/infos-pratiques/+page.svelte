@@ -70,7 +70,7 @@
 					la plus grande conférence tech de Bretagne.
 				</p>
 				<div class="editions-links">
-					{#each [2024, 2023, 2022, 2019, 2018, 2017, 2016, 2015, 2014, 2013] as year (year)}
+					{#each [2025, 2024, 2023, 2022, 2019, 2018, 2017, 2016, 2015, 2014, 2013] as year (year)}
 						<a
 							href="https://{year}.breizhcamp.org/"
 							target="_blank"

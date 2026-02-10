@@ -25,7 +25,7 @@
 		}
 	];
 
-	const years = [2024, 2023, 2022, 2019, 2018, 2017, 2016, 2015, 2014, 2013];
+	const years = [2025, 2024, 2023, 2022, 2019, 2018, 2017, 2016, 2015, 2014, 2013];
 	const footerPages = getFooterPages();
 
 	// Toutes les éditions utilisent le pattern https://YYYY.breizhcamp.org/
