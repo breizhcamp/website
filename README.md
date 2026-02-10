@@ -13,6 +13,14 @@ Pour lancer le site sur votre machine, Vous pouvez
 
 ## Développement avec Node.js et pnpm
 
+### Mettre en place son environnement de développement
+
+```sh
+cp .env.example .env
+```
+
+Attention, le fichier `.env` est exclu du git.
+
 ### Installer node.js et pnpm
 
 **1. Cloner le projet **
@@ -147,3 +155,11 @@ tickets: {
 **💡 Avantage :** Tous les menus, liens et badges se mettent à jour automatiquement sur tout le site !
 
 ## Mise en production
+
+Globallement, c'est déployer avec du `git push` :
+
+| Contexte       | Déclencheur              | PUBLIC_BASE_URL                                                                 |
+| -------------- | ------------------------ | ------------------------------------------------------------------------------- |
+| production     | Push sur main            | https://www.breizhcamp.org                                                      |
+| deploy-preview | Pull Request             | URL générée par Netlify (ex: https://deploy-preview-42--breizhcamp.netlify.app) |
+| branch-deploy  | Push sur autres branches | URL générée par Netlify (ex: https://feature-xyz--breizhcamp.netlify.app)       |
