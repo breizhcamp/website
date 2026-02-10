@@ -465,7 +465,7 @@
 										d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9V7h9v14z"
 									/>
 								</svg>
-								User Groups / Meetups rattachés à BreizhCamp
+								User Groups / Meetups rattachés au BreizhCamp
 							</h3>
 							<div class="groups-list" role="list">
 								{#each communities as community (community.name)}
