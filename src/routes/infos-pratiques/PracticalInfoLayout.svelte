@@ -5,7 +5,7 @@
 	const { title, excerpt } = $$props;
 </script>
 
-<Seo title="{title} | BreizhCamp" description={excerpt} type="article" />
+<Seo {title} description={excerpt} type="article" />
 
 <article>
 	<slot />

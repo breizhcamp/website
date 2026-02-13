@@ -1,16 +1,14 @@
 <script lang="ts">
+	import Seo from '$lib/components/seo/Seo.svelte';
 	import BlogPostCardList from './BlogPostCardList.svelte';
 
 	const { data } = $props();
 </script>
 
-<svelte:head>
-	<title>Blog - BreizhCamp 2026</title>
-	<meta
-		name="description"
-		content="Actualités, annonces et articles du BreizhCamp. Restez informés des dernières nouvelles de la conférence tech de Bretagne."
-	/>
-</svelte:head>
+<Seo
+	title="Blog"
+	description="Actualités, annonces et articles du BreizhCamp. Restez informés des dernières nouvelles de la conférence tech de Bretagne."
+/>
 
 <!-- Hero Section -->
 <section class="hero">

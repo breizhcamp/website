@@ -1,15 +1,13 @@
 <script>
-	import Card from '../../lib/components/ui/Card.svelte';
+	import Seo from '$lib/components/seo/Seo.svelte';
 	import Button from '../../lib/components/ui/Button.svelte';
+	import Card from '../../lib/components/ui/Card.svelte';
 </script>
 
-<svelte:head>
-	<title>Déclaration d'accessibilité - BreizhCamp 2026</title>
-	<meta
-		name="description"
-		content="Déclaration d'accessibilité du site BreizhCamp 2026 conforme au RGAA (Référentiel Général d'Amélioration de l'Accessibilité)."
-	/>
-</svelte:head>
+<Seo
+	title="Déclaration d'accessibilité"
+	description="Déclaration d'accessibilité du site BreizhCamp 2026 conforme au RGAA (Référentiel Général d'Amélioration de l'Accessibilité)."
+/>
 
 <!-- Hero Section -->
 <section class="hero">

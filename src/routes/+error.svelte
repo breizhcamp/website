@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import Seo from '$lib/components/seo/Seo.svelte';
 	import Button from '../lib/components/ui/Button.svelte';
 	import Card from '../lib/components/ui/Card.svelte';
 	import { getSuggestionPages } from '../lib/config/site';
@@ -41,10 +42,7 @@
 	const popularPages = getSuggestionPages();
 </script>
 
-<svelte:head>
-	<title>Erreur {$page.status} - BreizhCamp 2026</title>
-	<meta name="description" content="Page d'erreur {$page.status} du site BreizhCamp 2026" />
-</svelte:head>
+<Seo title="Erreur {$page.status}" description="Page d'erreur {$page.status} du site BreizhCamp" />
 
 <main class="error-page">
 	<div class="container">

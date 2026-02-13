@@ -1,16 +1,14 @@
 <script>
+	import Seo from '$lib/components/seo/Seo.svelte';
 	import Button from '../../lib/components/ui/Button.svelte';
 	import SponsorCard from './SponsorCard.svelte';
 	import { sponsorLevels } from './constants';
 </script>
 
-<svelte:head>
-	<title>Sponsors & Partenaires - BreizhCamp 2026</title>
-	<meta
-		name="description"
-		content="Le BreizhCamp est possible grâce au soutien de nos sponsors. Découvrez nos partenaires Platinum, Gold, Silver, Bronze et institutionnels."
-	/>
-</svelte:head>
+<Seo
+	title="Sponsors & Partenaires"
+	description="Le BreizhCamp est possible grâce au soutien de nos sponsors. Découvrez nos partenaires Platinum, Gold, Silver, Bronze et institutionnels."
+/>
 
 <!-- Hero Section -->
 <section class="hero" aria-labelledby="sponsors-hero-title">

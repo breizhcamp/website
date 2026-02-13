@@ -6,14 +6,7 @@
 	const { title, category, excerpt, date, banner, author } = $$props;
 </script>
 
-<Seo
-	title="{title} | BreizhCamp"
-	description={excerpt}
-	{date}
-	image={banner}
-	{author}
-	type="article"
-/>
+<Seo {title} description={excerpt} {date} image={banner} {author} type="article" />
 
 <main class="article-page">
 	<div class="container">

@@ -1,4 +1,5 @@
 <script>
+	import Seo from '$lib/components/seo/Seo.svelte';
 	import Card from '../../lib/components/ui/Card.svelte';
 	import { categories } from './constants';
 
@@ -11,13 +12,10 @@
 	}));
 </script>
 
-<svelte:head>
-	<title>Infos pratiques - BreizhCamp 2026</title>
-	<meta
-		name="description"
-		content="Toutes les informations pratiques pour participer au BreizhCamp 2026 : conférence, code de conduite, FAQ, équipe, association et plus encore."
-	/>
-</svelte:head>
+<Seo
+	title="Infos pratiques"
+	description="Toutes les informations pratiques pour participer au BreizhCamp 2026 : conférence, code de conduite, FAQ, équipe, association et plus encore."
+/>
 
 <!-- Hero Section -->
 <section class="hero">

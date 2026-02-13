@@ -1,4 +1,5 @@
 <script>
+	import Seo from '$lib/components/seo/Seo.svelte';
 	import Badge from '$lib/components/ui/Badge.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
@@ -98,13 +99,10 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Design System - BreizhCamp 2026</title>
-	<meta
-		name="description"
-		content="Système de design et classes utilitaires du site BreizhCamp"
-	/>
-</svelte:head>
+<Seo
+	title="Design System"
+	description="Système de design et classes utilitaires du site BreizhCamp"
+/>
 
 <!-- Hero -->
 <section class="hero">

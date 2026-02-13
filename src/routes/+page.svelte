@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/seo/Seo.svelte';
 	import HeroSection from '../lib/components/home/HeroSection.svelte';
 	import StatsSection from '../lib/components/home/StatsSection.svelte';
 	import Badge from '../lib/components/ui/Badge.svelte';
@@ -9,13 +10,10 @@
 	const { data } = $props();
 </script>
 
-<svelte:head>
-	<title>BreizhCamp 2026 - La conférence tech incontournable de Bretagne</title>
-	<meta
-		name="description"
-		content="La conférence tech incontournable de Bretagne. 3 jours d'innovation, de partage et de networking du 24 au 26 juin 2026."
-	/>
-</svelte:head>
+<Seo
+	title="BreizhCamp - La conférence tech incontournable de Bretagne"
+	description="La conférence tech incontournable de Bretagne. 3 jours d'innovation, de partage et de networking du 24 au 26 juin 2026."
+/>
 
 <HeroSection />
 <StatsSection />

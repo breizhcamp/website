@@ -18,7 +18,7 @@
 		<meta name="robots" content="noindex" />
 	{/if}
 
-	<title>{title}</title>
+	<title>{title} - BreizhCamp 2026</title>
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
 	<link rel="alternate" href={fullURL} hreflang="fr-FR" />

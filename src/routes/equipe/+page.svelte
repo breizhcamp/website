@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/seo/Seo.svelte';
 	import { communities } from '$lib/config/communities';
 
 	// État des sections dépliables
@@ -106,19 +107,10 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Équipe - BreizhCamp 2026</title>
-	<meta
-		name="description"
-		content="Découvrez l'équipe de bénévoles qui organise le BreizhCamp et l'association qui porte l'événement."
-	/>
-	<meta property="og:title" content="Équipe - BreizhCamp 2026" />
-	<meta
-		property="og:description"
-		content="Découvrez l'équipe de bénévoles qui organise le BreizhCamp et l'association qui porte l'événement."
-	/>
-	<meta property="og:type" content="website" />
-</svelte:head>
+<Seo
+	title="Équipe"
+	description="Découvrez l'équipe de bénévoles qui organise le BreizhCamp et l'association qui porte l'événement."
+/>
 
 <main class="main-content">
 	<div class="container">
