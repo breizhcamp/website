@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Speaker from '$lib/Speaker.svelte';
+	import BookmarkButton from './BookmarkButton.svelte';
 	import { type Session } from './data/constants';
 	import LevelIcon from './LevelIcon.svelte';
 	import { formatDate } from './utils';
@@ -31,8 +32,12 @@
 >
 	<!-- FIXME use correct title level -->
 	<a href="/programme/session/{id}">
-		<h2>{name}</h2>
+		<h2>
+			<div class="bookmark-button-placeholder"></div>
+			{name}
+		</h2>
 	</a>
+	<BookmarkButton eventId={id} />
 	{#if 'speakers' in props && props.speakers}
 		<div class="speakers" class:too-crowded={props.speakers.length >= 3}>
 			{#each props.speakers as speaker, index (index)}
@@ -62,12 +67,19 @@
 
 <style>
 	article {
+		position: relative;
 		background-color: hsla(var(--bg-color), 1);
 		border-left: 4px solid hsla(var(--accent-color), 1);
 		border-radius: 8px;
 		margin: 8px 0 8px 8px;
 		padding: 8px 16px;
 		height: 200px;
+	}
+
+	.bookmark-button-placeholder {
+		float: right;
+		width: 12px;
+		height: 24px;
 	}
 
 	.duration-15 {
@@ -110,6 +122,7 @@
 	a {
 		text-decoration: none !important;
 		padding: 0px !important;
+		display: block;
 	}
 
 	.speakers {
@@ -129,6 +142,8 @@
 		font-size: 12px;
 		font-weight: 700;
 		margin-bottom: 8px;
+		flex-shrink: 0;
+		padding-left: 2px;
 	}
 
 	.flex {

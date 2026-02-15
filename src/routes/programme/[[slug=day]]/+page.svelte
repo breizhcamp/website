@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '../bookmarks.svelte';
 	import DayNavigation from '../DayNavigation.svelte';
 	import Filters from '../Filters.svelte';
 	import LaptopSchedule from '../LaptopSchedule.svelte';
