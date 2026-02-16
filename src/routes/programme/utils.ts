@@ -22,6 +22,15 @@ export function getEventTypesFromSchedule(schedule: Array<Session>) {
 	);
 }
 
+export function getSessionDuration(session: Pick<Session, 'event_start' | 'event_end'>) {
+	return (session.event_end.getTime() - session.event_start.getTime()) / 1000 / 60;
+}
+
+export function formatSessionDuration(session: Pick<Session, 'event_start' | 'event_end'>) {
+	const duration = (session.event_end.getTime() - session.event_start.getTime()) / 1000 / 60;
+	return `${Math.floor(duration / 60)}h${(duration % 60).toFixed().padStart(2, '0')}`;
+}
+
 export function pairTimes<T>(times: T[]): { startAt: T; endAt: T }[] {
 	return times.slice(0, -1).map((t, i) => ({ startAt: t, endAt: times[i + 1]! }));
 }
@@ -135,8 +144,4 @@ export function sortEventsDateAndVenue(eventA: Session, eventB: Session) {
 
 export function getThemeIndex(eventTypes: Array<string>, event: Session) {
 	return eventTypes.findIndex((eventType) => eventType === event.event_type);
-}
-
-export function getDuration(event: Session) {
-	return (event.event_end.getTime() - event.event_start.getTime()) / 1000 / 60;
 }

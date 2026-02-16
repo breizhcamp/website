@@ -3,7 +3,7 @@
 	import BookmarkButton from './BookmarkButton.svelte';
 	import { type Session } from './data/constants';
 	import LevelIcon from './LevelIcon.svelte';
-	import { formatDate } from './utils';
+	import { formatDate, getSessionDuration } from './utils';
 
 	type Props = Session & { eventTypes: Array<string> };
 
@@ -21,7 +21,7 @@
 		...props
 	}: Props = $props();
 
-	const duration = $derived((event_end.getTime() - event_start.getTime()) / 1000 / 60);
+	const duration = $derived(getSessionDuration({ event_start, event_end }));
 
 	const themeIndex = $derived(eventTypes.findIndex((eventType) => eventType === event_type));
 </script>
@@ -37,7 +37,7 @@
 			{name}
 		</h2>
 	</a>
-	<BookmarkButton eventId={id} />
+	<BookmarkButton eventId={id} variant="sm" />
 	{#if 'speakers' in props && props.speakers}
 		<div class="speakers" class:too-crowded={props.speakers.length >= 3}>
 			{#each props.speakers as speaker, index (index)}

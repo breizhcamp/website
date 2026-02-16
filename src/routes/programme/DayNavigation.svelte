@@ -35,7 +35,7 @@
 		font-weight: 500;
 		cursor: pointer;
 		text-align: center;
-		text-decoration: none;
+		text-decoration: none !important;
 		color: black;
 		border-radius: 0px;
 	}
