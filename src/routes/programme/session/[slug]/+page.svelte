@@ -3,7 +3,8 @@
 	import Speaker from '$lib/Speaker.svelte';
 	import BookmarkButton from '../../BookmarkButton.svelte';
 	import { speakers } from '../../data/constants';
-	import { formatDate, formatDayOfWeek, formatSessionDuration } from '../../utils';
+	import { formatDayOfWeek, formatSessionDuration, formatTime } from '../../utils';
+	import FutureSessions from './FutureSessions.svelte';
 	import { addToGoogleCalendar, downloadIcsFile, share } from './share.utils';
 
 	const { data } = $props();
@@ -32,7 +33,7 @@
 					<span class="icon"><img src="/icons/clock.svg" alt="" /></span>
 					<span class="label">Horaire</span>
 					<span class="value"
-						>{formatDate(data.event_start)} à {formatDate(data.event_end)}</span
+						>{formatTime(data.event_start)} à {formatTime(data.event_end)}</span
 					>
 				</li>
 				<li>
@@ -91,6 +92,12 @@
 					Retour au programme
 				</Button>
 			</div>
+		</div>
+
+		<div class="laptop-card">
+			<h2>Les sessions futures sur le même thème</h2>
+
+			<FutureSessions {...data} />
 		</div>
 	</div>
 </article>

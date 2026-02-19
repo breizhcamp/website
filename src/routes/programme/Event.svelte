@@ -3,7 +3,7 @@
 	import BookmarkButton from './BookmarkButton.svelte';
 	import { type Session } from './data/constants';
 	import LevelIcon from './LevelIcon.svelte';
-	import { formatDate, getSessionDuration } from './utils';
+	import { formatTime, getSessionDuration } from './utils';
 
 	type Props = Session & { eventTypes: Array<string> };
 
@@ -51,7 +51,7 @@
 	{/if}
 	<div class="footer">
 		<p class="schedule">
-			{formatDate(event_start)} — {formatDate(event_end)}
+			{formatTime(event_start)} — {formatTime(event_end)}
 			<span class="mobile-only"> · {venue}</span>
 		</p>
 		<div class="flex">

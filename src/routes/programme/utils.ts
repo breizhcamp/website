@@ -117,6 +117,14 @@ export function groupSessionsBySlotsAndRooms(
 export type DaySessionsBySlot = ReturnType<typeof groupSessionsBySlotsAndRooms>[number];
 
 export function formatDate(date: Date) {
+	const day = new Intl.DateTimeFormat('fr-FR', {
+		weekday: 'long'
+	}).format(date);
+
+	return day.charAt(0).toUpperCase() + day.slice(1);
+}
+
+export function formatTime(date: Date) {
 	return `${((24 + date.getHours() - 2) % 24).toFixed()}h${date.getMinutes().toFixed().padStart(2, '0')}`;
 }
 
@@ -144,4 +152,15 @@ export function sortEventsDateAndVenue(eventA: Session, eventB: Session) {
 
 export function getThemeIndex(eventTypes: Array<string>, event: Session) {
 	return eventTypes.findIndex((eventType) => eventType === event.event_type);
+}
+
+export function getThreeFollowingSessionsWithTheSameTheme(
+	schedule: Array<Session>,
+	theme: string,
+	date: Date
+) {
+	return schedule
+		.filter((s) => s.event_type === theme && s.event_start >= date)
+		.sort((a, b) => a.event_start.getTime() - b.event_start.getTime())
+		.slice(0, 3);
 }

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PeriodTime } from './data/constants';
-	import { formatDate } from './utils';
+	import { formatTime } from './utils';
 
 	type Props = PeriodTime;
 
@@ -11,7 +11,7 @@
 	{label}
 </div>
 <div class="time">
-	{formatDate(startAt)} — {formatDate(endAt)}
+	{formatTime(startAt)} — {formatTime(endAt)}
 </div>
 
 <style>
