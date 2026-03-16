@@ -123,7 +123,7 @@ export const siteConfig: SiteConfig = {
 	cfp: {
 		isOpen: true, // 🔧 Changer à false pour fermer le CFP
 		url: 'https://sessionize.com/breizhcamp-2026/',
-		badge: 'Ouvert'
+		badge: 'Fermé'
 	},
 	tickets: {
 		available: false, // 🔧 Changer à true pour ouvrir les billets
