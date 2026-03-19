@@ -52,9 +52,13 @@ Pour activer ou désactiver une page, modifiez la propriété `available` dans `
 
 ```typescript
 cfp: {
-  isOpen: true, // ← Changer à false pour fermer le CFP
-  url: 'https://sessionize.com/breizhcamp-2026/',
-  badge: 'Ouvert'
+  showInMainNav: true, // 🔧 Changer à true/false pour afficher/cacher le CFP dans le header
+  isOpen: true, // 🔧 Changer à true/false pour ouvrir/fermer le CFP
+  // 🔧 Si non défini 'Ouvert'/'Fermé' en fonction de `isOpen`
+  //badge: 'Bientôt',
+  //badge: 'Ouvert → 15/03',
+  // 🔧 À commenter si pas encore créé dans Sessionize (⇒ menu grisé avec badge "Bientôt")
+  url: 'https://sessionize.com/breizhcamp-2026/'
 }
 ```
 
