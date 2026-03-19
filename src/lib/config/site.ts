@@ -33,9 +33,13 @@ export interface SiteConfig {
 	pages: PageConfig[];
 	/** Configuration du CFP */
 	cfp: {
+		/** Indique si le lien vers le CFP est affiché dans la barre de menus du header */
+		showInMainNav: boolean;
+		/** Indique si le CFP est ouvert/fermé */
 		isOpen: boolean;
-		url: string;
-		badge: string;
+		/** Text du badge (si non défini, sera "Ouvert"/"Fermé" en fonction de {@link isOpen} */
+		badge?: string;
+		url?: string;
 	};
 	/** Configuration des billets */
 	tickets: {
@@ -121,9 +125,13 @@ export const siteConfig: SiteConfig = {
 		}
 	],
 	cfp: {
-		isOpen: true, // 🔧 Changer à false pour fermer le CFP
-		url: 'https://sessionize.com/breizhcamp-2026/',
-		badge: 'Fermé'
+		showInMainNav: true, // 🔧 Changer à true/false pour afficher/cacher le CFP dans le header
+		isOpen: false, // 🔧 Changer à true/false pour ouvrir/fermer le CFP
+		// 🔧 Si non défini 'Ouvert'/'Fermé' en fonction de `isOpen`
+		//badge: 'Bientôt',
+		//badge: 'Ouvert → 15/03',
+		// 🔧 À commenter si pas encore créé dans Sessionize (⇒ menu grisé avec badge "Bientôt")
+		url: 'https://sessionize.com/breizhcamp-2026/'
 	},
 	tickets: {
 		available: false, // 🔧 Changer à true pour ouvrir les billets
@@ -160,13 +168,13 @@ export const getNavigationItems = () => {
 		ariaLabel: page.ariaLabel || page.label
 	}));
 
-	// Ajouter le CFP si ouvert
-	if (siteConfig.cfp.isOpen) {
+	// Ajouter le CFP si à afficher
+	if (siteConfig.cfp.showInMainNav) {
 		items.push({
 			label: 'CFP',
-			href: siteConfig.cfp.url,
+			href: siteConfig.cfp.url ?? '#',
 			description: 'Proposer une conférence',
-			available: true,
+			available: siteConfig.cfp.url !== undefined,
 			external: true,
 			ariaLabel: `CFP — ${siteConfig.cfp.badge} (ouvre Sessionize)`
 		});

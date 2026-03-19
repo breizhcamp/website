@@ -50,20 +50,79 @@ tickets: {
 - ✅ Bouton "Billets" cliquable dans le header
 - ✅ Lien vers `/billets` au lieu du badge
 
-### 🎤 Fermer le CFP
+### 🎤 Ouvrir/Fermer le CFP
+
+#### Cacher le menu CFP
 
 ```typescript
 cfp: {
-  isOpen: false, // ← Changer de true à false
-  url: 'https://sessionize.com/breizhcamp-2026/',
-  badge: 'Fermé'
+  showInMainNav: false,
+  isOpen: false
 }
 ```
 
 **Résultat :**
 
 - ❌ CFP disparaît du menu
-- ❌ Plus de lien externe vers Sessionize
+
+#### Affichage du menu CFP désactivé
+
+```typescript
+cfp: {
+	showInMainNav: false,
+	isOpen: false
+}
+```
+
+**Résultat :**
+
+- ✅ CFP apparaît dans le menu en grisé avec badge gris `BIENTÔT`
+- ❌ Pas de lien externe vers Sessionize
+
+#### Ouverture du CFP
+
+```typescript
+cfp: {
+  showInMainNav: true,
+  isOpen: true,
+  url: 'https://sessionize.com/breizhcamp-2026/'
+}
+```
+
+**Résultat :**
+
+- ✅ CFP apparaît dans le menu avec badge vert `OUVERT`
+- ✅ Lien externe vers Sessionize
+
+```typescript
+// CFP Ouvert avec badge spécifique
+cfp: {
+	showInMainNav: true,
+	isOpen: true,
+	badge: 'Ouvert → 15/03',
+	url: 'https://sessionize.com/breizhcamp-2026/'
+}
+```
+
+**Résultat :**
+
+- ✅ CFP apparaît dans le menu avec badge vert `OUVERT → 15/03`
+- ✅ Lien externe vers Sessionize
+
+#### Fermeture du CFP
+
+```typescript
+cfp: {
+	showInMainNav: true,
+	isOpen: false,
+	url: 'https://sessionize.com/breizhcamp-2026/'
+}
+```
+
+**Résultat :**
+
+- ✅ CFP apparaît dans le menu avec badge orange `FERMÉ`
+- ✅ Lien externe vers Sessionize
 
 ## 🚀 Déploiement par étapes
 
@@ -78,6 +137,7 @@ speakers: {
 	available: false;
 }
 cfp: {
+	showInMainNav: false;
 	isOpen: false;
 }
 tickets: {
@@ -85,10 +145,36 @@ tickets: {
 }
 ```
 
-### Phase 2 : Ouverture CFP
+### Phase 2 : Ouverture/Fermeture CFP
 
 ```typescript
-cfp: { isOpen: true, badge: 'Ouvert' }
+// Affichage du menu CFP désactivé
+cfp: {
+	showInMainNav: true,
+	isOpen: false
+}
+
+// CFP Ouvert
+cfp: {
+	showInMainNav: true,
+	isOpen: true,
+	url: 'https://sessionize.com/breizhcamp-2026/'
+}
+
+// CFP Ouvert avec badge spécifique
+cfp: {
+	showInMainNav: true,
+	isOpen: true,
+	badge: 'Ouvert → 15/03',
+	url: 'https://sessionize.com/breizhcamp-2026/'
+}
+
+// CFP Fermé
+cfp: {
+	showInMainNav: true,
+	isOpen: false,
+	url: 'https://sessionize.com/breizhcamp-2026/'
+}
 ```
 
 ### Phase 3 : Programme disponible

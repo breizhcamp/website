@@ -60,11 +60,18 @@
 								target={item.external ? '_blank' : undefined}
 								rel={item.external ? 'noopener noreferrer' : undefined}
 							>
-								{#if siteConfig.cfp.isOpen && item.label === 'CFP'}
+								{#if item.label === 'CFP'}
 									<div class="nav-text-container">
 										<span class="nav-text">{item.label}</span>
-										<Badge color="green" size="sm">{siteConfig.cfp.badge}</Badge
-										>
+										{#if siteConfig.cfp.isOpen}
+											<Badge color="green" size="sm"
+												>{siteConfig.cfp.badge ?? 'Ouvert'}</Badge
+											>
+										{:else}
+											<Badge color="orange" size="sm"
+												>{siteConfig.cfp.badge ?? 'Fermé'}</Badge
+											>
+										{/if}
 									</div>
 								{:else}
 									<span class="nav-text">{item.label}</span>
@@ -127,8 +134,16 @@
 								onclick={closeMobileMenu}
 							>
 								<span class="nav-text">{item.label}</span>
-								{#if siteConfig.cfp.isOpen && item.label === 'CFP'}
-									<Badge color="green" size="sm">{siteConfig.cfp.badge}</Badge>
+								{#if item.label === 'CFP'}
+									{#if siteConfig.cfp.isOpen}
+										<Badge color="green" size="sm"
+											>{siteConfig.cfp.badge ?? 'Ouvert'}</Badge
+										>
+									{:else}
+										<Badge color="orange" size="sm"
+											>{siteConfig.cfp.badge ?? 'Fermé'}</Badge
+										>
+									{/if}
 								{/if}
 							</a>
 						{:else}
