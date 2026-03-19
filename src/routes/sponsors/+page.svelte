@@ -48,7 +48,14 @@
 			>
 				{#each level.sponsors as sponsor, index (index)}
 					<div role="listitem">
-						<SponsorCard {sponsor} size={level.logoSize} />
+						{#if sponsor.hidden ?? false}
+							<SponsorCard
+								sponsor={{ name: 'Bientôt annoncé' }}
+								size={level.logoSize}
+							/>
+						{:else}
+							<SponsorCard {sponsor} size={level.logoSize} />
+						{/if}
 					</div>
 				{/each}
 			</div>

@@ -6,6 +6,7 @@
 	import Button from '../lib/components/ui/Button.svelte';
 	import Card from '../lib/components/ui/Card.svelte';
 	import BlogPostCardList from './blog/BlogPostCardList.svelte';
+	import { sponsorLevels } from './sponsors/constants';
 
 	const { data } = $props();
 </script>
@@ -105,24 +106,33 @@
 		</p>
 
 		<div class="partners-category">
-			<h3>Partenaires Platine</h3>
+			<h3>Partenaires Platinum</h3>
 			<div
-				class="partners-grid platine"
+				class="partners-grid platinum"
 				role="list"
-				aria-label="Liste des partenaires Platine"
+				aria-label="Liste des partenaires Platinum"
 			>
-				<div class="partner-logo" role="listitem">
-					<div class="placeholder-logo" aria-label="Emplacement partenaire 1">Logo 1</div>
-				</div>
-				<div class="partner-logo" role="listitem">
-					<div class="placeholder-logo" aria-label="Emplacement partenaire 2">Logo 2</div>
-				</div>
-				<div class="partner-logo" role="listitem">
-					<div class="placeholder-logo" aria-label="Emplacement partenaire 3">Logo 3</div>
-				</div>
-				<div class="partner-logo" role="listitem">
-					<div class="placeholder-logo" aria-label="Emplacement partenaire 4">Logo 4</div>
-				</div>
+				{#each sponsorLevels.filter((level) => level.id === 'platinum') as level (level.id)}
+					{#each level.sponsors as sponsor, index (index)}
+						<div class="partner-logo" role="listitem">
+							{#if sponsor.hidden ?? false}
+								<div class="placeholder-logo" aria-label="Logo partenaire 1">
+									Bientôt annoncé
+								</div>
+							{:else if sponsor.logo}
+								<img
+									src={sponsor.logo}
+									alt="Logo {sponsor.name}"
+									class="sponsor-logo"
+								/>
+							{:else}
+								<div class="placeholder-logo" aria-label="Logo {sponsor.name}">
+									{sponsor.name}
+								</div>
+							{/if}
+						</div>
+					{/each}
+				{/each}
 			</div>
 		</div>
 
