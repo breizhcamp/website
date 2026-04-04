@@ -6,7 +6,8 @@
 	import Button from '../lib/components/ui/Button.svelte';
 	import Card from '../lib/components/ui/Card.svelte';
 	import BlogPostCardList from './blog/BlogPostCardList.svelte';
-	import { sponsorLevels } from './sponsors/constants';
+	import SponsorCard from './sponsors/SponsorCard.svelte';
+	import { getSponsors } from './sponsors/utils';
 
 	const { data } = $props();
 </script>
@@ -112,26 +113,8 @@
 				role="list"
 				aria-label="Liste des partenaires Platinum"
 			>
-				{#each sponsorLevels.filter((level) => level.id === 'platinum') as level (level.id)}
-					{#each level.sponsors as sponsor, index (index)}
-						<div class="partner-logo" role="listitem">
-							{#if sponsor.hidden ?? false}
-								<div class="placeholder-logo" aria-label="Logo partenaire 1">
-									Bientôt annoncé
-								</div>
-							{:else if sponsor.logo}
-								<img
-									src={sponsor.logo}
-									alt="Logo {sponsor.name}"
-									class="sponsor-logo"
-								/>
-							{:else}
-								<div class="placeholder-logo" aria-label="Logo {sponsor.name}">
-									{sponsor.name}
-								</div>
-							{/if}
-						</div>
-					{/each}
+				{#each getSponsors('platinum') as sponsor, index (index)}
+					<SponsorCard {sponsor} size="large" />
 				{/each}
 			</div>
 		</div>
@@ -296,22 +279,6 @@
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		gap: 2rem;
 		margin-bottom: 2rem;
-	}
-
-	.partner-logo {
-		background: white;
-		padding: 2rem;
-		border-radius: var(--border-radius);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-height: 120px;
-		border: 1px solid var(--neutral-200);
-	}
-
-	.placeholder-logo {
-		color: var(--neutral-600);
-		font-weight: 500;
 	}
 
 	.partners-cta {

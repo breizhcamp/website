@@ -1,17 +1,22 @@
-// Types pour les sponsors
+export const DISPLAY_ONLY_FAKE_ONES = false;
+export const DISPLAY_FAKE_ONES = true;
+
+export type SponsorId = 'platinum' | 'gold' | 'silver' | 'bronze' | 'partner';
+
 export interface Sponsor {
 	hidden?: boolean;
 	name: string;
-	logo?: string | null;
-	url?: string | null;
+	logo: string | null;
+	url: string | null;
 	description?: string;
+	level: SponsorId;
 }
 
 export interface SponsorLevel {
 	name: string;
-	id: string;
+	id: SponsorId;
 	description: string;
-	sponsors: Sponsor[];
+	defaultSponsorCount: number;
 	gridCols: string;
 	logoSize: 'small' | 'medium' | 'large';
 }
@@ -22,63 +27,246 @@ export const sponsorLevels: SponsorLevel[] = [
 		name: 'Sponsors Platinum',
 		id: 'platinum',
 		description: "Nos partenaires stratégiques qui soutiennent massivement l'événement",
-		// listAnonymousSponsors(4)
-		sponsors: listSponsors(
-			true, // true : on force le fait de cacher les sponsors, même s'ils sont connus (correctement renseignés)
-			{ name: 'Sponsor 1', logo: '/sponsors/platinum-1.png', url: 'https://example.com' },
-			{ name: 'Sponsor 2', logo: '/sponsors/platinum-2.png', url: 'https://example.com' },
-			{ name: 'Sponsor 3', logo: '/sponsors/platinum-3.png', url: 'https://example.com' },
-			{ name: 'Sponsor 4', logo: '/sponsors/platinum-4.png', url: 'https://example.com' }
-		),
-		gridCols: 'grid-cols-2 md:grid-cols-3',
+		defaultSponsorCount: 4,
+		gridCols: 'grid-cols-2',
 		logoSize: 'large'
 	},
 	{
 		name: 'Sponsors Gold',
 		id: 'gold',
 		description: 'Nos partenaires majeurs qui contribuent significativement au BreizhCamp',
-		sponsors: listAnonymousSponsors(15),
-		gridCols: 'grid-cols-3 md:grid-cols-4 lg:grid-cols-5',
+		defaultSponsorCount: 12,
+		gridCols: 'grid-cols-3',
 		logoSize: 'medium'
 	},
 	{
 		name: 'Sponsors Silver',
 		id: 'silver',
 		description: 'Nos partenaires qui nous accompagnent dans cette aventure',
-		sponsors: listAnonymousSponsors(18),
-		gridCols: 'grid-cols-3 md:grid-cols-4 lg:grid-cols-6',
+		defaultSponsorCount: 21,
+		gridCols: 'grid-cols-3',
 		logoSize: 'medium'
 	},
 	{
 		name: 'Sponsors Bronze',
 		id: 'bronze',
 		description: 'Nos partenaires qui soutiennent la communauté tech bretonne',
-		sponsors: listAnonymousSponsors(4),
-		gridCols: 'grid-cols-2 md:grid-cols-4',
+		defaultSponsorCount: 4,
+		gridCols: 'grid-cols-4',
 		logoSize: 'small'
 	},
 	{
 		name: 'Partenaires',
-		id: 'partners',
+		id: 'partner',
 		description: 'Nos partenaires institutionnels et associatifs',
-		sponsors: listAnonymousSponsors(1),
-		gridCols: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+		defaultSponsorCount: 2,
+		gridCols: 'grid-cols-2',
 		logoSize: 'medium'
 	}
 ];
 
-function listSponsors(hidden = false, ...sponsors: Sponsor[]): Sponsor[] {
-	const list: Sponsor[] = [];
-	for (const sponsor of sponsors) {
-		const sponsorToList = { ...sponsor };
-		if (hidden) {
-			sponsorToList.hidden = true;
-		}
-		list.push(sponsorToList);
+export const sponsors: Array<Sponsor> = [
+	{
+		name: 'Liksi',
+		logo: '/sponsors/logo_liksi.png',
+		url: 'https://www.liksi.fr',
+		level: 'platinum',
+		hidden: true
+	},
+	{
+		name: "Agence Ministérielle pour l'Intelligence Artificielle de Défense",
+		logo: "/sponsors/logo_agence_ministerielle_pour_l'intelligence_artificielle_de_defense.png",
+		url: 'https://www.linkedin.com/company/amiad-minarm/',
+		level: 'gold'
+	},
+	{
+		name: 'Fellows',
+		logo: '/sponsors/logo_fellows.png',
+		url: 'https://www.fellows-consulting.com/',
+		level: 'gold'
+	},
+	{
+		name: 'G2S',
+		logo: '/sponsors/logo_g2s.png',
+		url: 'https://www.g2s-groupama-technologies.fr/',
+		level: 'gold'
+	},
+	{
+		name: 'GROUPE SII',
+		logo: '/sponsors/logo_groupe_sii.png',
+		url: 'https://sii-group.com',
+		level: 'gold'
+	},
+	{
+		name: 'Infotel',
+		logo: '/sponsors/logo_infotel.png',
+		url: 'https://infotel.com/',
+		level: 'gold'
+	},
+	{
+		name: 'Max DS',
+		logo: '/sponsors/logo_max_ds.svg',
+		url: 'https://maxds.fr/',
+		level: 'gold'
+	},
+	{
+		name: 'Zenika',
+		logo: '/sponsors/logo_zenika.svg',
+		url: 'https://www.zenika.com/',
+		level: 'gold'
+	},
+	{
+		name: '6TM',
+		logo: '/sponsors/logo_6tm.png',
+		url: 'https://www.6tm.com/',
+		level: 'silver',
+		hidden: true
+	},
+	{
+		name: 'ACENSI',
+		logo: '/sponsors/logo_acensi.svg',
+		url: 'https://acensi.group/',
+		level: 'silver',
+		hidden: true
+	},
+	{
+		name: 'ASI',
+		logo: '/sponsors/logo_asi.jpg',
+		url: 'https://www.asi.fr/',
+		level: 'silver',
+		hidden: true
+	},
+	{
+		name: 'Adventiel',
+		logo: '/sponsors/logo_adventiel.png',
+		url: 'https://www.adventiel.fr/',
+		level: 'silver'
+	},
+	{
+		name: 'CGI',
+		logo: '/sponsors/logo_cgi.png',
+		url: 'https://www.cgi.fr/fr-fr',
+		level: 'silver',
+		hidden: true
+	},
+	{
+		name: 'Catamania',
+		logo: '/sponsors/logo_catamania.png',
+		url: 'https://www.catamania.com/',
+		level: 'silver'
+	},
+	{
+		name: 'Coexya',
+		logo: '/sponsors/logo_coexya.png',
+		url: 'https://www.coexya.eu/',
+		level: 'silver'
+	},
+	{
+		name: 'Delia Technologies',
+		logo: '/sponsors/logo_delia_technologies.png',
+		url: 'https://www.delia.tech/',
+		level: 'silver',
+		hidden: true
+	},
+	{
+		name: 'IDnow',
+		logo: '/sponsors/logo_idnow.png',
+		url: 'https://www.idnow.io/fr/',
+		level: 'silver'
+	},
+	{
+		name: 'Kanoma',
+		logo: '/sponsors/logo_kanoma.svg',
+		url: 'https://www.kanoma.fr/',
+		level: 'silver'
+	},
+	{
+		name: 'Net-ng',
+		logo: '/sponsors/logo_net-ng.svg',
+		url: 'https://www.net-ng.com/',
+		level: 'silver'
+	},
+	{
+		name: 'Onepoint',
+		logo: '/sponsors/logo_onepoint.png',
+		url: 'https://www.groupeonepoint.com',
+		level: 'silver',
+		hidden: true
+	},
+	{
+		name: 'Open',
+		logo: '/sponsors/logo_open.png',
+		url: 'https://www.open.global/fr',
+		level: 'silver'
+	},
+	{
+		name: 'Oxxeo',
+		logo: '/sponsors/logo_oxxeo.png',
+		url: 'https://www.oxxeo.fr/',
+		level: 'silver'
+	},
+	{
+		name: 'SFEIR',
+		logo: '/sponsors/logo_sfeir.png',
+		url: 'https://sfeir.com/',
+		level: 'silver'
+	},
+	{
+		name: 'Shodo Rennes',
+		logo: '/sponsors/logo_shodo_rennes.png',
+		url: 'https://shodo.io/',
+		level: 'silver'
+	},
+	{
+		name: 'Wijin',
+		logo: '/sponsors/logo_wijin.png',
+		url: 'https://www.wijin.tech/',
+		level: 'silver'
+	},
+	{
+		name: 'berix',
+		logo: '/sponsors/logo_berix.png',
+		url: 'https://berix.bzh/',
+		level: 'silver'
+	},
+	{
+		name: 'Luminess',
+		logo: '/sponsors/logo_luminess.png',
+		url: 'https://www.luminess.eu/',
+		level: 'bronze'
+	},
+	{
+		name: 'RunsOn',
+		logo: '/sponsors/logo_runson.svg',
+		url: 'https://runs-on.com/',
+		level: 'bronze'
+	},
+	{
+		name: 'Scalian',
+		logo: '/sponsors/logo_scalian.png',
+		url: 'https://www.scalian.com',
+		level: 'bronze'
+	},
+	{
+		name: 'Softeam',
+		logo: '/sponsors/logo_softeam.png',
+		url: 'https://www.softeam.com/',
+		level: 'bronze',
+		hidden: true
 	}
-	return list;
-}
+];
 
-function listAnonymousSponsors(count: number): Sponsor[] {
-	return Array(count).fill({ hidden: true, name: 'X', logo: null, url: null });
-}
+export const partners: Array<Sponsor> = [
+	{
+		name: 'CYIM',
+		logo: '/sponsors/logo_cyim.svg',
+		url: 'https://www.cyim.com/',
+		level: 'platinum'
+	},
+	{
+		name: 'Université Rennes 1',
+		logo: '/sponsors/logo_univ_rennes_1.png',
+		url: 'https://www.univ-rennes.fr/',
+		level: 'partner'
+	}
+];
