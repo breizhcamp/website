@@ -1,32 +1,24 @@
 <script lang="ts">
+	import type { Sponsor } from './constants';
+
 	interface Props {
-		sponsor: {
-			name: string;
-			logo?: string | null;
-			url?: string | null;
-			//description?: string;
-		};
+		sponsor: Sponsor;
 		size?: 'small' | 'medium' | 'large';
 	}
 
 	let { sponsor, size = 'medium' }: Props = $props();
 </script>
 
-<div class="sponsor-card {size}">
+<div class="sponsor-card {size}" class:interactive={!!sponsor.url}>
 	{#if sponsor.logo && sponsor.url}
 		<a
 			href={sponsor.url}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="sponsor-link"
 			aria-label="Visiter le site de {sponsor.name}"
 		>
-			<img src={sponsor.logo} alt="Logo {sponsor.name}" class="sponsor-logo" />
+			<img src={sponsor.logo} alt="Logo {sponsor.name}" class="sponsor-logo" loading="lazy" />
 		</a>
-	{:else if sponsor.logo}
-		<div class="sponsor-link">
-			<img src={sponsor.logo} alt="Logo {sponsor.name}" class="sponsor-logo" />
-		</div>
 	{:else}
 		<div class="sponsor-placeholder">
 			<span class="placeholder-text">{sponsor.name}</span>
@@ -39,7 +31,6 @@
 		background: white;
 		border: 1px solid var(--neutral-200);
 		border-radius: var(--border-radius);
-		padding: 2rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -47,28 +38,27 @@
 		aspect-ratio: 3/2;
 	}
 
-	.sponsor-card:hover {
+	.sponsor-card.interactive:hover {
 		border-color: var(--violet);
 		box-shadow: 0 4px 12px rgba(142, 48, 137, 0.1);
 	}
 
-	/* Tailles des logos */
-	.sponsor-card.large {
+	.large a {
 		min-height: 120px;
 		padding: 2.5rem;
 	}
 
-	.sponsor-card.medium {
+	.medium a {
 		min-height: 100px;
 		padding: 2rem;
 	}
 
-	.sponsor-card.small {
+	.small a {
 		min-height: 80px;
 		padding: 1.5rem;
 	}
 
-	.sponsor-link {
+	a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -77,7 +67,7 @@
 		border-radius: 4px;
 	}
 
-	.sponsor-link:focus-visible {
+	a:focus-visible {
 		outline: 2px solid var(--violet);
 		outline-offset: 2px;
 	}

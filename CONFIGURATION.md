@@ -50,6 +50,18 @@ tickets: {
 - ✅ Bouton "Billets" cliquable dans le header
 - ✅ Lien vers `/billets` au lieu du badge
 
+### ✅ Afficher les sponsors "Bientôt annoncé"
+
+Pour n'afficher que les sponsors "Bientôt annoncé", modifier la constante `DISPLAY_ONLY_FAKE_ONES` dans le fichier `src\routes\sponsors\constants.ts` à `true`.
+
+**Résultat :** aucun soponsor n'est annoncé, uniquement des emplacement "Bientôt annoncé".
+
+Pour afficher les sponsors "Bientôt annoncé" en plus des sponsors présents, dans la limite du nombre de sponsoring prévu, modifier la constante `DISPLAY_FAKE_ONES` dans le fichier `src\routes\sponsors\constants.ts` à `true`. La variable `DISPLAY_ONLY_FAKE_ONES` doit être à `false`.
+
+**Résultat :** les soponsors sons annoncés, des emplacements "Bientôt annoncé" restent visibles pour inciter de nouveaux sponsors.
+
+Si les deux variables sont à `false`, les sponsors sont affichés et les emplacements "Bientôt annoncé" ne sont plus affichés.
+
 ### 🎤 Ouvrir/Fermer le CFP
 
 #### Cacher le menu CFP

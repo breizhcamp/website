@@ -3,6 +3,7 @@
 	import Button from '../../lib/components/ui/Button.svelte';
 	import SponsorCard from './SponsorCard.svelte';
 	import { sponsorLevels } from './constants';
+	import { getSponsors } from './utils';
 </script>
 
 <Seo
@@ -46,16 +47,9 @@
 				role="list"
 				aria-label="Liste des sponsors {level.name}"
 			>
-				{#each level.sponsors as sponsor, index (index)}
+				{#each getSponsors(level.id) as sponsor, index (index)}
 					<div role="listitem">
-						{#if sponsor.hidden ?? false}
-							<SponsorCard
-								sponsor={{ name: 'Bientôt annoncé' }}
-								size={level.logoSize}
-							/>
-						{:else}
-							<SponsorCard {sponsor} size={level.logoSize} />
-						{/if}
+						<SponsorCard {sponsor} size={level.logoSize} />
 					</div>
 				{/each}
 			</div>
@@ -152,7 +146,7 @@
 		display: grid;
 		gap: 2rem;
 		align-items: center;
-		justify-items: center;
+		justify-items: stretch;
 	}
 
 	/* Grid layouts par niveau */
