@@ -70,8 +70,7 @@ export const sponsors: Array<Sponsor> = [
 		name: 'Liksi',
 		logo: '/sponsors/logo_liksi.png',
 		url: 'https://www.liksi.fr',
-		level: 'platinum',
-		hidden: true
+		level: 'platinum'
 	},
 	{
 		name: "Agence Ministérielle pour l'Intelligence Artificielle de Défense",
@@ -110,6 +109,12 @@ export const sponsors: Array<Sponsor> = [
 		level: 'gold'
 	},
 	{
+		name: 'Sopra Steria',
+		logo: '/sponsors/logo_sopra_steria.png',
+		url: 'https://www.soprasteria.com/fr',
+		level: 'gold'
+	},
+	{
 		name: 'Zenika',
 		logo: '/sponsors/logo_zenika.svg',
 		url: 'https://www.zenika.com/',
@@ -126,8 +131,7 @@ export const sponsors: Array<Sponsor> = [
 		name: 'ACENSI',
 		logo: '/sponsors/logo_acensi.svg',
 		url: 'https://acensi.group/',
-		level: 'silver',
-		hidden: true
+		level: 'silver'
 	},
 	{
 		name: 'ASI',
