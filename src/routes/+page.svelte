@@ -1,4 +1,5 @@
 <script lang="ts">
+	import NewsletterForm from '$lib/components/NewsletterForm.svelte';
 	import Seo from '$lib/components/seo/Seo.svelte';
 	import HeroSection from '../lib/components/home/HeroSection.svelte';
 	import StatsSection from '../lib/components/home/StatsSection.svelte';
@@ -142,6 +143,14 @@
 				</svg>
 			</a>
 		</div>
+	</div>
+</section>
+
+<!-- Newsletter Section -->
+<section id="newsletter" class="newsletter" aria-labelledby="news-title">
+	<div class="container">
+		<h2 id="news-title">Inscription à la newsletter</h2>
+		<NewsletterForm />
 	</div>
 </section>
 
@@ -290,7 +299,8 @@
 		padding: 6rem 0;
 	}
 
-	.news h2 {
+	.news h2,
+	.newsletter h2 {
 		text-align: center;
 		color: var(--neutral-900);
 		margin-bottom: 1rem;
@@ -301,6 +311,10 @@
 		display: flex;
 		justify-content: center;
 		margin-top: 3rem;
+	}
+
+	.newsletter {
+		padding-bottom: 6rem;
 	}
 
 	.all-news-link {

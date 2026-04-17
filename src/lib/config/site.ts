@@ -114,6 +114,16 @@ export const siteConfig: SiteConfig = {
 			order: 6
 		},
 		{
+			id: 'newsletter',
+			label: 'Newsletter',
+			href: '/#newsletter',
+			description: "S'inscrire à la newsletter",
+			available: true,
+			showInMainNav: false,
+			showInFooter: true,
+			order: 6.5
+		},
+		{
 			id: 'equipe',
 			label: 'Équipe',
 			href: '/equipe',
