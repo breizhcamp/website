@@ -79,6 +79,12 @@ export const sponsors: Array<Sponsor> = [
 		level: 'gold'
 	},
 	{
+		name: 'CELAD',
+		logo: '/sponsors/logo_celad.png',
+		url: 'https://www.celad.com/',
+		level: 'gold'
+	},
+	{
 		name: 'Fellows',
 		logo: '/sponsors/logo_fellows.png',
 		url: 'https://www.fellows-consulting.com/',
@@ -124,8 +130,7 @@ export const sponsors: Array<Sponsor> = [
 		name: '6TM',
 		logo: '/sponsors/logo_6tm.png',
 		url: 'https://www.6tm.com/',
-		level: 'silver',
-		hidden: true
+		level: 'silver'
 	},
 	{
 		name: 'ACENSI',
@@ -135,7 +140,7 @@ export const sponsors: Array<Sponsor> = [
 	},
 	{
 		name: 'ASI',
-		logo: '/sponsors/logo_asi.jpg',
+		logo: '/sponsors/logo_asi.bin',
 		url: 'https://www.asi.fr/',
 		level: 'silver',
 		hidden: true
@@ -150,8 +155,7 @@ export const sponsors: Array<Sponsor> = [
 		name: 'CGI',
 		logo: '/sponsors/logo_cgi.png',
 		url: 'https://www.cgi.fr/fr-fr',
-		level: 'silver',
-		hidden: true
+		level: 'silver'
 	},
 	{
 		name: 'Catamania',
@@ -169,8 +173,7 @@ export const sponsors: Array<Sponsor> = [
 		name: 'Delia Technologies',
 		logo: '/sponsors/logo_delia_technologies.png',
 		url: 'https://www.delia.tech/',
-		level: 'silver',
-		hidden: true
+		level: 'silver'
 	},
 	{
 		name: 'IDnow',
@@ -194,8 +197,7 @@ export const sponsors: Array<Sponsor> = [
 		name: 'Onepoint',
 		logo: '/sponsors/logo_onepoint.png',
 		url: 'https://www.groupeonepoint.com',
-		level: 'silver',
-		hidden: true
+		level: 'silver'
 	},
 	{
 		name: 'Open',
