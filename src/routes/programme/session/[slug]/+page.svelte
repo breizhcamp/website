@@ -1,22 +1,38 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import Button from '$lib/components/ui/Button.svelte';
 	import Speaker from '$lib/Speaker.svelte';
 	import BookmarkButton from '../../BookmarkButton.svelte';
-	import { speakers } from '../../data/constants';
-	import { formatDayOfWeek, formatSessionDuration, formatTime } from '../../utils';
+	import { schedule, speakers } from '../../data/constants';
+	import {
+		formatDayOfWeek,
+		formatSessionDuration,
+		formatTime,
+		getThreeFollowingSessionsWithTheSameTheme
+	} from '../../utils';
 	import FutureSessions from './FutureSessions.svelte';
 	import { addToGoogleCalendar, downloadIcsFile, share } from './share.utils';
 
 	const { data } = $props();
 
 	const duration = $derived(formatSessionDuration(data));
+
+	const futureSessions = getThreeFollowingSessionsWithTheSameTheme(
+		schedule,
+		data.event_type,
+		data.event_end
+	);
 </script>
 
 <article style:opacity={data.filter === 'visible' ? 1 : 0.15}>
 	<div>
 		<div class="laptop-card">
 			<ul class="infos-utiles-one">
-				<li class="type" aria-label="thématique : {data.event_type}">{data.event_type}</li>
+				{#if !['Eat', 'Keynote'].includes(data.event_type)}
+					<li class="type" aria-label="thématique : {data.event_type}">
+						{data.event_type}
+					</li>
+				{/if}
 				<li class="format" aria-label="Format : {data.format}">{data.format}</li>
 				<li class="duration" aria-label="duration : {duration}">{duration}</li>
 			</ul>
@@ -44,21 +60,23 @@
 			</ul>
 		</div>
 
-		<div class="laptop-card">
-			<h2>Description</h2>
-			<p>{data.description}</p>
-		</div>
+		{#if data.description}
+			<div class="laptop-card">
+				<h2>Description</h2>
+				<p>{data.description}</p>
+			</div>
+		{/if}
 
-		<div class="laptop-card">
-			<h2>Orateur·ice{speakers.length >= 2 ? 's' : ''}</h2>
-			{#if data.speakers}
+		{#if data.speakers?.length}
+			<div class="laptop-card">
+				<h2>Orateur·ice{speakers.length >= 2 ? 's' : ''}</h2>
 				<div class="speakers" class:too-crowded={data.speakers.length >= 3}>
 					{#each data.speakers as speaker (speaker)}
 						<Speaker {speaker} size="lg" />
 					{/each}
 				</div>
-			{/if}
-		</div>
+			</div>
+		{/if}
 	</div>
 
 	<div>
@@ -87,18 +105,25 @@
 
 				<hr />
 
-				<Button variant="grey" href="/programme">
-					<img src="/icons/corner-down-left.svg" alt="" width="20" />
-					Retour au programme
-				</Button>
+				{#if browser}
+					<Button
+						variant="grey"
+						href="/programme/{window.localStorage.getItem('previous-page')}"
+					>
+						<img src="/icons/corner-down-left.svg" alt="" width="20" />
+						Retour au programme
+					</Button>
+				{/if}
 			</div>
 		</div>
 
-		<div class="laptop-card">
-			<h2>Les sessions futures sur le même thème</h2>
+		{#if futureSessions.length}
+			<div class="laptop-card">
+				<h2>Les sessions futures sur le même thème</h2>
 
-			<FutureSessions {...data} />
-		</div>
+				<FutureSessions sessions={futureSessions} />
+			</div>
+		{/if}
 	</div>
 </article>
 

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+	import { page } from '$app/state';
 	import Speaker from '$lib/Speaker.svelte';
 	import BookmarkButton from './BookmarkButton.svelte';
 	import { type Session } from './data/constants';
@@ -24,14 +26,18 @@
 	const duration = $derived(getSessionDuration({ event_start, event_end }));
 
 	const themeIndex = $derived(eventTypes.findIndex((eventType) => eventType === event_type));
+
+	function saveCurrentDayInLocalStorage() {
+		if (!browser) return;
+		window.localStorage.setItem('previous-page', page.params['slug'] ?? 'mercredi');
+	}
 </script>
 
 <article
 	class="theme-{themeIndex} duration-{duration}"
 	style:opacity={filter === 'visible' ? 1 : 0.15}
 >
-	<!-- FIXME use correct title level -->
-	<a href="/programme/session/{id}">
+	<a href="/programme/session/{id}" onclick={saveCurrentDayInLocalStorage}>
 		<h2>
 			<div class="bookmark-button-placeholder"></div>
 			{name}

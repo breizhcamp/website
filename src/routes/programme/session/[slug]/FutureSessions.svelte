@@ -1,17 +1,16 @@
 <script lang="ts">
-	import { schedule } from '../../constants';
-	import { formatDate, formatTime, getThreeFollowingSessionsWithTheSameTheme } from '../../utils';
+	import type { Session } from '../../data/constants';
+	import { formatDate, formatTime } from '../../utils';
 
 	interface Props {
-		event_type: string;
-		event_end: Date;
+		sessions: Array<Session>;
 	}
 
-	const { event_type, event_end }: Props = $props();
+	const { sessions }: Props = $props();
 </script>
 
 <ul class="wrapper">
-	{#each getThreeFollowingSessionsWithTheSameTheme(schedule, event_type, event_end) as session (session.id)}
+	{#each sessions as session (session.id)}
 		<li>
 			<ul class="infos-utiles-one">
 				<li class="type" aria-label="thématique : {session.event_type}">
@@ -24,7 +23,9 @@
 				<h3>{session.name}</h3>
 			</a>
 
-			<p>{session.description}</p>
+			{#if 'description' in session}
+				<p>{session.description}</p>
+			{/if}
 
 			<div class="infos-utiles-two">
 				<img src="/icons/clock.svg" alt="" width="16" />

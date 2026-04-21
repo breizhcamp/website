@@ -14,11 +14,7 @@
 		eventTypes: []
 	});
 
-	function getDayOfWeek() {
-		return data.day ? parseInt(data.day) : data.eventDays[0]!.getDay();
-	}
-
-	let currentDayOfWeek = $derived(getDayOfWeek());
+	let currentDayOfWeek = $derived(data.day);
 
 	const filteredSessions = $derived(
 		filterSessions(data.schedule, { ...filter, dayOfWeek: currentDayOfWeek })

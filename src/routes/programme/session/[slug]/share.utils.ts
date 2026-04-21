@@ -1,5 +1,5 @@
 import { PUBLIC_BASE_URL } from '$env/static/public';
-import type { Session } from '../../constants';
+import type { Session } from '../../data/constants';
 
 function formatTitle(data: Session) {
 	return `BreizhCamp - ${data.name}`;
@@ -7,9 +7,12 @@ function formatTitle(data: Session) {
 
 function formatDetails(data: Session) {
 	return `- format : ${data.format}
-- thème : ${data.event_type}
+- thème : ${data.event_type}${
+		'description' in data &&
+		`
 
-Description : ${data.description?.substring(0, 250)}...`;
+Description : ${data.description?.substring(0, 250)}...`
+	}`;
 }
 
 export function addToGoogleCalendar(data: Session) {
@@ -75,7 +78,9 @@ export function share(data: Session) {
 	try {
 		navigator.share({
 			title: formatTitle(data),
-			text: data.description?.substring(0, 120) ?? 'Rejoins la session du BreizhCamp !',
+			text:
+				('description' in data && data.description?.substring(0, 120)) ||
+				'Rejoins la session du BreizhCamp !',
 			url: `${PUBLIC_BASE_URL}/programme/session/${data.id}`
 		});
 	} catch (_err) {

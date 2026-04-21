@@ -13,7 +13,7 @@
 	{#each days as day, index (day)}
 		{@const formattedDay = formatDay(day)}
 		<a
-			href="/programme/{day.getDay()}"
+			href="/programme/{formattedDay.toLocaleLowerCase()}"
 			aria-current={day.getDay() === currentDayOfWeek ? 'true' : undefined}
 		>
 			<span class="laptop-only">Jour {index + 1} -</span>

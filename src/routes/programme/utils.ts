@@ -27,8 +27,13 @@ export function getSessionDuration(session: Pick<Session, 'event_start' | 'event
 }
 
 export function formatSessionDuration(session: Pick<Session, 'event_start' | 'event_end'>) {
-	const duration = (session.event_end.getTime() - session.event_start.getTime()) / 1000 / 60;
-	return `${Math.floor(duration / 60)}h${(duration % 60).toFixed().padStart(2, '0')}`;
+	const durationInMinutes =
+		(session.event_end.getTime() - session.event_start.getTime()) / 1000 / 60;
+	if (durationInMinutes < 60) {
+		return `${(durationInMinutes % 60).toFixed().padStart(2, '0')} min`;
+	} else {
+		return `${Math.floor(durationInMinutes / 60)}h${(durationInMinutes % 60).toFixed().padStart(2, '0')}`;
+	}
 }
 
 export function pairTimes<T>(times: T[]): { startAt: T; endAt: T }[] {
