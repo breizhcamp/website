@@ -8,6 +8,10 @@
 	}
 
 	let { eventTypes, filter = $bindable() }: Props = $props();
+
+	const filteredEventTypes = eventTypes
+		.map((eventType, index) => ({ eventType, index }))
+		.filter(({ eventType }) => !['Autre...', 'Eat', 'Keynote'].includes(eventType));
 </script>
 
 <div class="filters">
@@ -22,7 +26,7 @@
 			<legend>
 				<span>Thèmes</span>
 				<div class="themes">
-					{#each eventTypes.filter((eventType) => !['Autre...', 'Eat', 'Keynote'].includes(eventType)) as eventType, index (eventType)}
+					{#each filteredEventTypes as { eventType, index } (eventType)}
 						<label class="theme-{index}">
 							<input
 								type="checkbox"
