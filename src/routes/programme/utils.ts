@@ -1,5 +1,5 @@
 import { firstWednesdayOfEvent } from '$lib/constants';
-import { dayPeriods, type Session } from './constants';
+import { dayPeriods, type Session } from './data/constants';
 
 export function getDaysFromSchedule(schedule: Array<Session>) {
 	const days = schedule
@@ -82,7 +82,8 @@ export function filterSessions(schedule: Array<Session>, filter: Filter): Array<
 			const isEventTypeSelected =
 				!filter.eventTypes.length || filter.eventTypes.includes(event.event_type);
 
-			const isEventSearched = !filter.search || regex.test(event.search);
+			const isEventSearched =
+				!filter.search || ('search' in event && regex.test(event.search));
 
 			return {
 				...event,

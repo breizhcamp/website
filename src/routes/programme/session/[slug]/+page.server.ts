@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { schedule } from '../../constants';
+import { schedule } from '../../data/constants';
 import { getDuration, getThemeIndex } from '../../utils';
 
 export const load = async ({ params, parent }) => {

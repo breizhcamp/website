@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PeriodTime } from './constants';
+	import type { PeriodTime } from './data/constants';
 	import { formatDate } from './utils';
 
 	type Props = PeriodTime;

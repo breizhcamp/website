@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Speaker from '$lib/Speaker.svelte';
-	import { speakers } from '../../constants';
+	import { speakers } from '../../data/constants';
 	import LevelIcon from '../../LevelIcon.svelte';
 	import { formatDate, formatDayOfWeek } from '../../utils';
 

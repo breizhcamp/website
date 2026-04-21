@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Speaker } from '../routes/programme/constants';
+	import type { Speaker } from '../routes/programme/data/constants';
 
 	interface Props {
 		speaker: string | Speaker;

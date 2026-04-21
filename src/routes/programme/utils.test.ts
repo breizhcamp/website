@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { schedule } from './constants';
+import { schedule } from './data/constants';
 import { getDaysFromSchedule } from './utils';
 
 describe('utils - getDaysFromSchedule', () => {

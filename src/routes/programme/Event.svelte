@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Speaker from '$lib/Speaker.svelte';
-	import { type Session } from './constants';
+	import { type Session } from './data/constants';
 	import LevelIcon from './LevelIcon.svelte';
 	import { formatDate } from './utils';
 
@@ -9,14 +9,15 @@
 	const {
 		id,
 		name,
-		speakers,
+		// speakers ,
 		event_type,
-		level,
+		// level,
 		event_start,
 		event_end,
 		filter,
 		eventTypes,
-		venue
+		venue,
+		...props
 	}: Props = $props();
 
 	const duration = $derived((event_end.getTime() - event_start.getTime()) / 1000 / 60);
@@ -32,13 +33,13 @@
 	<a href="/programme/session/{id}">
 		<h2>{name}</h2>
 	</a>
-	{#if speakers}
-		<div class="speakers" class:too-crowded={speakers.length >= 3}>
-			{#each speakers as speaker, index (index)}
+	{#if 'speakers' in props && props.speakers}
+		<div class="speakers" class:too-crowded={props.speakers.length >= 3}>
+			{#each props.speakers as speaker, index (index)}
 				<Speaker
 					{speaker}
 					size={duration < 40 ? 'sm' : 'md'}
-					reducedTextSize={duration < 100 && speakers.length > 1}
+					reducedTextSize={duration < 100 && props.speakers.length > 1}
 				/>
 			{/each}
 		</div>
@@ -49,9 +50,9 @@
 			<span class="mobile-only"> · {venue}</span>
 		</p>
 		<div class="flex">
-			{#if level}
-				<span class="level" title={level} aria-label="Niveau {level}">
-					<LevelIcon {level} />
+			{#if 'level' in props && props.level}
+				<span class="level" title={props.level} aria-label="Niveau {props.level}">
+					<LevelIcon level={props.level} />
 				</span>
 			{/if}
 			<span class="event-type">{event_type}</span>
