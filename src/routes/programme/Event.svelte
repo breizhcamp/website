@@ -31,19 +31,30 @@
 		if (!browser) return;
 		window.localStorage.setItem('previous-page', page.params['slug'] ?? 'mercredi');
 	}
+
+	const isMealButNotLeach = event_type === 'Eat' && !formatTime(event_start).startsWith('12');
+	const notConfirmed = event_type === 'A venir';
 </script>
 
 <article
 	class="theme-{themeIndex} duration-{duration}"
+	class:is-meal={isMealButNotLeach}
 	style:opacity={filter === 'visible' ? 1 : 0.15}
 >
-	<a href="/programme/session/{id}" onclick={saveCurrentDayInLocalStorage}>
+	{#if notConfirmed}
 		<h2>
 			<div class="bookmark-button-placeholder"></div>
 			{name}
 		</h2>
-	</a>
-	<BookmarkButton eventId={id} variant="sm" />
+	{:else}
+		<a href="/programme/session/{id}" onclick={saveCurrentDayInLocalStorage}>
+			<h2>
+				<div class="bookmark-button-placeholder"></div>
+				{name}
+			</h2>
+		</a>
+		<BookmarkButton eventId={id} variant="sm" />
+	{/if}
 	{#if 'speakers' in props && props.speakers}
 		<div class="speakers" class:too-crowded={props.speakers.length >= 3}>
 			{#each props.speakers as speaker, index (index)}
@@ -77,36 +88,14 @@
 		background-color: hsla(var(--bg-color), 1);
 		border-left: 4px solid hsla(var(--accent-color), 1);
 		border-radius: 8px;
-		margin: 8px 0 8px 8px;
-		padding: 8px 16px;
-		height: 200px;
+		margin: 16px 0;
+		padding: 16px;
 	}
 
 	.bookmark-button-placeholder {
 		float: right;
 		width: 12px;
 		height: 24px;
-	}
-
-	.duration-15 {
-		height: 76px;
-		margin-top: 20px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-	}
-
-	.duration-25,
-	.duration-30 {
-		height: 100px;
-	}
-
-	.duration-55 {
-		height: 200px;
-	}
-
-	.duration-120 {
-		height: 408px;
 	}
 
 	h2 {
@@ -121,27 +110,14 @@
 		-webkit-box-orient: vertical;
 	}
 
-	h2:hover {
-		color: var(--orange);
-	}
-
 	a {
 		text-decoration: none !important;
 		padding: 0px !important;
 		display: block;
 	}
 
-	.speakers {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		margin-bottom: 12px;
-	}
-
-	.duration-55 .speakers.too-crowded,
-	.duration-120 .speakers {
-		flex-wrap: wrap;
-		gap: 4px 8px;
+	a:hover {
+		color: var(--orange);
 	}
 
 	.schedule {
@@ -175,70 +151,114 @@
 		border-radius: 12px;
 	}
 
-	.duration-15 {
-		padding: 4px 12px;
-	}
-
-	.duration-15 h2,
-	.duration-25 h2 {
-		font-size: 12px;
-		line-height: 1.05;
-		overflow: hidden;
-		display: -webkit-box;
-		-webkit-line-clamp: 2;
-		line-clamp: 2;
-		-webkit-box-orient: vertical;
-	}
-
-	.duration-15 h2,
-	.duration-15 .speakers {
-		margin-bottom: 0;
-	}
-
-	.duration-25 h2,
-	.duration-25 .speakers {
-		margin-bottom: 8px;
-	}
-
-	.duration-15 .schedule,
-	.duration-25 .schedule {
-		font-size: 10px;
-		margin: 0;
-	}
-
-	.duration-15 .footer,
-	.duration-25 .footer {
+	.speakers {
 		display: flex;
-		flex-direction: row-reverse;
 		align-items: center;
-		justify-content: space-between;
-	}
-
-	.duration-15 .event-type,
-	.duration-25 .event-type {
-		font-size: 10px;
-		padding: 2px 6px;
-		max-width: 80px;
-		text-overflow: ellipsis;
-		overflow: hidden;
-	}
-
-	.duration-15 .level,
-	.duration-25 .level {
-		padding: 2px;
-		border-radius: 10px;
-		height: 18px;
-	}
-
-	.duration-15 .level :global(svg),
-	.duration-25 .level :global(svg) {
-		width: 14px;
-		height: 14px;
+		gap: 8px;
+		margin-bottom: 12px;
 	}
 
 	@media (min-width: 768px) {
 		.mobile-only {
 			display: none;
+		}
+
+		article {
+			height: 200px;
+			margin: 8px 0 8px 8px;
+			padding: 8px 16px;
+		}
+
+		.duration-15 {
+			height: 76px;
+			margin-top: 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+		}
+
+		.duration-25,
+		.duration-30 {
+			height: 100px;
+		}
+
+		.duration-55 {
+			height: 200px;
+		}
+
+		.duration-120 {
+			height: 408px;
+		}
+
+		.is-meal {
+			height: 120px;
+		}
+
+		.duration-55 .speakers.too-crowded,
+		.duration-120 .speakers {
+			flex-wrap: wrap;
+			gap: 4px 8px;
+		}
+
+		.duration-15 {
+			padding: 4px 12px;
+		}
+
+		.duration-15 h2,
+		.duration-25 h2 {
+			font-size: 12px;
+			line-height: 1.05;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			line-clamp: 2;
+			-webkit-box-orient: vertical;
+		}
+
+		.duration-15 h2,
+		.duration-15 .speakers {
+			margin-bottom: 0;
+		}
+
+		.duration-25 h2,
+		.duration-25 .speakers {
+			margin-bottom: 8px;
+		}
+
+		.duration-15 .schedule,
+		.duration-25 .schedule {
+			font-size: 10px;
+			margin: 0;
+		}
+
+		.duration-15 .footer,
+		.duration-25 .footer {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.duration-15 .event-type,
+		.duration-25 .event-type {
+			font-size: 10px;
+			padding: 2px 6px;
+			max-width: 80px;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+
+		.duration-15 .level,
+		.duration-25 .level {
+			padding: 2px;
+			border-radius: 10px;
+			height: 18px;
+		}
+
+		.duration-15 .level :global(svg),
+		.duration-25 .level :global(svg) {
+			width: 14px;
+			height: 14px;
 		}
 	}
 </style>

@@ -51,6 +51,11 @@
 	--accent-color: 233, 52%, 25%;
 }
 .theme-13 {
+	--bg-color: 65, 100%, 95%;
+	--accent-color: 55, 100%, 40%;
+}
+/* -1 used for "A venir" sessions */
+.theme--1 {
 	--bg-color: 0, 0%, 94%;
 	--accent-color: 0, 0%, 39%;
 }

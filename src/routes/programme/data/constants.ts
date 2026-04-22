@@ -1,6 +1,7 @@
 import { sortEventsDate } from '../utils';
 import _keynotesAndLunch from './keynotesAndLunch.json';
 import _schedule from './schedule.json';
+import _scheduleNotConfirmed from './scheduleNotConfirmed.json';
 import _speakers from './speakers.json';
 
 type AsideSession = {
@@ -52,6 +53,26 @@ export type Speaker = {
 };
 
 export type PeriodTime = (typeof dayPeriods)[number]['times'][number];
+
+// writeFileSync(
+// 	'./schedule-not-confirmed.json',
+// 	JSON.stringify(
+// 		_schedule
+// 			.filter((s1) => !_schedule2.some((s2) => s1.id === s2.id))
+// 			.map((s) => ({
+// 				...s,
+// 				name: 'Bientôt annoncé',
+// 				event_type: 'A venir',
+// 				speakers: undefined,
+// 				video_url: undefined,
+// 				files_url: undefined,
+// 				slides_url: undefined,
+// 				description: undefined
+// 			})),
+// 		null,
+// 		2
+// 	)
+// );
 
 export const dayPeriods = [
 	{
@@ -257,6 +278,16 @@ const schedule = [
 			...kAndL,
 			event_start: new Date(`${kAndL.event_start.replace('<DAY>', date)}Z`),
 			event_end: new Date(`${kAndL.event_end.replace('<DAY>', date)}Z`),
+			filter: 'visible'
+		} as AsideSession;
+	}),
+	_scheduleNotConfirmed.map((event) => {
+		const eventStart = new Date(`${event.event_start}Z`);
+		return {
+			...event,
+			event_start: eventStart,
+			event_end: new Date(`${event.event_end}Z`),
+			day_of_week: eventStart.getDay(),
 			filter: 'visible'
 		} as AsideSession;
 	})

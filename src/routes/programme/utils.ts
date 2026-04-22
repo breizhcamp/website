@@ -16,7 +16,9 @@ export function getRoomsFromSchedule(schedule: Array<Session>) {
 }
 
 export function getEventTypesFromSchedule(schedule: Array<Session>) {
-	const eventTypes = schedule.map((event) => event.event_type);
+	const eventTypes = schedule
+		.map((event) => event.event_type)
+		.filter((eventType) => eventType !== 'A venir');
 	return Array.from(new Set(eventTypes)).sort((eventTypeA, eventTypeB) =>
 		eventTypeA.localeCompare(eventTypeB)
 	);
