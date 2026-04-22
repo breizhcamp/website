@@ -22,17 +22,6 @@
 		"venue_id": "1"
 	},
 	{
-		"id": "07ff4bc0f47c",
-		"name": "Keynote",
-		"format": "Keynote",
-		"venue": "Amphi C",
-		"day_of_week": 4,
-		"event_start": "<DAY>T18:05:00",
-		"event_end": "<DAY>T18:50:00",
-		"event_type": "Keynote",
-		"venue_id": "1"
-	},
-	{
 		"id": "6f6534c3-cdcc-4e9a-8278-79bfb4ae7226",
 		"name": "Accueil / Café",
 		"format": "Eat",
