@@ -1,17 +1,11 @@
 import { error } from '@sveltejs/kit';
-import { schedule } from '../../constants';
-import { getDuration, getThemeIndex } from '../../utils';
+import { schedule } from '../../data/constants';
 
-export const load = async ({ params, parent }) => {
-	const data = await parent();
+export const load = async ({ params }) => {
 	const event = schedule.find((event) => event.id === params.slug);
 
 	if (event) {
-		return {
-			...event,
-			themeIndex: getThemeIndex(data.eventTypes, event),
-			duration: getDuration(event)
-		};
+		return event;
 	}
 
 	error(404, 'Not found');

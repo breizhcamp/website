@@ -479,6 +479,8 @@
 	.eco-badge-link {
 		display: inline-block;
 		text-decoration: none;
+		padding: 0.25rem;
+		margin-left: -0.25rem;
 	}
 
 	.eco-badge-link:hover {

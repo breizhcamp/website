@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Session } from './constants';
+	import type { Session } from './data/constants';
 	import SlotEvents from './SlotEvents.svelte';
 	import SlotTitle from './SlotTitle.svelte';
 	import { groupSessionsBySlotsAndRooms, sortEventsDate, type DaySessionsBySlot } from './utils';

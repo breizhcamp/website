@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Speaker } from '../routes/programme/constants';
+	import type { Speaker } from '../routes/programme/data/constants';
 
 	interface Props {
 		speaker: string | Speaker;
@@ -37,7 +37,7 @@
 	}
 
 	.speaker img {
-		border-radius: 20px;
+		border-radius: 40px;
 		flex-shrink: 0;
 		width: 30px;
 		aspect-ratio: 1;
@@ -80,8 +80,17 @@
 		font-size: 10px;
 	}
 
+	.bio {
+		display: block;
+		font-size: 14px;
+		white-space: pre-line;
+		margin: 4px 0 16px;
+		line-height: 1;
+	}
+
 	.size-lg .speaker {
-		gap: 12px;
+		gap: 24px;
+		margin-bottom: 18px;
 	}
 
 	.size-lg + :global(.size-lg) {
@@ -89,18 +98,16 @@
 	}
 
 	.size-lg img {
-		width: 36px;
+		width: 80px;
 	}
 
 	.size-lg .speaker p {
-		font-size: 16px;
+		font-size: 18px;
+		font-weight: 700;
 	}
 
-	.bio {
-		display: block;
-		font-size: 14px;
-		white-space: pre-line;
-		margin: 4px 0 16px;
-		line-height: 1;
+	.size-lg .bio {
+		line-height: 1.5;
+		color: #4b5563;
 	}
 </style>

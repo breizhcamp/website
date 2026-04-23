@@ -3,6 +3,7 @@
 		| 'primary'
 		| 'secondary'
 		| 'tertiary'
+		| 'grey'
 		| 'link'
 		| 'icon-primary'
 		| 'icon-secondary';
@@ -56,7 +57,7 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		padding: 0.8rem 1.5rem;
+		padding: 12px 24px;
 		border-radius: 6px;
 		font-weight: 500;
 		font-size: 1rem;
@@ -77,9 +78,6 @@
 		width: 100%;
 	}
 
-	.btn:hover {
-		transform: translateY(-1px);
-	}
 	.btn:active {
 		transform: translateY(0);
 	}
@@ -131,6 +129,14 @@
 	}
 	.btn-icon-secondary:hover {
 		background: var(--neutral-200);
+	}
+
+	.btn-grey {
+		background-color: #f3f4f6;
+		color: #374151;
+	}
+	.btn-grey:hover {
+		background-color: #e9e9ed;
 	}
 
 	.btn-link {

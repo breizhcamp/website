@@ -1,4 +1,4 @@
-import { schedule } from './constants';
+import { schedule } from './data/constants';
 import { getDaysFromSchedule, getEventTypesFromSchedule, getRoomsFromSchedule } from './utils';
 
 export function load() {

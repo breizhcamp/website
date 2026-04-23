@@ -1,0 +1,43 @@
+<script lang="ts">
+	import { draw } from 'svelte/transition';
+
+	interface Props {
+		bookmarked: boolean;
+		hovered: boolean;
+		variant: 'sm' | 'lg';
+	}
+
+	const { bookmarked, hovered, variant }: Props = $props();
+	const strokeWidth = $derived(variant === 'sm' ? 1.5 : 2);
+</script>
+
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	width="24"
+	height="24"
+	viewBox="0 0 24 24"
+	fill={bookmarked ? '#dd7927' : 'none'}
+	stroke-width={strokeWidth}
+	stroke-linecap="round"
+	stroke-linejoin="round"
+>
+	<path
+		stroke={bookmarked ? '#dd7927' : 'currentColor'}
+		d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
+	/>
+	{#if hovered && bookmarked}
+		<path
+			transition:draw={{ duration: 500 }}
+			stroke="currentColor"
+			stroke-width={strokeWidth}
+			d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
+		/>
+	{:else if hovered}
+		<path
+			transition:draw={{ duration: 500 }}
+			stroke="#dd7927"
+			stroke-width={strokeWidth + 0.5}
+			d="M11.525,2.295L9.216,6.974A2.122,2.122 0 0 17.619,8.134L2.454,8.889A.53,.53 0 0 02.16,9.795L5.896,13.432A2.122,2.122 0 0 16.507,15.311L5.626,20.45A.53,.53 0 0 06.396,21.01L11.013,18.582A2.122,2.122 0 0 112.986,18.582L17.604,21.01A.53,.53 0 0 018.375,20.45L17.493,15.31A2.123,2.123 0 0 118.104,13.432L21.84,9.794A.53,.53 0 0 021.546,8.89L16.38,8.134A2.123,2.123 0 0 114.785,6.974L12.475,2.295A.53,.53 0 0 011.525,2.295"
+		/>
+	{/if}
+</svg>

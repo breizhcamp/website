@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Session } from './constants';
+	import type { Session } from './data/constants';
 	import Event from './Event.svelte';
 
 	interface Props {

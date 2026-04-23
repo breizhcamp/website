@@ -1,5 +1,5 @@
 import { firstWednesdayOfEvent } from '$lib/constants';
-import { dayPeriods, type Session } from './constants';
+import { dayPeriods, type Session } from './data/constants';
 
 export function getDaysFromSchedule(schedule: Array<Session>) {
 	const days = schedule
@@ -16,10 +16,26 @@ export function getRoomsFromSchedule(schedule: Array<Session>) {
 }
 
 export function getEventTypesFromSchedule(schedule: Array<Session>) {
-	const eventTypes = schedule.map((event) => event.event_type);
+	const eventTypes = schedule
+		.map((event) => event.event_type)
+		.filter((eventType) => eventType !== 'A venir');
 	return Array.from(new Set(eventTypes)).sort((eventTypeA, eventTypeB) =>
 		eventTypeA.localeCompare(eventTypeB)
 	);
+}
+
+export function getSessionDuration(session: Pick<Session, 'event_start' | 'event_end'>) {
+	return (session.event_end.getTime() - session.event_start.getTime()) / 1000 / 60;
+}
+
+export function formatSessionDuration(session: Pick<Session, 'event_start' | 'event_end'>) {
+	const durationInMinutes =
+		(session.event_end.getTime() - session.event_start.getTime()) / 1000 / 60;
+	if (durationInMinutes < 60) {
+		return `${(durationInMinutes % 60).toFixed().padStart(2, '0')} min`;
+	} else {
+		return `${Math.floor(durationInMinutes / 60)}h${(durationInMinutes % 60).toFixed().padStart(2, '0')}`;
+	}
 }
 
 export function pairTimes<T>(times: T[]): { startAt: T; endAt: T }[] {
@@ -82,7 +98,8 @@ export function filterSessions(schedule: Array<Session>, filter: Filter): Array<
 			const isEventTypeSelected =
 				!filter.eventTypes.length || filter.eventTypes.includes(event.event_type);
 
-			const isEventSearched = !filter.search || regex.test(event.search);
+			const isEventSearched =
+				!filter.search || ('search' in event && regex.test(event.search));
 
 			return {
 				...event,
@@ -107,6 +124,14 @@ export function groupSessionsBySlotsAndRooms(
 export type DaySessionsBySlot = ReturnType<typeof groupSessionsBySlotsAndRooms>[number];
 
 export function formatDate(date: Date) {
+	const day = new Intl.DateTimeFormat('fr-FR', {
+		weekday: 'long'
+	}).format(date);
+
+	return day.charAt(0).toUpperCase() + day.slice(1);
+}
+
+export function formatTime(date: Date) {
 	return `${((24 + date.getHours() - 2) % 24).toFixed()}h${date.getMinutes().toFixed().padStart(2, '0')}`;
 }
 
@@ -136,6 +161,13 @@ export function getThemeIndex(eventTypes: Array<string>, event: Session) {
 	return eventTypes.findIndex((eventType) => eventType === event.event_type);
 }
 
-export function getDuration(event: Session) {
-	return (event.event_end.getTime() - event.event_start.getTime()) / 1000 / 60;
+export function getThreeFollowingSessionsWithTheSameTheme(
+	schedule: Array<Session>,
+	theme: string,
+	date: Date
+) {
+	return schedule
+		.filter((s) => s.event_type === theme && s.event_start >= date)
+		.sort((a, b) => a.event_start.getTime() - b.event_start.getTime())
+		.slice(0, 3);
 }

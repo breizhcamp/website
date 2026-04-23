@@ -1,0 +1,156 @@
+[
+	{
+		"id": "7a8c08ec6675",
+		"name": "Keynote de clôture",
+		"format": "Keynote",
+		"venue": "Amphi C",
+		"day_of_week": 5,
+		"event_start": "<DAY>T16:30:00",
+		"event_end": "<DAY>T17:00:00",
+		"event_type": "Keynote",
+		"venue_id": "1"
+	},
+	{
+		"id": "803c8631f8f5",
+		"name": "Keynote",
+		"format": "Keynote",
+		"venue": "Amphi C",
+		"day_of_week": 4,
+		"event_start": "<DAY>T09:00:00",
+		"event_end": "<DAY>T10:00:00",
+		"event_type": "Keynote",
+		"venue_id": "1"
+	},
+	{
+		"id": "6f6534c3-cdcc-4e9a-8278-79bfb4ae7226",
+		"name": "Accueil / Café",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 4,
+		"event_start": "<DAY>T08:00:00",
+		"event_end": "<DAY>T09:00:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	},
+	{
+		"id": "1f0f8bd1-9192-441e-b1fa-0da65a8db338",
+		"name": "Accueil / Café",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 5,
+		"event_start": "<DAY>T08:00:00",
+		"event_end": "<DAY>T09:00:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	},
+	{
+		"id": "2daae633-36b0-4e2b-8d49-fc33fa010405",
+		"name": "Pause déjeuner",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 4,
+		"event_start": "<DAY>T12:30:00",
+		"event_end": "<DAY>T13:30:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	},
+	{
+		"id": "31824c64-a503-4463-bb5a-58ad70edd373",
+		"name": "Pause café",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 3,
+		"event_start": "<DAY>T15:30:00",
+		"event_end": "<DAY>T16:00:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	},
+	{
+		"id": "4152a32e-6695-482a-8f8c-af00b440a5d6",
+		"name": "Pause café",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 4,
+		"event_start": "<DAY>T15:30:00",
+		"event_end": "<DAY>T16:00:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	},
+	{
+		"id": "43ddb221-7ad3-44f3-9fe3-b69f35ddb3fe",
+		"name": "Pause Café",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 5,
+		"event_start": "<DAY>T10:00:00",
+		"event_end": "<DAY>T10:30:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	},
+	{
+		"id": "911c3138-78c6-4380-8082-4fb65c78d4f1",
+		"name": "Pause Café",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 5,
+		"event_start": "<DAY>T15:30:00",
+		"event_end": "<DAY>T16:00:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	},
+	{
+		"id": "bdad07f8-41b7-441d-919a-dcba2045cbe2",
+		"name": "Pause déjeuner",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 5,
+		"event_start": "<DAY>T12:30:00",
+		"event_end": "<DAY>T13:30:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	},
+	{
+		"id": "e6dc0829-a283-4496-8d0f-63b36d2dc6c0",
+		"name": "Pause déjeuner",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 3,
+		"event_start": "<DAY>T12:00:00",
+		"event_end": "<DAY>T13:30:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	},
+	{
+		"id": "f11bdc6d-9d67-4c90-8481-941360f222b4",
+		"name": "Accueil / Café",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 3,
+		"event_start": "<DAY>T09:00:00",
+		"event_end": "<DAY>T10:00:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	},
+	{
+		"id": "f4e09f05-8253-4b02-a382-da9b4b07d51e",
+		"name": "Meet'n Greet",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 4,
+		"event_start": "<DAY>T18:50:00",
+		"event_end": "<DAY>T23:00:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	},
+	{
+		"id": "f5a32e4d-5f28-4723-ba15-826d05709664",
+		"name": "Pause café",
+		"format": "Eat",
+		"venue": "Hall",
+		"day_of_week": 4,
+		"event_start": "<DAY>T10:00:00",
+		"event_end": "<DAY>T10:30:00",
+		"event_type": "Eat",
+		"venue_id": "1"
+	}
+]

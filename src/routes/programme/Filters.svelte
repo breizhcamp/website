@@ -8,9 +8,13 @@
 	}
 
 	let { eventTypes, filter = $bindable() }: Props = $props();
+
+	const filteredEventTypes = eventTypes
+		.map((eventType, index) => ({ eventType, index }))
+		.filter(({ eventType }) => !['Autre...', 'Eat', 'Keynote'].includes(eventType));
 </script>
 
-<div class="filters">
+<div class="gray-wrapper">
 	<div class="max-width">
 		<div class="search">
 			<label>
@@ -22,7 +26,7 @@
 			<legend>
 				<span>Thèmes</span>
 				<div class="themes">
-					{#each eventTypes.filter((eventType) => !['Autre...', 'Eat', 'Keynote'].includes(eventType)) as eventType, index (eventType)}
+					{#each filteredEventTypes as { eventType, index } (eventType)}
 						<label class="theme-{index}">
 							<input
 								type="checkbox"
@@ -45,18 +49,18 @@
 </div>
 
 <style>
-	.filters {
+	.gray-wrapper {
 		background-color: var(--neutral-100);
 		padding: 24px;
-		display: flex;
-		flex-direction: column;
-		gap: 32px;
 	}
 
 	.max-width {
 		width: 100%;
 		max-width: 1440px;
 		margin: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
 	}
 
 	.search input {
@@ -80,6 +84,10 @@
 		cursor: pointer;
 	}
 
+	legend {
+		flex-shrink: 10;
+	}
+
 	.button-wrapper {
 		display: flex;
 		justify-content: flex-end;
@@ -99,9 +107,9 @@
 	}
 
 	@media (min-width: 768px) {
-		.filter {
+		.max-width {
 			flex-direction: row;
-			margin: 32px 0px;
+			margin: 32px auto;
 			border-radius: 8px;
 		}
 		.search input {

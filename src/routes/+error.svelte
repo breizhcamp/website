@@ -380,6 +380,7 @@
 	.encouragement-content {
 		text-align: center;
 		padding: 2rem;
+		margin: auto;
 	}
 
 	.encouragement-content h3 {
@@ -395,8 +396,6 @@
 		line-height: 1.6;
 		margin-bottom: 2rem;
 		max-width: 600px;
-		margin-left: auto;
-		margin-right: auto;
 	}
 
 	.contact-actions {

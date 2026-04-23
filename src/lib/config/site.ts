@@ -68,7 +68,7 @@ export const siteConfig: SiteConfig = {
 			label: 'Programme',
 			href: '/programme',
 			description: 'Découvrir les sessions et conférences',
-			available: false, // 🔧 Changer à true pour activer
+			available: true, // 🔧 Changer à true pour activer
 			showInMainNav: true, // ← Réactivé mais sera dans un menu "Plus" si nécessaire
 			showInFooter: true,
 			order: 2
