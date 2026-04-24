@@ -1153,7 +1153,7 @@
 	},
 	{
 		"id": "1181653",
-		"name": "Sécurisez son réseau Kubernetes avec Cilium",
+		"name": "Sécuriser son réseau Kubernetes avec Cilium",
 		"event_start": "2026-06-26T14:30:00",
 		"event_end": "2026-06-26T15:25:00",
 		"event_type": "DevOps",
@@ -1164,7 +1164,7 @@
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "Quelques lignes de commandes suffisent aujourd'hui pour créer son cluster Kubernetes dans le cloud.\nOn peut alors y déployer sa panoplie de Pods, Deployments, Services, etc. avec peu d'efforts (quoique beaucoup de YAML).\nMais qu'en est-il des accès réseaux ? Comment restreindre les accès en entrée et en sortie de son cluster ? Comment contrôler les requêtes HTTP entre microservices ?\nEt comment sécuriser les données qui transitent entre ces microservices ?\n\nDans ce talk, nous répondrons à ces questions avec Cilium, un plugin réseau pour Kubernetes.\nCilium permet d'acheminer les paquets entre conteneurs, d'appliquer les politiques de sécurité réseau, de chiffrer les données en transit et bien plus.\nIl offre aussi divers outils visuels pour créer ses politiques de sécurité et comprendre ce qui se passe côté réseau [1, 2].\n\nAu programme :\n- Une courte introduction aux réseaux de conteneurs à la Kubernetes.\n- Comment Cilium utilise eBPF pour faire la différence.\n- Sécuriser les accès IP, TCP, HTTP et autres en suivant les bonnes pratiques.\n- Chiffrer ses données applicatives sans sidecar ni prise de tête.\n\n[1] https://docs.cilium.io/en/latest/gettingstarted/hubble/\n[2] https://editor.networkpolicy.io",
+		"description": "Quelques lignes de commandes suffisent aujourd'hui pour créer son cluster Kubernetes dans le cloud. On peut alors y déployer sa panoplie de Pods, Deployments, Services, etc. avec peu d'efforts (quoique beaucoup de YAML). Mais qu'en est-il des accès réseaux ? Comment restreindre les accès en entrée et en sortie de son cluster ? Comment contrôler les requêtes HTTP entre microservices ? Et comment sécuriser les données qui transitent entre ces microservices ?\n\nDans ce talk, nous répondrons à ces questions avec Cilium, un plugin réseau pour Kubernetes. Cilium permet d'acheminer les paquets entre conteneurs, d'appliquer les politiques de sécurité réseau, de chiffrer les données en transit et bien plus. Il offre aussi divers outils visuels pour créer ses politiques de sécurité et comprendre ce qui se passe côté réseau [1, 2].\n\nAu programme :\n- Une courte introduction aux réseaux de conteneurs à la Kubernetes.\n- Comment Cilium utilise eBPF pour faire la différence.\n- Sécuriser les accès IP, TCP, HTTP et autres en suivant les bonnes pratiques.\n- Chiffrer ses données applicatives sans sidecar ni prise de tête.\n\n[1] https://docs.cilium.io/en/latest/gettingstarted/hubble/\n[2] https://editor.networkpolicy.io",
 		"level": "Standard"
 	},
 	{
