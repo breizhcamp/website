@@ -144,7 +144,7 @@ export const siteConfig: SiteConfig = {
 		url: 'https://sessionize.com/breizhcamp-2026/'
 	},
 	tickets: {
-		available: false, // 🔧 Changer à true pour ouvrir les billets
+		available: true, // 🔧 Changer à true pour ouvrir les billets
 		badge: 'Bientôt'
 	}
 };
