@@ -124,6 +124,17 @@ nav a {
 	text-decoration: none;
 }
 
+table {
+	border-collapse: collapse;
+	margin: auto;
+}
+
+td,
+th {
+	border: 1px solid black;
+	padding: 2px 16px;
+}
+
 /* AMÉLIORATION DES CONTRASTES CRITIQUES SEULEMENT */
 @media (prefers-contrast: high) {
 	a:link {

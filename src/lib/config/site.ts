@@ -135,7 +135,7 @@ export const siteConfig: SiteConfig = {
 		}
 	],
 	cfp: {
-		showInMainNav: true, // 🔧 Changer à true/false pour afficher/cacher le CFP dans le header
+		showInMainNav: false, // 🔧 Changer à true/false pour afficher/cacher le CFP dans le header
 		isOpen: false, // 🔧 Changer à true/false pour ouvrir/fermer le CFP
 		// 🔧 Si non défini 'Ouvert'/'Fermé' en fonction de `isOpen`
 		//badge: 'Bientôt',
@@ -203,4 +203,8 @@ export const getSuggestionPages = () => {
 		description: page.available ? page.description : 'Bientôt disponible',
 		unavailable: !page.available
 	}));
+};
+
+export const isProgramAvailable = () => {
+	return siteConfig.pages.find((page) => page.id === 'programme')?.available ?? false;
 };
