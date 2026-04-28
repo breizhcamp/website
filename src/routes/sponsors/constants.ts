@@ -115,6 +115,13 @@ export const sponsors: Array<Sponsor> = [
 		level: 'gold'
 	},
 	{
+		name: 'Orange Business',
+		logo: '/sponsors/logo_orange_business.png',
+		url: 'https://www.orange-business.com/fr',
+		level: 'gold',
+		hidden: true
+	},
+	{
 		name: 'Sopra Steria',
 		logo: '/sponsors/logo_sopra_steria.png',
 		url: 'https://www.soprasteria.com/fr',
@@ -137,13 +144,6 @@ export const sponsors: Array<Sponsor> = [
 		logo: '/sponsors/logo_acensi.svg',
 		url: 'https://acensi.group/',
 		level: 'silver'
-	},
-	{
-		name: 'ASI',
-		logo: '/sponsors/logo_asi.bin',
-		url: 'https://www.asi.fr/',
-		level: 'silver',
-		hidden: true
 	},
 	{
 		name: 'Adventiel',
@@ -188,9 +188,27 @@ export const sponsors: Array<Sponsor> = [
 		level: 'silver'
 	},
 	{
+		name: 'MV GROUP',
+		logo: '/sponsors/logo_mv_group.svg',
+		url: 'https://www.mv-group.fr/',
+		level: 'silver'
+	},
+	{
+		name: 'Moustache AI',
+		logo: '/sponsors/logo_moustache_ai.png',
+		url: 'https://moustacheai.fr',
+		level: 'silver'
+	},
+	{
 		name: 'Net-ng',
 		logo: '/sponsors/logo_net-ng.svg',
 		url: 'https://www.net-ng.com/',
+		level: 'silver'
+	},
+	{
+		name: 'Néosoft',
+		logo: '/sponsors/logo_neosoft.png',
+		url: 'https://www.neo-soft.fr/',
 		level: 'silver'
 	},
 	{
@@ -236,6 +254,12 @@ export const sponsors: Array<Sponsor> = [
 		level: 'silver'
 	},
 	{
+		name: 'ASI',
+		logo: '/sponsors/logo_asi.jpg',
+		url: 'https://www.asi.fr/',
+		level: 'bronze'
+	},
+	{
 		name: 'Luminess',
 		logo: '/sponsors/logo_luminess.png',
 		url: 'https://www.luminess.eu/',
@@ -257,8 +281,7 @@ export const sponsors: Array<Sponsor> = [
 		name: 'Softeam',
 		logo: '/sponsors/logo_softeam.png',
 		url: 'https://www.softeam.com/',
-		level: 'bronze',
-		hidden: true
+		level: 'bronze'
 	}
 ];
 

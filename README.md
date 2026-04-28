@@ -156,6 +156,11 @@ tickets: {
 }
 ```
 
+### Mise à jour des sponsors
+
+- Éditez `src/routes/sponsors/constants.ts` avec la configuration des sponsors
+- Déposez les logos dans `static/sponsors`
+
 **💡 Avantage :** Tous les menus, liens et badges se mettent à jour automatiquement sur tout le site !
 
 ## Mise en production
