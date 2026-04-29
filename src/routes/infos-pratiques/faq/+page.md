@@ -11,7 +11,7 @@ order: 3
 
 ## Quand a lieu le BreizhCamp 2026 ?
 
-Retrouvons nous sur le campus de Beaulieu du 24 au 25 juin 2026!
+Retrouvons nous sur le campus de Beaulieu du 24 au 26 juin 2026!
 
 Si ce n'est pas suffisant pour vous, vous pouvez rejoindre l'équipe de bénévoles le mardi 23 pour nous aider à tout installer.
 

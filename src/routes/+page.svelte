@@ -1,6 +1,7 @@
 <script lang="ts">
 	import NewsletterForm from '$lib/components/NewsletterForm.svelte';
 	import Seo from '$lib/components/seo/Seo.svelte';
+	import { isProgramAvailable } from '$lib/config/site';
 	import HeroSection from '../lib/components/home/HeroSection.svelte';
 	import StatsSection from '../lib/components/home/StatsSection.svelte';
 	import Badge from '../lib/components/ui/Badge.svelte';
@@ -26,15 +27,21 @@
 	<div class="container">
 		<div class="programme-header">
 			<h2 id="programme-title">Programme 2026</h2>
-			<div class="programme-badge">
-				<span class="badge-unavailable" aria-label="Programme bientôt disponible"
-					>Bientôt disponible</span
-				>
-			</div>
+			<p class="section-subtitle" style:margin-bottom="0">
+				Découvrez les dernières technologies tech avec nos experts internationaux
+			</p>
+			{#if isProgramAvailable()}
+				<span class="programme-button-wrapper">
+					<Button href="/programme" variant="tertiary">Accéder au programme</Button>
+				</span>
+			{:else}
+				<div class="programme-badge">
+					<span class="badge-unavailable" aria-label="Programme bientôt disponible"
+						>Bientôt disponible</span
+					>
+				</div>
+			{/if}
 		</div>
-		<p class="section-subtitle">
-			Découvrez les dernières technologies tech avec nos experts internationaux
-		</p>
 
 		<div class="tracks-grid">
 			<Card>
@@ -180,9 +187,16 @@
 		margin: 0;
 	}
 
+	.programme-button-wrapper :global(a) {
+		padding: 6px 12px;
+		border-radius: 100px;
+		margin-bottom: 4rem;
+	}
+
 	.programme-badge {
 		display: flex;
 		justify-content: center;
+		margin-bottom: 4rem;
 	}
 
 	.badge-unavailable {
