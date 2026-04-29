@@ -33,9 +33,9 @@ Alors, vous commencez par quoi ? 👀
 
 ## La billetterie est ouverte !
 
-La billetterie de l'édition 2026 est ouverte. Vous pouvez dors et déjà réserver vos places.
+La billetterie de l'édition 2026 est ouverte. Vous pouvez d'ores et déjà réserver vos places.
 
-Contrairement aux éditions précédentes, il n'y aura pas de tirage au sort. En effet, les 2 éditions précédentes, le nombre de place vendu était légèrement inférieur à la capacité d'accueil de l'université. Néanmoins, l'achat des places ce fera donc au premier arrivé, premier servi ! Alors n'attendez plus !
+Contrairement aux éditions précédentes, il n'y aura pas de tirage au sort. En effet, les 2 éditions précédentes, le nombre de place vendu était légèrement inférieur à la capacité d'accueil de l'université. Néanmoins, l'achat des places se fera donc au premier arrivé, premier servi ! Alors n'attendez plus !
 
 <Button
     variant="tertiary"
@@ -44,7 +44,7 @@ Contrairement aux éditions précédentes, il n'y aura pas de tirage au sort. En
 Accéder à la billetterie
 </Button>
 
-## Une bien triste nouvelle
+## Augmentation des tarifs
 
 Vous le constaterez sans doute au moment d'acheter vos billets : nous avons appliqué une augmentation assez significative des tarifs.
 
