@@ -35,7 +35,7 @@ Alors, vous commencez par quoi ? 👀
 
 La billetterie de l'édition 2026 est ouverte. Vous pouvez d'ores et déjà réserver vos places.
 
-Contrairement aux éditions précédentes, il n'y aura pas de tirage au sort. En effet, les 2 éditions précédentes, le nombre de place vendu était légèrement inférieur à la capacité d'accueil de l'université. Néanmoins, l'achat des places se fera donc au premier arrivé, premier servi ! Alors n'attendez plus !
+Contrairement aux éditions précédentes, il n'y aura pas de tirage au sort. En effet, les 2 éditions précédentes, le nombre de places vendues était légèrement inférieur à la capacité d'accueil de l'université. L'achat des places se fera donc au premier arrivé, premier servi, alors n'attendez plus !
 
 <Button
     variant="tertiary"
