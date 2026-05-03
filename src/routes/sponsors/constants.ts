@@ -27,7 +27,7 @@ export const sponsorLevels: SponsorLevel[] = [
 		name: 'Sponsors Platinum',
 		id: 'platinum',
 		description: "Nos partenaires stratégiques qui soutiennent massivement l'événement",
-		defaultSponsorCount: 4,
+		defaultSponsorCount: 2,
 		gridCols: 'grid-cols-2',
 		logoSize: 'large'
 	},
@@ -35,7 +35,7 @@ export const sponsorLevels: SponsorLevel[] = [
 		name: 'Sponsors Gold',
 		id: 'gold',
 		description: 'Nos partenaires majeurs qui contribuent significativement au BreizhCamp',
-		defaultSponsorCount: 12,
+		defaultSponsorCount: 10,
 		gridCols: 'grid-cols-3',
 		logoSize: 'medium'
 	},
@@ -43,8 +43,8 @@ export const sponsorLevels: SponsorLevel[] = [
 		name: 'Sponsors Silver',
 		id: 'silver',
 		description: 'Nos partenaires qui nous accompagnent dans cette aventure',
-		defaultSponsorCount: 21,
-		gridCols: 'grid-cols-3',
+		defaultSponsorCount: 20,
+		gridCols: 'grid-cols-4',
 		logoSize: 'medium'
 	},
 	{
@@ -118,8 +118,7 @@ export const sponsors: Array<Sponsor> = [
 		name: 'Orange Business',
 		logo: '/sponsors/logo_orange_business.png',
 		url: 'https://www.orange-business.com/fr',
-		level: 'gold',
-		hidden: true
+		level: 'gold'
 	},
 	{
 		name: 'Sopra Steria',
@@ -284,7 +283,6 @@ export const sponsors: Array<Sponsor> = [
 		level: 'bronze'
 	}
 ];
-
 export const partners: Array<Sponsor> = [
 	{
 		name: 'CYIM',
