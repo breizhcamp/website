@@ -93,14 +93,12 @@
 		<!-- CTA Section -->
 		<div class="cta-section">
 			{#if siteConfig.tickets.available}
-				<Button variant="primary" href="https://www.billetweb.fr/breizhcamp-2026" external
-					>Billets</Button
-				>
+				<Button variant="primary" href={siteConfig.tickets.url} external>Billets</Button>
 			{:else}
 				<div class="cta-disabled">
 					<div class="cta-text-container">
 						<span class="cta-text">Billets</span>
-						<Badge color="orange" size="sm">{siteConfig.tickets.badge}</Badge>
+						<Badge color="orange" size="sm">Bientôt</Badge>
 					</div>
 				</div>
 			{/if}
@@ -158,16 +156,13 @@
 				{/each}
 				<li class="mobile-cta">
 					{#if siteConfig.tickets.available}
-						<Button
-							variant="primary"
-							href="https://www.billetweb.fr/breizhcamp-2026"
-							fullWidth
-							external>Billets</Button
+						<Button variant="primary" href={siteConfig.tickets.url} fullWidth external
+							>Billets</Button
 						>
 					{:else}
 						<div class="mobile-cta-disabled">
 							<span class="cta-text">Billets</span>
-							<Badge color="orange" size="sm">{siteConfig.tickets.badge}</Badge>
+							<Badge color="orange" size="sm">Bientôt</Badge>
 						</div>
 					{/if}
 				</li>

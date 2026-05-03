@@ -44,7 +44,7 @@ export interface SiteConfig {
 	/** Configuration des billets */
 	tickets: {
 		available: boolean;
-		badge: string;
+		url: string;
 	};
 }
 
@@ -145,7 +145,7 @@ export const siteConfig: SiteConfig = {
 	},
 	tickets: {
 		available: true, // 🔧 Changer à true pour ouvrir les billets
-		badge: 'Bientôt'
+		url: 'https://www.billetweb.fr/breizhcamp-2026'
 	}
 };
 

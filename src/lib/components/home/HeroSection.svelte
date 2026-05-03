@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { siteConfig } from '$lib/config/site';
+
 	let currentSlide = $state(0);
 
 	const slides = [
@@ -49,10 +51,14 @@
 					</div>
 				</div>
 				<div class="hero-actions">
-					<div class="hero-cta-disabled">
-						<span class="cta-text">Réserver mes billets</span>
-						<span class="cta-badge">Bientôt disponibles</span>
-					</div>
+					{#if siteConfig.tickets.available}
+						<a class="hero-cta" href={siteConfig.tickets.url}>Réserver mes billets</a>
+					{:else}
+						<div class="hero-cta disabled">
+							<span class="cta-text">Réserver mes billets</span>
+							<span class="cta-badge">Bientôt disponibles</span>
+						</div>
+					{/if}
 				</div>
 			</div>
 			<div class="hero-image" role="region" aria-label="Galerie d'images de l'événement">
@@ -169,7 +175,7 @@
 	}
 
 	/* CTA désactivé dans le hero */
-	.hero-cta-disabled {
+	.hero-cta {
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
@@ -179,15 +185,22 @@
 		border-radius: 6px;
 		font-weight: 500;
 		font-size: 1rem;
-		cursor: not-allowed;
 		border: 2px solid rgba(255, 255, 255, 0.3);
 	}
 
-	.hero-cta-disabled .cta-text {
+	.hero-cta.disabled {
+		cursor: not-allowed;
+	}
+
+	.hero-cta .cta-text {
 		color: rgba(255, 255, 255, 0.9);
 	}
 
-	.hero-cta-disabled .cta-badge {
+	a.hero-cta {
+		text-decoration: none;
+	}
+
+	.hero-cta .cta-badge {
 		background: var(--orange);
 		color: white;
 		font-size: 0.7rem;
