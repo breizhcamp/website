@@ -22,17 +22,6 @@
 		"social": null
 	},
 	{
-		"id": "d86ba09c-4f64-4c81-8a06-1f2e572363df",
-		"lastname": "Alves",
-		"firstname": "Mickael",
-		"imageProfilURL": "https://sessionize.com/image/7582-400o400o1-DZwYZtrmstb3n6eBpbHxxH.png",
-		"bio": "👋🏼 Web Maker, application builder, and passionate speaker on web development, design, computing, and new technologies! 👨🏻‍💻\n\nCurrently a web consultant at @Zenika 🔴, I also enjoy sharing my knowledge through teaching and speaking at conferences. I’m a co-organizer of @LyonJS 🦁, an @Appwrite Hero 🦸🏼‍♂️, and a @Remotion Expert 🎬",
-		"github": null,
-		"googleplus": null,
-		"twitter": null,
-		"social": null
-	},
-	{
 		"id": "7aaf0ffd-ffcb-4af6-bc2f-07fa340c1203",
 		"lastname": "Ancelin",
 		"firstname": "Mathieu",
@@ -143,17 +132,6 @@
 		"social": null
 	},
 	{
-		"id": "cef8c142-9b42-4d0a-b2dd-8fe32628f003",
-		"lastname": "Bouron",
-		"firstname": "Nicolas",
-		"imageProfilURL": "https://sessionize.com/image/9f1c-400o400o1-DgJadeSSkSniDsbZRiiqHr.png",
-		"bio": "Consultant/Formateur Architecte Cloud/SRE/GenAI @TechTown",
-		"github": null,
-		"googleplus": null,
-		"twitter": null,
-		"social": null
-	},
-	{
 		"id": "b5568add-398c-4aa7-ac0d-45aab99ec825",
 		"lastname": "Breton",
 		"firstname": "Yoann",
@@ -258,6 +236,17 @@
 		"firstname": "Alexis \"Horgix\"",
 		"imageProfilURL": "https://sessionize.com/image/872c-400o400o1-H7g2nepYUA1xbxPffCzoTy.png",
 		"bio": "Alexis \"Horgix\" Chotard is a systems engineer and developer working at PayFit (https://payfit.fr), a French unicorn.\n\nDeveloper by training with experience primarily focused on systems and infrastructure, naturally finding himself involved in all things \"DevOps\"'.\nPassionate about automation to build autonomous, resilient, and easily maintainable systems.\nCommitted to the Cloud Native ecosystem, lover of Rust, and supporter of open source.",
+		"github": null,
+		"googleplus": null,
+		"twitter": null,
+		"social": null
+	},
+	{
+		"id": "89c89680-c674-403f-980b-c0344d302706",
+		"lastname": "Christian Sperandio",
+		"firstname": "Christian / Sperandio",
+		"imageProfilURL": "https://sessionize.com/image/7445-400o400o1-GiAr82jpKtQkprLNXgXN95.jpg",
+		"bio": "Développeur depuis la fin des années 1990, j’ai évolué avec des langages comme le C, Java, puis Go. Passionné par la conception de systèmes distribués, j’ai souvent travaillé sur des projets d’intégration de données. Mon approche est pragmatique : je privilégie les solutions concrètes plutôt que les leçons théoriques.\n\nActuellement, je travaille dans une société de télécoms, où je m’occupe de l’ingestion des données de performances du réseau. J’y développe des services cloud (GCP, Cloud Run, Pub/Sub) pour traiter ces données, avec une attention particulière aux contraintes de performance et de scalabilité.",
 		"github": null,
 		"googleplus": null,
 		"twitter": null,
@@ -528,6 +517,17 @@
 		"social": null
 	},
 	{
+		"id": "176ff351-f3e8-4afb-80c1-ddab60478601",
+		"lastname": "Halima",
+		"firstname": "Assal",
+		"imageProfilURL": "https://sessionize.com/image/ecab-400o400o1-4QQZckeX23yz6jLBq8LmQ1.jpg",
+		"bio": "Bonjour, moi c’est Halima. Je suis experte en données spatiales et systèmes d’information géographique (SIG), avec plusieurs années d’expérience dans le développement et l’analyse de données.\n\nAu cours de mon parcours, j’ai travaillé comme développeuse et analyste data, ce qui m’a permis de concevoir des solutions SIG concrètes, de l’architecture des bases de données à la visualisation interactive et aux pipelines de traitement des données.\n\nJe suis passionnée par le potentiel des données spatiales pour comprendre, simuler et modéliser le monde réel, et j’aime partager cette expertise avec la communauté afin d’inspirer de nouvelles approches et solutions.",
+		"github": null,
+		"googleplus": null,
+		"twitter": null,
+		"social": null
+	},
+	{
 		"id": "b1974f5a-0a03-4079-abae-0f87145fb355",
 		"lastname": "Haumont",
 		"firstname": "Julien",
@@ -583,17 +583,6 @@
 		"social": null
 	},
 	{
-		"id": "32606f30-e604-4adb-890a-7072e22fb211",
-		"lastname": "Idoux",
-		"firstname": "Etienne",
-		"imageProfilURL": "https://sessionize.com/image/6350-400o400o1-9wxxZmtssVcZJFcYZezYGo.jpg",
-		"bio": "💁‍♂️ Jeune développeur animé par sa passion, Etienne IDOUX se présente comme un consultant web travaillant à Zenika 🔴. Entrain de parfaire ses armes en tant que Développeur Frontend 🖼️ à Bedrock ⚫, il pimente son temps libre de toute sorte de projet. Il aime se rendre à des conférences afin d'apprendre et de faire apprendre à travers des talks variés !",
-		"github": null,
-		"googleplus": null,
-		"twitter": null,
-		"social": null
-	},
-	{
 		"id": "f1062f53-91c0-41d8-ac83-c33f6eb4545e",
 		"lastname": "Jonathan",
 		"firstname": "V-Vignon",
@@ -610,6 +599,17 @@
 		"firstname": "Fanny",
 		"imageProfilURL": "https://sessionize.com/image/aeab-400o400o1-TvX7R9Xk1wt6J7Tw7skrmg.jpg",
 		"bio": "Accompagnatrice agile & DevOps chez Apside, co-créatrice de TADx - Tours agile & DevOps eXperience, j'ai parcouru des kilomètres de lignes de développements, d'analyses fonctionnelles et d'architectures orientées données avant de revenir à mes premières amours : le travail d'équipe, dans un cadre motivant et bienveillant, autour de produits utiles et vivants.\nC'est donc tout naturellement vers l'agilité et le DevOps que mes dernières missions se sont tournées. Depuis, je glane le meilleur pour alimenter les équipes que j'accompagne au quotidien : mindset DevOps et craftership, outils au service de la qualité et du déploiement, techniques de design thinking pour capter les vrais besoins et l'amélioration continue des produits et des équipes.",
+		"github": null,
+		"googleplus": null,
+		"twitter": null,
+		"social": null
+	},
+	{
+		"id": "5defd2f7-9f66-42b1-98ca-6d3ed3c646f8",
+		"lastname": "Labarussias",
+		"firstname": "Thomas",
+		"imageProfilURL": "https://sessionize.com/image/fd8b-400o400o1-KyU6BoXNgLGEsMCTP25uiu.png",
+		"bio": "Staff DevOps/SRE. Ex DevRel pour un projet OSS de la CNCF. CNCF Ambassador. Speaker.",
 		"github": null,
 		"googleplus": null,
 		"twitter": null,
@@ -693,33 +693,11 @@
 		"social": null
 	},
 	{
-		"id": "3038873d-9822-43f1-9e81-e92b00e272ba",
-		"lastname": "Lefebvre",
-		"firstname": "Ludovic",
-		"imageProfilURL": "https://sessionize.com/image/6fb5-400o400o1-YBFVEBarBYVW1jyfAyXSbU.png",
-		"bio": "En tant que passionné de la performance web depuis plus de 15 ans, j’ai acquis une solide expérience en tant que responsable de l’équipe « coaching perf » chez Peaksys, filiale Tech de Cdiscount, pendant plusieurs années. Aujourd’hui, en tant que Product Owner d’une solution innovante de sécurité et de performance web, ma mission est de fournir des solutions innovantes pour garantir une expérience utilisateur de qualité et une sécurité renforcée.\n\nEn dehors de mon travail, je suis également passionné par le mind mapping et la composition de musique électronique.\n\nExpert en Web Performance et javascript \nProduct Owner de la solution de web sécurité Saas Baleen\nIntervenant à l'université de Bordeaux / Talence",
-		"github": null,
-		"googleplus": null,
-		"twitter": null,
-		"social": null
-	},
-	{
 		"id": "fcc78a7e-7329-4215-b2fb-1b6abe73776d",
 		"lastname": "Le Merrer",
 		"firstname": "Pascal",
 		"imageProfilURL": "https://sessionize.com/image/f2af-400o400o1-P9LF4gTZvvupveoBA1xKv3.jpeg",
 		"bio": "Pascal est un développeur très expérimenté. Il est aussi formateur, coach agile, et orateur. Curieux de nature, il se forme et expérimente en permanence. Il est convaincu que partager est la façon la plus efficace d'apprendre, et apprécie particulièrement les échanges avec ses pairs. C'est pourquoi il s'investit dans l'organisation d'événements consacrés au développement logiciel (Meetup Software Crafters Rennes, Breizhcamp et SoCraTes Rennes), et il publie une newsletter de veille technologique (http://www.craftletter.fr)",
-		"github": null,
-		"googleplus": null,
-		"twitter": null,
-		"social": null
-	},
-	{
-		"id": "645a4f71-61d1-4ba0-a5c4-ff42b230f7d5",
-		"lastname": "Lenormand",
-		"firstname": "Maxime",
-		"imageProfilURL": "https://sessionize.com/image/b2f2-400o400o1-EjyGj3JrMfCe8DM1ifmVYh.jpg",
-		"bio": "En tant qu'Architecte Sécurité, j’accompagne mes clients dans la sécurisation de leurs applications tout au long de leur cycle de vie. Ma spécialité : la défense en profondeur, toujours en équilibre avec les enjeux métier.",
 		"github": null,
 		"googleplus": null,
 		"twitter": null,
@@ -764,17 +742,6 @@
 		"firstname": "Benoît",
 		"imageProfilURL": "https://sessionize.com/image/1ec2-400o400o1-DALTnXkA3dyRVurrmQarVy.jpg",
 		"bio": "Tombé dans la potion quand j'étais petit, je m'intéresse depuis toujours à l'informatique : d'abord joueur, bidouilleur et développeur sur calculatrice, puis professionnellement en tant que chercheur et formateur, et finalement de retour au développement depuis quelques années.\n\nPassionné par les langages modernes, de bas niveau (Go, Rust) ou fonctionnels (Caml, Elm) permettant par leur conception de limiter les risques d'erreur humaine, je m'implique dans les communautés locales pour partager mes expériences et améliorer mes pratiques.\n\nActuellement Team Leader dans l'équipe Noms de Domaines chez OVHcloud.",
-		"github": null,
-		"googleplus": null,
-		"twitter": null,
-		"social": null
-	},
-	{
-		"id": "1f99b890-7870-40fb-b979-3a80d8edf05b",
-		"lastname": "Mayer",
-		"firstname": "Antoine",
-		"imageProfilURL": "https://sessionize.com/image/6cca-400o400o1-D5xkkpTHSx9rS4jKhH74ch.jpg",
-		"bio": "SRE chez Kaliop. Je suis passionné par le Cloud, Linux et la Sécurité. J'aime par-dessus tout comprendre comment les choses fonctionnent. Ce que j'apprends, je trouve important de le partager, que ce soit sur mon blog ou en talk.",
 		"github": null,
 		"googleplus": null,
 		"twitter": null,
@@ -935,6 +902,17 @@
 		"social": null
 	},
 	{
+		"id": "0c9b144a-3a48-4cb8-b9f9-84def47710c6",
+		"lastname": "Quintard",
+		"firstname": "Christophe",
+		"imageProfilURL": "https://sessionize.com/image/ccf6-400o400o1-9nG6mqe6UoUQayqce1sMeT.png",
+		"bio": "Je suis passé par des startups, IBM, Timwi, Ouest-France et maintenant je suis consultant chez Onepoint. Je continue à coder, parce que je ne veux pas être un architecte hors-sol. Mon but, c'est de mettre en place des SI évolutifs, grâce aux meilleurs principes et aux technos actuelles les plus adaptées.",
+		"github": null,
+		"googleplus": null,
+		"twitter": null,
+		"social": null
+	},
+	{
 		"id": "e731490a-c472-4fae-8913-c9b221daad11",
 		"lastname": "Ramond",
 		"firstname": "Armelle",
@@ -973,17 +951,6 @@
 		"firstname": "Stéphane",
 		"imageProfilURL": "https://sessionize.com/image/3993-400o400o1-s1jTBx7vRAbzNuCECMNziW.jpg",
 		"bio": "Stéphane Robert a un parcours atypique débutant sa formation par la chaudronnerie avant de se passionner pour la programmation informatique. Après ses études, il a travaillé dans la conception de produits et la formation, avant de se consacrer au DevOps après son arrivé dans le Nord de la France. Depuis 15 ans, il travaille sur des projets variés, se concentrant sur l'automatisation, le développement d'API Python, l pratique d'Ansible. Ces cinq dernières anneées il décidé de partager ses connaisssances sur le DevOps avec son blog.",
-		"github": null,
-		"googleplus": null,
-		"twitter": null,
-		"social": null
-	},
-	{
-		"id": "e40a7d07-4fa3-4c68-8637-3a37bbce00c3",
-		"lastname": "Rwanyindo",
-		"firstname": "Jacqueline",
-		"imageProfilURL": "https://sessionize.com/image/17a3-400o400o1-pXTxHgSdwmec7AfNYTbTvt.jpg",
-		"bio": "Software Engineer, je cultive les valeurs et pratiques de l’eXtreme Programming avec pragmatisme. Organisant régulièrement des meetups, je contribue activement aux communautés tech lilloises.",
 		"github": null,
 		"googleplus": null,
 		"twitter": null,
@@ -1034,17 +1001,6 @@
 		"social": null
 	},
 	{
-		"id": "68ac299d-097b-4d55-8bc5-a8e95b4c9067",
-		"lastname": "Simonnet",
-		"firstname": "Thomas",
-		"imageProfilURL": "https://sessionize.com/image/abc7-400o400o1-9xe1NYRM7RsyJaDWB4dzhi.jpg",
-		"bio": "Développeur depuis 2009, je fais du React quotidiennement depuis 9 ans. Même si ma préférence va pour le Front Web, je m'intéresse aussi aux technos et pratiques qui gravitent autour : React Native, NextJS, Design Systems pour n'en citer que 3.\n\nMes expériences précédentes me permettent de prendre du recul sur les nouveautés qui pullulent dans notre beau monde de la Tech, et qui le font avancer.\n\nBien sûr, en ces temps où l'IA est partout, je m'intéresse évidemment à ce sujet, sous les angles qui m'ont toujours motivé : expérience développeur, bonnes pratiques et automatisation.",
-		"github": null,
-		"googleplus": null,
-		"twitter": null,
-		"social": null
-	},
-	{
 		"id": "58e7a32e-712a-4419-a10c-e054a1c4bc20",
 		"lastname": "Spassevitch",
 		"firstname": "Stéphane",
@@ -1083,17 +1039,6 @@
 		"firstname": "Arnaud",
 		"imageProfilURL": "https://sessionize.com/image/c29f-400o400o1-pg2adyRyyhkqZnw62S9txD.png",
 		"bio": "12 ans d’architecture logicielle, 25 ans de code passionné, et quelques centaines de milliers de lignes de code plus tard… \n\nArnaud en a vu des belles, des monolithes de 3 millions de lignes, les microservices qui deviennent des nano services, des projets multiformes avec tous les buzzWord, et les configurations Spring Boot copiées-collées dans + de 50 projets. \n\nAujourd’hui architecte chez Ouest-France, après plusieurs années à conseiller en ESN, il a une mission : standardiser, simplifier et éviter les migraines aux développeurs.\n\nDans son parcours, il a joué avec :\n\nLes microservices – Avant que ça devienne un buzzword incontournable.\nL’IoT – Quand connecter et piloter des objets connectés depuis son smartphone relevait encore du défi technique.\nL’API Management – Parce qu’avoir 50 micro services sans les exposer proprement, c’est juste du chaos.\n\nAujourd’hui, il vous raconte comment il a mis fin au copier-coller en créant des Starters Spring Boot sur mesure. Une approche qui accélère les développements, impose des bonnes pratiques sans douleur, et évite bien des incompréhensions dans la construction de ses projets.\n\nSi vous aussi, vous voulez industrialiser vos projets sans sacrifier votre santé mentale, cette session est faite pour vous ! 🎤🔥",
-		"github": null,
-		"googleplus": null,
-		"twitter": null,
-		"social": null
-	},
-	{
-		"id": "63299d33-bc94-4cda-8a52-9ba3ec742c30",
-		"lastname": "Toison",
-		"firstname": "Ludovic",
-		"imageProfilURL": "https://sessionize.com/image/de28-400o400o1-LoZ6F8wHz9vZJYsftpvyFt.jpg",
-		"bio": "Passionné d'informatique depuis ses débuts, Ludovic a programmé son premier site web dès l'enfance et n'a jamais cessé de coder depuis. Après avoir implémenté des systèmes distribués en Java, il s'est intéressé au déploiement et à l'exploitation de ces systèmes en production, avec un accent particulier sur l'observabilité.\n\nLudovic a travaillé pendant plusieurs années en tant qu'Architecte Technique pour accompagner les organisations dans l'adoption de technologies Cloud Native telles que Mesos/Marathon, Kubernetes, OpenFaas et Istio. Il dirige aujourd'hui une organisation en tant que VP Engineering, avec pour ambition de bâtir une culture d'ingénierie performante et collaborative permettant aux équipes et aux individus de s'épanouir.",
 		"github": null,
 		"googleplus": null,
 		"twitter": null,
@@ -1160,6 +1105,17 @@
 		"firstname": "Matthieu",
 		"imageProfilURL": "https://sessionize.com/image/0b6e-400o400o1-nG8EipFwWG3wHJU7szEyve.jpg",
 		"bio": "✍️ All my references are available @ https://me.yodamad.fr\n🎤 Speaker since 2022 @ Devoxx FR, @SnowCamp, multiple DevFest, Innersource summit, ...\n🌋 Co-founder of Volcamp @Clermont-Fd : https://volcamp.io\n🦊 Gitlab hero | 🤖 R2Devops ambassador",
+		"github": null,
+		"googleplus": null,
+		"twitter": null,
+		"social": null
+	},
+	{
+		"id": "37ef6099-0400-4357-af5e-4c44154f24e7",
+		"lastname": "Vuillemin",
+		"firstname": "Florent",
+		"imageProfilURL": "https://sessionize.com/image/73fc-400o400o1-42CneuP1WNwVmH24Uh8syn.jpg",
+		"bio": "Souvent je développe, parfois je bricole des trucs, et de temps en temps je m'amuse avec de l'IOT.",
 		"github": null,
 		"googleplus": null,
 		"twitter": null,

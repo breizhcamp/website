@@ -112,6 +112,22 @@
 		"level": "Standard"
 	},
 	{
+		"id": "1152985",
+		"name": "La face cachée de la performance des équipes de développements",
+		"event_start": "2026-06-24T13:30:00",
+		"event_end": "2026-06-24T14:25:00",
+		"event_type": "Autre...",
+		"format": "Conférence",
+		"venue": "Amphi E",
+		"venue_id": "5",
+		"speakers": "Graveaud Geoffrey",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "En tant que coach craft et devops, j'accompagne au quotidien des équipes de développements. Je suis à leur écoute, je prends en compte leur besoin et j'essaie de comprendre ce qui les ralentit.\nFort de mon expérience depuis plus de 17 ans maintenant, j'ai identifié petit à petit les \"vrais\" bloqueurs ou ralentisseurs de ces équipes. Et j'ai découvert notamment qu'un développeur était interrompu 1 fois toutes les 4 minutes dans son quotidien de travail, soit environ 15 fois par heure.\nCela a pour effet d'avoir un impact négatif sur votre mémoire de travail et donc sur votre performance.\n\nAlors faut il encore penser que ce qui ralentit le plus les équipes, ce sont les processus ou les outils ?\n\nA travers cette conférence, je souhaite vous révéler les 4/5 ralentisseurs invisibles les plus impactants dans votre quotidien. Nous comprendrons ensemble également pas à pas leur impact négatif sur les équipes et sur les temps de réalisation de nos tâches. Tout cela avec l'appui d'étude et de références scientifiques pertinentes. Pour terminer, vous présenterai également les perspectives possibles en 2026 qui pourraient être mise dans votre organisation.",
+		"level": "Introduction"
+	},
+	{
 		"id": "1145721",
 		"name": "MCP : Bienvenue dans la Matrice ! Connectez vos IA au monde réel avec le Model Context Protocol",
 		"event_start": "2026-06-24T13:30:00",
@@ -144,6 +160,22 @@
 		"level": "Standard"
 	},
 	{
+		"id": "1180048",
+		"name": "1h50min pour créer une App Front avec la Clean Archigonale ©️",
+		"event_start": "2026-06-24T13:30:00",
+		"event_end": "2026-06-24T15:30:00",
+		"event_type": "Web",
+		"format": "Université",
+		"venue": "Amphi C",
+		"venue_id": "3",
+		"speakers": "Dorian Lamandé, Guillaume Chauvet",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Tout le monde pense que la \"Clean Architecture / Architecture Hexagonale\" se fait uniquement côté Back.\nDans cet atelier, nous allons vous montrer que cela fonctionne également côté Front.\n\nEt oui, Redux n'est pas le Silver Bullet des applications front-end.\nEt oui, Les Stores ne sont pas toujours obligatoires, mais ceci est une autre histoire !\n\nOn va coder ensemble une petit App Front pour voir comment mettre en place cela.\n\nTake away :\n\nComprendre et manipuler les concepts.\nArchitecture Logicielle\nStratégie de Tests",
+		"level": "Standard"
+	},
+	{
 		"id": "1183944",
 		"name": "Au-delà de la hype : gérer des embeddings à l'échelle du milliard dans Elasticsearch et OpenSearch",
 		"event_start": "2026-06-24T13:30:00",
@@ -158,6 +190,22 @@
 		"slides_url": null,
 		"description": "La recherche sémantique promet une révolution : pertinence contextuelle et compréhension du langage naturel en quelques lignes de code seulement. Sur un notebook ou un POC, c'est magique. Mais que se passe-t-il lorsque votre index dépasse le milliard de vecteurs ?\n\nLa magie cède rapidement la place à la brutalité de l'ingénierie : explosion de la latence, coûts d'infrastructure incontrôlés et défis liés à la RAM.\n\nDans cette présentation, nous laissons le buzz marketing à la porte et plongeons dans les entrailles d'Elasticsearch et d'OpenSearch à très grande échelle. Nous aborderons comment :\n\n- Architecturer vos clusters pour gérer un milliard d'embeddings sans flancher.\n- Optimiser le compromis critique entre précision et latence.\n- Réduire les coûts en utilisant des stratégies de quantification et de chunking intelligent.\n\nSi vous devez passer d'une recherche sémantique « Hello World » à une production massive, cette session est votre guide de survie.",
 		"level": "Avancé"
+	},
+	{
+		"id": "1181460",
+		"name": "REX – Construire un poste d’administration conforme SecNumCloud",
+		"event_start": "2026-06-24T14:30:00",
+		"event_end": "2026-06-24T15:25:00",
+		"event_type": "Sécurité",
+		"format": "Conférence",
+		"venue": "Amphi D",
+		"venue_id": "4",
+		"speakers": "David Gandra, Chris Navas",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "SecNumCloud est aujourd’hui la plus haute référence en matière de sécurité pour les services cloud en france, mais ses exigences peuvent sembler complexes, notamment lorsqu’il s’agit des accès d’administration.\n\nDans ce talk, nous partagerons notre retour d’expérience concret sur la conception et la mise en place d’un poste d’administration sécurisé permettant à nos équipes d’exploiter et d’administrer la plateforme tout en respectant les exigences SecNumCloud de l’ANSSI.\n\nÀ travers un retour d’expérience terrain, nous expliquerons nos choix techniques, les contraintes rencontrées, les erreurs commises et les solutions mises en place. Pas de théorie abstraite : du pragmatique et du vécu.\n\nNous aborderons les grands principes (séparation des usages, durcissement, traçabilité, contrôle des accès), l’architecture retenue, les compromis réalisés et les bénéfices concrets pour les équipes.\n\nCe talk ne prétend pas être une interprétation officielle du référentiel : nous ne sommes ni experts ni auditeurs SecNumCloud. Il s’agit d’un retour d’expérience honnête et opérationnel, destiné à démystifier SecNumCloud et à montrer qu’il est possible d’allier sécurité forte et efficacité opérationnelle.",
+		"level": "Introduction"
 	},
 	{
 		"id": "1182027",
@@ -206,6 +254,22 @@
 		"slides_url": null,
 		"description": "Marre d'utiliser Docker comme un simple lanceur de containers ? 🤔\n\nVous pensez avoir fait le tour de la question avec un docker run et un docker-compose up qui fonctionne \"plus ou moins\" ? Venez donc (ré-)apprendre à dompter les baleines !\n\nCette université est faite pour les développeurs et les SRE qui veulent passer au niveau supérieur. Repartons des bases et allons explorer les fonctionnalités méconnues qui transformeront votre workflow :\n* Compose, ce chef d'orchestre de génie : Découvrez le pouvoir caché des fichiers docker-compose.yml pour mettre en musique vos microservices et orchestrer des applications multi-conteneurs sans effort.\n* Buildx, le couteau suisse de la construction d'images : Dites adieu aux builds lents et bonjour aux images multi-architectures et aux caches partagés. Nous explorerons la puissance de docker buildx, notamment sa commande bake pour compiler plusieurs images simultanément avec une simple configuration, comme un chef préparant un festin de containers !\n* Multi-stage builds, le Saint Graal du build : Réduisez la taille de vos images de 90 % et faites rougir votre CI/CD.\n\nRejoignez-nous pour (re)découvrir que Docker est bien plus qu'un simple outil, c'est une philosophie, et que vos applications méritent un style qui va bien au-delà de la ligne de commande.",
 		"level": "Standard"
+	},
+	{
+		"id": "1180072",
+		"name": "Rendez vos tests Spring Boot rapides,robustes et maintenables",
+		"event_start": "2026-06-24T16:00:00",
+		"event_end": "2026-06-24T18:00:00",
+		"event_type": "Développement",
+		"format": "Université",
+		"venue": "Amphi A",
+		"venue_id": "1",
+		"speakers": "Thomas Piscitelli",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Si Spring Boot propose un arsenal d'outils complet pour tester nos applications, il n'est pas si évident de les utiliser efficacement. Trop souvent, les suites de tests deviennent un frein : lentes, fragiles et trop liées à l'implémentation technique plutôt qu'au sens métier.\n\nCet atelier de 2h propose d'échanger autour de nos pratiques à travers un exercice concret de refactoring des tests d'une application existante. L'objectif est d'apprendre à concevoir des tests rapides, compréhensibles et qui expriment pleinement le sens du code métier.\n\nSi vous ne savez pas ce qu'est le slice testing, si vous pensez que les tests containers ne sont que pour des tests d'intégration, si vous voulez réduire l'impact sur vos tests à chaque modification du code métier, cet atelier est pour vous",
+		"level": "Introduction"
 	},
 	{
 		"id": "1180523",
@@ -272,6 +336,38 @@
 		"level": "Introduction"
 	},
 	{
+		"id": "1180165",
+		"name": "Et si les cartes pouvaient simuler le monde réel?",
+		"event_start": "2026-06-25T10:30:00",
+		"event_end": "2026-06-25T11:25:00",
+		"event_type": "Autre...",
+		"format": "Conférence",
+		"venue": "Amphi E",
+		"venue_id": "5",
+		"speakers": "Assal Halima",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Les cartes servent généralement à visualiser des données. Mais que se passerait-il si elles pouvaient aussi simuler le monde réel, un peu comme dans Matrix, où le monde n’est qu’une simulation?\n\nDans ce talk, nous verrons comment transformer une carte classique en jumeau numérique simplifié d’un territoire. L’objectif : créer un système capable d’intégrer des données, de les traiter et de simuler certains phénomènes (trafic, météo, flux urbains…).\n\nÀ travers une démonstration concrète, nous construirons pas à pas un mini jumeau numérique en utilisant des outils open source. Nous aborderons notamment :\nLa gestion de données spatiales.\nLa transformation et l’intégration de données spatiales.\nLa visualisation interactive de carte.\nLes bases d’une architecture permettant de simuler un système territorial.\n\nL’objectif n’est pas de construire un modèle parfait, mais de montrer comment un développeur peut créer les fondations d’un système capable de représenter et de simuler le monde réel.\nUn voyage au croisement des SIG, de la data et de l’architecture logicielle… et une petite plongée dans la matrice géospatiale.",
+		"level": "Standard"
+	},
+	{
+		"id": "1141303",
+		"name": "HTMX, de manière simplix !",
+		"event_start": "2026-06-25T10:30:00",
+		"event_end": "2026-06-25T11:25:00",
+		"event_type": "Développement",
+		"format": "Conférence",
+		"venue": "Amphi C",
+		"venue_id": "3",
+		"speakers": "Thomas Labarussias, Stéphane Trebel",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "**Résumé**:\nOn a beaucoup parlé d'HTMX, maintenant, il serait temps de s'y mettre. Et c'est exactement ce que Thomas et moi avons fait !\nNous nous sommes mis à la place d'une équipe technique qui décide d'effectuer une migration d'une application SPA (React, Angular, etc.) vers une \"Hypermedia Driven Application\", grâce à HTMX (https://htmx.org) !\n\n**À qui ça s'adresse**:\nÀ qui s'intéresse au développement Web, aux frameworks FrontEnd, ou bien au contraire qui avait fait une croix sur tout ça parce que \"c'est devenu trop compliqué\". Bonne nouvelle ! Non seulement ça ne l'est pas, mais en plus on va vous expliquer pourquoi !\n\n**Plan**:\n- On part d'un exemple concret, un bon vieux CRUD implémenté en React (https://github.com/mutoe/preact-realworld-example-app), et on migre progressivement ce paradigme SPA+JSON vers une version HDA+HTMX\n- Point de ToDo-List simpliste ici, on va prendre un vrai cas métier: un clone de Medium, le site de gestion/publication d'articles de blog : https://realworld-docs.netlify.app/\n- Comment qu'on migre ? Graduellement ! On va Jouer sur le Content-Type pour renvoyer soit du JSON, soit du HTML, ce qui nous permettra de jouer sur les deux tableaux afin de comparer les deux approches. On prendra donc un ensemble de composants plus ou moins complexes pour les convertir.\n- À chaque étape, on aborde un aspect du développement Web et ses conséquences : SPA vs HDA, WebComponents, la gestion des APIs des \"Back-For-Front\" et la transition JSON->HTML \n- La grande force des SPA, ce sont leurs composants \"réactifs\". Voyons comment on a fait la même chose avec https://lit.dev/ pour créer des WebComponents équivalents, notamment grâce à HTMX",
+		"level": "Standard"
+	},
+	{
 		"id": "1150062",
 		"name": "Vous pensiez que la dette technique était le pire? Voici la dette de conception !",
 		"event_start": "2026-06-25T10:30:00",
@@ -302,6 +398,22 @@
 		"slides_url": null,
 		"description": "On a l'impression qu'avec chaque version de Java il y a de plus en plus de Garbage Collectors (GCs) avec de plus en plus d'options. On entend des phrases cryptiques telles que \"Oh trop bien ZGC est devenu générationnel alors que Shenandoah ne l'est pas\" ou \"T'as vu chez Netflix ils ont réduit leurs tail latencies avec ZGC\".\n\nDu coup on se pose tout plein de questions:\n* qu'est-ce qu'ils racontent ?\n* ZGC c'est quoi ?\n* si ce ZGC est si magique, pourquoi il y a d'autres GCs dans Java, hein ?\n* pourquoi on ne parle toujours que des différents GCs de Java mais jamais pour Go ou JavaScript ? chez Java ils ne sont pas capables d'en choisir un ?\n* et en natif, on a besoin d'un GC ?\n\nDev Java ou simples curieuses et curieux, tout le monde est bienvenu. On va repartir des bases, en commençant il y a 30 ans lors de la création de Java jusqu'à maintenant pour comprendre pourquoi on a toujours besoin d'un GC et pourquoi ce n'est pas un problème résolu (comme l'API Collection). On fera aussi un tour des GCs, de leurs évolutions, de pourquoi on en est arrivé là, de leurs forces et de leurs faiblesses. (spoiler alert: ZGC n'est pas le GC qui les remplacera tous)\n\nÀ l'issue de ce talk vous saurez quand utiliser quel GC afin de trouver le plus adapté à chaque projet, chaque application, chaque environnement.",
 		"level": "Introduction"
+	},
+	{
+		"id": "1153925",
+		"name": "L'architecture appliquée aux équipes",
+		"event_start": "2026-06-25T10:30:00",
+		"event_end": "2026-06-25T11:25:00",
+		"event_type": "Méthodologie",
+		"format": "Conférence",
+		"venue": "Amphi B",
+		"venue_id": "2",
+		"speakers": "Christophe Quintard",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "En architecture informatique, on sait concevoir un système capable de gérer différents types de requêtes qui soit clair et performant avec des temps de réponse prévisibles : découper en modules, définir les rôles, spécifier les interfaces, détailler les échanges, superviser, améliorer en continu...\nEt si on appliquait ce savoir à la conception... d'une DSI ?\nDurant ce talk, je vous partage mon expérience suite à la réorganisation d'une DSI : identifier les symptômes d'une mauvaise organisation, rechercher les causes premières, redécouper les équipes, définir leur rôle et leurs échanges, suivre les progrès, faire les ajustements. Au menu : agilité, DORA, Team Topologies, sens et bon sens !",
+		"level": "Standard"
 	},
 	{
 		"id": "1139629",
@@ -349,6 +461,22 @@
 		"files_url": null,
 		"slides_url": null,
 		"description": "Chaque application naît propre. Quelques années plus tard, elle est devenue le monstre que personne ne veut toucher. Ce n'est pas une fatalité, ce n'est pas de la malveillance, c'est le cycle de vie naturel d'une application.\n\nTout professionnel de l'informatique a ou aura la chance (ou la malchance) de travailler sur des projets récents comme en fin de vie ; avec peu d'utilisateurs comme des milliers ; sur des architectures propres comme sur des codebases que personne n'oserait ouvrir !\n\nOn va d'abord comprendre pourquoi nos applications ne sont pas éternelles, comment une codebase si propre et si performante se retrouve petit à petit sous perfusion. Pression produit, turnover, dépendances qui meurent, hotfixes qui s'accumulent… On nomme les coupables.\nPuis on passe aux antidotes : comment maintenir une application en bonne santé du début à la fin, et quand ce n'est plus possible, comment préparer la transmission dans les meilleures conditions ?\n \nDurant ce talk, vous allez pouvoir prendre du recul sur vos projets. À lire leur état de santé. Et surtout, à répondre à la vraie question : est-ce qu'on se bat pour la survie ou est-ce qu'on accompagne pour laisser place à autre chose ?",
+		"level": "Standard"
+	},
+	{
+		"id": "1181878",
+		"name": "Dix pièges à éviter lors de l'intégration de Keycloak",
+		"event_start": "2026-06-25T11:30:00",
+		"event_end": "2026-06-25T12:25:00",
+		"event_type": "Web",
+		"format": "Conférence",
+		"venue": "Amphi E",
+		"venue_id": "5",
+		"speakers": "Tristan Denmat",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Vous avez fait un POC de Keycloak rapide et convaincant et vous pensez que le plus dur est fait ? \n\nVenez découvrir les 10 principaux pièges dans lesquels tombent régulièrement les équipes qui intègrent Keycloak. \nSécurité, architecture, gouvernance, développement, exploitation... nos retours d'expérience couvriront la plupart des aspects d'un projet Keycloak.\n\nVous repartirez avec quelques clés importantes pour anticiper les difficultés et réussir un déploiement durable et sécurisé.",
 		"level": "Standard"
 	},
 	{
@@ -512,6 +640,22 @@
 		"level": "Standard"
 	},
 	{
+		"id": "1182067",
+		"name": "Cache-moi si tu peux : patterns et pièges du cache en production",
+		"event_start": "2026-06-25T13:30:00",
+		"event_end": "2026-06-25T14:25:00",
+		"event_type": "Architecture",
+		"format": "Conférence",
+		"venue": "Amphi B",
+		"venue_id": "2",
+		"speakers": "Sébastien Lecacheur",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "\"On va mettre un cache, ça ira plus vite.\"\nCette phrase a déjà coûté des nuits blanches à bien des équipes.\n\nLe cache est souvent introduit comme une \"optimisation\" rapide à mettre en place. En réalité, il transforme profondément le comportement d'un système : cohérence éventuelle, données obsolètes, effets de bord distribués... et bugs impossibles à reproduire. Aujourd'hui, ces mêmes défis réapparaissent dans les architectures intégrant des LLMs, avec l'émergence de modèles comme le *semantic caching*.\n\nPartons ensemble pour un voyage pragmatique dans le monde du cache :\n\n- ce qu'est réellement un cache (et ce qu'il n'est pas),\n- les principaux patterns de caching et leurs compromis,\n- les anti-patterns classiques qui transforment une application rapide en cauchemar opérationnel,\n- un arbre de décision pour choisir la bonne stratégie.\n\nCette session vous donnera les outils pour construire des systèmes rapides et prévisibles, et vous aidera à ne plus jamais considérer le cache comme un simple détail d'implémentation.",
+		"level": "Introduction"
+	},
+	{
 		"id": "1145894",
 		"name": "Développer un moteur de règle en 50 minutes, l'AST à la rescousse",
 		"event_start": "2026-06-25T14:30:00",
@@ -541,6 +685,22 @@
 		"files_url": null,
 		"slides_url": null,
 		"description": "On est en 2026 et l'authentification par mot de passe est toujours largement utilisée. Mais bon, il faut que les utilisateurs arrêtent d'utiliser \"toto\" ou \"azerty\"... Alors je vais faire comme d'habitude et imposer un mot de passe de 10 caractères avec 1 majuscule, 1 minuscule, 1 chiffre et 2 caractères spéciaux comme ça je serai tranquille...\n\nÊtes-vous sûr·e de vos pratiques ?\nÊtes-vous prêt·e à confronter vos intuitions à la réalité mathématique ?\nDans cette conférence, nous allons creuser le sujet d'une \"bonne\" politique de mots de passe, bien comprendre ce qu'est un mot de passe dit \"robuste\" ou \"complexe\" et voir des concepts clés pour critiquer objectivement la gestion de ceux-ci dans un SI. Nous mènerons une réflexion progressive et illustrée afin de bien appréhender et s'approprier ces concepts.\n\nL'objectif est de tordre le cou aux pratiques contre-productives, aux intuitions erronées et autres fausses bonnes idées.\n\nCette conférence s'adresse à toutes personnes créant ou utilisant un SI : développeuses, chef de projet, directrice de SI, architectes, responsables de produit, MOA, utilisateurs...",
+		"level": "Standard"
+	},
+	{
+		"id": "1179856",
+		"name": "Microgpt : on partage la pilule rouge ?",
+		"event_start": "2026-06-25T14:30:00",
+		"event_end": "2026-06-25T15:25:00",
+		"event_type": "IA",
+		"format": "Conférence",
+		"venue": "Amphi B",
+		"venue_id": "2",
+		"speakers": "Loïc Truchot",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Generative Pre-trained Transformer, GPT.\n3 lettres et une architecture simple qui a changé le monde, comme le vol d'un papillon déclenche un ouragan.\n\nPourtant, la majorité d'entre nous n’ont pas eu l’occasion de soulever le capot et se contentent de vivre dans la Matrice.\nSi même nous les devs, on ne comprend pas comment ça marche, qui le pourra ?\n\nmicrogpt d'Andrej Karpathy, c'est 200 lignes de Python pour un  modèle GPT minimaliste mais complet, idéal pour comprendre la révolution IA.\n\nJe vous propose de les réimplémenter en TypeScript, notre lingua franca, en détaillant chaque fonction de l'algo sur lequel repose Gemini, ChatGPT ou même Claude.\n\nhttps://karpathy.github.io/2026/02/12/microgpt/",
 		"level": "Standard"
 	},
 	{
@@ -672,6 +832,22 @@
 		"level": "Introduction"
 	},
 	{
+		"id": "1147686",
+		"name": "Green Architecture : moins de gras, plus d’impact, plus d'efficacité !",
+		"event_start": "2026-06-25T17:00:00",
+		"event_end": "2026-06-25T17:25:00",
+		"event_type": "Architecture",
+		"format": "Tool in action",
+		"venue": "Amphi A",
+		"venue_id": "1",
+		"speakers": "Diallo Thierno, David De Carvalho",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Vos APIs ont pris un peu de poids ? Elles consomment plus que nécessaire ? Pas de panique, on sort la boîte à outils pour leur faire un Green relooking !\n\nDans ce Tools-in-Action, nous appliquerons pas à pas le framework \"API Green Score\" sur une API réelle et existante, avec des outils open-source et des métriques concrètes.\n\nLe constat est simple : les APIs modernes sont souvent gourmandes.\n\nLe problème ? Pas le manque de principes, mais l’absence de règles mesurables et automatisées.\n\nEn live, nous :\n\n- prendrons les mesures (payload, latence, cache),\n- calculerons le Green Score par endpoint,\n- mettrons en place des règles actionnables : compression GZIP/Brotli, champs partiels, allègement des données transférées, pagination obligatoire, …\n- automatiserons la non-régression (SonarQube, Spectral).\n\nRésultat ? Une API plus légère, plus rapide, et un impact environnemental réduit.\n\nNous vous montrerons les gains en direct (avant/après) : trafic réseau réduit, latence stabilisée, cache optimisé.\n\nEt pour repartir avec du concret, un repo GitHub vous attend avec tout le nécessaire pour reproduire la démarche.",
+		"level": "Standard"
+	},
+	{
 		"id": "1176957",
 		"name": "Développer une file d'opérations asynchrone en Rust pour Thunderbird",
 		"event_start": "2026-06-25T17:00:00",
@@ -736,6 +912,22 @@
 		"level": "Introduction"
 	},
 	{
+		"id": "1167779",
+		"name": "On touche pas son père : sortir de l’héritage avec la délégation Kotlin",
+		"event_start": "2026-06-25T17:35:00",
+		"event_end": "2026-06-25T18:00:00",
+		"event_type": "Développement",
+		"format": "Tool in action",
+		"venue": "Amphi B",
+		"venue_id": "2",
+		"speakers": "Thomas Martin",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Quand on jouait au loup dans la cour d’école, il y avait une règle tacite : “on touche pas son père” — on ne retouche pas celui qui vient de nous toucher, sinon la partie tourne en boucle. En code, beaucoup d’équipes finissent par appliquer la même règle à la classe mère : “ne touche pas au parent, tu vas tout casser”. Et c’est souvent le signe de bugs dans la Matrice : couplages implicites, effets de bord, overrides surprenants… et, au passage, des glissements progressifs vers des violations des principes SOLID.\n\nDans cette session, je propose une autre approche : remplacer l’héritage utilisé pour partager du comportement par de la composition et de la délégation en Kotlin (by). L’idée est simple : au lieu d’empiler des responsabilités dans une hiérarchie de classes, on construit des services “en couches” (wrappers / décorateurs) qui ajoutent chacun un comportement précis, tout en déléguant le reste.\n\nÀ travers quelques refactorings “avant / après”, on verra comment cette approche rend les responsabilités plus explicites, facilite les tests, et permet d’évoluer sans créer de nouvelles classes de base ni de hooks implicites — avec une méthode de migration progressive, applicable sur une base existante.",
+		"level": "Standard"
+	},
+	{
 		"id": "1177781",
 		"name": "Des nulls visibles avant la prod : JSpecify en action",
 		"event_start": "2026-06-25T17:35:00",
@@ -798,6 +990,22 @@
 		"slides_url": null,
 		"description": "En tant qu’actrices et acteurs de la Tech, nous nous pensons souvent comme des ingénieurs et ingénieures : rationnels, méthodiques, cherchant à améliorer nos produits et nos pratiques par l’intelligence collective. Nous parlons d’expérimentation, d’itération, de rigueur… bref, d’ingénierie.\n\nPourtant, quand on observe nos échanges sur les réseaux sociaux ou dans nos réunions, on découvre un tout autre monde. D’un côté, un influenceur proclame que “tester est une perte de temps”. De l’autre, une experte affirme que le TDD est la clé de la robustesse logicielle. Un Scrum Master défend la vélocité en story points pendant qu’une développeuse revendique le noEstimates. Et au centre, les commentateurs tranchent : “tout le monde a raison, du moment que ça vous apporte de la valeur”.\n\nEt si, au fond, notre univers technique ressemblait plus à une pop culture qu’à une science appliquée ?\n\nEt si, derrière nos débats passionnés, se cachait une croyance partagée : celle que nos opinions valent des vérités ?\n\nDans cette conférence, nous verrons comment nos comportements, nos biais et nos figures d’autorité ont transformé la Tech en un espace de croyances, parfois éloigné de sa nature d’ingénierie. Nous explorerons comment retrouver une posture plus critique et plus rigoureuse :\n\n- distinguer opinion, intuition et preuve scientifique\n- reconnaître nos défauts de posture en tant qu'observateurs / observatrices mais aussi bien en tant qu'expertes et experts (dualité anti-intellectualisme et gatekeeping) et comment réformer notre posture intellectuelle.\n- renouer avec l’esprit de la méthode scientifique, comme l’agilité l’avait initialement envisagé ;\n- sortir du relativisme confortable sans tomber dans le dogmatisme.\n\nUne invitation à réconcilier curiosité, esprit critique et humanité dans un métier qui n’a jamais été aussi \"culturel\" qu’aujourd’hui.",
 		"level": "Standard"
+	},
+	{
+		"id": "1182070",
+		"name": "Comment l’IA va vous aider à réduire votre impact carbone (vraiment)",
+		"event_start": "2026-06-26T10:30:00",
+		"event_end": "2026-06-26T11:25:00",
+		"event_type": "Méthodologie",
+		"format": "Conférence",
+		"venue": "Amphi A",
+		"venue_id": "1",
+		"speakers": "Nicolas Ledez",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "L’IA est incontestablement consommatrice de ressources.\n\nMais puisque le mal est fait, pourquoi ne pas l’utiliser à bon escient pour réduire notre impact carbone ?\n\nJe l’ai mise à profit sur notre projet Zou pour optimiser les tests et la CI.\n\nVenez découvrir les résultats, c’est impressionnant.",
+		"level": "Introduction"
 	},
 	{
 		"id": "1141357",
@@ -992,6 +1200,22 @@
 		"level": "Introduction"
 	},
 	{
+		"id": "1179892",
+		"name": "Tuner uv pour travailler avec Docker",
+		"event_start": "2026-06-26T13:05:00",
+		"event_end": "2026-06-26T13:20:00",
+		"event_type": "DevOps",
+		"format": "Quicky",
+		"venue": "Amphi C",
+		"venue_id": "3",
+		"speakers": "Florent Vuillemin",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Vous utilisez uv, le super gestionnaire de packages Python ? Vous avez bien raison. Si vous faites des builds fréquents, vous voudrez éviter de télécharger les dépendances à chaque fois. Et au moment de construire une image docker de votre application, il faudra minimiser son contenu pour réduire la surface d'attaque et accélérer son transfert.\nÇa tombe bien, Astral a tout prévu pour ça au moyen d'options et de variables d'environnement dédiées ! Je vous ai déjà dit que c'était un super outil ?",
+		"level": "Standard"
+	},
+	{
 		"id": "1153222",
 		"name": "Context Engineering : pas des modèles plus malins, du contexte plus malin",
 		"event_start": "2026-06-26T13:05:00",
@@ -1056,36 +1280,36 @@
 		"level": "Introduction"
 	},
 	{
-		"id": "1152985",
-		"name": "La face cachée de la performance des équipes de développements",
+		"id": "1135237",
+		"name": "Direct en production !",
 		"event_start": "2026-06-26T13:30:00",
 		"event_end": "2026-06-26T14:25:00",
-		"event_type": "Autre...",
+		"event_type": "Architecture",
 		"format": "Conférence",
 		"venue": "Amphi E",
 		"venue_id": "5",
-		"speakers": "Graveaud Geoffrey",
+		"speakers": "Christian / Sperandio Christian Sperandio",
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "En tant que coach craft et devops, j'accompagne au quotidien des équipes de développements. Je suis à leur écoute, je prends en compte leur besoin et j'essaie de comprendre ce qui les ralentit.\nFort de mon expérience depuis plus de 17 ans maintenant, j'ai identifié petit à petit les \"vrais\" bloqueurs ou ralentisseurs de ces équipes. Et j'ai découvert notamment qu'un développeur était interrompu 1 fois toutes les 4 minutes dans son quotidien de travail, soit environ 15 fois par heure.\nCela a pour effet d'avoir un impact négatif sur votre mémoire de travail et donc sur votre performance.\n\nAlors faut il encore penser que ce qui ralentit le plus les équipes, ce sont les processus ou les outils ?\n\nA travers cette conférence, je souhaite vous révéler les 4/5 ralentisseurs invisibles les plus impactants dans votre quotidien. Nous comprendrons ensemble également pas à pas leur impact négatif sur les équipes et sur les temps de réalisation de nos tâches. Tout cela avec l'appui d'étude et de références scientifiques pertinentes. Pour terminer, vous présenterai également les perspectives possibles en 2026 qui pourraient être mise dans votre organisation.",
-		"level": "Introduction"
+		"description": "Depuis des années, nous utilisons plusieurs environnements intermédiaires avant LA livraison en production. Mais en 2026, est-ce vraiment nécessaire ? Sommes-nous certains qu’un déploiement en recette nous garantit une livraison réussie en production ?\n\nEt si nous tentions le coup ? Et si nous bazardions tout pour ne conserver que la production ?\n\nDurant cette présentation, nous explorerons comment allier craft et ingénierie logicielle pour concevoir des architectures prêtes pour la production. Nous aborderons les meilleures pratiques, les outils et les stratégies essentiels pour minimiser les risques et maximiser l'efficacité.",
+		"level": "Standard"
 	},
 	{
-		"id": "1182070",
-		"name": "Comment l’IA va vous aider à réduire votre impact carbone (vraiment)",
+		"id": "1155330",
+		"name": "Astro GitOps - Press ⓧ to start",
 		"event_start": "2026-06-26T13:30:00",
 		"event_end": "2026-06-26T14:25:00",
-		"event_type": "Méthodologie",
+		"event_type": "DevOps",
 		"format": "Conférence",
 		"venue": "Amphi C",
 		"venue_id": "3",
-		"speakers": "Nicolas Ledez",
+		"speakers": "Kevin Davin",
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "L’IA est incontestablement consommatrice de ressources.\n\nMais puisque le mal est fait, pourquoi ne pas l’utiliser à bon escient pour réduire notre impact carbone ?\n\nJe l’ai mise à profit sur notre projet Zou pour optimiser les tests et la CI.\n\nVenez découvrir les résultats, c’est impressionnant.",
-		"level": "Introduction"
+		"description": "🛸 Après le crash de notre vaisseau sur une planète inconnu, Astro part secourir ses companions en danger dans le monde du GitOps! \n        \nEn repartant de la base du GitOps, de son idée fondatrice à son utilisation quotidienne, nous découvrirons les bonnes et mauvaise pratiques qui façonnent cet univers.\nAu travers d'exemples dans différents domaines (Kubernetes, infrastructure, secret management), nous verrons concrètement comment appliquer cette philosophie.          \n\nEmbarquons pour ce voyage interstellaire, accompagné de nos bots favoris 🤖, dans le monde du GitOps !",
+		"level": "Standard"
 	},
 	{
 		"id": "1186113",
@@ -1153,7 +1377,7 @@
 	},
 	{
 		"id": "1181653",
-		"name": "Sécuriser son réseau Kubernetes avec Cilium",
+		"name": "Sécurisez son réseau Kubernetes avec Cilium",
 		"event_start": "2026-06-26T14:30:00",
 		"event_end": "2026-06-26T15:25:00",
 		"event_type": "DevOps",
@@ -1164,7 +1388,7 @@
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "Quelques lignes de commandes suffisent aujourd'hui pour créer son cluster Kubernetes dans le cloud. On peut alors y déployer sa panoplie de Pods, Deployments, Services, etc. avec peu d'efforts (quoique beaucoup de YAML). Mais qu'en est-il des accès réseaux ? Comment restreindre les accès en entrée et en sortie de son cluster ? Comment contrôler les requêtes HTTP entre microservices ? Et comment sécuriser les données qui transitent entre ces microservices ?\n\nDans ce talk, nous répondrons à ces questions avec Cilium, un plugin réseau pour Kubernetes. Cilium permet d'acheminer les paquets entre conteneurs, d'appliquer les politiques de sécurité réseau, de chiffrer les données en transit et bien plus. Il offre aussi divers outils visuels pour créer ses politiques de sécurité et comprendre ce qui se passe côté réseau [1, 2].\n\nAu programme :\n- Une courte introduction aux réseaux de conteneurs à la Kubernetes.\n- Comment Cilium utilise eBPF pour faire la différence.\n- Sécuriser les accès IP, TCP, HTTP et autres en suivant les bonnes pratiques.\n- Chiffrer ses données applicatives sans sidecar ni prise de tête.\n\n[1] https://docs.cilium.io/en/latest/gettingstarted/hubble/\n[2] https://editor.networkpolicy.io",
+		"description": "Quelques lignes de commandes suffisent aujourd'hui pour créer son cluster Kubernetes dans le cloud.\nOn peut alors y déployer sa panoplie de Pods, Deployments, Services, etc. avec peu d'efforts (quoique beaucoup de YAML).\nMais qu'en est-il des accès réseaux ? Comment restreindre les accès en entrée et en sortie de son cluster ? Comment contrôler les requêtes HTTP entre microservices ?\nEt comment sécuriser les données qui transitent entre ces microservices ?\n\nDans ce talk, nous répondrons à ces questions avec Cilium, un plugin réseau pour Kubernetes.\nCilium permet d'acheminer les paquets entre conteneurs, d'appliquer les politiques de sécurité réseau, de chiffrer les données en transit et bien plus.\nIl offre aussi divers outils visuels pour créer ses politiques de sécurité et comprendre ce qui se passe côté réseau [1, 2].\n\nAu programme :\n- Une courte introduction aux réseaux de conteneurs à la Kubernetes.\n- Comment Cilium utilise eBPF pour faire la différence.\n- Sécuriser les accès IP, TCP, HTTP et autres en suivant les bonnes pratiques.\n- Chiffrer ses données applicatives sans sidecar ni prise de tête.\n\n[1] https://docs.cilium.io/en/latest/gettingstarted/hubble/\n[2] https://editor.networkpolicy.io",
 		"level": "Standard"
 	},
 	{
@@ -1213,6 +1437,22 @@
 		"files_url": null,
 		"slides_url": null,
 		"description": "Il y a un an, ma veille technologique ressemblait à ça :\n\n→ Des dizaines d'onglets ouverts \"à lire plus tard\"\n→ Des favoris qui prenaient la poussière\n→ Une sensation constante de passer à côté de l'essentiel\n\nAujourd'hui, j'ai un système qui transforme cette veille passive en apprentissage actif.\n\nMon workflow complet :\n\n1- Capture → Readwise (articles, vidéos, posts)\n2- Podcasts → Snipd (avec transcription IA)\n3- Livres → Kindle (highlighting automatique)\n4- Centralisation → Obsidian (hub central)\n5- Output → Articles de blog, talks, tutoriels\n\nDans ce talk, je vous partage les différents outils que j’utilise au quotidien ce qui me permet d'écrire des articles de blogs ou des présentations.",
+		"level": "Standard"
+	},
+	{
+		"id": "1172923",
+		"name": "La revanche des VMs: sandboxing avec NerdBox",
+		"event_start": "2026-06-26T16:00:00",
+		"event_end": "2026-06-26T16:25:00",
+		"event_type": "DevOps",
+		"format": "Tool in action",
+		"venue": "Amphi E",
+		"venue_id": "5",
+		"speakers": "Nicolas De Loof",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Alors qu'ils ont radicalement bouleversé notre façon de concevoir le déploiements des applications, les containers sont aujourd'hui considérés comme un \"commodité\", un détail d'implémentation. Le runtime qui leur permet de tourner n'intéresse que les experts lors de débats enflammés autour d'une pinte.\n\nPourtant les choses continuent d'évoluer. Si on pourrait croire que l'architecture de Docker n'a pas changé depuis 10 ans, en réalité de nombreux composants évoluent pour assurer performance, flexibilité et sécurité renforcée. Par ailleurs, de nouveaux besoins apparaissent: avec la déferlante des agents IA, être en mesure de fournir un environment sans restriction tout en préservant son système hôte est devenu une nécessité.\n\nJe vais vous présenter dans les grandes lignes les nouveautés de containerd 2.2 avant de m'attarder sur le tout nouveau projet NerdBox qui permet de gérer des sandbox à base de microVM avec la simplicité des containers ... et -- cerise sur le gâteau -- sans avoir besoin d'être root 🤩",
 		"level": "Standard"
 	},
 	{
