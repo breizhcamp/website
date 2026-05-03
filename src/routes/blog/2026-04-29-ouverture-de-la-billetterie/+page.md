@@ -3,7 +3,7 @@ title: 'Ouverture de la billetterie'
 date: '2026-04-29'
 category: 'Annonce'
 excerpt: "Le programme du BreizhCamp 2026 est en ligne et la billetterie est maintenant ouverte ! N'attendez plus pour prendre vos places !"
-banner: '/blog/2026/newsletter.png'
+banner: '/blog/2026/newsletter.webp'
 layout: blog-post
 author: 'L’équipe du BreizhCamp'
 ---
