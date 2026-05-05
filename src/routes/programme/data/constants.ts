@@ -193,11 +193,6 @@ export const dayPeriods = [
 				startAt: new Date('2026-06-25T18:00:00.000Z'),
 				endAt: new Date('2026-06-25T19:00:00.000Z'),
 				label: 'Keynote'
-			},
-			{
-				startAt: new Date('2026-06-25T19:00:00.000Z'),
-				endAt: new Date('2026-06-25T23:00:00.000Z'),
-				label: 'Soirée'
 			}
 		]
 	},
