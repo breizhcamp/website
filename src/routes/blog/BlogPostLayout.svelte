@@ -234,6 +234,17 @@
 		color: inherit;
 	}
 
+	.article-content :global(table) {
+		border-collapse: collapse;
+		margin: auto;
+	}
+
+	.article-content :global(td),
+	.article-content :global(th) {
+		border: 1px solid black;
+		padding: 2px 16px;
+	}
+
 	.article-footer {
 		border-top: 1px solid var(--neutral-200);
 		padding-top: 2rem;
