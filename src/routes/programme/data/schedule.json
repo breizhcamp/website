@@ -24,7 +24,7 @@
 		"format": "Conférence",
 		"venue": "Amphi E",
 		"venue_id": "5",
-		"speakers": "Christopher Anciaux",
+		"speakers": "Samuel Lukes, Christopher Anciaux",
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
@@ -112,20 +112,20 @@
 		"level": "Standard"
 	},
 	{
-		"id": "1152985",
-		"name": "La face cachée de la performance des équipes de développements",
+		"id": "1171108",
+		"name": "Karpenter * Keda : Le duo gagnant du FinOps",
 		"event_start": "2026-06-24T13:30:00",
 		"event_end": "2026-06-24T14:25:00",
-		"event_type": "Autre...",
+		"event_type": "DevOps",
 		"format": "Conférence",
 		"venue": "Amphi E",
 		"venue_id": "5",
-		"speakers": "Graveaud Geoffrey",
+		"speakers": "Sebastien Fourreau, Guillaume Membré",
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "En tant que coach craft et devops, j'accompagne au quotidien des équipes de développements. Je suis à leur écoute, je prends en compte leur besoin et j'essaie de comprendre ce qui les ralentit.\nFort de mon expérience depuis plus de 17 ans maintenant, j'ai identifié petit à petit les \"vrais\" bloqueurs ou ralentisseurs de ces équipes. Et j'ai découvert notamment qu'un développeur était interrompu 1 fois toutes les 4 minutes dans son quotidien de travail, soit environ 15 fois par heure.\nCela a pour effet d'avoir un impact négatif sur votre mémoire de travail et donc sur votre performance.\n\nAlors faut il encore penser que ce qui ralentit le plus les équipes, ce sont les processus ou les outils ?\n\nA travers cette conférence, je souhaite vous révéler les 4/5 ralentisseurs invisibles les plus impactants dans votre quotidien. Nous comprendrons ensemble également pas à pas leur impact négatif sur les équipes et sur les temps de réalisation de nos tâches. Tout cela avec l'appui d'étude et de références scientifiques pertinentes. Pour terminer, vous présenterai également les perspectives possibles en 2026 qui pourraient être mise dans votre organisation.",
-		"level": "Introduction"
+		"description": "La gestion des coûts est un enjeu majeur sur les plateformes Cloud. Sans une approche rigoureuse, l’élasticité et la flexibilité promises peuvent rapidement se transformer en dépenses imprévisibles.\n\nRCA utilise le service managé Kubernetes EKS d’AWS. Afin de gérer les variations de charge des applications, nous avons déployé KEDA pour ajuster automatiquement le nombre d’instances en fonction de l’activité des utilisateurs et des périodes de la journée. Dans une optique FinOps, le dimensionnement des nœuds est optimisé via Karpenter, garantissant ainsi une adéquation au plus juste entre les ressources allouées et les besoins des applications.\n\nEn combinant ces solutions avec une stratégie hybride de facturation avec des instances Spot et des instances réservées en fonction des environnements, nous maximisons l’efficacité tout en réduisant les coûts.\nLors de cette présentation, nous vous partagerons nos astuces et nos difficultés sur l'intégration de ces outils sur AWS dans une approche FinOps.",
+		"level": "Standard"
 	},
 	{
 		"id": "1145721",
@@ -268,7 +268,7 @@
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "Si Spring Boot propose un arsenal d'outils complet pour tester nos applications, il n'est pas si évident de les utiliser efficacement. Trop souvent, les suites de tests deviennent un frein : lentes, fragiles et trop liées à l'implémentation technique plutôt qu'au sens métier.\n\nCet atelier de 2h propose d'échanger autour de nos pratiques à travers un exercice concret de refactoring des tests d'une application existante. L'objectif est d'apprendre à concevoir des tests rapides, compréhensibles et qui expriment pleinement le sens du code métier.\n\nSi vous ne savez pas ce qu'est le slice testing, si vous pensez que les tests containers ne sont que pour des tests d'intégration, si vous voulez réduire l'impact sur vos tests à chaque modification du code métier, cet atelier est pour vous",
+		"description": "Si Spring Boot propose un arsenal d'outils complet pour tester nos applications, il n'est pas si évident de les utiliser efficacement. Trop souvent, les suites de tests deviennent un frein : lentes, fragiles et trop liées à l'implémentation technique plutôt qu'au sens métier.\n\nCet atelier de 2h propose d'échanger autour de nos pratiques à travers un exercice concret de refactoring des tests d'une application existante. L'objectif est d'apprendre à concevoir des tests rapides, compréhensibles et qui expriment pleinement le sens du code métier.\n\nSi vous ne savez pas ce qu'est le slice testing, si vous pensez que les tests containers ne sont que pour des tests d'intégration, si vous voulez réduire l'impact sur vos tests à chaque modification du code métier, cet atelier est pour vous\n\nPRÉREQUIS :\n- Java 25 (JDK)\n- Docker et Docker Compose — daemon Docker lancé\n- Git\n- Un IDE Java— IntelliJ IDEA (recommande) ou votre IDE préféré pour faire du java",
 		"level": "Introduction"
 	},
 	{
@@ -304,20 +304,20 @@
 		"level": "Introduction"
 	},
 	{
-		"id": "1171108",
-		"name": "Karpenter * Keda : Le duo gagnant du FinOps",
+		"id": "1152985",
+		"name": "La face cachée de la performance des équipes de développements",
 		"event_start": "2026-06-24T17:00:00",
 		"event_end": "2026-06-24T17:55:00",
-		"event_type": "DevOps",
+		"event_type": "Autre...",
 		"format": "Conférence",
 		"venue": "Amphi D",
 		"venue_id": "4",
-		"speakers": "Sebastien Fourreau, Guillaume Membré",
+		"speakers": "Graveaud Geoffrey",
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "La gestion des coûts est un enjeu majeur sur les plateformes Cloud. Sans une approche rigoureuse, l’élasticité et la flexibilité promises peuvent rapidement se transformer en dépenses imprévisibles.\n\nRCA utilise le service managé Kubernetes EKS d’AWS. Afin de gérer les variations de charge des applications, nous avons déployé KEDA pour ajuster automatiquement le nombre d’instances en fonction de l’activité des utilisateurs et des périodes de la journée. Dans une optique FinOps, le dimensionnement des nœuds est optimisé via Karpenter, garantissant ainsi une adéquation au plus juste entre les ressources allouées et les besoins des applications.\n\nEn combinant ces solutions avec une stratégie hybride de facturation avec des instances Spot et des instances réservées en fonction des environnements, nous maximisons l’efficacité tout en réduisant les coûts.\nLors de cette présentation, nous vous partagerons nos astuces et nos difficultés sur l'intégration de ces outils sur AWS dans une approche FinOps.",
-		"level": "Standard"
+		"description": "En tant que coach craft et devops, j'accompagne au quotidien des équipes de développements. Je suis à leur écoute, je prends en compte leur besoin et j'essaie de comprendre ce qui les ralentit.\nFort de mon expérience depuis plus de 17 ans maintenant, j'ai identifié petit à petit les \"vrais\" bloqueurs ou ralentisseurs de ces équipes. Et j'ai découvert notamment qu'un développeur était interrompu 1 fois toutes les 4 minutes dans son quotidien de travail, soit environ 15 fois par heure.\nCela a pour effet d'avoir un impact négatif sur votre mémoire de travail et donc sur votre performance.\n\nAlors faut il encore penser que ce qui ralentit le plus les équipes, ce sont les processus ou les outils ?\n\nA travers cette conférence, je souhaite vous révéler les 4/5 ralentisseurs invisibles les plus impactants dans votre quotidien. Nous comprendrons ensemble également pas à pas leur impact négatif sur les équipes et sur les temps de réalisation de nos tâches. Tout cela avec l'appui d'étude et de références scientifiques pertinentes. Pour terminer, vous présenterai également les perspectives possibles en 2026 qui pourraient être mise dans votre organisation.",
+		"level": "Introduction"
 	},
 	{
 		"id": "1173487",
@@ -637,6 +637,22 @@
 		"files_url": null,
 		"slides_url": null,
 		"description": "Le \"1 Billion Row Challenge\" a poussé Java dans ses derniers retranchements. Mais Node.js, souvent réduit à son rôle \"single-threaded\", a-t-il les épaules pour relever ce défi ?\n\nJe vous propose un voyage au cœur de la compréhension du runtime. Nous partirons d'une implémentation naïve pour la reconstruire brique par brique.\n\nAu programme : éviter le Garbage Collector, maîtriser le Zero-Allocation, et orchestrer Worker Threads et Shared Memory ou encore utiliser WebAssembly. Venez découvrir comment transformer du JavaScript classique en une solution haute performance, grâce à des concepts applicables bien au-delà de ce challenge.",
+		"level": "Standard"
+	},
+	{
+		"id": "1149198",
+		"name": "L’animation web responsable : faire bouger sans alourdir",
+		"event_start": "2026-06-25T13:30:00",
+		"event_end": "2026-06-25T14:25:00",
+		"event_type": "Web",
+		"format": "Conférence",
+		"venue": "Amphi C",
+		"venue_id": "3",
+		"speakers": "Josiane Makelele",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Depuis une dizaine d’années, les animations web ont profondément transformé notre manière d’interagir avec les interfaces numériques. Qu’il s’agisse de transitions fluides, de micro-interactions ou d’effets de défilement, elles sont devenues un langage visuel à part entière. Ces animations enrichissent l’expérience utilisateur, attirent l’attention, facilitent la compréhension… et parfois, en font trop.\n\nMais derrière cette légèreté apparente se cachent des enjeux plus profonds : performance, accessibilité, sobriété numérique. Une animation mal pensée peut ralentir un site, exclure des utilisateurs sensibles aux mouvements, ou simplement détourner l’attention du message. À l’inverse, une animation bien conçue peut guider, apaiser, clarifier — sans surcharger.\n\nAujourd’hui, dans ce talk, je vous propose un voyage à travers les bonnes pratiques, les outils CSS modernes, et les choix de design qui permettent de faire bouger nos interfaces… sans les alourdir.",
 		"level": "Standard"
 	},
 	{
@@ -980,8 +996,8 @@
 		"name": "Pourquoi la Tech tient plus de la pop culture que de l'ingénierie?",
 		"event_start": "2026-06-25T18:00:00",
 		"event_end": "2026-06-25T19:00:00",
-		"event_type": "Keynote",
-		"format": "Keynote",
+		"event_type": "Autre...",
+		"format": "Conférence",
 		"venue": "Amphi C",
 		"venue_id": "3",
 		"speakers": "Julien Topçu",
@@ -1377,7 +1393,7 @@
 	},
 	{
 		"id": "1181653",
-		"name": "Sécurisez son réseau Kubernetes avec Cilium",
+		"name": "Sécuriser son réseau Kubernetes avec Cilium",
 		"event_start": "2026-06-26T14:30:00",
 		"event_end": "2026-06-26T15:25:00",
 		"event_type": "DevOps",
@@ -1388,7 +1404,7 @@
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "Quelques lignes de commandes suffisent aujourd'hui pour créer son cluster Kubernetes dans le cloud.\nOn peut alors y déployer sa panoplie de Pods, Deployments, Services, etc. avec peu d'efforts (quoique beaucoup de YAML).\nMais qu'en est-il des accès réseaux ? Comment restreindre les accès en entrée et en sortie de son cluster ? Comment contrôler les requêtes HTTP entre microservices ?\nEt comment sécuriser les données qui transitent entre ces microservices ?\n\nDans ce talk, nous répondrons à ces questions avec Cilium, un plugin réseau pour Kubernetes.\nCilium permet d'acheminer les paquets entre conteneurs, d'appliquer les politiques de sécurité réseau, de chiffrer les données en transit et bien plus.\nIl offre aussi divers outils visuels pour créer ses politiques de sécurité et comprendre ce qui se passe côté réseau [1, 2].\n\nAu programme :\n- Une courte introduction aux réseaux de conteneurs à la Kubernetes.\n- Comment Cilium utilise eBPF pour faire la différence.\n- Sécuriser les accès IP, TCP, HTTP et autres en suivant les bonnes pratiques.\n- Chiffrer ses données applicatives sans sidecar ni prise de tête.\n\n[1] https://docs.cilium.io/en/latest/gettingstarted/hubble/\n[2] https://editor.networkpolicy.io",
+		"description": "Quelques lignes de commandes suffisent aujourd'hui pour créer son cluster Kubernetes dans le cloud. On peut alors y déployer sa panoplie de Pods, Deployments, Services, etc. avec peu d'efforts (quoique beaucoup de YAML). Mais qu'en est-il des accès réseaux ? Comment restreindre les accès en entrée et en sortie de son cluster ? Comment contrôler les requêtes HTTP entre microservices ? Et comment sécuriser les données qui transitent entre ces microservices ?\n\nDans ce talk, nous répondrons à ces questions avec Cilium, un plugin réseau pour Kubernetes. Cilium permet d'acheminer les paquets entre conteneurs, d'appliquer les politiques de sécurité réseau, de chiffrer les données en transit et bien plus. Il offre aussi divers outils visuels pour créer ses politiques de sécurité et comprendre ce qui se passe côté réseau [1, 2].\n\nAu programme :\n- Une courte introduction aux réseaux de conteneurs à la Kubernetes.\n- Comment Cilium utilise eBPF pour faire la différence.\n- Sécuriser les accès IP, TCP, HTTP et autres en suivant les bonnes pratiques.\n- Chiffrer ses données applicatives sans sidecar ni prise de tête.\n\n[1] https://docs.cilium.io/en/latest/gettingstarted/hubble/\n[2] https://editor.networkpolicy.io",
 		"level": "Standard"
 	},
 	{
@@ -1474,10 +1490,10 @@
 	{
 		"id": "1180044",
 		"name": "Enshittification, ou la face cachée du numérique",
-		"event_start": "2026-06-26T09:00:00",
-		"event_end": "2026-06-26T10:00:00",
-		"event_type": "Keynote",
-		"format": "Keynote",
+		"event_start": "2026-06-26T09:30:00",
+		"event_end": "2026-06-26T10:25:00",
+		"event_type": "Autre...",
+		"format": "Conférence",
 		"venue": "Amphi C",
 		"venue_id": "3",
 		"speakers": "Karine Sabatier",

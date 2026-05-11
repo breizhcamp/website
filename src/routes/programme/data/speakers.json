@@ -704,6 +704,28 @@
 		"social": null
 	},
 	{
+		"id": "e480ae10-12d8-4898-be1c-772b3a851ecb",
+		"lastname": "Lukes",
+		"firstname": "Samuel",
+		"imageProfilURL": "https://sessionize.com/image/a36d-400o400o1-HohGnMN9k8WuHNQxF9c7UA.jpg",
+		"bio": "Je suis staff engineer chez Doctolib, avec un parcours entre le Royaume-Uni et la France. J’ai commencé ma carrière en travaillant sur le moteur de recherche des Pages Jaunes britanniques, puis j’ai rejoint la BBC, où j’ai eu l’occasion de contribuer à des projets de streaming vidéo à grande échelle.\n\nDepuis mon arrivée chez Doctolib, je me consacre à la transformation numérique de la santé : intégration de données médicales, amélioration des parcours praticiens, et, ces deux dernières années, co-construction de la Medical Data Platform (MDP) d’abord en Rails puis en NodeJS/Nest, pour répondre à des besoins de robustesse et de scalabilité.\n\nJ’interviens régulièrement en interne pour partager mon expérience lors d’ateliers d’architecture ou de présentations techniques, dans une démarche de transmission et de construction collective de la culture engineering.",
+		"github": null,
+		"googleplus": null,
+		"twitter": null,
+		"social": null
+	},
+	{
+		"id": "c54a196b-39f7-4ef3-9365-1908d6193182",
+		"lastname": "Makelele",
+		"firstname": "Josiane",
+		"imageProfilURL": "https://sessionize.com/image/c2ff-400o400o1-9FUcyCLDoebbDKRANW3L5N.jpg",
+		"bio": "Je suis passionnée par tout ce qui touche au web, ça évolue tellement qu'on ne peut pas s'ennuyer ! Je suis particulièrement sensible aux problématiques touchant à l'intégration HTML et au CSS. Je n'en oublie pas le JS pour autant !",
+		"github": null,
+		"googleplus": null,
+		"twitter": null,
+		"social": null
+	},
+	{
 		"id": "f2cf176d-3c3a-497c-a99d-2218e0342f23",
 		"lastname": "Marchand",
 		"firstname": "Jérôme",

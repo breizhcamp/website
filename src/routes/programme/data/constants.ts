@@ -1,8 +1,25 @@
 import { sortEventsDate } from '../utils';
 import _keynotesAndLunch from './keynotesAndLunch.json';
 import _schedule from './schedule.json';
-import _scheduleNotConfirmed from './scheduleNotConfirmed.json';
+import _scheduleNotConfirmed from './scheduleNotConfirmed.json' assert { type: 'json' };
 import _speakers from './speakers.json';
+
+type ScheduleEvent = {
+	id: string;
+	name: string;
+	event_start: string;
+	event_end: string;
+	event_type: string;
+	format: string;
+	venue: string;
+	venue_id: string;
+	speakers?: string | null;
+	description?: string;
+	video_url?: string | null;
+	files_url?: string | null;
+	slides_url?: string | null;
+	level?: 'Introduction' | 'Standard' | 'Avancé';
+};
 
 type AsideSession = {
 	id: string;
@@ -245,8 +262,10 @@ export const dayPeriods = [
 
 const speakers = _speakers as Array<Speaker>;
 
+const scheduleNotConfirmed = _scheduleNotConfirmed as Array<ScheduleEvent>;
+
 const schedule = [
-	_schedule.map((event) => {
+	(_schedule as Array<ScheduleEvent>).map((event) => {
 		const eventStart = new Date(`${event.event_start}Z`);
 		const _speakers = event.speakers
 			? event.speakers.split(', ').map((fullName) => {
@@ -262,7 +281,7 @@ const schedule = [
 			event_start: eventStart,
 			event_end: new Date(`${event.event_end}Z`),
 			day_of_week: eventStart.getDay(),
-			search: `${event.name} ${event.speakers.replace('/,/', '')}`,
+			search: `${event.name} ${event.speakers ? event.speakers.replace('/,/', '') : ''}`,
 			speakers: _speakers,
 			filter: 'visible'
 		} as Session;
@@ -281,7 +300,7 @@ const schedule = [
 			filter: 'visible'
 		} as AsideSession;
 	}),
-	_scheduleNotConfirmed.map((event) => {
+	scheduleNotConfirmed.map((event) => {
 		const eventStart = new Date(`${event.event_start}Z`);
 		return {
 			...event,
