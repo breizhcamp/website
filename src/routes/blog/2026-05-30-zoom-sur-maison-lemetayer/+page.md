@@ -38,4 +38,4 @@ Partenaire engagé du BreizhCamp, Maison Lemétayer Traiteur place ses engagemen
 
 Concrètement : 95 % de leurs produits sont issus du territoire français. Le seul écart à cette règle ? Un jambon ibérique d'exception signé La Casa del Jamon, en Espagne — parce que certains produits méritent qu'on aille les chercher là où ils sont les meilleurs. Pour le BreizhCamp, choisir Maison Lemétayer Traiteur, c'est choisir un partenaire dont les valeurs résonnent avec les nôtres : exigence, cohérence et engagement concret pour un événement à la hauteur de notre communauté.
 
-_Un grand merci à toute l'équipe Maison Lemétayer pour leur implication et leur sérieux à chaque édition. On se retrouve avec plaisir les 25 et 26 juin prochains !_
+_Un grand merci à toute l'équipe Maison Lemétayer pour leur implication et leur sérieux à chaque édition. On se retrouve avec plaisir du 24 au 26 juin prochains !_
