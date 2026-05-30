@@ -1,3 +1,7 @@
+<script context="module">
+	export { img } from './blog.components';
+</script>
+
 <script>
 	import Seo from '$lib/components/seo/Seo.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
