@@ -153,17 +153,21 @@
 
 	.article-image {
 		width: 100%;
-		height: 400px;
+		min-height: 200px;
 		overflow: hidden;
 		border-radius: var(--border-radius);
 		margin-bottom: 3rem;
 		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.article-image img {
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		min-height: 100%;
+		object-fit: contain;
 	}
 
 	.article-content {
@@ -270,10 +274,6 @@
 		.article-title {
 			font-size: 3rem;
 		}
-
-		.article-image {
-			height: 500px;
-		}
 	}
 
 	@media (max-width: 640px) {
@@ -291,10 +291,6 @@
 
 		.article-actions {
 			flex-direction: column;
-		}
-
-		.article-image {
-			height: 250px;
 		}
 	}
 
