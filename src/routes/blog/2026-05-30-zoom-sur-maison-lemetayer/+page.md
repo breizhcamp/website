@@ -14,7 +14,7 @@ Cela fait maintenant près d'une décennie que [Maison Lemétayer Traiteur](http
 
 Leur mission tout au long de la journée : faire en sorte que vous mangiez bien, du matin jusqu'à l'après-midi. Café d'accueil et viennoiseries pour bien démarrer, pauses gourmandes entre les conférences pour recharger les batteries, repas du midi pour souffler, discuter et profiter d'un vrai moment de convivialité.
 
-![Exemples de plats](/blog/2026/Plats_Maison_Lemetayer.jpeg)
+![Maison Lemetayer au BreizhCamp](/blog/2026/Breizhcamp_Maison_Lemetayer.jpeg)
 
 On apprécie particulièrement leur capacité à s'adapter à la diversité des participantes et participants — recettes végétariennes, adaptées aux allergies spécifiques — sans faire de compromis sur le goût et la qualité des produits.
 
