@@ -2,7 +2,7 @@
 title: 'BreizhCamp 2026 : un budget contraint'
 date: '2026-06-07'
 category: 'Annonce'
-excerpt: 'Le sponsoring étant une nouvelle fois en retrait cette année, nous avons dû renoncer à certaine dépenses.'
+excerpt: 'Le sponsoring étant une nouvelle fois en retrait cette année, nous avons dû renoncer à certaines dépenses.'
 banner: '/blog/2026/matrix_euro.jpg'
 layout: blog-post
 author: 'L’équipe du BreizhCamp'
