@@ -36,6 +36,7 @@
 		{ nom: 'Caroline Mouden', photo: '/team/CarolineMouden.jpg' },
 		{ nom: 'Etienne Besson', photo: '/team/etienne_besson.jpg' },
 		{ nom: 'Gaël Salaün', photo: '/team/gsalaun1.jpg' },
+		{ nom: 'Guillaume Collic', photo: '/team/gcollic.png' },
 		{ nom: 'Hermann Nsounga', photo: '/team/hermann-n.jpeg' },
 		{ nom: 'Johanna Duigou', photo: '/team/johanna_duigou.jpg' },
 		{ nom: 'Julien Coste', photo: '/team/CosteJulien.png' },
@@ -71,7 +72,6 @@
 	];
 	const comiteProgramme = [
 		{ nom: 'Alexandre Thomazo', photo: '/team/alexlg.jpg' },
-		{ nom: 'Guillaume Collic', photo: '/team/gcollic.png' },
 		{ nom: 'Benoît Masson', photo: '/team/benoitmasson.png' },
 		{ nom: 'Gaël Salaün', photo: '/team/gsalaun1.jpg' },
 		{ nom: 'Pascal Le Merrer', photo: '/team/pascallemerrer.jpeg' },
