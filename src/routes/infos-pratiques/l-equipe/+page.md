@@ -9,6 +9,8 @@ order: 2
 
 <script>
 import PracticalInfoActions from '../PracticalInfoActions.svelte';
+import PracticalInfoMembersList from '../PracticalInfoMembersList.svelte';
+import { equipeOrganisation, comiteProgramme } from '$lib/config/team';
 </script>
 
 # Une équipe de bénévoles survitaminée
@@ -27,7 +29,7 @@ L'équipe d'organisation s'occupe de tous les aspects logistiques et opérationn
 
 **Membres de l'équipe d'organisation :**
 
-Alexandre Thomazo, Annelore Bidaux, Benoit Miedan-Gros, Caroline Mouden, Etienne Besson, Gaël Salaün, Hermann Nsounga, Johanna Duigou, Julien Coste, Julien Stephan, Laurent Huet, Luc Sorel-Giffo, Marc Audefroy, Maxime Odye, Nicolas Ledez, Pascal Le Merrer, Sébastien Chédor, Sylvain Révéreault, Yoann Dubreuil.
+<PracticalInfoMembersList members={equipeOrganisation} />.
 
 ## Comité programme
 
@@ -42,7 +44,7 @@ Le comité programme est responsable de :
 
 **Membres du comité programme :**
 
-Alexandre Thomazo, Guillaume Collic, Benoît Masson, Gaël Salaün, Pascal Le Merrer, Nicolas Pennec, Sylvain Révéreault, Sylvain Guernion, Luc Sorel-Giffo, Caroline Mouden, Sylvain Tranchand, Benoit Miedan-Gros, Sébastien Chédor, Julien Stephan, Maxime Odye, Jean-Louis Jouannic, Christopher Louët.
+<PracticalInfoMembersList members={comiteProgramme} />.
 
 ## Rejoindre l'équipe
 

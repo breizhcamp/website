@@ -1,6 +1,12 @@
 <script lang="ts">
 	import Seo from '$lib/components/seo/Seo.svelte';
 	import { communities } from '$lib/config/communities';
+	import {
+		equipeOrganisation,
+		comiteProgramme,
+		membresBureau,
+		anciensMembresBureau
+	} from '$lib/config/team';
 
 	// État des sections dépliables
 	let organisationOpen = $state(false);
@@ -27,67 +33,6 @@
 		// Icône générique de site web
 		return 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z';
 	}
-
-	// Données de l'équipe d'organisation
-	const equipeOrganisation = [
-		{ nom: 'Alexandre Thomazo', photo: '/team/alexlg.jpg' },
-		{ nom: 'Annelore Bidaux', photo: '/team/annelore-bidaux.jpeg' },
-		{ nom: 'Benoit Miedan-Gros', photo: '/team/bmiedangros.jpg' },
-		{ nom: 'Caroline Mouden', photo: '/team/CarolineMouden.jpg' },
-		{ nom: 'Etienne Besson', photo: '/team/etienne_besson.jpg' },
-		{ nom: 'Gaël Salaün', photo: '/team/gsalaun1.jpg' },
-		{ nom: 'Guillaume Collic', photo: '/team/gcollic.png' },
-		{ nom: 'Hermann Nsounga', photo: '/team/hermann-n.jpeg' },
-		{ nom: 'Johanna Duigou', photo: '/team/johanna_duigou.jpg' },
-		{ nom: 'Julien Coste', photo: '/team/CosteJulien.png' },
-		{ nom: 'Julien Stephan', photo: '/team/julienstephan.jpeg' },
-		{ nom: 'Laurent Huet', photo: '/team/lhuet35.png' },
-		{ nom: 'Luc Sorel-Giffo', photo: '/team/lucsorelgiffo.jpg' },
-		{ nom: 'Marc Audefroy', photo: '/team/MarcAudefroy.jpg' },
-		{ nom: 'Maxime Odye', photo: '/team/MaxOdye.jpg' },
-		{ nom: 'Nicolas Ledez', photo: '/team/nledez.jpg' },
-		{ nom: 'Pascal Le Merrer', photo: '/team/pascallemerrer.jpeg' },
-		{ nom: 'Sébastien Chédor', photo: '/team/SebastienChedor.jpg' },
-		{ nom: 'Sylvain Révéreault', photo: '/team/srevereault.jpg' },
-		{ nom: 'Yoann Dubreuil', photo: '/team/yoanndubreuil.jpg' }
-	];
-
-	// Données des membres du bureau avec photos
-	const membresBureau = [
-		{ nom: 'Sylvain Révéreault', photo: '/team/srevereault.jpg' },
-		{ nom: 'Jean-Louis Jouannic', photo: '/team/jljouannic.png' },
-		{ nom: 'Julien Coste', photo: '/team/CosteJulien.png' },
-		{ nom: 'Laurent Huet', photo: '/team/lhuet35.png' },
-		{ nom: 'Johanna Duigou', photo: '/team/johanna_duigou.jpg' },
-		{ nom: 'Loïc Guibert', photo: '/team/loicguibert.png' },
-		{ nom: 'Nicolas Ledez', photo: '/team/nledez.jpg' },
-		{ nom: 'Yoann Dubreuil', photo: '/team/yoanndubreuil.jpg' },
-		{ nom: 'Alexandre Thomazo', photo: '/team/alexlg.jpg' }
-	];
-
-	// Données des anciens membres du bureau
-	const anciensMembresBureau = [
-		{ nom: 'Sébastien Brousse', photo: '/team/seb_brousse.jpg' },
-		{ nom: 'Nicolas De Loof', photo: '/team/ndeloof.jpg' }
-	];
-	const comiteProgramme = [
-		{ nom: 'Alexandre Thomazo', photo: '/team/alexlg.jpg' },
-		{ nom: 'Benoît Masson', photo: '/team/benoitmasson.png' },
-		{ nom: 'Gaël Salaün', photo: '/team/gsalaun1.jpg' },
-		{ nom: 'Pascal Le Merrer', photo: '/team/pascallemerrer.jpeg' },
-		{ nom: 'Nicolas Pennec', photo: '/team/NicoPennec.jpeg' },
-		{ nom: 'Sylvain Révéreault', photo: '/team/srevereault.jpg' },
-		{ nom: 'Sylvain Guernion', photo: '/team/sguernion.jpg' },
-		{ nom: 'Luc Sorel-Giffo', photo: '/team/lucsorelgiffo.jpg' },
-		{ nom: 'Caroline Mouden', photo: '/team/CarolineMouden.jpg' },
-		{ nom: 'Sylvain Tranchand', photo: '/team/sylvain_tranchand.jpg' },
-		{ nom: 'Benoit Miedan-Gros', photo: '/team/bmiedangros.jpg' },
-		{ nom: 'Sébastien Chédor', photo: '/team/SebastienChedor.jpg' },
-		{ nom: 'Julien Stephan', photo: '/team/julienstephan.jpeg' },
-		{ nom: 'Maxime Odye', photo: '/team/MaxOdye.jpg' },
-		{ nom: 'Jean-Louis Jouannic', photo: '/team/jljouannic.png' },
-		{ nom: 'Christopher Louët', photo: '/team/christopher_louet.jpg' }
-	];
 
 	function toggleSection(section: 'organisation' | 'comite' | 'asso') {
 		if (section === 'organisation') {
