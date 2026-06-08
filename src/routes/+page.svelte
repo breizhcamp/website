@@ -10,13 +10,14 @@
 	import BlogPostCardList from './blog/BlogPostCardList.svelte';
 	import SponsorCard from './sponsors/SponsorCard.svelte';
 	import { getSponsors } from './sponsors/utils';
+	import { editionYear, editionDatesLong } from '$lib/constants';
 
 	const { data } = $props();
 </script>
 
 <Seo
 	title="BreizhCamp - La conférence tech incontournable de Bretagne"
-	description="La conférence tech incontournable de Bretagne. 3 jours d'innovation, de partage et de networking du 24 au 26 juin 2026."
+	description="La conférence tech incontournable de Bretagne. 3 jours d'innovation, de partage et de networking du {editionDatesLong}."
 />
 
 <HeroSection />
@@ -26,7 +27,7 @@
 <section class="programme" aria-labelledby="programme-title">
 	<div class="container">
 		<div class="programme-header">
-			<h2 id="programme-title">Programme 2026</h2>
+			<h2 id="programme-title">Programme {editionYear}</h2>
 			<p class="section-subtitle" style:margin-bottom="0">
 				Découvrez les dernières technologies tech avec nos experts internationaux
 			</p>

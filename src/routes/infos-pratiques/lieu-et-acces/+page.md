@@ -7,9 +7,13 @@ layout: practical-info
 order: 2
 ---
 
+<script>
+import { editionYear } from '$lib/constants';
+</script>
+
 # Lieu et accès
 
-Le BreizhCamp 2026 se déroule à l'université de Rennes, en Bretagne.
+Le BreizhCamp {editionYear} se déroule à l'université de Rennes, en Bretagne.
 
 <a href="https://umap.openstreetmap.fr/fr/map/breizhcamp-acces_1418977#16/48.118126/-1.637135" target="_blank">
 

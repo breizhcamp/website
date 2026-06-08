@@ -6,7 +6,7 @@
 
 <Seo
 	title="Déclaration d'accessibilité"
-	description="Déclaration d'accessibilité du site BreizhCamp 2026 conforme au RGAA (Référentiel Général d'Amélioration de l'Accessibilité)."
+	description="Déclaration d'accessibilité du site BreizhCamp conforme au RGAA (Référentiel Général d'Amélioration de l'Accessibilité)."
 />
 
 <!-- Hero Section -->
@@ -294,6 +294,7 @@
 		max-width: 700px;
 		margin-left: auto;
 		margin-right: auto;
+		color: unset;
 	}
 
 	/* Main content */

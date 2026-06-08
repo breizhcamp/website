@@ -2,11 +2,12 @@
 	import Seo from '$lib/components/seo/Seo.svelte';
 	import Button from '../../lib/components/ui/Button.svelte';
 	import Card from '../../lib/components/ui/Card.svelte';
+	import { editionYear } from '$lib/constants';
 </script>
 
 <Seo
 	title="EcoIndex et démarche éco-responsable"
-	description="Découvrez la démarche éco-responsable du site BreizhCamp 2026 et notre score EcoIndex pour un web plus durable."
+	description="Découvrez la démarche éco-responsable du site BreizhCamp {editionYear} et notre score EcoIndex pour un web plus durable."
 />
 
 <!-- Hero Section -->

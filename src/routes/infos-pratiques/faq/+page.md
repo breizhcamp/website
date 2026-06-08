@@ -7,13 +7,17 @@ layout: practical-info
 order: 3
 ---
 
+<script>
+import { editionYear, editionDatesLong } from '$lib/constants';
+</script>
+
 # Questions générales
 
-## Quand a lieu le BreizhCamp 2026 ?
+## Quand a lieu le BreizhCamp {editionYear} ?
 
-Retrouvons nous sur le campus de Beaulieu du 24 au 26 juin 2026!
+Retrouvons-nous sur le campus de Beaulieu du {editionDatesLong} !
 
-Si ce n'est pas suffisant pour vous, vous pouvez rejoindre l'équipe de bénévoles le mardi 23 pour nous aider à tout installer.
+Si ce n'est pas suffisant pour vous, vous pouvez rejoindre l'équipe de bénévoles le mardi pour nous aider à tout installer.
 
 ## Combien coûte un billet ?
 

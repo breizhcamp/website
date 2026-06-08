@@ -3,6 +3,7 @@ import _keynotesAndLunch from './keynotesAndLunch.json';
 import _schedule from './schedule.json';
 import _scheduleNotConfirmed from './scheduleNotConfirmed.json' assert { type: 'json' };
 import _speakers from './speakers.json';
+import { editionDateWednesday, editionDateThursday, editionDateFriday } from '$lib/constants';
 
 type ScheduleEvent = {
 	id: string;
@@ -95,36 +96,36 @@ export const dayPeriods = [
 	{
 		day: 3,
 		label: 'Mercredi',
-		date: '2026-06-24',
+		date: editionDateWednesday,
 		times: [
 			{
-				startAt: new Date('2026-06-24T09:00:00.000Z'),
-				endAt: new Date('2026-06-24T10:00:00.000Z'),
+				startAt: new Date(editionDateWednesday + 'T09:00:00.000Z'),
+				endAt: new Date(editionDateWednesday + 'T10:00:00.000Z'),
 				label: 'Accueil'
 			},
 			{
-				startAt: new Date('2026-06-24T10:00:00.000Z'),
-				endAt: new Date('2026-06-24T12:00:00.000Z'),
+				startAt: new Date(editionDateWednesday + 'T10:00:00.000Z'),
+				endAt: new Date(editionDateWednesday + 'T12:00:00.000Z'),
 				label: 'Universités & conférences'
 			},
 			{
-				startAt: new Date('2026-06-24T12:00:00.000Z'),
-				endAt: new Date('2026-06-24T13:30:00.000Z'),
+				startAt: new Date(editionDateWednesday + 'T12:00:00.000Z'),
+				endAt: new Date(editionDateWednesday + 'T13:30:00.000Z'),
 				label: 'Déjeuner'
 			},
 			{
-				startAt: new Date('2026-06-24T13:30:00.000Z'),
-				endAt: new Date('2026-06-24T15:30:00.000Z'),
+				startAt: new Date(editionDateWednesday + 'T13:30:00.000Z'),
+				endAt: new Date(editionDateWednesday + 'T15:30:00.000Z'),
 				label: 'Universités & conférences'
 			},
 			{
-				startAt: new Date('2026-06-24T15:30:00.000Z'),
-				endAt: new Date('2026-06-24T16:00:00.000Z'),
+				startAt: new Date(editionDateWednesday + 'T15:30:00.000Z'),
+				endAt: new Date(editionDateWednesday + 'T16:00:00.000Z'),
 				label: 'Pause'
 			},
 			{
-				startAt: new Date('2026-06-24T16:00:00.000Z'),
-				endAt: new Date('2026-06-24T18:00:00.000Z'),
+				startAt: new Date(editionDateWednesday + 'T16:00:00.000Z'),
+				endAt: new Date(editionDateWednesday + 'T18:00:00.000Z'),
 				label: 'Universités & conférences'
 			}
 		]
@@ -132,66 +133,66 @@ export const dayPeriods = [
 	{
 		day: 4,
 		label: 'Jeudi',
-		date: '2026-06-25',
+		date: editionDateThursday,
 		times: [
 			{
-				startAt: new Date('2026-06-25T08:00:00.000Z'),
-				endAt: new Date('2026-06-25T10:00:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T08:00:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T10:00:00.000Z'),
 				label: 'Accueil & keynote'
 			},
 			{
-				startAt: new Date('2026-06-25T10:00:00.000Z'),
-				endAt: new Date('2026-06-25T10:30:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T10:00:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T10:30:00.000Z'),
 				label: 'Pause'
 			},
 			{
-				startAt: new Date('2026-06-25T10:30:00.000Z'),
-				endAt: new Date('2026-06-25T11:30:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T10:30:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T11:30:00.000Z'),
 				label: 'Conférences'
 			},
 			{
-				startAt: new Date('2026-06-25T11:30:00.000Z'),
-				endAt: new Date('2026-06-25T12:30:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T11:30:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T12:30:00.000Z'),
 				label: 'Conférences'
 			},
 			{
-				startAt: new Date('2026-06-25T12:30:00.000Z'),
-				endAt: new Date('2026-06-25T13:30:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T12:30:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T13:30:00.000Z'),
 				label: 'Déjeuner & capsules'
 			},
 			{
-				startAt: new Date('2026-06-25T13:30:00.000Z'),
-				endAt: new Date('2026-06-25T14:30:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T13:30:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T14:30:00.000Z'),
 				label: 'Conférences'
 			},
 			{
-				startAt: new Date('2026-06-25T14:30:00.000Z'),
-				endAt: new Date('2026-06-25T15:30:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T14:30:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T15:30:00.000Z'),
 				label: 'Conférences'
 			},
 			{
-				startAt: new Date('2026-06-25T15:30:00.000Z'),
-				endAt: new Date('2026-06-25T16:00:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T15:30:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T16:00:00.000Z'),
 				label: 'Pause'
 			},
 			{
-				startAt: new Date('2026-06-25T16:00:00.000Z'),
-				endAt: new Date('2026-06-25T17:00:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T16:00:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T17:00:00.000Z'),
 				label: 'Conférences'
 			},
 			{
-				startAt: new Date('2026-06-25T17:00:00.000Z'),
-				endAt: new Date('2026-06-25T17:30:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T17:00:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T17:30:00.000Z'),
 				label: 'Tools in action'
 			},
 			{
-				startAt: new Date('2026-06-25T17:30:00.000Z'),
-				endAt: new Date('2026-06-25T18:00:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T17:30:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T18:00:00.000Z'),
 				label: 'Tools in action'
 			},
 			{
-				startAt: new Date('2026-06-25T18:00:00.000Z'),
-				endAt: new Date('2026-06-25T19:00:00.000Z'),
+				startAt: new Date(editionDateThursday + 'T18:00:00.000Z'),
+				endAt: new Date(editionDateThursday + 'T19:00:00.000Z'),
 				label: 'Keynote'
 			}
 		]
@@ -199,56 +200,56 @@ export const dayPeriods = [
 	{
 		day: 5,
 		label: 'Vendredi',
-		date: '2026-06-26',
+		date: editionDateFriday,
 		times: [
 			{
-				startAt: new Date('2026-06-26T08:00:00.000Z'),
-				endAt: new Date('2026-06-26T10:00:00.000Z'),
+				startAt: new Date(editionDateFriday + 'T08:00:00.000Z'),
+				endAt: new Date(editionDateFriday + 'T10:00:00.000Z'),
 				label: 'Accueil & keynote'
 			},
 			{
-				startAt: new Date('2026-06-26T10:00:00.000Z'),
-				endAt: new Date('2026-06-26T10:30:00.000Z'),
+				startAt: new Date(editionDateFriday + 'T10:00:00.000Z'),
+				endAt: new Date(editionDateFriday + 'T10:30:00.000Z'),
 				label: 'Pause'
 			},
 			{
-				startAt: new Date('2026-06-26T10:30:00.000Z'),
-				endAt: new Date('2026-06-26T11:30:00.000Z'),
+				startAt: new Date(editionDateFriday + 'T10:30:00.000Z'),
+				endAt: new Date(editionDateFriday + 'T11:30:00.000Z'),
 				label: 'Conférences'
 			},
 			{
-				startAt: new Date('2026-06-26T11:30:00.000Z'),
-				endAt: new Date('2026-06-26T12:30:00.000Z'),
+				startAt: new Date(editionDateFriday + 'T11:30:00.000Z'),
+				endAt: new Date(editionDateFriday + 'T12:30:00.000Z'),
 				label: 'Conférences'
 			},
 			{
-				startAt: new Date('2026-06-26T12:30:00.000Z'),
-				endAt: new Date('2026-06-26T13:30:00.000Z'),
+				startAt: new Date(editionDateFriday + 'T12:30:00.000Z'),
+				endAt: new Date(editionDateFriday + 'T13:30:00.000Z'),
 				label: 'Déjeuner & capsules'
 			},
 			{
-				startAt: new Date('2026-06-26T13:30:00.000Z'),
-				endAt: new Date('2026-06-26T14:30:00.000Z'),
+				startAt: new Date(editionDateFriday + 'T13:30:00.000Z'),
+				endAt: new Date(editionDateFriday + 'T14:30:00.000Z'),
 				label: 'Conférences'
 			},
 			{
-				startAt: new Date('2026-06-26T14:30:00.000Z'),
-				endAt: new Date('2026-06-26T15:30:00.000Z'),
+				startAt: new Date(editionDateFriday + 'T14:30:00.000Z'),
+				endAt: new Date(editionDateFriday + 'T15:30:00.000Z'),
 				label: 'Conférences'
 			},
 			{
-				startAt: new Date('2026-06-26T15:30:00.000Z'),
-				endAt: new Date('2026-06-26T16:00:00.000Z'),
+				startAt: new Date(editionDateFriday + 'T15:30:00.000Z'),
+				endAt: new Date(editionDateFriday + 'T16:00:00.000Z'),
 				label: 'Pause'
 			},
 			{
-				startAt: new Date('2026-06-26T16:00:00.000Z'),
-				endAt: new Date('2026-06-26T16:30:00.000Z'),
+				startAt: new Date(editionDateFriday + 'T16:00:00.000Z'),
+				endAt: new Date(editionDateFriday + 'T16:30:00.000Z'),
 				label: 'Conférences'
 			},
 			{
-				startAt: new Date('2026-06-26T16:30:00.000Z'),
-				endAt: new Date('2026-06-26T17:00:00.000Z'),
+				startAt: new Date(editionDateFriday + 'T16:30:00.000Z'),
+				endAt: new Date(editionDateFriday + 'T17:00:00.000Z'),
 				label: 'Keynote'
 			}
 		]

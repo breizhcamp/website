@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getFooterPages } from '../../config/site';
+	import { editionYear } from '$lib/constants';
 
 	// Données pour les liens
 	const socialLinks = [
@@ -66,7 +67,7 @@
 				{/each}
 			</div>
 
-			<p class="copyright">Copyright © 2015-2026, BreizhCamp team</p>
+			<p class="copyright">Copyright © 2015-{editionYear}, BreizhCamp team</p>
 		</div>
 
 		<nav class="footer-nav" aria-label="Footer">

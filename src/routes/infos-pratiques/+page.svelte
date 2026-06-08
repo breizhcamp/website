@@ -2,6 +2,7 @@
 	import Seo from '$lib/components/seo/Seo.svelte';
 	import Card from '../../lib/components/ui/Card.svelte';
 	import { categories } from './constants';
+	import { editionYear } from '$lib/constants';
 
 	const { data } = $props();
 
@@ -14,7 +15,7 @@
 
 <Seo
 	title="Infos pratiques"
-	description="Toutes les informations pratiques pour participer au BreizhCamp 2026 : conférence, code de conduite, FAQ, équipe, association et plus encore."
+	description="Toutes les informations pratiques pour participer au BreizhCamp {editionYear} : conférence, code de conduite, FAQ, équipe, association et plus encore."
 />
 
 <!-- Hero Section -->
@@ -22,8 +23,9 @@
 	<div class="container">
 		<h1>Infos pratiques</h1>
 		<p class="hero-description">
-			Tout ce que vous devez savoir pour profiter pleinement du BreizhCamp 2026. Retrouvez ici
-			toutes les informations pratiques, les règles de bonne conduite et les ressources
+			Tout ce que vous devez savoir pour profiter pleinement du BreizhCamp&nbsp;{editionYear}.
+			<br />
+			Retrouvez ici toutes les informations pratiques, les règles de bonne conduite et les ressources
 			utiles.
 		</p>
 	</div>
@@ -112,7 +114,7 @@
 		margin-bottom: 2rem;
 		opacity: 0.95;
 		line-height: 1.6;
-		max-width: 700px;
+		max-width: 800px;
 		margin-left: auto;
 		margin-right: auto;
 	}

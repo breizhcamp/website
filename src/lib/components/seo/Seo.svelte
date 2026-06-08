@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { PUBLIC_BASE_URL } from '$env/static/public';
+	import { editionYear } from '$lib/constants';
 
 	const fullURL = `${PUBLIC_BASE_URL}${page.url.pathname}`;
 
@@ -18,7 +19,7 @@
 		<meta name="robots" content="noindex" />
 	{/if}
 
-	<title>{title} - BreizhCamp 2026</title>
+	<title>{title} - BreizhCamp {editionYear}</title>
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
 	<link rel="alternate" href={fullURL} hreflang="fr-FR" />

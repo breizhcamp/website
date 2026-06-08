@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Seo from '$lib/components/seo/Seo.svelte';
 	import BlogPostCardList from './BlogPostCardList.svelte';
+	import { editionYear } from '$lib/constants';
 
 	const { data } = $props();
 </script>
@@ -16,7 +17,7 @@
 		<h1>Blog BreizhCamp</h1>
 		<p class="hero-description">
 			Actualités, annonces et coulisses de la plus grande conférence tech de Bretagne.
-			Découvrez les dernières nouvelles et préparez-vous pour l'édition 2026.
+			Découvrez les dernières nouvelles et préparez-vous pour l'édition {editionYear}.
 		</p>
 	</div>
 </section>
@@ -55,7 +56,7 @@
 		margin-bottom: 2rem;
 		opacity: 0.95;
 		line-height: 1.6;
-		max-width: 700px;
+		max-width: 800px;
 		margin-left: auto;
 		margin-right: auto;
 	}

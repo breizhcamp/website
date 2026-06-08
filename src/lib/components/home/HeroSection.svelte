@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { siteConfig } from '$lib/config/site';
+	import { editionYear, editionDatesShort } from '$lib/constants';
 
 	let currentSlide = $state(0);
 
@@ -35,7 +36,7 @@
 	<div class="container">
 		<div class="hero-content">
 			<div class="hero-text">
-				<h1>BreizhCamp <span class="year">2026</span></h1>
+				<h1>BreizhCamp <span class="year">{editionYear}</span></h1>
 				<p class="hero-description">
 					La conférence tech incontournable de Bretagne. 3 jours d'innovation, de partage
 					et de networking à Rennes.
@@ -43,7 +44,7 @@
 				<div class="hero-meta">
 					<div class="date">
 						<span class="icon" aria-hidden="true">📅</span>
-						<span>24-26 juin 2026</span>
+						<span>{editionDatesShort}</span>
 					</div>
 					<div class="location">
 						<span class="icon" aria-hidden="true">📍</span>

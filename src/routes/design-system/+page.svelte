@@ -351,7 +351,7 @@
 		margin-bottom: 2rem;
 		opacity: 0.95;
 		line-height: 1.6;
-		max-width: 700px;
+		max-width: 800px;
 		margin-left: auto;
 		margin-right: auto;
 	}
