@@ -161,3 +161,10 @@ Cette configuration rendra automatiquement :
 - Programme et Intervenants cliquables dans tous les menus
 - CFP absent du menu
 - Bouton "Billets" cliquable dans le header
+
+## Carte / plan d'accès
+
+Dans la partie "Infos pratiques", il y a un plan d'accès au BreizhCamp :  
+https://umap.openstreetmap.fr/fr/map/breizhcamp-acces_1418977
+
+Le lien pour l'édition de la carte est disponible via le slack du BreizhCamp.
