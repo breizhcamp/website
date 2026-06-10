@@ -85,6 +85,12 @@ export const sponsors: Array<Sponsor> = [
 		level: 'gold'
 	},
 	{
+		name: 'Elastic',
+		logo: '/sponsors/logo_elastic.svg',
+		url: 'https://www.elastic.co/fr/',
+		level: 'gold'
+	},
+	{
 		name: 'Fellows',
 		logo: '/sponsors/logo_fellows.png',
 		url: 'https://www.fellows-consulting.com/',
