@@ -3,6 +3,7 @@
 </script>
 
 <script>
+	import { PUBLIC_BASE_URL } from '$env/static/public';
 	import Seo from '$lib/components/seo/Seo.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 	import { formatDate } from '$lib/date.utils';
@@ -11,6 +12,15 @@
 </script>
 
 <Seo {title} description={excerpt} {date} image={banner} {author} type="article" />
+
+<svelte:head>
+	<link
+		rel="alternate"
+		type="application/rss+xml"
+		title="Flux RSS des articles de blog du BreizhCamp"
+		href="{PUBLIC_BASE_URL}/blog/rss.xml"
+	/>
+</svelte:head>
 
 <main class="article-page">
 	<div class="container">
