@@ -1,1 +1,12 @@
-[]
+[
+	{
+		"id": "1181460",
+		"name": "Bientôt annoncé",
+		"event_start": "2026-06-24T17:00:00",
+		"event_end": "2026-06-24T17:55:00",
+		"event_type": "A venir",
+		"format": "Conférence",
+		"venue": "Amphi D",
+		"venue_id": "4"
+	}
+]

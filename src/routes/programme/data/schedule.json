@@ -993,11 +993,11 @@
 	},
 	{
 		"id": "1150064",
-		"name": "Pourquoi la Tech tient plus de la pop culture que de l'ingénierie?",
+		"name": "Keynote · Pourquoi la Tech tient plus de la pop culture que de l'ingénierie?",
 		"event_start": "2026-06-25T18:00:00",
 		"event_end": "2026-06-25T19:00:00",
-		"event_type": "Autre...",
-		"format": "Conférence",
+		"event_type": "Keynote",
+		"format": "Keynote",
 		"venue": "Amphi C",
 		"venue_id": "3",
 		"speakers": "Julien Topçu",
@@ -1005,7 +1005,23 @@
 		"files_url": null,
 		"slides_url": null,
 		"description": "En tant qu’actrices et acteurs de la Tech, nous nous pensons souvent comme des ingénieurs et ingénieures : rationnels, méthodiques, cherchant à améliorer nos produits et nos pratiques par l’intelligence collective. Nous parlons d’expérimentation, d’itération, de rigueur… bref, d’ingénierie.\n\nPourtant, quand on observe nos échanges sur les réseaux sociaux ou dans nos réunions, on découvre un tout autre monde. D’un côté, un influenceur proclame que “tester est une perte de temps”. De l’autre, une experte affirme que le TDD est la clé de la robustesse logicielle. Un Scrum Master défend la vélocité en story points pendant qu’une développeuse revendique le noEstimates. Et au centre, les commentateurs tranchent : “tout le monde a raison, du moment que ça vous apporte de la valeur”.\n\nEt si, au fond, notre univers technique ressemblait plus à une pop culture qu’à une science appliquée ?\n\nEt si, derrière nos débats passionnés, se cachait une croyance partagée : celle que nos opinions valent des vérités ?\n\nDans cette conférence, nous verrons comment nos comportements, nos biais et nos figures d’autorité ont transformé la Tech en un espace de croyances, parfois éloigné de sa nature d’ingénierie. Nous explorerons comment retrouver une posture plus critique et plus rigoureuse :\n\n- distinguer opinion, intuition et preuve scientifique\n- reconnaître nos défauts de posture en tant qu'observateurs / observatrices mais aussi bien en tant qu'expertes et experts (dualité anti-intellectualisme et gatekeeping) et comment réformer notre posture intellectuelle.\n- renouer avec l’esprit de la méthode scientifique, comme l’agilité l’avait initialement envisagé ;\n- sortir du relativisme confortable sans tomber dans le dogmatisme.\n\nUne invitation à réconcilier curiosité, esprit critique et humanité dans un métier qui n’a jamais été aussi \"culturel\" qu’aujourd’hui.",
-		"level": "Standard"
+		"level": null
+	},
+	{
+		"id": "1180044",
+		"name": "Keynote · Enshittification, ou la face cachée du numérique",
+		"event_start": "2026-06-26T09:00:00",
+		"event_end": "2026-06-26T10:00:00",
+		"event_type": "Keynote",
+		"format": "Keynote",
+		"venue": "Amphi C",
+		"venue_id": "3",
+		"speakers": "Karine Sabatier",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Pourquoi nos plateformes numériques se ressemblent-elles toutes (mêmes contenus, mêmes algorithmes) au point de ne former qu'une seule et même Matrice assoiffée de nos traces virtuelles ?\n\nEn dépit de notre supposée liberté d’action, pourquoi sommes-nous en réalité prisonniers de systèmes et d’algorithmes qui ne sont ni neutres ni bienveillants ni émancipateurs et qui nous font, en réalité, travailler pour eux ?\n\nPlongez avec moi dans l’envers du décor pour comprendre l’Enshittification du web, ce lent déclin de plateformes géantes délibérément conçues au détriment de leurs utilisateurs — et qui ont brisé les 2 piliers du web moderne.\n\nVous découvrirez peut-être l’origine de votre “digital fatigue”, ou bien vous pourrez identifier si vous aussi vous contribuez à \"emmerdifier\" le web. Et surtout, vous recevrez au travers de cette présentation, un Wake Up Call pour commencer à reprendre votre destinée en mains.",
+		"level": null
 	},
 	{
 		"id": "1182070",
