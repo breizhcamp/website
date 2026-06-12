@@ -304,22 +304,6 @@
 		"level": "Introduction"
 	},
 	{
-		"id": "1152985",
-		"name": "La face cachée de la performance des équipes de développements",
-		"event_start": "2026-06-24T17:00:00",
-		"event_end": "2026-06-24T17:55:00",
-		"event_type": "Autre...",
-		"format": "Conférence",
-		"venue": "Amphi D",
-		"venue_id": "4",
-		"speakers": "Graveaud Geoffrey",
-		"video_url": null,
-		"files_url": null,
-		"slides_url": null,
-		"description": "En tant que coach craft et devops, j'accompagne au quotidien des équipes de développements. Je suis à leur écoute, je prends en compte leur besoin et j'essaie de comprendre ce qui les ralentit.\nFort de mon expérience depuis plus de 17 ans maintenant, j'ai identifié petit à petit les \"vrais\" bloqueurs ou ralentisseurs de ces équipes. Et j'ai découvert notamment qu'un développeur était interrompu 1 fois toutes les 4 minutes dans son quotidien de travail, soit environ 15 fois par heure.\nCela a pour effet d'avoir un impact négatif sur votre mémoire de travail et donc sur votre performance.\n\nAlors faut il encore penser que ce qui ralentit le plus les équipes, ce sont les processus ou les outils ?\n\nA travers cette conférence, je souhaite vous révéler les 4/5 ralentisseurs invisibles les plus impactants dans votre quotidien. Nous comprendrons ensemble également pas à pas leur impact négatif sur les équipes et sur les temps de réalisation de nos tâches. Tout cela avec l'appui d'étude et de références scientifiques pertinentes. Pour terminer, vous présenterai également les perspectives possibles en 2026 qui pourraient être mise dans votre organisation.",
-		"level": "Introduction"
-	},
-	{
 		"id": "1173487",
 		"name": "Rejouer une partie, rejouer le système de la matrice : des replays de jeux vidéo à l’event sourcing",
 		"event_start": "2026-06-24T17:00:00",
@@ -386,8 +370,8 @@
 	{
 		"id": "1167543",
 		"name": "G1, ZGC, Shenandoah... Chez Java, ils sont gentils avec tous leurs GCs mais moi je choisis lequel ?",
-		"event_start": "2026-06-25T10:30:00",
-		"event_end": "2026-06-25T11:25:00",
+		"event_start": "2026-06-24T17:00:00",
+		"event_end": "2026-06-24T17:55:00",
 		"event_type": "Développement",
 		"format": "Conférence",
 		"venue": "Amphi D",
@@ -397,6 +381,22 @@
 		"files_url": null,
 		"slides_url": null,
 		"description": "On a l'impression qu'avec chaque version de Java il y a de plus en plus de Garbage Collectors (GCs) avec de plus en plus d'options. On entend des phrases cryptiques telles que \"Oh trop bien ZGC est devenu générationnel alors que Shenandoah ne l'est pas\" ou \"T'as vu chez Netflix ils ont réduit leurs tail latencies avec ZGC\".\n\nDu coup on se pose tout plein de questions:\n* qu'est-ce qu'ils racontent ?\n* ZGC c'est quoi ?\n* si ce ZGC est si magique, pourquoi il y a d'autres GCs dans Java, hein ?\n* pourquoi on ne parle toujours que des différents GCs de Java mais jamais pour Go ou JavaScript ? chez Java ils ne sont pas capables d'en choisir un ?\n* et en natif, on a besoin d'un GC ?\n\nDev Java ou simples curieuses et curieux, tout le monde est bienvenu. On va repartir des bases, en commençant il y a 30 ans lors de la création de Java jusqu'à maintenant pour comprendre pourquoi on a toujours besoin d'un GC et pourquoi ce n'est pas un problème résolu (comme l'API Collection). On fera aussi un tour des GCs, de leurs évolutions, de pourquoi on en est arrivé là, de leurs forces et de leurs faiblesses. (spoiler alert: ZGC n'est pas le GC qui les remplacera tous)\n\nÀ l'issue de ce talk vous saurez quand utiliser quel GC afin de trouver le plus adapté à chaque projet, chaque application, chaque environnement.",
+		"level": "Introduction"
+	},
+	{
+		"id": "01140234",
+		"name": "💊 Burn-out : The Matrix Reboot",
+		"event_start": "2026-06-25T10:30:00",
+		"event_end": "2026-06-25T11:25:00",
+		"event_type": "Autre...",
+		"format": "Conférence",
+		"venue": "Amphi D",
+		"venue_id": "4",
+		"speakers": "Pierre Fervel",
+		"video_url": null,
+		"files_url": null,
+		"slides_url": null,
+		"description": "Bienvenue dans la Matrice. Un monde où les deadlines pleuvent, où les notifications remplacent les battements de ton cœur, et où la productivité est devenue la nouvelle réalité.\nTu te crois libre, maître de ton code et de ton agenda ? 🧑‍💻 Et si tout cela n’était qu’une illusion soigneusement entretenue ?\n\nDans ce talk, je vous invite à replonger dans votre cerveau, non pas pour sauver l’humanité, mais pour sauver vous-même.\nCar quelque part entre un sprint Jira et un visio Teams, beaucoup d’entre nous ont avalé la mauvaise pilule. 😵‍💫\n\nEn suivant la voie de Neo, on décodera ensemble les illusions du travail moderne — performance, perfection, disponibilité permanente — qui nous font glisser pas à pas vers le burn-out 🧠.\nAvec humour, anecdotes et auto-dérision, je vous montrerai les 10 programmes les plus dangereux de la Matrice du travail, et surtout comment en sortir… sans débrancher complètement.\n\n🎤 Format et ton :\nUn talk énergique, fun, un brin philosophique — mélange de storytelling, d’interaction, de références pop-culture et de déclics concrets à appliquer dès le lendemain. Ni moralisateur ni soporifique : un miroir bienveillant pour tous les devs, managers ou freelancers coincés dans la simulation.\n\n🎯 Plan du talk :\n1️⃣ Bienvenue dans la Matrice du boulot — Pourquoi on ne voit pas les signaux du burn-out\n2️⃣ Les 10 programmes toxiques — “Toujours dispo”, “travailler plus = valeur”, “ignorer les bugs physiques”\n3️⃣ L’illusion du contrôle — Pourquoi le cerveau adore le stress (et comment il nous trompe)\n4️⃣ Choisir la pilule rouge — Les vrais hacks pour se reconnecter au réel (sommeil, limites, déconnexion, sens)\n5️⃣ Reload — Comment reprogrammer durablement son rapport au travail\n\n⚡ Public :\nDéveloppeurs, managers, indépendants, curieux du lien entre temps, code et santé mentale. Un talk pour rire, réfléchir et, peut-être, choisir enfin… la pilule rouge. 🔴",
 		"level": "Introduction"
 	},
 	{
