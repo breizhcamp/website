@@ -8,6 +8,12 @@ class Bookmarks {
 
 		if (browser) {
 			this.ids = JSON.parse(localStorage.getItem('bookmarks') ?? '[]');
+
+			addEventListener('storage', (event) => {
+				if (browser && event.key === 'bookmarks') {
+					this.ids = JSON.parse(localStorage.getItem('bookmarks') ?? '[]');
+				}
+			});
 		}
 	}
 
