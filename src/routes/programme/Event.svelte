@@ -136,11 +136,13 @@
 	}
 
 	.event-type {
-		font-size: 12px;
-		text-transform: uppercase;
+		font-size: 0.75rem;
+		font-weight: 500;
 		background-color: hsla(var(--accent-color), 0.1);
+		color: hsla(var(--accent-color), 1);
 		padding: 4px 8px;
 		border-radius: 12px;
+		line-height: 1;
 	}
 
 	.level {
