@@ -78,7 +78,7 @@
 					{props.level}
 				</span>
 			{/if}
-			<span class="event-type">{event_type}</span>
+			<span class="event-type" title={event_type}>{event_type}</span>
 		</div>
 	</div>
 </article>
@@ -180,6 +180,9 @@
 			height: 200px;
 			margin: 8px 0 8px 8px;
 			padding: 8px 16px;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
 		}
 
 		.duration-15 {
@@ -242,6 +245,12 @@
 		.duration-25 .schedule {
 			font-size: 10px;
 			margin: 0;
+			white-space: nowrap;
+			flex-shrink: 0;
+		}
+
+		.footer {
+			margin-top: auto;
 		}
 
 		.duration-15 .footer,
@@ -249,7 +258,8 @@
 			display: flex;
 			flex-direction: row-reverse;
 			align-items: center;
-			justify-content: space-between;
+			justify-content: flex-end;
+			gap: 8px;
 		}
 
 		.duration-15 .event-type,
