@@ -75,6 +75,7 @@
 			{#if 'level' in props && props.level}
 				<span class="level" title={props.level} aria-label="Niveau {props.level}">
 					<LevelIcon level={props.level} />
+					{props.level}
 				</span>
 			{/if}
 			<span class="event-type">{event_type}</span>
@@ -143,12 +144,16 @@
 	}
 
 	.level {
-		height: 26px;
-		display: flex;
-
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
 		background-color: hsla(var(--accent-color), 0.1);
-		padding: 4px;
+		padding: 4px 8px 4px 6px;
 		border-radius: 12px;
+		font-size: 0.75rem;
+		font-weight: 500;
+		color: hsla(var(--accent-color), 1);
+		line-height: 1;
 	}
 
 	.speakers {
