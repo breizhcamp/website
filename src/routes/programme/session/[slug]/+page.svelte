@@ -10,6 +10,7 @@
 		formatTime,
 		getThreeFollowingSessionsWithTheSameTheme
 	} from '../../utils';
+	import LevelIcon from '../../LevelIcon.svelte';
 	import FutureSessions from './FutureSessions.svelte';
 	import { addToGoogleCalendar, downloadIcsFile, share } from './share.utils';
 
@@ -34,6 +35,12 @@
 					</li>
 				{/if}
 				<li class="format" aria-label="Format : {data.format}">{data.format}</li>
+				{#if data.level}
+					<li class="level" aria-label="Niveau : {data.level}">
+						<LevelIcon level={data.level} />
+						{data.level}
+					</li>
+				{/if}
 				<li class="duration" aria-label="duration : {duration}">{duration}</li>
 			</ul>
 
@@ -156,6 +163,19 @@
 
 	ul.infos-utiles-one li.duration {
 		color: #6b7280;
+	}
+
+	ul.infos-utiles-one li.level {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		background-color: hsla(var(--accent-color), 0.1);
+		padding: 4px 8px 4px 6px;
+		border-radius: 12px;
+		font-size: 0.75rem;
+		font-weight: 500;
+		color: hsla(var(--accent-color), 1);
+		line-height: 1;
 	}
 
 	h1 {
