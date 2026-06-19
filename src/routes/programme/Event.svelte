@@ -158,6 +158,12 @@
 		line-height: 1;
 	}
 
+	.level :global(svg) {
+		width: 12px;
+		height: 12px;
+		flex-shrink: 0;
+	}
+
 	.speakers {
 		display: flex;
 		align-items: center;
@@ -257,15 +263,15 @@
 
 		.duration-15 .level,
 		.duration-25 .level {
-			padding: 2px;
-			border-radius: 10px;
-			height: 18px;
+			font-size: 10px;
+			padding: 2px 6px 2px 4px;
+			gap: 3px;
 		}
 
 		.duration-15 .level :global(svg),
 		.duration-25 .level :global(svg) {
-			width: 14px;
-			height: 14px;
+			width: 10px;
+			height: 10px;
 		}
 	}
 </style>
