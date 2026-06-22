@@ -33,18 +33,18 @@
 	},
 	{
 		"id": "1146511",
-		"name": "💥 Domptez la complexité d’un tunnel de vente et retrouvez des tests lisibles",
+		"name": "❌ [ANNULÉ] ❌",
 		"event_start": "2026-06-24T10:00:00",
 		"event_end": "2026-06-24T12:00:00",
 		"event_type": "Architecture",
 		"format": "Université",
 		"venue": "Amphi B",
 		"venue_id": "2",
-		"speakers": "Thibaut Cantet",
+		"speakers": "",
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "La refonte de l’étape du paiement de la billetterie Roland-Garros était critique. Mais à cause de la complexité des différents cas fonctionnels, je me suis retrouvé empêtré avec des tests peu lisibles et une implémentation difficile à suivre.\n\nDans cet atelier, je vous propose de découvrir l’architecture événementielle que j’ai pu mettre en place, lors d’un refactoring guidé, basé sur deux patterns puissants : Command/CommandHandler et Event/EventListener.\n\n🔧 Ce que vous apprendrez :\n- Structurer la logique métier avec Command/CommandHandler\n- Publier et consommer des événements métier pour une architecture extensible\n- Simplifier les tests unitaires en isolant les comportements\n- Construire un tunnel de vente maintenable et évolutif\n\n⏱️ Déroulement : 30 min de présentation, 10 min de setup, 60 min de refactoring guidé, 10 min de Q&A\n\n🎯 Public cible : dév backend avec un niveau intermédiaire minimum sur une stack Java/SpringBoot\n\n🏁 Résultats : code refactoré, use case réutilisables et plus lisibles, réduction des cas de test",
+		"description": "",
 		"level": "Avancé"
 	},
 	{
