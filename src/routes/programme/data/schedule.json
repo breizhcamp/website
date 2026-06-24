@@ -801,18 +801,18 @@
 	},
 	{
 		"id": "1178704",
-		"name": "Prédire les crues de la Vilaine avec le Deep Learning — de la donnée brute à la production",
+		"name": "❌ [ANNULÉ] ❌",
 		"event_start": "2026-06-25T16:00:00",
 		"event_end": "2026-06-25T16:55:00",
 		"event_type": "Data",
 		"format": "Conférence",
 		"venue": "Amphi C",
 		"venue_id": "3",
-		"speakers": "Sébastien Burel",
+		"speakers": "",
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "La Vilaine déborde. Pas une surprise pour les Bretons — mais peut-on vraiment l'anticiper 24h à l'avance, station par station, avec une marge d'erreur fiable ?\n\nTout est parti d'une frustration : début février 2026, Vigicrues tombe en panne au pire moment — en pleine période de crues hivernales. En cherchant une alternative, je tombe sur l'API publique EauFrance — et l'idée germe : et si j'entraînais un modèle directement sur ces données brutes ?\n\nAu cœur du projet, une intuition : chaque station hydrométrique a sa propre dynamique, mais les stations ne sont pas indépendantes — une montée des eaux à l'amont annonce ce qui va se passer à l'aval. J'ai donc conçu une architecture où un LSTM par station capture la dynamique locale, et un mécanisme d'attention permet aux stations de \"se parler\" entre elles.\n\nDans ce retour d'expérience, je vous raconte le chemin : les données croisées, les choix d'architecture, et les décisions d'ingénierie qui font la différence entre un modèle qui marche en notebook et un système qui tourne vraiment en production.",
+		"description": "",
 		"level": "Standard"
 	},
 	{
