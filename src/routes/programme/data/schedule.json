@@ -801,18 +801,18 @@
 	},
 	{
 		"id": "1178704",
-		"name": "❌ [ANNULÉ] ❌",
+		"name": "SmartWatch DIY",
 		"event_start": "2026-06-25T16:00:00",
 		"event_end": "2026-06-25T16:55:00",
-		"event_type": "Data",
+		"event_type": "Autre...",
 		"format": "Conférence",
 		"venue": "Amphi C",
 		"venue_id": "3",
-		"speakers": "",
+		"speakers": "Xavier-Frédéric Moulet, Sebastien Peneau",
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "",
+		"description": "Hourra ! Neo à 50 ans et pour éviter qu'il ne rate sa vie, ses copains lui offrent une montre ! Pour ne pas être facilement tracable, cette montre sera entièrement DIY ! Du choix du microprocesseur à la conception du bracelet, de la boite en passant par l'écran, un firmware custom et à une deadline plus que serrée, venez découvrir les étapes de sa conception, puis ce qu'il a décidé d'en faire pour entrer dans la matrice.",
 		"level": "Standard"
 	},
 	{
