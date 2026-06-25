@@ -545,18 +545,18 @@
 	},
 	{
 		"id": "1155142",
-		"name": "L'arme secrète d'Uber, Tinder et Slack : Buildkite",
+		"name": "❌ [ANNULÉ] ❌",
 		"event_start": "2026-06-25T13:05:00",
 		"event_end": "2026-06-25T13:20:00",
 		"event_type": "DevOps",
 		"format": "Quicky",
 		"venue": "Amphi C",
 		"venue_id": "3",
-		"speakers": "Julien Haumont",
+		"speakers": "",
 		"video_url": null,
 		"files_url": null,
 		"slides_url": null,
-		"description": "Uber. Slack. Tinder. Elastic. Shopify.\n\nVous pensez connaître la CI/CD qui propulse ces géants ? Vous imaginez sûrement une usine à gaz Jenkins ou des milliers de GitHub Actions ?\nEt bien non. Vous ne la connaissez pas. Leur point commun s'appelle Buildkite.\n\nMais pourquoi l'élite de la Tech a-t-elle choisi cet outsider plutôt que les standards du marché ? C'est la question que je me suis posée.\nJ'ai testé pour vous cet OVNI de l'intégration continue. Venez découvrir mon retour d'expérience et comprendre pourquoi, après ce talk, vous ne regarderez plus vos pipelines de la même façon.",
+		"description": "",
 		"level": "Standard"
 	},
 	{
