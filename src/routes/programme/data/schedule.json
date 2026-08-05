@@ -1520,22 +1520,6 @@
 		"venue_id": "1"
 	},
 	{
-		"id": "1180044",
-		"name": "Enshittification, ou la face cachée du numérique",
-		"event_start": "2026-06-26T09:30:00",
-		"event_end": "2026-06-26T10:25:00",
-		"event_type": "Autre...",
-		"format": "Conférence",
-		"venue": "Amphi C",
-		"venue_id": "3",
-		"speakers": "Karine Sabatier",
-		"video_url": null,
-		"files_url": null,
-		"slides_url": null,
-		"description": "Pourquoi nos plateformes numériques se ressemblent-elles toutes (mêmes contenus, mêmes algorithmes) au point de ne former qu'une seule et même Matrice assoiffée de nos traces virtuelles ?\n\nEn dépit de notre supposée liberté d’action, pourquoi sommes-nous en réalité prisonniers de systèmes et d’algorithmes qui ne sont ni neutres ni bienveillants ni émancipateurs et qui nous font, en réalité, travailler pour eux ?\n\nPlongez avec moi dans l’envers du décor pour comprendre l’Enshittification du web, ce lent déclin de plateformes géantes délibérément conçues au détriment de leurs utilisateurs — et qui ont brisé les 2 piliers du web moderne.\n\nVous découvrirez peut-être l’origine de votre “digital fatigue”, ou bien vous pourrez identifier si vous aussi vous contribuez à \"emmerdifier\" le web. Et surtout, vous recevrez au travers de cette présentation, un Wake Up Call pour commencer à reprendre votre destinée en mains.",
-		"level": "Standard"
-	},
-	{
 		"id": "803c8631f8f5",
 		"name": "Aventure de l'IA et de la défense",
 		"format": "Conférence",
