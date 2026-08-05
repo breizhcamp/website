@@ -1,16 +1,5 @@
 [
 	{
-		"id": "7a8c08ec6675",
-		"name": "Keynote de clôture",
-		"format": "Keynote",
-		"venue": "Amphi C",
-		"day_of_week": 5,
-		"event_start": "<DAY>T16:30:00",
-		"event_end": "<DAY>T17:00:00",
-		"event_type": "Keynote",
-		"venue_id": "1"
-	},
-	{
 		"id": "6f6534c3-cdcc-4e9a-8278-79bfb4ae7226",
 		"name": "Accueil / Café",
 		"format": "Eat",
