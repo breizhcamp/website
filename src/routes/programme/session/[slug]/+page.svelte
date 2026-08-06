@@ -91,6 +91,13 @@
 			<h2>Actions rapides</h2>
 
 			<div class="button-wrapper">
+				{#if 'video_url' in data && data.video_url}
+					<Button variant="primary" href={data.video_url} external>
+						<span aria-hidden="true">🎥</span>
+						Voir la vidéo
+					</Button>
+				{/if}
+
 				<BookmarkButton eventId={data.id} variant="lg" />
 
 				<Button variant="grey" onclick={() => addToGoogleCalendar(data)}>

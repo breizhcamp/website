@@ -72,6 +72,18 @@
 			<span class="mobile-only"> · {venue}</span>
 		</p>
 		<div class="flex">
+			{#if 'video_url' in props && props.video_url}
+				<a
+					class="video"
+					href={props.video_url}
+					target="_blank"
+					rel="noopener noreferrer"
+					title="Voir la vidéo"
+					aria-label="Voir la vidéo de « {name} » (nouvelle fenêtre)"
+				>
+					<span aria-hidden="true">🎥</span>
+				</a>
+			{/if}
 			{#if 'level' in props && props.level}
 				<span class="level" title={props.level} aria-label="Niveau {props.level}">
 					<LevelIcon level={props.level} />
@@ -162,6 +174,23 @@
 		width: 12px;
 		height: 12px;
 		flex-shrink: 0;
+	}
+
+	.video {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background-color: hsla(var(--accent-color), 0.1);
+		padding: 4px 8px;
+		border-radius: 12px;
+		font-size: 0.75rem;
+		line-height: 1;
+		flex-shrink: 0;
+		text-decoration: none !important;
+	}
+
+	.video:hover {
+		background-color: hsla(var(--accent-color), 0.25);
 	}
 
 	.speakers {
@@ -276,6 +305,12 @@
 			font-size: 10px;
 			padding: 2px 6px 2px 4px;
 			gap: 3px;
+		}
+
+		.duration-15 .video,
+		.duration-25 .video {
+			font-size: 10px;
+			padding: 2px 6px;
 		}
 
 		.duration-15 .level :global(svg),
