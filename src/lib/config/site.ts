@@ -46,6 +46,19 @@ export interface SiteConfig {
 		available: boolean;
 		url: string;
 	};
+	/** Bandeau d'annonce affiché en haut de toutes les pages */
+	announcement: {
+		/** Le bandeau est-il affiché ? */
+		enabled: boolean;
+		/** Texte de l'annonce */
+		text: string;
+		/** Libellé du lien d'action */
+		linkLabel: string;
+		/** Cible du lien */
+		href: string;
+		/** Lien externe ? */
+		external?: boolean;
+	};
 }
 
 /**
@@ -146,6 +159,12 @@ export const siteConfig: SiteConfig = {
 	tickets: {
 		available: true, // 🔧 Changer à true pour ouvrir les billets
 		url: 'https://www.billetweb.fr/breizhcamp-2026'
+	},
+	announcement: {
+		enabled: true, // 🔧 Changer à false pour masquer le bandeau
+		text: 'Le BreizhCamp est signataire de la Lettre ouverte pour la survie des événements techniques en France.',
+		linkLabel: "Lire l'article",
+		href: '/blog/2026-09-08-lettre-ouverte'
 	}
 };
 

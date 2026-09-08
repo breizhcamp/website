@@ -1,8 +1,11 @@
 <script>
 	import '../lib/css/index.css';
+	import AnnouncementBanner from '../lib/components/layout/AnnouncementBanner.svelte';
 	import Header from '../lib/components/layout/Header.svelte';
 	import Footer from '../lib/components/layout/Footer.svelte';
 </script>
+
+<AnnouncementBanner />
 
 <Header />
 
