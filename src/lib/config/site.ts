@@ -43,7 +43,10 @@ export interface SiteConfig {
 	};
 	/** Configuration des billets */
 	tickets: {
+		/** Le bloc billets est-il affiché ? (false ⇒ rien dans le header ni le menu mobile) */
 		available: boolean;
+		/** La billetterie est-elle ouverte ? (false ⇒ bloc grisé avec badge "Bientôt") */
+		open: boolean;
 		url: string;
 	};
 	/** Bandeau d'annonce affiché en haut de toutes les pages */
@@ -157,7 +160,8 @@ export const siteConfig: SiteConfig = {
 		url: 'https://sessionize.com/breizhcamp-2026/'
 	},
 	tickets: {
-		available: true, // 🔧 Changer à true pour ouvrir les billets
+		available: false, // 🔧 Changer à true pour afficher le bloc billets (false ⇒ masqué)
+		open: false, // 🔧 Changer à false pour afficher "Billets — Bientôt" (bloc grisé)
 		url: 'https://www.billetweb.fr/breizhcamp-2026'
 	},
 	announcement: {

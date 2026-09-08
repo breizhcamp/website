@@ -51,16 +51,20 @@
 						<span>Université de Rennes</span>
 					</div>
 				</div>
-				<div class="hero-actions">
-					{#if siteConfig.tickets.available}
-						<a class="hero-cta" href={siteConfig.tickets.url}>Réserver mes billets</a>
-					{:else}
-						<div class="hero-cta disabled">
-							<span class="cta-text">Réserver mes billets</span>
-							<span class="cta-badge">Bientôt disponibles</span>
-						</div>
-					{/if}
-				</div>
+				{#if siteConfig.tickets.available}
+					<div class="hero-actions">
+						{#if siteConfig.tickets.open}
+							<a class="hero-cta" href={siteConfig.tickets.url}
+								>Réserver mes billets</a
+							>
+						{:else}
+							<div class="hero-cta disabled">
+								<span class="cta-text">Réserver mes billets</span>
+								<span class="cta-badge">Bientôt disponibles</span>
+							</div>
+						{/if}
+					</div>
+				{/if}
 			</div>
 			<div class="hero-image" role="region" aria-label="Galerie d'images de l'événement">
 				<div class="carousel">

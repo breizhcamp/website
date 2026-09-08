@@ -91,18 +91,21 @@
 		</nav>
 
 		<!-- CTA Section -->
-		<div class="cta-section">
-			{#if siteConfig.tickets.available}
-				<Button variant="primary" href={siteConfig.tickets.url} external>Billets</Button>
-			{:else}
-				<div class="cta-disabled">
-					<div class="cta-text-container">
-						<span class="cta-text">Billets</span>
-						<Badge color="orange" size="sm">Bientôt</Badge>
+		{#if siteConfig.tickets.available}
+			<div class="cta-section">
+				{#if siteConfig.tickets.open}
+					<Button variant="primary" href={siteConfig.tickets.url} external>Billets</Button
+					>
+				{:else}
+					<div class="cta-disabled">
+						<div class="cta-text-container">
+							<span class="cta-text">Billets</span>
+							<Badge color="orange" size="sm">Bientôt</Badge>
+						</div>
 					</div>
-				</div>
-			{/if}
-		</div>
+				{/if}
+			</div>
+		{/if}
 
 		<!-- Bouton Menu Mobile -->
 		<HamburgerButton open={mobileMenuOpen} onToggleMenu={toggleMobileMenu} />
@@ -154,18 +157,23 @@
 						{/if}
 					</li>
 				{/each}
-				<li class="mobile-cta">
-					{#if siteConfig.tickets.available}
-						<Button variant="primary" href={siteConfig.tickets.url} fullWidth external
-							>Billets</Button
-						>
-					{:else}
-						<div class="mobile-cta-disabled">
-							<span class="cta-text">Billets</span>
-							<Badge color="orange" size="sm">Bientôt</Badge>
-						</div>
-					{/if}
-				</li>
+				{#if siteConfig.tickets.available}
+					<li class="mobile-cta">
+						{#if siteConfig.tickets.open}
+							<Button
+								variant="primary"
+								href={siteConfig.tickets.url}
+								fullWidth
+								external>Billets</Button
+							>
+						{:else}
+							<div class="mobile-cta-disabled">
+								<span class="cta-text">Billets</span>
+								<Badge color="orange" size="sm">Bientôt</Badge>
+							</div>
+						{/if}
+					</li>
+				{/if}
 			</ul>
 		</nav>
 	{/if}

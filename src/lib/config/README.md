@@ -66,10 +66,19 @@ cfp: {
 
 ```typescript
 tickets: {
-  available: false, // ← Changer à true pour ouvrir les billets
-  badge: 'Bientôt disponibles'
+  available: false, // ← Le bloc billets est-il affiché ?
+  open: true,       // ← La billetterie est-elle ouverte ?
+  url: 'https://www.billetweb.fr/breizhcamp-2026'
 }
 ```
+
+Les deux drapeaux se combinent ainsi :
+
+| `available` | `open`        | Résultat                                       |
+| ----------- | ------------- | ---------------------------------------------- |
+| `false`     | _peu importe_ | Aucun bloc billets (header, menu mobile, hero) |
+| `true`      | `false`       | Bloc grisé « Billets » + badge « Bientôt »     |
+| `true`      | `true`        | Bouton « Billets » cliquable vers `url`        |
 
 ## 🎯 Utilisation dans les composants
 
@@ -150,8 +159,9 @@ export const siteConfig: SiteConfig = {
 		badge: 'Fermé'
 	},
 	tickets: {
-		available: true, // ✅ Billets ouverts
-		badge: 'Disponibles'
+		available: true, // ✅ Bloc billets affiché
+		open: true, // ✅ Billetterie ouverte
+		url: 'https://www.billetweb.fr/breizhcamp-2026'
 	}
 };
 ```
