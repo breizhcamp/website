@@ -8,7 +8,7 @@ layout: blog-post
 author: 'L’équipe du BreizhCamp'
 ---
 
-Le BreizhCamp 2026 est terminé depuis quelque temps déjà, mais une partie de son code source restait encore derrière un écran noir : les replays des conférences.Ceci est maintenant réglé. Nous sommes heureux de vous partager l'ensemble des conférences.
+Le BreizhCamp 2026 est terminé depuis quelque temps déjà, mais une partie de son code source restait encore derrière un écran noir : les replays des conférences. Ceci est maintenant réglé. Nous sommes heureux de vous partager l'ensemble des conférences.
 Vous pouvez les retrouvez dans la playlist YouTube suivante : 👉 https://lnkd.in/e3Hbyrbz
 
 Si vous étiez là, c’est l’occasion de revivre certains moments.
@@ -19,7 +19,7 @@ Et si vous n’avez pas pu venir au BreizhCamp cette année… vous pouvez maint
 Mais cette fois, tout est branché, les niveaux sont bons et les vidéos sont prêtes.
 
 Ces replays n’auraient évidemment pas été possibles sans la captation réalisée pendant l’événement.
-🙏 Un grand merci à [notre partenaire CYIM](https://www.cyim.com/fr), qui a assuré la captation vidéo du BreizhCamp 2026. Leur travail nous permet une fois de plus de prolonger l’événement bien au-delà des deux jours de conférences et de partager ces contenus avec toute la communauté tech.
+🙏 Un grand merci à [notre partenaire CYIM](https://www.cyim.com/fr), qui a assuré la captation vidéo du BreizhCamp 2026. Leur travail nous permet une fois de plus de prolonger l’événement bien au-delà des trois jours de conférences et de partager ces contenus avec toute la communauté tech.
 
 Bon visionnage, et merci à toutes celles et ceux qui ont participé au BreizhCamp 2026, sur scène comme dans le public !
 À bientôt pour la prochaine édition. 🚀
